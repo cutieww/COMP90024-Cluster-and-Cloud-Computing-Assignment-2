@@ -4,10 +4,10 @@
     auto_ip: false
     availability_zone: "{{ availability_zone }}"
     flavor: "{{ instance_flavor }}"
-    image: 
-    instance_key_name: 
-    instance_network:
-    security_groups:
+    image: "{{ instance_image }}"
+    instance_key_name: "{{ instance_key_name }}"
+    instance_network: "{{ instance_network }}"
+    security_groups: "{{ security_groups }}"
     state: present
     timeout: 600
     volumes: "{{ item.volumes }}"
@@ -25,10 +25,6 @@
     msg: "Instance {{ item.server.name }} has been created. IP address is {{item['server']['addresses'][instance_network][0]['addr'] }}"
   loop: "{{ os.instance.results }}"
   when: item.server is defined 
-
-
-
-
 
 
 
