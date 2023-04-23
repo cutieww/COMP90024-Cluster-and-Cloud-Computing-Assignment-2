@@ -1,0 +1,56 @@
+
+- name: Create instances on MRC
+  hosts: localhost
+  vars_files:
+    - variables/vars.yaml
+  gather_facts: true
+
+  roles:
+    - role: openstack-common
+    - role: openstack-images
+    - role: openstack-volume 
+    - role: openstack-security-group 
+    - role: openstack-instance
+#    - role: openstack-volume-snapshot
+#    - role: openstack-mastadon 
+
+
+
+- hosts: MRC
+  gather_facts: true
+  roles:
+    - role: setup/mount-volume
+    - role: setup/docker
+    - role: setup/git
+
+
+- name: Setting up harvester CouchDB
+  vars_files:
+    - vars/setup.yaml
+  become: yes
+  hosts:  mrc
+  gather_facts: no
+  vars:
+    - nodes: "{{groups['mrc'] }}"
+  roles:
+    - role: setup/couch
+  loop: "{{ nodes }}"
+
+
+- name: Harvester Setup CouchDB
+  hosts: mrc
+  gather_facts: no
+  roles:
+    - role: setup/harvester
+  loop 
+
+
+
+
+
+
+
+
+
+
+

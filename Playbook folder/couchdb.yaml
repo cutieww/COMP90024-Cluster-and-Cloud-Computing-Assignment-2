@@ -1,0 +1,31 @@
+- name: Connect data from crawlers to CouchDB database
+  hosts: localhost
+  tasks:
+    - name: Read data from crawler output files
+      shell: cat /path/to/crawler/output/*.json
+      register: crawler_output
+
+    - name: Parse JSON data from crawler output
+      set_fact:
+        parsed_data: "{{ crawler_output.stdout_lines | map('from_json') | list }}"
+
+    - name: Create or update documents in CouchDB database
+      couchdb_document:
+        database: mydb
+        document_id: "{{ item.id }}"
+        state: present
+        data: "{{ item.data }}"
+      loop: "{{ parsed_data }}"
+  
+  
+- name: Create CouchDB database
+  hosts: localhost
+  vars:
+    couchdb_host: http://localhost:5984
+    couchdb_database: example_db
+  tasks:
+    - name: Create database
+      couchdb_database:
+        url: "{{ couchdb_host }}"
+        name: "{{ couchdb_database }}"
+        state: present
