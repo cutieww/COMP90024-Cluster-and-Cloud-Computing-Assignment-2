@@ -1,0 +1,1 @@
+export MASTODON_ACCESS_TOKEN="dcD1nafa2HnRMEEPgflV3G0CAefvanb11nAsQiBcedY"
