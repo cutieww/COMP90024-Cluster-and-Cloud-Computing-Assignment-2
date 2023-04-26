@@ -70,9 +70,3 @@ if [ $is_master -eq 1 ]; then
 else
   echo "This server is an other node."
 fi
-
-if [ $is_master -eq 1 ]; then
-  echo "This server is the master node."
-else
-  echo "This server is an other node."
-fi

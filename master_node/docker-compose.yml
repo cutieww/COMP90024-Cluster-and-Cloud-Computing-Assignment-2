@@ -1,0 +1,11 @@
+version: '3'
+services:
+  frontend:
+    image: luchen2001/mrc:frontend54
+    ports:
+      - "3000:3000"
+  backend:
+    image: luchen2001/mrc:backend54
+    ports:
+      - "8000:8000"
+

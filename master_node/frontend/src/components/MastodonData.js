@@ -8,7 +8,8 @@ const MastodonData = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('http://localhost:8000/mastodon_data');
+      //const response = await fetch('http://localhost:8000/mastodon_data');
+      const response = await fetch('http://172.26.132.54:8000/mastodon_data');
       const text = await response.json();
       setData(
         { name: 'Count', value: text.number },
