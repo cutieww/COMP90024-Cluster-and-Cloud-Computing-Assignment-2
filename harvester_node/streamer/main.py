@@ -2,7 +2,10 @@ from mastodon import Mastodon, MastodonNotFoundError, MastodonRatelimitError, St
 import os, time
 import couchdb
 
-couch = couchdb.Server('http://admin:admin@localhost:5984')
+#host_ip = "192.168.1.116"
+host_ip = "172.26.135.122"
+
+couch = couchdb.Server(f'http://admin:admin@{host_ip}:5984')
 
 db = None
 
@@ -14,7 +17,8 @@ else:
 
 m = Mastodon(
     api_base_url=f'https://mastodon.world',
-    access_token=os.environ['MASTODON_ACCESS_TOKEN']
+    #access_token=os.environ['MASTODON_ACCESS_TOKEN']
+    access_token="dcD1nafa2HnRMEEPgflV3G0CAefvanb11nAsQiBcedY"
 )
 
 
@@ -26,7 +30,7 @@ class Listener(StreamListener):
                 "content": status["content"],
                 "url": status["url"]
             }
-            print(mastodon)
+            #print(mastodon)
             doc = {
                 "username": status["account"]["username"],
                 "content": status["content"],
