@@ -3,7 +3,7 @@
   vars_files:
     - variables/mastodon_vars.yaml
   tasks:
-    
+
     - name: Check whether its working
       ansible.builtin.uri:
         url: "https://{{ item.name }}/api/v1/accounts/verify_credentials"
@@ -34,7 +34,6 @@
         status_code: 200
       register: response
       loop: "{{ domains }}"
-
 
     - name: Print public toots
       debug:
