@@ -1,15 +1,15 @@
---- 
-- name: Retrieve all available Openstack iamges
-  openstack.cloud..image_info: 
+---
+- name: Retrieve all available Openstack images
+  openstack.cloud.image_info:
   register: image_result
 
 - name: Get image names and Ids
   ansible.builtin.set_fact:
-    image_facts: "{{ image_facts|default([]) + [{'name': item.name, 'id': item.id}]}}"
+    image_facts: "{{ image_facts|default([]) + [ {'name': item.name, 'id': item.id} ] }}"
   loop: "{{ image_result.images }}"
   when: item.name is defined
 
-- name: Show iamges
+- name: Show images
   ansible.builtin.debug:
     msg: "Image name: {{ item.name }}; Image id: {{ item.id }}"
   loop: "{{ image_facts }}"

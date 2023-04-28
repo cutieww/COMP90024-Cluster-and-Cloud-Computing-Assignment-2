@@ -1,41 +1,42 @@
-
+---
 - name: Create an instance
   openstack.cloud.server:
-    auto_ip: false
+    name: "{{ item.name }}"
+    auto_floating_ip: false
     availability_zone: "{{ availability_zone }}"
     flavor: "{{ instance_flavor }}"
     image: "{{ instance_image }}"
-    instance_key_name: "{{ instance_key_name }}"
-    instance_network: "{{ instance_network }}"
-    security_groups: "{{ security_groups }}"
-    state: present
+    key_name: "{{ instance_key_name }}"
+    # network: "{{ instance_network }}"
+    security_groups: "{{ sg_names }}"
     timeout: 600
     volumes: "{{ item.volumes }}"
-    wait: yes
+    state: present
+    wait: true
   loop: "{{ instances }}"
   register: os_instance
 
-
-
-- name: Print return information
-  ansible.builtin.debug:
-    var: os_instance 
-
 - ansible.builtin.debug:
-    msg: "Instance {{ item.server.name }} has been created. IP address is {{item['server']['addresses'][instance_network][0]['addr'] }}"
-  loop: "{{ os.instance.results }}"
-  when: item.server is defined 
+    msg: "Instance {{ item.server.name }} has been created. IP address is {{ item.server.access_ipv4 }}"
+  loop: "{{ os_instance.results }}"
+  when: item.server is defined
+
+- name: Wait for connection
+  ansible.builtin.wait_for:
+    host: "{{ item.server.access_ipv4 }}"
+    port: 22
+    timeout: 120
+    search_regex: OpenSSH
+  loop: "{{ os_instance.results }}"
+  when: item.server is defined
 
 
-
-#Add hosts to Ansible in-memory inventory 
 - name: Add host
   ansible.builtin.add_host:
-    name: "{{ item['server']['addresses'][instance_network][0]['addr'] }}"
+    name: "{{ item.server.access_ipv4 }}"
     groups: COMP90024
   loop: "{{ os_instance.results }}"
-  when: item.server is defined 
-
+  when: item.server is defined
 
 
 
