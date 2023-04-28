@@ -1,84 +1,55 @@
----
-- name: Deploy Mastodon APIs
-  hosts: mastodon
+- name: Stream updates for a specific user using Mastodon API
+  hosts: localhost
   vars_files:
     - variables/mastodon_vars.yaml
   tasks:
+    
+    - name: Check whether its working
+      ansible.builtin.uri:
+        url: "https://{{ item.name }}/api/v1/accounts/verify_credentials"
+        method: GET
+        headers:
+          Authorization: "Bearer {{ item.access_token }}"
+        
+        body_format: json
+        return_content: yes
+        status_code: 200
+      register: response
+      loop: "{{ domains }}"
 
-    - name: Install dependencies
-      apt:
-        name: "{{ item }}"
-        state: present
-      with_items:
-        - git
-        - build-essential
-        - libssl-dev
-        - libpq-dev
-        - libreadline-dev
-        - zlib1g-dev
-        - libicu-dev
-        - libprotobuf-dev
-        - protobuf-compiler
-        - libidn11-dev
-        - libjemalloc-dev
-    - name: Clone Mastodon repository
-      git:
-        repo: https://github.com/tootsuite/mastodon.git
-        dest: /opt/mastodon
-    - name: Install Mastodon dependencies
-      shell: cd /opt/mastodon && bundle install --deployment --without development test
-    - name: Configure Mastodon environment
-      copy:
-        dest: /opt/mastodon/.env.production
-        content: |
-          DB_NAME={{ mastodon_db_name }}
-          DB_USER={{ mastodon_db_user }}
-          DB_PASS={{ mastodon_db_password }}
-          EMAIL_FROM_ADDRESS={{ mastodon_email_from_address }}
-          SMTP_SERVER={{ mastodon_smtp_address }}
-          SMTP_PORT={{ mastodon_smtp_port }}
-          SMTP_LOGIN={{ mastodon_smtp_username }}
-          SMTP_PASSWORD={{ mastodon_smtp_password }}
-          SECRET_KEY_BASE={{ mastodon_secret_key_base }}
-    - name: Compile Mastodon assets
-      shell: cd /opt/mastodon && RAILS_ENV=production bundle exec rails assets:precompile
-    - name: Start Mastodon services
-      shell: cd /opt/mastodon && RAILS
+    - name: Print response
+      debug:
+        var: item.content
+      loop: "{{ response.results }}"
+    
+    
+    - name: Retrieve public toots
+      ansible.builtin.uri:
+        url: "https://{{ item.name }}/api/v1/timelines/public"
+        method: GET
+        headers:
+          Authorization: "Bearer {{ item.access_token }}"
+        body_format: json
+        return_content: yes
+        status_code: 200
+      register: response
+      loop: "{{ domains }}"
+
+
+    - name: Print public toots
+      debug:
+        var: item.content
+      loop: "{{ response.results }}"
+
     
 
 
-- name: Deploy and process Mastodon crawler
-  hosts: crawler
-  vars:
-    mastodon_instance_url: https://mastodon.social
-    mastodon_access_token: abcdefghijklmnopqrstuvwxyz0123456789
-    couchdb_url: http://localhost:5984
-    couchdb_database: mastodon_data
-  tasks:
-    - name: Copy and pre-process crawler code
-      replace:
-        path: /opt/mastodon-crawler/crawler.py
-        regexp: 'foo'
-        replace: 'bar'
-      # ... additional pre-processing steps ...
-      notify: Start crawler
-    - name: Start crawler
-      command: python3 /opt/mastodon-crawler/crawler.py
-      async: 3600
-      poll: 0
-      register: crawler_output
-      changed_when: false
-      notify: Insert data into CouchDB
-    - name: Convert crawler output to JSON
-      set_fact:
-        json_data: "{{ crawler_output.stdout | to_json }}"
-    - name: Insert data into CouchDB
-      couchdb_document:
-        url: "{{ couchdb_url }}"
-        db: "{{ couchdb_database }}"
-        doc_id: "{{ inventory_hostname }}-{{ ansible_date_time.date }}-{{ ansible_date_time.hour }}"
-        doc_body: "{{ json_data }}"
-        status_code: 201
+        
+
+
+
+
+
 
 
 

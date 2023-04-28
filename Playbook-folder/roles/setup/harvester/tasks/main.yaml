@@ -1,5 +1,0 @@
-- name: Install pip requirements
-  pip:
-    name:
-      ["senticnet", "clean-text", "Unidecode", "tweepy", "couchdb", "geopandas"]
-    state: latest
