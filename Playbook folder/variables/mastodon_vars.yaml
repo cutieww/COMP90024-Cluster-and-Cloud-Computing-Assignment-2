@@ -1,0 +1,11 @@
+
+
+mastodon_db_name: mastodon_production
+mastodon_db_user: mastodon
+mastodon_db_password: "{{ lookup('env','MASTODON_DB_PASSWORD') }}"
+mastodon_email_from_address: admin@example.com
+mastodon_smtp_address: smtp.example.com
+mastodon_smtp_port: 587
+mastodon_smtp_username: admin@example.com
+mastodon_smtp_password: "{{ lookup('env','MASTODON_SMTP_PASSWORD') }}"
+mastodon_secret_key_base: "{{ lookup('env','MASTODON_SECRET_KEY_BASE') }}"

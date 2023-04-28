@@ -14,14 +14,15 @@
 #    - role: openstack-volume-snapshot
 #    - role: openstack-mastadon 
 
-"""
+
 - hosts: mrc
   gather_facts: true
   roles:
     - role: setup/mount-volume
     - role: setup/docker
     - role: setup/git
-"""
+
+
 
 - name: Setting up harvester CouchDB
   become: yes
@@ -42,7 +43,6 @@
   roles:
     - role: setup/harvester
   loop: "{{ nodes }}"
-
 
 
 
