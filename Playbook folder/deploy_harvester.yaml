@@ -1,9 +1,0 @@
-- name: Build Docker image
-  hosts: mastodon
-  gather_facts: true 
-  vars_files:
-    - variables/mastodon_vars.yaml
-
-  roles:
-#    - role: mastodon/build_master 
-    - role: mastodon/build_harvester
