@@ -1,8 +1,8 @@
 # COMP90024 Cluster and Cloud Computing Assignment 2
 
-##Deploy Streamer Node (UK Server)
+## Deploy Streamer Node (UK Server)
 
-###Docker Command for Streamer UK
+### Docker Command for Streamer UK
 
 docker build -t streamer_uk --platform linux/amd64 .
 
