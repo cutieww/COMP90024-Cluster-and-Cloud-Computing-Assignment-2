@@ -1,0 +1,39 @@
+---
+- name: Get CPU usage
+  shell: "top -b -n 1 | grep 'Cpu(s)' | awk '{print $2 + $4}'"
+  register: cpu_usage_raw
+  changed_when: false
+
+- name: Parse CPU usage
+  set_fact:
+    cpu_usage: "{{ cpu_usage_raw.stdout | float }}"
+
+- name: Get current number of instances
+  shell: "docker ps -q --filter name={{ container_name }} | wc -l"
+  register: num_instances_raw
+  changed_when: false
+
+- name: Parse number of instances
+  set_fact:
+    num_instances: "{{ num_instances_raw.stdout | int }}"
+
+- name: Scale up
+  when: cpu_usage > cpu_threshold and num_instances < max_instances
+  block:
+    - name: Run new container
+      docker_container:
+        name: "{{ container_name }}_{{ ansible_date_time.epoch }}"
+        image: "{{ docker_image }}"
+        state: started
+    - name: Log scaling up
+      debug:
+        msg: "Scaling up: CPU usage = {{ cpu_usage }}%, Num instances = {{ num_instances }} -> {{ num_instances + 1 }}"
+
+- name: Scale down
+  when: cpu_usage < cpu_threshold and num_instances > min_instances
+  block:
+    - name: Stop oldest container
+      shell: "docker ps -q --filter name={{ container_name }} | head -n 1 | xargs docker stop"
+    - name: Log scaling down
+      debug:
+        msg: "Scaling down: CPU usage = {{ cpu_usage }}%, Num instances = {{ num_instances }} -> {{ num_instances - 1 }}"

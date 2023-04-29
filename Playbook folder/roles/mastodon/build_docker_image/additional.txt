@@ -1,0 +1,26 @@
+
+
+- name: Get a list of running containers
+  docker_container_info:
+    filters:
+      "name": "mastodon_*"
+  register: containers
+
+- name: Start the Docker container for harvester_node
+  docker_container:
+    name: mastodon_{{ harvester_number }}
+    image: mastodon_image
+    state: started
+
+
+
+
+
+- name: Sort the containers by creation date
+  set_fact:
+    sorted_containers: "{{ containers.containers | sort(attribute='Created') }}"
+
+- name: Remove the oldest container
+  docker_container:
+    name: "{{ sorted_containers[0].Names[0][1:] }}"
+    state: absent

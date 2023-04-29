@@ -1,0 +1,7 @@
+---
+- name: Build Docker image
+  become: true
+  docker_image:
+    name: mastodon_image
+    path: /COMP90024-A2/harvester_node/Dockerfile
+    pull: yes
