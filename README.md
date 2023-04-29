@@ -35,3 +35,7 @@ bash deploy_couchdb.sh
 bash add_group.sh
 
 docker run -p 8000:8000 luchen2001/mrc:server1
+
+### set up CouchDB cluster
+
+bash set_cluster.sh
