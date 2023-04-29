@@ -1,7 +1,12 @@
 ---
+- name: Print Dockerfile contents
+  debug:
+    msg: "{{ lookup('file', '~/COMP90024-A2/harvester_node/streamer/Dockerfile') }}"
+
+
 - name: Build Docker image
-  become: true
-  docker_image:
+  ansible.builtin.docker_image:
     name: mastodon_image
-    path: /COMP90024-A2/harvester_node/Dockerfile
-    pull: yes
+    source: ~/COMP90024-A2/harvester_node/streamer
+    dockerfile: Dockerfile
+    state: present 

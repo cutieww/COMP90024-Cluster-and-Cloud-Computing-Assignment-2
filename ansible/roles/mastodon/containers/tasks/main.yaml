@@ -18,7 +18,7 @@
     num_instances: "{{ num_instances_raw.stdout | int }}"
 
 - name: Scale up
-  when: cpu_usage > cpu_threshold and num_instances < max_instances
+  when: cpu_usage > cpu_threshold_high and num_instances < max_instances
   block:
     - name: Run new container
       docker_container:
@@ -30,7 +30,7 @@
         msg: "Scaling up: CPU usage = {{ cpu_usage }}%, Num instances = {{ num_instances }} -> {{ num_instances + 1 }}"
 
 - name: Scale down
-  when: cpu_usage < cpu_threshold and num_instances > min_instances
+  when: cpu_usage < cpu_threshold_low and num_instances > min_instances
   block:
     - name: Stop oldest container
       shell: "docker ps -q --filter name={{ container_name }} | head -n 1 | xargs docker stop"
