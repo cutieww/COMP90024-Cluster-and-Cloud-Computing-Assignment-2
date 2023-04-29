@@ -10,5 +10,27 @@ docker tag streamer_uk luchen2001/mrc:streamer_uk
 
 docker push luchen2001/mrc:streamer_uk
 
+### Deploy the CouchDB and Streamer in Cloud
 
+bash deploy_couchdb.sh
+
+bash add_group.sh
+
+docker run luchen2001/mrc:streamer_uk
+
+## Deploy Server1/2
+
+### Docker Command for Server
+
+Docker build -t server1 --platform linux/amd64 .
+
+Docker tag server1 luchen2001/mrc:server1
+
+Docker push luchen2001/mrc:server1
+
+### Deploy the CouchDB and Server in Cloud
+
+bash deploy_couchdb.sh
+
+bash add_group.sh
 
