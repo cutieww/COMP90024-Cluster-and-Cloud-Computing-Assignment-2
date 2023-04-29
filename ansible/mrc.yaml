@@ -11,31 +11,10 @@
     - role: openstack/volume 
     - role: openstack/security-group 
     - role: openstack/instance
-#    - role: openstack-volume-snapshot
+    - role: openstack-volume-snapshot
 
 
 
-
-
-- name: Setting up harvester CouchDB
-  become: yes
-  hosts:  mrc
-  gather_facts: no
-  vars:
-    - nodes: "{{groups['mrc'] }}"
-  roles:
-    - role: setup/couch
-  loop: "{{ nodes }}"
-
-
-- name: Harvester support CouchDB
-  hosts: mrc
-  gather_facts: no
-  vars:
-    - nodes: "{{groups['mrc'] }}"
-  roles:
-    - role: setup/harvester
-  loop: "{{ nodes }}"
 
 
 
