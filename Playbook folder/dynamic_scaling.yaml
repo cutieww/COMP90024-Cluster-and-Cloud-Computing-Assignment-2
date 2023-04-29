@@ -1,0 +1,20 @@
+- name: Scale Docker containers based on CPU usage
+  hosts: localhost
+  #hosts: mastodon 
+  gather_facts: true
+  become: true
+
+  vars_files:
+    - variables/docker_vars.yaml
+
+  roles:
+    - role: mastodon/common 
+    - role: mastodon/build_docker_image
+      register: docker_image 
+    - role: mastodon/containers
+      vars: 
+        docker_image_name: "{{ docker_image.image_name }}"
+
+
+    
+

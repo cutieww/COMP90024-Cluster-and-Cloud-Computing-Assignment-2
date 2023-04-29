@@ -1,0 +1,23 @@
+---
+- name: Deploy Mastodon using Docker Compose
+  hosts: your_host_name
+  become: true
+
+  tasks:
+    - name: Install Docker Compose
+      pip:
+        name: docker-compose
+
+    - name: Copy Docker Compose file
+      copy:
+        src: /path/to/docker-compose.yml
+        dest: /path/on/remote/host/docker-compose.yml
+
+    - name: Start Docker Compose services
+      docker_compose:
+        project_src: /path/on/remote/host
+        project_name: mastodon
+        build: no
+        state: present
+        timeout: 180
+#Not complete 
