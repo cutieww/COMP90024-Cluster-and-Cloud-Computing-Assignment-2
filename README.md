@@ -64,4 +64,4 @@ bash add_group.sh
 
 - Copy the docker-compose.yml
 
-docker compose up
+docker compose up -d
