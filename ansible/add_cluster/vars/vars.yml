@@ -1,0 +1,8 @@
+# vars/vars.yml
+master_ip: "172.26.129.100"
+worker_ip: "172.26.128.30"
+
+couchdb_version: "3.0.0"
+couchdb_user: "admin"
+couchdb_password: "admin"
+couchdb_cookie: "a192aeb9904e6590849337933b000c99"

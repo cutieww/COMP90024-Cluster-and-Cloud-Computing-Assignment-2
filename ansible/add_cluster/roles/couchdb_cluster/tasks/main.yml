@@ -1,0 +1,58 @@
+---
+# roles/couchdb_cluster/tasks/main.yml
+- name: Enable cluster
+  uri:
+    url: "http://admin:admin@{{ master_ip }}:5984/_cluster_setup"
+    method: POST
+    headers:
+      Content-Type: "application/json"
+    body_format: json
+    body:
+      action: "enable_cluster"
+      bind_address: "0.0.0.0"
+      username: "admin"
+      password: "admin"
+      port: "5984"
+      remote_node: "{{ worker_ip }}"
+      node_count: "{{ worker_ip | regex_replace('^\\s+|\\s+$', '') | length }}"
+      remote_current_user: "admin"
+      remote_current_password: "admin"
+    status_code: 200
+
+
+- name: Add node
+  uri:
+    url: "http://admin:admin@{{ master_ip }}:5984/_cluster_setup"
+    method: POST
+    headers:
+      Content-Type: "application/json"
+    body_format: json
+    body:
+      action: "add_node"
+      host: "{{ worker_ip }}"
+      port: "5984"
+      username: "admin"
+      password: "admin"
+    status_code: 200
+
+- name: Finish cluster
+  uri:
+    url: "http://admin:admin@{{ master_ip }}:5984/_cluster_setup"
+    method: POST
+    headers:
+      Content-Type: "application/json"
+    body_format: json
+    body:
+      action: "finish_cluster"
+    status_code: 200
+
+- name: Get membership
+  uri:
+    url: "http://admin:admin@{{ worker_ip }}:5984/_membership"
+    method: GET
+    return_content: yes
+  register: membership_result
+
+- name: Display membership result
+  debug:
+    var: membership_result.content

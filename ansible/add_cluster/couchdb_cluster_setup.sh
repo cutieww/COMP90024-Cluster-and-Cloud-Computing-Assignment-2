@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Set the IP addresses of the master and worker nodes
-master_ip="172.26.129.100"
-worker_ip="172.26.128.30"
+# Use the environment variables for the IP addresses
+master_ip="${master_ip}"
+worker_ip="${worker_ip}"
 
 # Use the IP addresses in the curl commands
 curl -XPOST "http://admin:admin@$master_ip:5984/_cluster_setup" \
@@ -22,4 +22,3 @@ curl -XPOST "http://admin:admin@$master_ip:5984/_cluster_setup"\
     --header "Content-Type: application/json" --data "{\"action\": \"finish_cluster\"}"
 
 curl -X GET "http://admin:admin@$worker_ip:5984/_membership"
-

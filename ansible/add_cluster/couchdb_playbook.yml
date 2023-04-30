@@ -1,0 +1,24 @@
+---
+- hosts: couchdb_servers
+  vars_files:
+    - vars/vars.yml
+  gather_facts: true
+
+  vars:
+    - ansible_user: ubuntu
+    - ansible_ssh_private_key_file: ../mrc.pem
+    - ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
+
+  roles:
+    - role: install_couchdb
+
+- hosts: localhost
+  vars_files:
+    - vars/vars.yml
+
+  tasks:
+    - name: Run CouchDB cluster setup script
+      script: couchdb_cluster_setup.sh
+      environment:
+        master_ip: "{{ master_ip }}"
+        worker_ip: "{{ worker_ip }}"
