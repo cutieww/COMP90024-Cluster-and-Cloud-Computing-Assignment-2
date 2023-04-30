@@ -1,0 +1,11 @@
+version: '3'
+services:
+  react-app:
+    image: luchen2001/mrc:frontend
+    ports:
+      - "80:3000" # Map port 3000 in the container to port 80 on the host
+
+  nginx-loadbalancer:
+    image: luchen2001/mrc:loadbalancer
+    ports:
+      - "80:80"

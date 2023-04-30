@@ -25,35 +25,3 @@ sudo systemctl enable docker
 sudo systemctl start docker
 
 echo "Docker is now installed and ready to use."
-
-# Define environmental variables
-user='admin'
-pass='admin'
-VERSION='3.0.0'
-cookie='a192aeb9904e6590849337933b000c99'
-
-# Get Docker image
-sudo docker pull couchdb:${VERSION}
-
-# Stop and remove existing Docker container
-if [ ! -z $(sudo docker ps --all --filter "name=couchdb" --quiet) ]; then
-  sudo docker stop $(sudo docker ps --all --filter "name=couchdb" --quiet)
-  sudo docker rm $(sudo docker ps --all --filter "name=couchdb" --quiet)
-fi
-
-# Create container and open ports for distributed cluster communication
-sudo docker create \
-  -p 9100:9100 \
-  -p 4369:4369 \
-  -p 5984:5984 \
-  --name couchdb \
-  --env COUCHDB_USER=${user} \
-  --env COUCHDB_PASSWORD=${pass} \
-  --env COUCHDB_SECRET=${cookie} \
-  --env ERL_FLAGS="-setcookie \"${cookie}\" -name \"couchdb@$(hostname -I | awk '{print $1}')\"" \
-  couchdb:${VERSION}
-
-# Start and run Docker container
-sudo docker start couchdb
-
-echo "CouchDB is now installed and ready to use."

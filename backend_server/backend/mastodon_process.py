@@ -3,10 +3,12 @@ import requests
 import json
 import time
 
-#host_ip = "192.168.1.116" #replace this with the host machine IP
-host_ip = "172.26.132.54"
+#host_ip = "192.168.1.116" # Note: if running locally, use the host machine IP
+#host_ip = "172.26.132.19"
+host_ip = "172.26.129.100" # replalce this with instance IP the server Running
+
 couch = couchdb.Server(f'http://admin:admin@{host_ip}:5984')
-db = couch['db_test']
+db = couch['mastodon']
 
 map_function = """
 function (doc) {
@@ -39,15 +41,15 @@ else:
 
 def count_documents():
     print('trying to fetch data from data base')
-    url = f"http://admin:admin@{host_ip}:5984/db_test/_design/document_count/_view/count_docs?reduce=true&group_level=0"
+    url = f"http://admin:admin@{host_ip}:5984/mastodon/_design/document_count/_view/count_docs?reduce=true&group_level=0"
+    print(url)
     response = requests.get(url)
     print(response)
     data = json.loads(response.text)
-    print(data)
     document_count = data['rows'][0]['value']
     return document_count
 
-mastodon_data = {'number': 0}
+mastodon_data = {'number': 0, 'host': host_ip}
 if __name__ == '__main__':
     time.sleep(1)
     while True:

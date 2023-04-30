@@ -1,5 +1,4 @@
 
-
 curl -XPOST "http://admin:admin@172.26.132.54:5984/_cluster_setup" \
       --header "Content-Type: application/json"\
       --data "{\"action\": \"enable_cluster\", \"bind_address\":\"0.0.0.0\",\

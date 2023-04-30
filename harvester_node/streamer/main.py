@@ -2,17 +2,16 @@ from mastodon import Mastodon, MastodonNotFoundError, MastodonRatelimitError, St
 import os, time
 import couchdb
 
-#host_ip = "192.168.1.116"
-host_ip = "172.26.135.122"
+host_ip = "172.26.128.252"
 
 couch = couchdb.Server(f'http://admin:admin@{host_ip}:5984')
 
 db = None
 
 if 'db_test' in couch:
-    db = couch['db_test']
+    db = couch['mastodon']
 else:
-    db = couch.create('db_test')
+    db = couch.create('mastodon')
 #db = couch['db_test']
 
 m = Mastodon(
