@@ -94,3 +94,14 @@
         endpoint_mode: vip
         networks:
           - name: overlay-network
+
+
+  - name: Start Docker service
+      systemd:
+        name: docker
+        state: started
+
+  - name: Start Docker service
+      service:
+        name: docker
+        state: started

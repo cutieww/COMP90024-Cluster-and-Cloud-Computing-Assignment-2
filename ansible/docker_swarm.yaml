@@ -2,14 +2,22 @@
   hosts: localhost #need to change this 
   become: true
 
+#should install python and pip 
   vars_files:
     - variables/docker_vars.yaml 
   tasks:
+  
+    # might need to install python 
+    - name: Install pip
+      ansible.builtin.apt:
+        name: ["python3-dev", "python3-setuptools", "python3-pip"]
+        state: latest
+        update_cache: true
+      when: ansible_distribution == "Ubuntu"
+
     - name: Install required packages
       apt:
         name:
-          - python3-apt
-          - python3-pip
           - apt-transport-https
           - ca-certificates
           - curl
@@ -41,18 +49,15 @@
         name: docker
         state: present
 
-
     - name: Start Docker service
-      systemd:
-        name: docker
-        state: started
+      command: /etc/init.d/docker start
 
-
+    
     - name: Initialize Docker Swarm
       community.docker.docker_swarm:
+        name: "{{ swarm_name }}"
         state: present
-        listen_addr: "{{ ansible_host }}" # need to be changed 
-        advertise_addr: "{{ ansible_host }}"
+        default_addr_pool: "{{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}" 
 
       
     - name: Get the Manager join-token
@@ -63,26 +68,26 @@
       shell: docker swarm join-token --quiet worker
       register: worker_token
 
-
+    #error could be due to the fact that its run in check mode 
     - name: Add manager nodes to the swarm
       community.docker.docker_swarm:
-        state: manager
+        
+        state: join
+        advertise_addr: "{{ hostvars['swarm-managers']['ansible_default_ipv4']['address'] }}"
         join_token: "{{ manager_token.stdout }}"
-        replicas: "{{ num_managers }}"
+        remote_addrs: "{{ hostvars['swarm-managers']['ansible_default_ipv4']['address'] }}:2377"
+      loop: "{{ groups['swarm-managers'] }}"
 
     - name: Add worker nodes to the swarm
       community.docker.docker_swarm:
-        state: worker
+        state: join
+        advertise_addr: "{{ ansible_host }}"
         join_token: "{{ worker_token.stdout }}"
-        replicas: "{{ num_workers }}"
-
-  
-
-    - name: Stop Docker Swarm
-      community.docker.docker_swarm:
-        state: absent
+        remote_addrs: "{{ hostvars['swarm-workers']['ansible_default_ipv4']['address'] }}:2377"
+      loop: "{{ groups['swarm-workers'] }}"
+    
 
 
-
+#Screw it, just scrape information from github and stuff, and bring this issue up on the stands 
 
 

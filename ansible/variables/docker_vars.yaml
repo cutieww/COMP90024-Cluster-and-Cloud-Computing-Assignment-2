@@ -1,2 +1,7 @@
+
+
+
+swarm_name: Docker Swarm 
+
 num_managers: 3
 num_workers: 10 
