@@ -1,8 +1,10 @@
 - name: Install Docker and Docker Swarm
   hosts: localhost #need to change this 
   become: true
-  tasks:
 
+  vars_files:
+    - variables/docker_vars.yaml 
+  tasks:
     - name: Install required packages
       apt:
         name:
@@ -39,8 +41,11 @@
         name: docker
         state: present
 
+
     - name: Start Docker service
-      command: /etc/init.d/docker start
+      systemd:
+        name: docker
+        state: started
 
 
     - name: Initialize Docker Swarm
@@ -48,7 +53,6 @@
         state: present
         listen_addr: "{{ ansible_host }}" # need to be changed 
         advertise_addr: "{{ ansible_host }}"
-      become: yes
 
       
     - name: Get the Manager join-token
@@ -58,6 +62,21 @@
     - name: Get the worker join-token
       shell: docker swarm join-token --quiet worker
       register: worker_token
+
+
+    - name: Add manager nodes to the swarm
+      community.docker.docker_swarm:
+        state: manager
+        join_token: "{{ manager_token.stdout }}"
+        replicas: "{{ num_managers }}"
+
+    - name: Add worker nodes to the swarm
+      community.docker.docker_swarm:
+        state: worker
+        join_token: "{{ worker_token.stdout }}"
+        replicas: "{{ num_workers }}"
+
+  
 
     - name: Stop Docker Swarm
       community.docker.docker_swarm:
