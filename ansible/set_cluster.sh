@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Set the IP addresses of the master and worker nodes
-master_ip="172.26.129.100"
-worker_ip="172.26.128.30"
+master_ip="172.26.132.19"
+worker_ip="172.26.128.252"
 
 # Use the IP addresses in the curl commands
 curl -XPOST "http://admin:admin@$master_ip:5984/_cluster_setup" \

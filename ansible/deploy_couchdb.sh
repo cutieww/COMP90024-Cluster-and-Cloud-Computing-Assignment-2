@@ -51,9 +51,16 @@ sudo docker create \
   --env COUCHDB_PASSWORD=${pass} \
   --env COUCHDB_SECRET=${cookie} \
   --env ERL_FLAGS="-setcookie \"${cookie}\" -name \"couchdb@$(hostname -I | awk '{print $1}')\"" \
+  --volume /mnt/database:/opt/couchdb/data \
   couchdb:${VERSION}
 
 # Start and run Docker container
 sudo docker start couchdb
 
 echo "CouchDB is now installed and ready to use."
+
+# Create the directory, format the volume, and mount it
+sudo mkdir /mnt/database
+sudo mkfs.ext4 /dev/vdb
+sudo mount /dev/vdb /mnt/database
+echo "Created directory and mounted volume"

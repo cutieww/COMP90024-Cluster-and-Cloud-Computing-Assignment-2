@@ -76,3 +76,5 @@
       COUCHDB_PASSWORD: "{{ couchdb_password }}"
       COUCHDB_SECRET: "{{ couchdb_cookie }}"
       ERL_FLAGS: "-setcookie \"{{ couchdb_cookie }}\" -name \"couchdb@{{ ansible_default_ipv4.address }}\""
+    volumes:
+      - "/mnt/database:/opt/couchdb/data"
