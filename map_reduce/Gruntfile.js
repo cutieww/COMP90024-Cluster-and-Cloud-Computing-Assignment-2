@@ -4,7 +4,8 @@ module.exports = function (grunt) {
       "couch-compile": {
         dbs: {
           files: {
-            "/tmp/mastodon_policy.json": "mastodon_policy/policy_count"
+            "/tmp/mastodon_policy.json": "mastodon_policy/policy_view",
+            
           }
         }
       },
@@ -18,7 +19,7 @@ module.exports = function (grunt) {
       }
     });
 
-  grunt.config.set(`couch-push.mastodon_policy.files.http://172\\.26\\.128\\.252:5984/${process.env.dbname1}`, "/tmp/mastodon_policy.json");
+  grunt.config.set(`couch-push.mastodon_policy.files.http://172\\.26\\.132\\.19:5984/${process.env.dbname1}`, "/tmp/mastodon_policy.json");
   console.log(JSON.stringify(grunt.config.get()));
   grunt.loadNpmTasks("grunt-couch");
 };
