@@ -49,17 +49,18 @@
         name: docker
         state: present
 
-    - name: Start Docker service
-      command: /etc/init.d/docker start
+    - name: Start Docker Engine
+      service:
+        name: docker
+        state: started
 
-    
+        
     - name: Initialize Docker Swarm
       community.docker.docker_swarm:
         name: "{{ swarm_name }}"
         state: present
         default_addr_pool: "{{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}" 
 
-      
     - name: Get the Manager join-token
       shell: docker swarm join-token --quiet manager
       register: manager_token
@@ -68,7 +69,6 @@
       shell: docker swarm join-token --quiet worker
       register: worker_token
 
-    #error could be due to the fact that its run in check mode 
     - name: Add manager nodes to the swarm
       community.docker.docker_swarm:
         
