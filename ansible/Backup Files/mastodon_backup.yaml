@@ -6,7 +6,6 @@
 
   vars_files:
     - variables/docker_vars.yaml
-
   roles:
     #- role: mastodon/common 
     - role: mastodon/build_docker_image
@@ -14,7 +13,3 @@
     - role: mastodon/containers
       vars: 
         docker_image: "{{ docker_image.name }}"
-
-
-    
-

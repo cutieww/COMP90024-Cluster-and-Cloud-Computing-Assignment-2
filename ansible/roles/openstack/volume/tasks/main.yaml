@@ -1,5 +1,5 @@
 ---
-- name: Create volume(s) on NeCTAR
+- name: Create volume(s) on Cloud
   openstack.cloud.volume:
     display_name: "{{ item.vol_name }}"
     size: "{{ item.vol_size }}"

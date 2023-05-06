@@ -1,0 +1,30 @@
+
+--create an image first, and then register it 
+
+- name: Create a Docker service
+  hosts: swarm-managers
+  become: true
+  vars_files:
+    - variables/mastodon_vars.yaml 
+    
+  tasks:
+    - name: Build Docker image
+      ansible.builtin.docker_image:
+        name: "{{ image_name }}"
+        source: ~/COMP90024-A2/harvester_node/streamer
+        dockerfile: Dockerfile
+        state: present
+
+    - name: Create the Docker service
+      docker_service:
+        name: "{{ service_name }}"
+        image: "{{ image_name }}"
+        replicas: "{{ num_replicas }}"
+    
+
+
+
+    
+
+    
+

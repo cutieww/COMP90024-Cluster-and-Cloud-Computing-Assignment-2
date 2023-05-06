@@ -1,5 +1,6 @@
 - name: Install Docker and Docker Swarm
   hosts: localhost #need to change this 
+  #hosts: docker-nodes
   become: true
 
 #should install python and pip 
@@ -60,6 +61,8 @@
         name: "{{ swarm_name }}"
         state: present
         default_addr_pool: "{{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}" 
+      when: swarm_status.rc != 0
+      run_once: true
 
     - name: Get the Manager join-token
       shell: docker swarm join-token --quiet manager
@@ -69,6 +72,8 @@
       shell: docker swarm join-token --quiet worker
       register: worker_token
 
+
+
     - name: Add manager nodes to the swarm
       community.docker.docker_swarm:
         
@@ -76,18 +81,22 @@
         advertise_addr: "{{ hostvars['swarm-managers']['ansible_default_ipv4']['address'] }}"
         join_token: "{{ manager_token.stdout }}"
         remote_addrs: "{{ hostvars['swarm-managers']['ansible_default_ipv4']['address'] }}:2377"
-      loop: "{{ groups['swarm-managers'] }}"
+      loop: "{{ groups['swarm-managers'] }}"  
 
     - name: Add worker nodes to the swarm
       community.docker.docker_swarm:
         state: join
-        advertise_addr: "{{ ansible_host }}"
+        advertise_addr: "{{ ansible_host }}" #might not be needed 
         join_token: "{{ worker_token.stdout }}"
         remote_addrs: "{{ hostvars['swarm-workers']['ansible_default_ipv4']['address'] }}:2377"
+        replicas: "{{ num_workers }}"
       loop: "{{ groups['swarm-workers'] }}"
+
+
+        
     
 
 
 #Screw it, just scrape information from github and stuff, and bring this issue up on the stands 
-
-
+#Mastodon first, then 
+#Focus on the mastodon aspect of this 

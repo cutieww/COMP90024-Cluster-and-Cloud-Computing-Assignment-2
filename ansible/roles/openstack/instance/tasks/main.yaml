@@ -34,9 +34,26 @@
 - name: Add host
   ansible.builtin.add_host:
     name: "{{ item.server.access_ipv4 }}"
-    groups: COMP90024
+    groups: docker-nodes
   loop: "{{ os_instance.results }}"
   when: item.server is defined
+
+- name: Add manager nodes to inventory group
+  ansible.builtin.add_host:
+    name: "{{ item.server.access_ipv4 }}"
+    groups: swarm-managers
+  loop: "{{ os_instance.results[:num_managers] }}"
+  when: item.server is defined
+
+- name: Add worker nodes to inventory group
+  ansible.builtin.add_host:
+    name: "{{ item.server.access_ipv4 }}"
+    groups: swarm-workers
+  loop: "{{ os_instance.results[num_managers:] }}"
+  when: item.server is defined
+
+
+
 
 
 
