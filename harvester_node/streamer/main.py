@@ -8,23 +8,26 @@ from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from datetime import datetime
+import nltk
 
-# nltk.download('stopwords')
-# nltk.download('punkt')
-# nltk.download('wordnet')
+nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('wordnet')
+
 
 host_ip = "172.26.128.252"
 # host_ip = '127.0.0.1'
 policy_bow = ["government","democracy",  "elections", "voting","campaigns","political parties","legislation", "policy", "administration", "diplomacy", "foreign policy","domestic policy", "public policy", "law",     "constitution",     "civil rights",     "civil liberties",     "social justice",     "equality",     "political ideology",     "political spectrum",     "lobbying",     "special interest groups",     "media",     "political commentary",     "political satire",     "corruption",     "transparency",     "accountability",     "political science",     "international relations",     "public opinion",     "propaganda",     "power",     "authority",     "leadership",     "governance",     "policy making",     "public administration",    "bureaucracy",    "campaign finance",    "censorship",    "checks and balances",    "citizenship",    "constituency",    "crisis management",    "debates",    "defamation",    "dictatorship",    "discrimination",    "divisiveness",    "economic policy",    "election security",    "emergency powers",    "fascism",    "freedom of speech",    "human rights",    "impeachment",    "judicial system",    "legislative branch",    "libertarianism",    "lobbyists",    "military",    "minorities",    "nationalism","patriotism","peacekeeping","political asylum","political correctness","political culture","political economy","political stability","populism","protest","public service","reform","representation","revolution","separation of powers","socialism","sovereignty","state","totalitarianism","veto","war","welfare state"]
 
 couch = couchdb.Server(f'http://admin:admin@{host_ip}:5984')
-
+today = datetime.today().strftime('%Y-%m-%d')
+db_name = 'mastodon_policy' + "_" + today
 db = None
 
-if 'mastodon_policy' in couch:
-    db = couch['mastodon_policy']
+if db_name in couch:
+    db = couch[db_name]
 else:
-    db = couch.create('mastodon_policy')
+    db = couch.create(db_name)
 #db = couch['db_test']
 
 m = Mastodon(
@@ -32,6 +35,17 @@ m = Mastodon(
     #access_token=os.environ['MASTODON_ACCESS_TOKEN']
     access_token="dcD1nafa2HnRMEEPgflV3G0CAefvanb11nAsQiBcedY"
 )
+
+def create_database(date):
+    today = date
+    db_name = 'mastodon_policy' + "_" + today
+    db = None
+    if db_name in couch:
+        db = couch[db_name]
+    else:
+        db = couch.create(db_name)
+
+
 
 
 class Listener(StreamListener):
@@ -75,13 +89,13 @@ class Listener(StreamListener):
         # remove all the HTML tags
         pattern2 = r"<a\b[^>]*>(.*?)</a>"
         text = re.sub(pattern2, "", lst)
-        
+
 
         # Remove HTML tags using re.sub()
         pattern3 = re.compile(r'<.*?>')
         text = re.sub(pattern3, '', text)
 
-        
+
 
         # Remove punctuations and "'s" using re.sub()
         pattern4 = re.compile(r'[^\w\s]|\'s')
@@ -97,13 +111,13 @@ class Listener(StreamListener):
     def on_update(self, status):
         # message = json.dumps(status, indent=2, sort_keys=True,default=str)
         # print(message[0])
-        
+
         if status['language'] == 'en':
             token = self.to_token(status["content"])
             political_related = False
             if self.check_include_topic(token,policy_bow) != []:
                 political_related = True
-            
+
             doc = {
                 "username": status["account"]["username"],
                 "token": token,
@@ -113,12 +127,15 @@ class Listener(StreamListener):
                 "replies_count":status["replies_count"],
                 "political_related":political_related,
             }
-            
+
             db.save(doc)
 
 
 def start_mastodon_stream():
     while True:
+        date = datetime.today().strftime('%Y-%m-%d')
+        if date != today:
+            create_database(date)
         try:
             m.stream_public(Listener())
         except (MastodonNotFoundError, MastodonRatelimitError) as e:
