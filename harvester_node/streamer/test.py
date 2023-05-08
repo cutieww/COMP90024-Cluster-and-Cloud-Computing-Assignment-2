@@ -2,18 +2,18 @@ from mastodon import Mastodon, MastodonNotFoundError, MastodonRatelimitError, St
 import os, time
 import re
 import couchdb
-import nltk
+import json
 from nltk.stem import WordNetLemmatizer
 from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from datetime import datetime
-
 import nltk
+
 nltk.download('stopwords')
 nltk.download('punkt')
 nltk.download('wordnet')
-nltk.download('words')
+
 
 host_ip = "172.26.128.252"
 # host_ip = '127.0.0.1'
@@ -46,6 +46,9 @@ def create_database(date):
     else:
         db = couch.create(db_name)
 
+
+
+
 class Listener(StreamListener):
     def to_root_words(self, bow):
         lemmatizer = WordNetLemmatizer()
@@ -74,27 +77,26 @@ class Listener(StreamListener):
         input = [word.lower() for word in input]
         input_remove = self.to_root_words(input)
         policy_words = [word for word in input_remove if word in topic_bow_remove]
-        
+
         return policy_words
-    
+
     def to_token(self, content):
       pattern = r"<p>(.*?)</p>"
       content_list = re.findall(pattern, content)
-      
+
       text_list = []
       stop_words = set(stopwords.words('english'))
-      english_words_set = set(nltk.corpus.words.words())
       for lst in content_list:
         # remove all the HTML tags
         pattern2 = r"<a\b[^>]*>(.*?)</a>"
         text = re.sub(pattern2, "", lst)
-        
+
 
         # Remove HTML tags using re.sub()
         pattern3 = re.compile(r'<.*?>')
         text = re.sub(pattern3, '', text)
 
-        
+
 
         # Remove punctuations and "'s" using re.sub()
         pattern4 = re.compile(r'[^\w\s]|\'s')
@@ -103,23 +105,20 @@ class Listener(StreamListener):
         # print(text)
 
         token_list = word_tokenize(text)
-
-
-
-        filtered_token_list = [word.lower() for word in token_list if word.lower() not in stop_words and word.lower() in english_words_set]
+        filtered_token_list = [word for word in token_list if word.casefold() not in stop_words]
         text_list.extend(filtered_token_list)
       return "|".join(text_list)
 
     def on_update(self, status):
         # message = json.dumps(status, indent=2, sort_keys=True,default=str)
         # print(message[0])
-        
+
         if status['language'] == 'en':
             token = self.to_token(status["content"])
             political_related = False
             if self.check_include_topic(token,policy_bow) != []:
                 political_related = True
-            
+
             doc = {
                 "username": status["account"]["username"],
                 "token": token,
@@ -129,7 +128,7 @@ class Listener(StreamListener):
                 "replies_count":status["replies_count"],
                 "political_related":political_related,
             }
-            
+
             db.save(doc)
 
 
@@ -148,7 +147,6 @@ def start_mastodon_stream():
         except (MastodonNotFoundError, MastodonRatelimitError) as e:
             print(f"Error: {e}")
             time.sleep(60)  # Wait 60 seconds before retrying
-
 
 if __name__ == '__main__':
     start_mastodon_stream()
