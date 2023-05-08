@@ -37,9 +37,10 @@ m = Mastodon(
 )
 
 def create_database(date):
+    global db_name, db
     today = date
     db_name = 'mastodon_policy' + "_" + today
-    db = None
+
     if db_name in couch:
         db = couch[db_name]
     else:
@@ -76,13 +77,13 @@ class Listener(StreamListener):
         input = [word.lower() for word in input]
         input_remove = self.to_root_words(input)
         policy_words = [word for word in input_remove if word in topic_bow_remove]
-        
+
         return policy_words
-    
+
     def to_token(self, content):
       pattern = r"<p>(.*?)</p>"
       content_list = re.findall(pattern, content)
-      
+
       text_list = []
       stop_words = set(stopwords.words('english'))
       for lst in content_list:
@@ -132,10 +133,15 @@ class Listener(StreamListener):
 
 
 def start_mastodon_stream():
+    global today, db
+
     while True:
-        date = datetime.today().strftime('%Y-%m-%d')
-        if date != today:
-            create_database(date)
+        current_date = datetime.today().strftime('%Y-%m-%d')
+        if current_date != today:
+            create_database(current_date)
+            today = current_date  # Update the global 'today' variable
+            db = couch[db_name]  # Update the global 'db' variable to reference the new database
+
         try:
             m.stream_public(Listener())
         except (MastodonNotFoundError, MastodonRatelimitError) as e:
