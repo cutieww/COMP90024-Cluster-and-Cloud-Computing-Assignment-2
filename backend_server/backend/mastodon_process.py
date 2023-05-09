@@ -2,14 +2,27 @@ import couchdb
 import requests
 import json
 import time
+import datetime
 
 #host_ip = "192.168.1.116" # Note: if running locally, use the host machine IP
 #host_ip = "172.26.132.19"
 host_ip = "172.26.129.100" # replalce this with instance IP the server Running
 
-couch = couchdb.Server(f'http://admin:admin@{host_ip}:5984')
-db = couch['mastodon_policy']
+import datetime
 
+# Get today's date
+today = datetime.date.today()
+
+# Format the date as a string in the desired format
+date_string = today.strftime("%Y-%m-%d")
+
+# Combine the date string with the CouchDB name prefix
+db_name = "mastodon_policy_" + date_string
+
+
+couch = couchdb.Server(f'http://admin:admin@{host_ip}:5984')
+# db = couch['mastodon_policy']
+db = couch[db_name]
 
 def mastodon_total_count():
     map_function = """
@@ -186,9 +199,7 @@ def mastodon_word_map():
     }
     """
 
-    reduce_function = """
-    _count
-    """
+
 
     view_name = "word_count"
     design_doc_name = "_design/policy_view"
@@ -199,7 +210,7 @@ def mastodon_word_map():
             "views": {
                 view_name: {
                     "map": map_function,
-                    "reduce": reduce_function,
+                    "reduce": "_count",
                 }
             }
         }
@@ -209,7 +220,7 @@ def mastodon_word_map():
         if view_name not in design_doc["views"]:
             design_doc["views"][view_name] = {
                 "map": map_function,
-                "reduce": reduce_function,
+                "reduce": "_count",
             }
             db.save(design_doc)
 
