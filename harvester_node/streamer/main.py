@@ -109,11 +109,20 @@ class Listener(StreamListener):
         filtered_token_list = [word.lower() for word in token_list if word.lower() not in stop_words and word.lower() in english_words_set]
         text_list.extend(filtered_token_list)
       return "|".join(text_list)
+    
+    def update_database_if_needed(self):
+        global today, db
+        current_date = datetime.today().strftime('%Y-%m-%d')
+        if current_date != today:
+            create_database(current_date)
+            today = current_date
+            db = couch[db_name]
 
     def on_update(self, status):
         # message = json.dumps(status, indent=2, sort_keys=True,default=str)
         # print(message[0])
-        
+        self.update_database_if_needed()
+
         if status['language'] == 'en':
             token = self.to_token(status["content"])
             political_related = False
@@ -134,15 +143,7 @@ class Listener(StreamListener):
 
 
 def start_mastodon_stream():
-    global today, db
-
     while True:
-        current_date = datetime.today().strftime('%Y-%m-%d')
-        if current_date != today:
-            create_database(current_date)
-            today = current_date  # Update the global 'today' variable
-            db = couch[db_name]  # Update the global 'db' variable to reference the new database
-
         try:
             m.stream_public(Listener())
         except (MastodonNotFoundError, MastodonRatelimitError) as e:
