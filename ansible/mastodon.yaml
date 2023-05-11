@@ -1,8 +1,5 @@
-
---create an image first, and then register it 
-
 - name: Create a Docker service
-  hosts: swarm-managers
+  hosts: swarm_managers 
   become: true
   vars_files:
     - variables/mastodon_vars.yaml 
@@ -15,11 +12,16 @@
         dockerfile: Dockerfile
         state: present
 
+
     - name: Create the Docker service
-      docker_service:
-        name: "{{ service_name }}"
-        image: "{{ image_name }}"
-        replicas: "{{ num_replicas }}"
+      community.docker.docker_compose:
+        project_src: /home/wagw/COMP90024-Cluster-and-Cloud-Computing-Assignment-2/ansible/mastodon-compose.yaml
+        project_name: crawler
+        build: false
+        scale:
+          crawler: "{{ num_replicas }}"
+
+   
     
 
 

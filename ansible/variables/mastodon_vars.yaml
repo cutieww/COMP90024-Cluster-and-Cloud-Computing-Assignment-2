@@ -1,5 +1,3 @@
-
-
 image_name: docker_image
 service_name: docker_service
 num_replicas: 3

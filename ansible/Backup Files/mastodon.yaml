@@ -43,9 +43,12 @@
     
 
 
-        
-
-
+      
+ - name: Create the Docker service
+      docker_service:
+        name: "{{ service_name }}"
+        image: "{{ image_name }}"
+        replicas: "{{ num_replicas }}"
 
 
 

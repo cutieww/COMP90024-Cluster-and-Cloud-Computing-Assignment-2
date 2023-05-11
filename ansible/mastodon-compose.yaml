@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  crawler:
+    image: "{{ image_name }}"
+   
+  
