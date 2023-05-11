@@ -1,6 +1,6 @@
 - name: Install Docker and Docker Swarm
-  hosts: localhost #need to change this 
-  #hosts: docker-nodes
+  #hosts: localhost #need to change this 
+  hosts: docker-nodes
   become: true
 
 #should install python and pip 
@@ -8,14 +8,6 @@
     - variables/docker_vars.yaml 
   tasks:
   
-    # might need to install python 
-    - name: Install pip
-      ansible.builtin.apt:
-        name: ["python3-dev", "python3-setuptools", "python3-pip"]
-        state: latest
-        update_cache: true
-      when: ansible_distribution == "Ubuntu"
-
     - name: Install required packages
       apt:
         name:
@@ -51,10 +43,9 @@
         state: present
 
     - name: Start Docker Engine
-      service:
+      systemd:
         name: docker
         state: started
-
         
     - name: Initialize Docker Swarm
       community.docker.docker_swarm:
@@ -72,11 +63,8 @@
       shell: docker swarm join-token --quiet worker
       register: worker_token
 
-
-
     - name: Add manager nodes to the swarm
       community.docker.docker_swarm:
-        
         state: join
         advertise_addr: "{{ hostvars['swarm-managers']['ansible_default_ipv4']['address'] }}"
         join_token: "{{ manager_token.stdout }}"
@@ -86,15 +74,13 @@
     - name: Add worker nodes to the swarm
       community.docker.docker_swarm:
         state: join
-        advertise_addr: "{{ ansible_host }}" #might not be needed 
+        #advertise_addr: "{{ ansible_host }}" #might not be needed 
         join_token: "{{ worker_token.stdout }}"
         remote_addrs: "{{ hostvars['swarm-workers']['ansible_default_ipv4']['address'] }}:2377"
         replicas: "{{ num_workers }}"
       loop: "{{ groups['swarm-workers'] }}"
 
 
-        
-    
 
 
 #Screw it, just scrape information from github and stuff, and bring this issue up on the stands 

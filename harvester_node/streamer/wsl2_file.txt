@@ -1,0 +1,16 @@
+sudo unlink /etc/resolv.conf # this will unlink the default wsl2 resolv.conf
+
+# This config will prevent wsl2 from overwritting the resolve.conf file everytime
+# you start wsl2
+cat <<EOF | sudo tee -a /etc/wsl.conf
+[network]
+generateResolvConf = false
+EOF
+
+cat <<EOF | sudo tee -a /etc/resolv.conf
+nameserver 128.250.66.5
+nameserver 128.250.201.5
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+search unimelb.edu.au 
+EOF

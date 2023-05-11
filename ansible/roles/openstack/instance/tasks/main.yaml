@@ -35,6 +35,7 @@
   ansible.builtin.add_host:
     name: "{{ item.server.access_ipv4 }}"
     groups: docker-nodes
+    #inventory_file: "{{ inventory_file }}"
   loop: "{{ os_instance.results }}"
   when: item.server is defined
 
@@ -42,14 +43,18 @@
   ansible.builtin.add_host:
     name: "{{ item.server.access_ipv4 }}"
     groups: swarm-managers
-  loop: "{{ os_instance.results[:num_managers] }}"
+    #inventory_file: "{{ inventory_file }}"
+  #loop: "{{ os_instance.results[:num_managers] }}"
+  loop: "{{ os_instance.results }}"
   when: item.server is defined
 
 - name: Add worker nodes to inventory group
   ansible.builtin.add_host:
     name: "{{ item.server.access_ipv4 }}"
     groups: swarm-workers
-  loop: "{{ os_instance.results[num_managers:] }}"
+    #inventory_file: "{{ inventory_file }}"
+  #loop: "{{ os_instance.results[num_managers:] }}"
+  loop: "{{ os_instance.results }}"
   when: item.server is defined
 
 

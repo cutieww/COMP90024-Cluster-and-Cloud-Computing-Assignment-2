@@ -1,0 +1,18 @@
+- name: swarm_2377
+    description: "Security group for Docker Swarm 2377"
+    protocol: tcp
+    port_range_min: 2377
+    port_range_max: 2377
+    remote_ip_prefix: 0.0.0.0/0
+  - name: swarm_4789
+    description: "Security group for Docker Swarm 4789"
+    protocol: udp
+    port_range_min: 4789
+    port_range_max: 4789
+    remote_ip_prefix: 0.0.0.0/0
+  - name: swarm_7946
+    description: "Security group for Docker Swarm 7946"
+    protocol: tcp
+    port_range_min: 7946
+    port_range_max: 7946
+    remote_ip_prefix: 0.0.0.0/0
