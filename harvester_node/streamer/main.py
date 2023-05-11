@@ -19,9 +19,19 @@ host_ip = "172.26.128.252"
 # host_ip = '127.0.0.1'
 policy_bow = ["government","democracy",  "elections", "voting","campaigns","political parties","legislation", "policy", "administration", "diplomacy", "foreign policy","domestic policy", "public policy", "law",     "constitution",     "civil rights",     "civil liberties",     "social justice",     "equality",     "political ideology",     "political spectrum",     "lobbying",     "special interest groups",     "media",     "political commentary",     "political satire",     "corruption",     "transparency",     "accountability",     "political science",     "international relations",     "public opinion",     "propaganda",     "power",     "authority",     "leadership",     "governance",     "policy making",     "public administration",    "bureaucracy",    "campaign finance",    "censorship",    "checks and balances",    "citizenship",    "constituency",    "crisis management",    "debates",    "defamation",    "dictatorship",    "discrimination",    "divisiveness",    "economic policy",    "election security",    "emergency powers",    "fascism",    "freedom of speech",    "human rights",    "impeachment",    "judicial system",    "legislative branch",    "libertarianism",    "lobbyists",    "military",    "minorities",    "nationalism","patriotism","peacekeeping","political asylum","political correctness","political culture","political economy","political stability","populism","protest","public service","reform","representation","revolution","separation of powers","socialism","sovereignty","state","totalitarianism","veto","war","welfare state"]
 
+criminal_bow = ['theft', 'robbery', 'burglary', 'fraud', 'embezzlement', 'forgery', 'extortion', 'blackmail', 'smuggling', 'money laundering', 'racketeering', 'homicide', 'assault', 'kidnapping', 'arson', 'drug trafficking', 'prostitution', 'gambling', 'terrorism', 'cybercrime', 'piracy', 'carjacking', 'vandalism', 'shoplifting', 'pickpocketing', 'cyberbullying', 'hate crime', 'white-collar crime', 'organized crime', 'juvenile delinquency', 'prison', 'parole', 'probation', 'criminal record', 'suspect', 'defendant', 'convict', 'witness', 'prosecutor', 'defense attorney', 'judge', 'jury', 'plea bargain', 'sentencing', 'probation officer', 'correctional facility', 'parole board', 'inmate', 'parolee', 'fugitive', 'surveillance', 'wiretap', 'sting operation', 'forensic','evidence', 'DNA', 'investigation']
+
+employment_bow = ['career', 'profession', 'resume', 'CV', 'interview', 'compensation', 'workplace', 'coworker', 'supervisor', 'manager', 'networking', 'diversity', 'harassment', 'opportunity', 'laws', 'overtime', 'sick leave', 'vacation', 'retirement', 'pension', 'severance', 'unemployment', 'loss', 'security', 'gig', 'freelancing', 'entrepreneurship', 'advancement', 'development', 'growth', 'goals', 'balance', 'insurance', 'program', 'maternity', 'paternity', 'child care', 'scheduling', 'telecommuting', 'metrics', 'incentives', 'bonuses', 'turnover', 'unions', 'contracts', 'agreements', 'termination', 'lawsuits', 'safety', 'culture', 'ethics', 'inclusion', 'resources', 'staffing', 'boards', 'fairs', 'associations', 'shadowing', 'mentorship', 'leadership', 'apprenticeships', 'internships', 'co-op']
+
+traffic_bow = ['vehicle', 'driver', 'road', 'highway', 'street', 'lane', 'intersection', 'stoplight', 'stop sign', 'yield sign', 'speed limit', 'traffic signal', 'pedestrian', 'crosswalk', 'sidewalk', 'parking', 'parking lot', 'parking meter', 'public transit', 'bus', 'train', 'subway', 'light rail', 'bike lane', 'carpool', 'commute', 'congestion', 'accident', 'collision', 'tow truck', 'highway patrol', 'traffic jam', 'detour', 'roadwork', 'construction', 'bridge', 'tunnel', 'toll road', 'expressway', 'roundabout', 'lane closure', 'merge', 'yield', 'U-turn', 'speed bump', 'traffic circle', 'interchange', 'overpass', 'underpass', 'median', 'shoulder', 'off-ramp', 'on-ramp']
+
+
 couch = couchdb.Server(f'http://admin:admin@{host_ip}:5984')
 today = datetime.today().strftime('%Y-%m-%d')
-db_name = 'mastodon_policy' + "_" + today
+
+
+
+db_name = 'mastodon' + "_" + today
 db = None
 
 if db_name in couch:
@@ -126,8 +136,17 @@ class Listener(StreamListener):
         if status['language'] == 'en':
             token = self.to_token(status["content"])
             political_related = False
+            criminal_related = False
+            employment_related = False
+            traffic_related = False
             if self.check_include_topic(token,policy_bow) != []:
                 political_related = True
+            elif self.check_include_topic(token,criminal_bow) != []:
+                criminal_related = True
+            elif self.check_include_topic(token,employment_bow) != []:
+                employment_related = True
+            elif self.check_include_topic(token,traffic_bow) != []:
+                traffic_related = True
             
             doc = {
                 "username": status["account"]["username"],
@@ -137,6 +156,9 @@ class Listener(StreamListener):
                 "reblogs_count": status["reblogs_count"],
                 "replies_count":status["replies_count"],
                 "political_related":political_related,
+                "criminal_related": criminal_related,
+                "employment_related": employment_related,
+                "traffic_related": traffic_related,
             }
             
             db.save(doc)
