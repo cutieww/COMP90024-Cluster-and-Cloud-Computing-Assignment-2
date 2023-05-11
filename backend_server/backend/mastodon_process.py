@@ -286,6 +286,8 @@ if __name__ == '__main__':
         # Check if the date has changed
         check_date_change()
 
+        mastodon_data['date'] = date_string
+
         # number of post with related to the political related topics
         total_count  = mastodon_total_count(db, db_name)
         print("Number of policy related topic post in mastodon:", total_count)

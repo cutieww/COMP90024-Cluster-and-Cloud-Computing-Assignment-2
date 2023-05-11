@@ -4,6 +4,7 @@ import { Route, Routes, Link } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import TwitterData from './components/TwitterData';
 import MastodonData from './components/MastodonData';
+import DataCompare from './components/DataCompare';
 import AboutUs from './components/AboutUs';
 
 
@@ -22,6 +23,9 @@ function App() {
             <Link to="/mastodon-data">Mastodon Data</Link>
           </li>
           <li>
+            <Link to="/data-comparison">Data Comparison</Link>
+          </li>
+          <li>
             <Link to="/about-us">About Us</Link>
           </li>
         </ul>
@@ -31,6 +35,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/twitter-data" element={<TwitterData />} />
         <Route path="/mastodon-data" element={<MastodonData />} />
+        <Route path='/data-comparison' element={<DataCompare/>}/>
         <Route path="/about-us" element={<AboutUs />} />
       </Routes>
     </div>
