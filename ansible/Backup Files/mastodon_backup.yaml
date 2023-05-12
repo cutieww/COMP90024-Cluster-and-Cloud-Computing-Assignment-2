@@ -1,15 +1,99 @@
-- name: Scale Docker containers based on CPU usage
+- name: Stream updates for a specific user using Mastodon API
   hosts: localhost
-  #hosts: mastodon 
-  gather_facts: true
-  become: true
-
   vars_files:
-    - variables/docker_vars.yaml
-  roles:
-    #- role: mastodon/common 
-    - role: mastodon/build_docker_image
-      register: docker_image 
-    - role: mastodon/containers
-      vars: 
-        docker_image: "{{ docker_image.name }}"
+    - variables/mastodon_vars.yaml
+  tasks:
+
+    - name: Check whether its working
+      ansible.builtin.uri:
+        url: "https://{{ item.name }}/api/v1/accounts/verify_credentials"
+        method: GET
+        headers:
+          Authorization: "Bearer {{ item.access_token }}"
+        
+        body_format: json
+        return_content: yes
+        status_code: 200
+      register: response
+      loop: "{{ domains }}"
+
+    - name: Print response
+      debug:
+        var: item.content
+      loop: "{{ response.results }}"
+    
+    
+    - name: Retrieve public toots
+      ansible.builtin.uri:
+        url: "https://{{ item.name }}/api/v1/timelines/public"
+        method: GET
+        headers:
+          Authorization: "Bearer {{ item.access_token }}"
+        body_format: json
+        return_content: yes
+        status_code: 200
+      register: response
+      loop: "{{ domains }}"
+
+    - name: Print public toots
+      debug:
+        var: item.content
+      loop: "{{ response.results }}"
+
+    
+
+
+      
+ - name: Create the Docker service
+      docker_service:
+        name: "{{ service_name }}"
+        image: "{{ image_name }}"
+        replicas: "{{ num_replicas }}"
+
+
+
+
+# use in case the docker service fails: 
+ - name: Create Docker containers
+      community.docker.docker_container:
+        name: "my_container_{{ item }}"
+        image: "{{ item }}"
+        state: started
+      with_items: "{{ image_name }}"
+
+
+
+
+#use in the bottom to loop over systems 
+- name: Create Docker services
+  hosts: swarm_managers 
+  become: true
+  vars_files:
+    - variables/mastodon_vars.yaml 
+    
+  tasks:
+    - name: Build Docker images
+      ansible.builtin.docker_image:
+        name: "{{ item }}"
+        source: /home/wagw/COMP90024-Cluster-and-Cloud-Computing-Assignment-2/harvester_node/streamer
+        dockerfile: Dockerfile
+        state: present
+      with_items: "{{ image_name }}"
+
+    - name: Create Docker services
+      community.docker.docker_compose:
+        project_src: /home/wagw/COMP90024-Cluster-and-Cloud-Computing-Assignment-2/ansible/mastodon-compose.yaml
+        project_name: "{{ item }}"
+        build: false
+        scale:
+          crawler: "{{ num_replicas }}"
+      with_items: "{{ image_name }}"
+
+  
+ - name: Create the Docker service
+      community.docker.docker_compose:
+        project_src: /home/wagw/COMP90024-Cluster-and-Cloud-Computing-Assignment-2/ansible/mastodon-compose.yaml
+        project_name: crawler
+        build: false
+        scale:
+          crawler: "{{ num_replicas }}"

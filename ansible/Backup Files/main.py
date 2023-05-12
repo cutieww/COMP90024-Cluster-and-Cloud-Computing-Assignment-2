@@ -16,13 +16,9 @@ else:
 #db = couch['db_test']
 
 m = Mastodon(
-    api_base_url = os.environ.get('API_BASE_URL'),
-    #api_base_url=f'https://mastodon.world',
-
-    access_token = os.environ.get('ACCESS_TOKEN')
-
+    api_base_url=f'https://mastodon.world',
     #access_token=os.environ['MASTODON_ACCESS_TOKEN']
-    #access_token="dcD1nafa2HnRMEEPgflV3G0CAefvanb11nAsQiBcedY"
+    access_token="dcD1nafa2HnRMEEPgflV3G0CAefvanb11nAsQiBcedY"
 )
 
 

@@ -16,25 +16,11 @@
   loop: "{{ instances }}"
   register: os_instance
 
-- ansible.builtin.debug:
-    msg: "Instance {{ item.server.name }} has been created. IP address is {{ item.server.access_ipv4 }}"
-  loop: "{{ os_instance.results }}"
-  when: item.server is defined
-
-- name: Wait for connection
-  ansible.builtin.wait_for:
-    host: "{{ item.server.access_ipv4 }}"
-    port: 22
-    timeout: 120
-    search_regex: OpenSSH
-  loop: "{{ os_instance.results }}"
-  when: item.server is defined
-
 
 - name: Add host
   ansible.builtin.add_host:
     name: "{{ item.server.access_ipv4 }}"
-    groups: docker-nodes
+    groups: docker_nodes
     #inventory_file: "{{ inventory_file }}"
   loop: "{{ os_instance.results }}"
   when: item.server is defined
@@ -42,7 +28,7 @@
 - name: Add manager nodes to inventory group
   ansible.builtin.add_host:
     name: "{{ item.server.access_ipv4 }}"
-    groups: swarm-managers
+    groups: swarm_managers
     #inventory_file: "{{ inventory_file }}"
   #loop: "{{ os_instance.results[:num_managers] }}"
   loop: "{{ os_instance.results }}"
@@ -51,7 +37,7 @@
 - name: Add worker nodes to inventory group
   ansible.builtin.add_host:
     name: "{{ item.server.access_ipv4 }}"
-    groups: swarm-workers
+    groups: swarm_workers
     #inventory_file: "{{ inventory_file }}"
   #loop: "{{ os_instance.results[num_managers:] }}"
   loop: "{{ os_instance.results }}"

@@ -9,11 +9,6 @@ COPY . /app
 # Install bash and the required packages
 RUN pip install -r requirements.txt
 
-
-ENV API_BASE_URL="{{ item.link }}"
-ENV ACCESS_TOKEN="{{ item.access_token }}"
-
-
 #RUN . ./secrets.sh
 # Run the secrets.sh script and then main.py when the container starts
 CMD ["python", "main.py"]

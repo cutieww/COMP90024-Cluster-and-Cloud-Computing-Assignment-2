@@ -1,28 +1,34 @@
-- name: Create a Docker service
+---
+- name: Create Docker services
   hosts: swarm_managers 
   become: true
   vars_files:
     - variables/mastodon_vars.yaml 
-    
+
+
+  #need to fix the building docker images (e.g. soruce, build, dockerfile)
+  # need to know what the ports mean 
   tasks:
-    - name: Build Docker image
-      ansible.builtin.docker_image:
-        name: "{{ image_name }}"
-        source: /home/wagw/COMP90024-Cluster-and-Cloud-Computing-Assignment-2/harvester_node/streamer
+  - name: Build Docker images
+    community.docker.docker_image:
+      name: "{{ item.name }}"
+      source: /home/wagw/COMP90024-Cluster-and-Cloud-Computing-Assignment-2/harvester_node/streamer
+      build:
         dockerfile: Dockerfile
-        state: present
+      state: present
+    loop: "{{ domains }}"
 
+  - name: Create Docker container
+    community.general.docker_container:
+      name: "{{ item.name }}_container"
+      image: "{{ item.name }}"
+      state: started
+      ports:
+        - "8080:80"
+    loop: "{{ domains }}"
 
-    - name: Create the Docker service
-      community.docker.docker_compose:
-        project_src: /home/wagw/COMP90024-Cluster-and-Cloud-Computing-Assignment-2/ansible/mastodon-compose.yaml
-        project_name: crawler
-        build: false
-        scale:
-          crawler: "{{ num_replicas }}"
 
    
-    
 
 
 
