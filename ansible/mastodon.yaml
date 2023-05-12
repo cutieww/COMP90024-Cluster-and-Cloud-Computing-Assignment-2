@@ -7,7 +7,6 @@
 
 
   #need to fix the building docker images (e.g. soruce, build, dockerfile)
-  # need to know what the ports mean 
   tasks:
   - name: Build Docker images
     community.docker.docker_image:
