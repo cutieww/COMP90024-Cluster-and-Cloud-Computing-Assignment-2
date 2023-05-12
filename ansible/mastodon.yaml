@@ -27,8 +27,12 @@
     loop: "{{ domains }}"
 
 
-   
-
+  #For deleting docker containers  
+  - name: Delete Docker container
+    community.general.docker_container:
+      name: "{{ item.name }}_container"
+      state: absent
+    loop: "{{ domains }}"
 
 
     
