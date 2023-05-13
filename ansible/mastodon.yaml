@@ -11,7 +11,7 @@
   - name: Build Docker images
     community.docker.docker_image:
       name: "{{ item.name }}"
-      source: /home/wagw/COMP90024-Cluster-and-Cloud-Computing-Assignment-2/harvester_node/streamer
+      source: "/home/wagw/COMP90024-Cluster-and-Cloud-Computing-Assignment-2/harvester_node/streamer"
       build:
         dockerfile: Dockerfile
       state: present
