@@ -3,7 +3,6 @@ import requests
 import json
 import time
 import datetime
-import itertools
 
 #host_ip = "192.168.1.116" # Note: if running locally, use the host machine IP
 #host_ip = "172.26.132.19"
@@ -14,7 +13,7 @@ today = datetime.date.today()
 
 # Format the date as a string in the desired format
 date_string = today.strftime("%Y-%m-%d")
-
+date_string = '2023-05-12'
 # Combine the date string with the CouchDB name prefix
 db_name = "mastodon_" + date_string
 
@@ -37,7 +36,7 @@ def check_date_change():
         db_name = "mastodon_policy_" + date_string
         db = couch[db_name]
 
-
+'''''
 def get_latest_post(db,db_name):
     map_function = """
     function (doc) {
@@ -71,7 +70,7 @@ def get_latest_post(db,db_name):
     data = json.loads(response.text)
     latest_post = data['rows'][0]['value'] if data['rows'] else None
     return latest_post
-
+'''''
 
 def mastodon_post_total(db,db_name, design_name,view_name):
     map_function = """
@@ -84,7 +83,7 @@ def mastodon_post_total(db,db_name, design_name,view_name):
 
     if design_doc_name not in db:
         design_doc = {
-            "_id": design_doc_name,  
+            "_id": design_doc_name,
             "views": {
                 view_name: {
                     "map": map_function,
@@ -119,7 +118,7 @@ def mastodon_user_total(db,db_name, design_name,view_name):
 
     if design_doc_name not in db:
         design_doc = {
-            "_id": design_doc_name,  
+            "_id": design_doc_name,
             "views": {
                 view_name: {
                     "map": map_function,
@@ -140,16 +139,15 @@ def mastodon_user_total(db,db_name, design_name,view_name):
     url = f'http://admin:admin@{host_ip}:5984/{db_name}/_design/{design_name}/_view/{view_name}?group=true'
     response = requests.get(url)
     data = json.loads(response.text)
- 
+
     return len(data['rows'])
 
 def mastodon_topic_post(db,db_name, design_name,view_name,map_function):
-
     design_doc_name = "_design/"+design_name
 
     if design_doc_name not in db:
         design_doc = {
-            "_id": design_doc_name,  
+            "_id": design_doc_name,
             "views": {
                 view_name: {
                     "map": map_function,
@@ -169,7 +167,10 @@ def mastodon_topic_post(db,db_name, design_name,view_name,map_function):
 
     url = f'http://admin:admin@{host_ip}:5984/{db_name}/_design/{design_name}/_view/{view_name}?reduce=true'
     response = requests.get(url)
+    print(url)
+    print(map_function)
     data = json.loads(response.text)
+    print(data)
     count = data['rows'][0]['value']
     return count
 
@@ -179,7 +180,7 @@ def mastodon_topic_word(db,db_name, design_name,view_name,map_function):
 
     if design_doc_name not in db:
         design_doc = {
-            "_id": design_doc_name,  
+            "_id": design_doc_name,
             "views": {
                 view_name: {
                     "map": map_function,
@@ -208,12 +209,11 @@ def mastodon_topic_word(db,db_name, design_name,view_name,map_function):
     return word_sort_dict
 
 def mastodon_topic_user_dict(db,db_name, design_name,view_name,map_function):
-    
     design_doc_name = "_design/"+design_name
 
     if design_doc_name not in db:
         design_doc = {
-            "_id": design_doc_name,  
+            "_id": design_doc_name,
             "views": {
                 view_name: {
                     "map": map_function,
@@ -241,11 +241,6 @@ def mastodon_topic_user_dict(db,db_name, design_name,view_name,map_function):
     sorted_user_dict = dict(sorted(user_dict.items(), key=lambda item: item[1], reverse=True))
 
     return sorted_user_dict
-
-
-
-
-
 
 
 def map_post(field_name):
@@ -285,28 +280,26 @@ def map_word(field_name):
     return map_function
 
 
-def get_topic_dictionary(db,db_name,date_string, topic_dict, topic, field_name):
+def get_topic_dictionary(db, db_name,date_string, topic_dict, topic, field_name):
         topic_dict['date'] = date_string
 
         # total users, not related to the topic selected
         topic_dict["total_post"] = mastodon_post_total(db,db_name,"total","post")
         topic_dict["total_user"] = mastodon_user_total(db,db_name,"total","user")
 
-
-        # for topic related post information 
+        # for topic related post information
         topic_dict['post_num'] = mastodon_topic_post(db,db_name, topic, "post",map_post(field_name))
         topic_dict["post_ratio"] = topic_dict["post_num"]/topic_dict["total_post"]
 
         # for topic word and the number of count, used for the word cloud
         topic_dict["wordmap"] = mastodon_topic_word(db,db_name,topic, "word",map_word(field_name))
 
-
         # for user information
         topic_dict["usermap"] = mastodon_topic_user_dict(db,db_name,topic, "user",map_user(field_name))
         topic_dict["user_num"] = len(topic_dict["usermap"])
         topic_dict["user_ratio"] = topic_dict["user_num"]/topic_dict["total_user"]
 
-        topic_dict['latest_post'] = get_latest_post(db,db_name)
+        #topic_dict['latest_post'] = get_latest_post(db,db_name)
         return topic_dict
 
 
@@ -318,12 +311,13 @@ def mastodon_topic_post_total(db,db_name, design_name,view_name):
         }
     }
     """
+
     design_doc_name = "_design/"+design_name
 
 
     if design_doc_name not in db:
         design_doc = {
-            "_id": design_doc_name,  
+            "_id": design_doc_name,
             "views": {
                 view_name: {
                     "map": map_function,
@@ -359,7 +353,7 @@ def mastodon_topic_user_total(db,db_name, design_name,view_name):
 
     if design_doc_name not in db:
         design_doc = {
-            "_id": design_doc_name,  
+            "_id": design_doc_name,
             "views": {
                 view_name: {
                     "map": map_function,
@@ -380,18 +374,8 @@ def mastodon_topic_user_total(db,db_name, design_name,view_name):
     url = f'http://admin:admin@{host_ip}:5984/{db_name}/_design/{design_name}/_view/{view_name}?group=true'
     response = requests.get(url)
     data = json.loads(response.text)
- 
+
     return len(data['rows'])
-
-
-
-
-
-
-
-
-
-
 
 
 def get_total_dictionary(db,db_name,date_string, total_dic):
@@ -407,11 +391,8 @@ def get_total_dictionary(db,db_name,date_string, total_dic):
     total_dic['post_ratio'] = total_dic['post_num']/total_dic["total_post"]
     total_dic['user_ratio'] = total_dic["user_num"]/total_dic["total_user"]
 
-
-    total_dic['latest_post'] = get_latest_post(db,db_name)
+    #total_dic['latest_post'] = get_latest_post(db,db_name)
     return total_dic
-
-
 
 
 mastodon_total = {'host': host_ip, 'date': date_string, 'latest_post':{},
@@ -422,198 +403,28 @@ mastodon_total = {'host': host_ip, 'date': date_string, 'latest_post':{},
 
 
 
-
-mastodon_policy = {'host': host_ip, 'date': date_string, 'latest_post':{},
-                   'total_post':0, 'total_user':0,
-                   'post_num':0,'post_ratio':0, 'wordmap':{},
-                   'user_num':0,'user_ratio':0,'usermap':{},
-                   }
-
-
-mastodon_criminal = {'host': host_ip, 'date': date_string, 'latest_post':{},
-                   'total_post':0, 'total_user':0,
-                   'post_num':0,'post_ratio':0, 'wordmap':{},
-                   'user_num':0,'user_ratio':0,'usermap':{},
-                   }
-
-
-mastodon_employment = {'host': host_ip, 'date': date_string, 'latest_post':{},
-                   'total_post':0, 'total_user':0,
-                   'post_num':0,'post_ratio':0, 'wordmap':{},
-                   'user_num':0,'user_ratio':0,'usermap':{},
-                   }
-
-mastodon_traffic = {'host': host_ip, 'date': date_string, 'latest_post':{},
-                   'total_post':0, 'total_user':0,
-                   'post_num':0,'post_ratio':0, 'wordmap':{},
-                   'user_num':0,'user_ratio':0,'usermap':{},
-                   }
-
-
 if __name__ == '__main__':
     time.sleep(1)
     while True:
         # Check if the date has changed
         check_date_change()
 
-
-
         # ############################### total #############################
         mastodon_total = get_total_dictionary(db,db_name,date_string, mastodon_total)
+        #requests.post(f'http://localhost:8000/update_mastodon', json=mastodon_total)
         requests.post(f'http://{host_ip}:8000/update_mastodon', json=mastodon_total)
 
-
-        
-
-
-
-        
-
-
-
-
-
         # ############################### policy topics #############################
-        mastodon_policy = get_topic_dictionary(db,db_name,date_string, mastodon_policy, "political", "political_related")
-        requests.post(f'http://{host_ip}:8000/update_mastodon', json=mastodon_policy)
-        
-
+        #mastodon_policy = get_topic_dictionary(db,db_name,date_string, mastodon_policy, "political", "political_related")
 
         ################################ criminal topics #############################
-        mastodon_criminal = get_topic_dictionary(db,db_name,date_string, mastodon_criminal, "criminal", "criminal_related")
-        requests.post(f'http://{host_ip}:8000/update_mastodon', json=mastodon_criminal)
-        
-
+        #mastodon_criminal = get_topic_dictionary(db,db_name,date_string, mastodon_criminal, "criminal", "criminal_related")
 
         ################################ employment topics #############################
-        mastodon_employment = get_topic_dictionary(db,db_name,date_string, mastodon_employment, "employment", "employment_related")
-        requests.post(f'http://{host_ip}:8000/update_mastodon', json=mastodon_employment)
-
+        #mastodon_employment = get_topic_dictionary(db,db_name,date_string, mastodon_employment, "employment", "employment_related")
 
         ################################ employment topics #############################
-        mastodon_traffic = get_topic_dictionary(db,db_name,date_string, mastodon_traffic, "traffic", "traffic_related")
-        requests.post(f'http://{host_ip}:8000/update_mastodon', json=mastodon_traffic)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        # mastodon_policy['date'] = date_string
-
-        # # total users, not related to the political area selected
-        # mastodon_policy["total_post"] = mastodon_post_total(db,db_name,"total","post")
-        # mastodon_policy["total_user"] = mastodon_user_total(db,db_name,"total","user")
-
-
-        # # for topic related post information 
-        # mastodon_policy['post_num'] = mastodon_topic_post(db,db_name, "political", "post",map_post("political_related"))
-        # mastodon_policy["post_ratio"] = mastodon_policy["post_num"]/mastodon_policy["total_post"]
-
-        # # for political word and the number of count, used for the word cloud
-        # mastodon_policy["wordmap"] = mastodon_topic_word(db,db_name,"political", "word",map_word("political_related"))
-
-
-        # # for user information
-        # mastodon_policy["usermap"] = mastodon_topic_user_dict(db,db_name,"political", "user",map_user("political_related"))
-        # mastodon_policy["user_num"] = len(mastodon_policy["usermap"])
-        # mastodon_policy["user_ratio"] = mastodon_policy["user_num"]/mastodon_policy["total_user"]
-
-        # mastodon_policy['latest_post'] = get_latest_post(db,db_name)
-
-
-        
-
-
-
-        # ############################### criminal topics #############################
-        # mastodon_criminal['date'] = date_string
-
-        # # total users, not related to the criminal area selected
-        # mastodon_criminal["total_post"] = total_post
-        # mastodon_criminal["total_user"] = total_user
-
-
-        # # for topic related post information 
-        # mastodon_criminal['post_num'] = mastodon_topic_post(db,db_name, "criminal", "post",map_post("criminal_related"))
-        # mastodon_criminal["post_ratio"] = mastodon_criminal["post_num"]/mastodon_criminal["total_post"]
-
-        # # for criminal word and the number of count, used for the word cloud
-        # mastodon_criminal["wordmap"] = mastodon_topic_word(db,db_name,"criminal", "word",map_word("criminal_related"))
-
-
-        # # for user information
-        # mastodon_criminal["usermap"] = mastodon_topic_user_dict(db,db_name,"criminal", "user",map_user("criminal_related"))
-        # mastodon_criminal["user_num"] = len(mastodon_criminal["usermap"])
-        # mastodon_criminal["user_ratio"] = mastodon_criminal["user_num"]/mastodon_criminal["total_user"]
-
-        # mastodon_criminal['latest_post'] = get_latest_post(db,db_name)
-        # requests.post(f'http://{host_ip}:8000/update_mastodon', json=mastodon_criminal)
-        
-
-        ################################ employment topics #############################
-        # mastodon_employment['date'] = date_string
-
-        # # total users, not related to the employment area selected
-        # mastodon_employment["total_post"] = total_post
-        # mastodon_employment["total_user"] = total_user
-
-
-        # # for topic related post information 
-        # mastodon_employment['post_num'] = mastodon_topic_post(db,db_name, "employment", "post",map_post("employment_related"))
-        # mastodon_employment["post_ratio"] = mastodon_employment["post_num"]/mastodon_employment["total_post"]
-
-        # # for employment word and the number of count, used for the word cloud
-        # mastodon_employment["wordmap"] = mastodon_topic_word(db,db_name,"employment", "word",map_word("employment_related"))
-
-
-        # # for user information
-        # mastodon_employment["usermap"] = mastodon_topic_user_dict(db,db_name,"employment", "user",map_user("employment_related"))
-        # mastodon_employment["user_num"] = len(mastodon_employment["usermap"])
-        # mastodon_employment["user_ratio"] = mastodon_employment["user_num"]/mastodon_employment["total_user"]
-
-        # mastodon_employment['latest_post'] = get_latest_post(db,db_name)
-        # requests.post(f'http://{host_ip}:8000/update_mastodon', json=mastodon_employment)
-
-
-
-        # ############################### traffic topics #############################
-        # mastodon_traffic['date'] = date_string
-
-        # # total users, not related to the traffic area selected
-        # mastodon_traffic["total_post"] = total_post
-        # mastodon_traffic["total_user"] = total_user
-
-
-        # # for topic related post information 
-        # mastodon_traffic['post_num'] = mastodon_topic_post(db,db_name, "traffic", "post",map_post("traffic_related"))
-        # mastodon_traffic["post_ratio"] = mastodon_traffic["post_num"]/mastodon_traffic["total_post"]
-
-        # # for traffic word and the number of count, used for the word cloud
-        # mastodon_traffic["wordmap"] = mastodon_topic_word(db,db_name,"traffic", "word",map_word("traffic_related"))
-
-
-        # # for user information
-        # mastodon_traffic["usermap"] = mastodon_topic_user_dict(db,db_name,"traffic", "user",map_user("traffic_related"))
-        # mastodon_traffic["user_num"] = len(mastodon_traffic["usermap"])
-        # mastodon_traffic["user_ratio"] = mastodon_traffic["user_num"]/mastodon_traffic["total_user"]
-
-        # mastodon_traffic['latest_post'] = get_latest_post(db,db_name)
-        # requests.post(f'http://{host_ip}:8000/update_mastodon', json=mastodon_traffic)
-
-        # ###############total##############
+        #mastodon_traffic = get_topic_dictionary(db,db_name,date_string, mastodon_traffic, "traffic", "traffic_related")
 
 
         time.sleep(1)

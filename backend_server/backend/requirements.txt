@@ -1,5 +1,5 @@
-ansible==7.4.0
-ansible-core==2.14.4
+#ansible==7.4.0
+#ansible-core==2.14.4
 anyio==3.6.2
 certifi==2022.12.7
 cffi==1.15.1

@@ -8,6 +8,7 @@ from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from datetime import datetime
+import requests
 
 import nltk
 nltk.download('stopwords')
@@ -133,6 +134,7 @@ class Listener(StreamListener):
         # print(message[0])
         self.update_database_if_needed()
 
+
         if status['language'] == 'en':
             token = self.to_token(status["content"])
             political_related = False
@@ -147,7 +149,7 @@ class Listener(StreamListener):
                 employment_related = True
             elif self.check_include_topic(token,traffic_bow) != []:
                 traffic_related = True
-            
+
             doc = {
                 "username": status["account"]["username"],
                 "token": token,
@@ -160,7 +162,31 @@ class Listener(StreamListener):
                 "employment_related": employment_related,
                 "traffic_related": traffic_related,
             }
-            
+
+
+            # Test if the API is open and send the mastodon_post dict
+            mastodon_post = {"username": status["account"]["username"],
+                            'content': status["content"],
+                            "created_at": status["created_at"].isoformat(),
+                            "political_related":political_related,
+                            "criminal_related": criminal_related,
+                            "employment_related": employment_related,
+                            "traffic_related": traffic_related,
+                            "url": status["url"]
+                            }
+
+            host_ips = ["172.26.129.100", "172.26.132.19"]
+
+            for host_ip in host_ips:
+                try:
+                    response = requests.post(f'http://{host_ip}:8000/update_mastodon_post', json=mastodon_post, timeout=2.0)
+                    if response.status_code == 200:
+                        print(f"Data sent to API at {host_ip} successfully")
+                    else:
+                        print(f"Error sending data to API at {host_ip}. Status code: {response.status_code}")
+                except requests.exceptions.RequestException as exc:
+                    print(f"Error sending data to API at {host_ip}: {exc}")
+
             db.save(doc)
 
 

@@ -1,9 +1,10 @@
 # api_server.py
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from mastodon_process import mastodon_total_count, mastodon_user_count, mastodon_count, mastodon_user_total, host_ip
+from mastodon_process import get_topic_dictionary, get_total_dictionary, host_ip
 import couchdb
 import httpx
+
 
 app = FastAPI()
 origins = ["*"]
@@ -16,30 +17,44 @@ app.add_middleware(
 )
 
 couch = couchdb.Server(f'http://admin:admin@{host_ip}:5984')
-def get_data_by_date_from_db(date):
-    # Replace 'db' with the CouchDB instance for the specified date
-    db_name = "mastodon_policy_" + date
-    db = couch[db_name]
 
-    total_count = mastodon_total_count(db, db_name)
-    mastodon_user = mastodon_user_count(db, db_name)
-    total = mastodon_count(db, db_name)
-    user_total = mastodon_user_total(db, db_name)
+mastodon_total = {'host': host_ip, 'date': "date_string",
+                   'total_post':0, 'total_user':0,
+                   'post_num':0,'post_ratio':0,
+                   'user_num':0,'user_ratio':0,
+                   }
 
-    data = {
-        'date': date,
-        'count': total_count,
-        'total_post': total,
-        'post_ratio': total_count / total,
-        'user_ratio': len(mastodon_user) / user_total,
-        'user_total': user_total,
-        'mastodon_user': mastodon_user
-    }
 
-    return data
+mastodon_policy = {'host': host_ip, 'date': "date_string",
+                   'total_post':0, 'total_user':0,
+                   'post_num':0,'post_ratio':0, 'wordmap':{},
+                   'user_num':0,'user_ratio':0,'usermap':{},
+                   }
+
+
+mastodon_criminal = {'host': host_ip, 'date': "date_string",
+                   'total_post':0, 'total_user':0,
+                   'post_num':0,'post_ratio':0, 'wordmap':{},
+                   'user_num':0,'user_ratio':0,'usermap':{},
+                   }
+
+
+mastodon_employment = {'host': host_ip, 'date': "date_string",
+                   'total_post':0, 'total_user':0,
+                   'post_num':0,'post_ratio':0, 'wordmap':{},
+                   'user_num':0,'user_ratio':0,'usermap':{},
+                   }
+
+
+mastodon_traffic = {'host': host_ip, 'date': "date_string",
+                   'total_post':0, 'total_user':0,
+                   'post_num':0,'post_ratio':0, 'wordmap':{},
+                   'user_num':0,'user_ratio':0,'usermap':{},
+                   }
+
 
 mastodon_data = {}
-mastodon_map ={}
+mastodon_post = {}
 
 @app.get('/')
 async def root():
@@ -48,11 +63,32 @@ async def root():
 
 @app.get('/mastodon_data')
 async def get_data():
+    mastodon_data['latest_post'] = mastodon_post
     return mastodon_data
 
-@app.get('/mastodon_data/date/{date}')
-async def get_data_by_date(date: str):
-    data = get_data_by_date_from_db(date)
+@app.get('/mastodon_data/query/{topic}/{date}')
+async def query_data(topic: str, date: str):
+    db_name = "mastodon_" + date
+    db = couch[db_name]
+    topic = topic
+    topic_dict = {}
+    field_name = ''
+    if topic == "political":
+        topic_dict = mastodon_policy
+        field_name = "political_related"
+    elif topic == "criminal":
+        topic_dict = mastodon_criminal
+        field_name = "criminal_related"
+    elif topic == "employment":
+        topic_dict = mastodon_employment
+        field_name = "employment_related"
+    elif topic == "traffic":
+        topic_dict = mastodon_traffic
+        field_name = "traffic_related"
+    else:
+        print('error for matching the topic in api sercer')
+
+    data = get_topic_dictionary(db, db_name, date, topic_dict, topic, field_name)
     return data
 
 @app.get('/mastodon_data/all')
@@ -61,45 +97,43 @@ async def get_all_data():
     async with httpx.AsyncClient() as client:
         response = await client.get(COUCHDB_SERVER_URL + '_all_dbs')
         all_dbs = response.json()
-    policy_dbs = [db_name for db_name in all_dbs if db_name.startswith('mastodon_policy_')]
+    dbs = [db_name for db_name in all_dbs if db_name.startswith('mastodon_')]
+
     integrated_data = {
-        'count': 0,
         'total_post': 0,
-        'user_count': 0,
-        'user_total': 0,
+        'total_user': 0,
+        'post_num':0,
+        'user_num': 0
     }
 
-    for db_name in policy_dbs:
+    for db_name in dbs:
         date = db_name.split('_')[-1]
-        data = get_data_by_date_from_db(date)
-        integrated_data['count'] += data['count']
+        db = couch[db_name]
+        data = get_total_dictionary(db,db_name, date, mastodon_total)
+        print(data)
+        integrated_data['post_num'] += data['post_num']
         integrated_data['total_post'] += data['total_post']
-        integrated_data['user_count'] += len(data['mastodon_user'])
-        integrated_data['user_total'] += data['user_total']
+        integrated_data['user_num'] += data['user_num']
+        integrated_data['total_user'] += data['total_user']
 
     if integrated_data['total_post'] > 0:
-        integrated_data['post_ratio'] = integrated_data['count'] / integrated_data['total_post']
+        integrated_data['post_ratio'] = integrated_data['post_num'] / integrated_data['total_post']
     else:
         integrated_data['post_ratio'] = 0
 
-    if integrated_data['user_total'] > 0:
-        integrated_data['user_ratio'] = integrated_data['user_count'] / integrated_data['user_total']
+    if integrated_data['total_user'] > 0:
+        integrated_data['user_ratio'] = integrated_data['user_num'] / integrated_data['total_user']
     else:
         integrated_data['user_ratio'] = 0
 
     return integrated_data
-
-@app.get('/mastodon_map')
-async def get_data():
-    return mastodon_map
 
 @app.post('/update_mastodon')
 async def update_data(update_data: dict):
     global mastodon_data
     mastodon_data = update_data
 
-
-@app.post('/update_mastodon_map')
+@app.post('/update_mastodon_post')
 async def update_data(update_data: dict):
-    global mastodon_map
-    mastodon_map = update_data
+    global mastodon_post
+    mastodon_post = update_data
