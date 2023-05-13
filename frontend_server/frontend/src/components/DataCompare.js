@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, XAxis, YAxis, Tooltip, CartesianGrid, Bar, Legend, PieChart, Pie, Cell } from 'recharts';
+import ReactD3Cloud from 'react-d3-cloud';
 
 const DataCompare = () => {
   const [date, setDate] = useState('');
+  const [topic, setTopic] = useState('');
   const [mastodon, setMastodon] = useState({
     date: '',
-    count: 0,
+    post_num: 0,
     total_post: 0,
     post_ratio: 0,
     user_ratio: 0,
-    user_total: 0,
+    total_user: 0
   });
 
 
@@ -18,12 +20,18 @@ const DataCompare = () => {
     setDate(selectedDate);
   };
 
+  const handleTopicChange = async (event) => {
+    const selectedTopic = event.target.value;
+    setTopic(selectedTopic);
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       if (date) {
-        const response = await fetch(`http://172.26.131.144/data/mastodon_data/date/${date}`);
+        const response = await fetch(`http://172.26.131.144/data/mastodon_data/query/${topic}/${date}`);
         if (response.ok) {
           const data = await response.json();
+          console.log('Fetched data:', data); // Add this line
           setMastodon(data);
         } else {
           console.error(`Error fetching data: ${response.status}`);
@@ -32,27 +40,50 @@ const DataCompare = () => {
     };
 
     fetchData();
-  }, [date]);
+  }, [date, topic]);
 
   // Bar chart data
     const barChartData = [
-    { name: 'Political Post', value: mastodon.count },
+    { name: topic + ' post', value: mastodon.post_num },
     { name: 'Total Post', value: mastodon.total_post },
   ];
 
   // Pie chart data
   const postRatioData = [
-    { name: 'political post', value: mastodon.post_ratio },
+    { name: topic + ' post', value: mastodon.post_ratio },
     { name: 'remaining ratio', value: 1 - mastodon.post_ratio },
   ];
 
   const userRatioData = [
-    { name: 'user with political post', value: mastodon.user_ratio },
+    { name: topic + ' post', value: mastodon.user_ratio },
     { name: 'remaining ratio', value: 1 - mastodon.user_ratio },
   ];
 
   // Colors for the charts
   const COLORS = ['#0088FE', '#00C49F'];
+
+  // Prepare word cloud data
+  const wordCloudData = Object.entries(mastodon.wordmap || {})
+    .map(([text, value]) => ({ text, value }))
+    .sort((a, b) => b.value - a.value)
+    .slice(0, 200);
+
+  const userCloudData = Object.entries(mastodon.usermap || {})
+    .map(([text, value]) => ({ text, value }))
+    .sort((a, b) => b.value - a.value)
+    .slice(0, 50);
+
+  // Define word cloud options
+  const wordCloudOptions = {
+    rotations: 2,
+    rotationAngles: [0, 90], // Words will be either horizontal (0 degrees) or vertical (90 degrees)
+    fontSizes: [80, 120], // Increase the minimum font size
+    fontWeight: 'bold',
+    padding: -2, // Decrease the padding between words
+    width: 200, // Set the width of the SVG canvas
+    height: 100, // Set the height of the SVG canvas
+  };
+
 
   return (
     <div>
@@ -60,6 +91,20 @@ const DataCompare = () => {
         <h4>Graph for the mastodon data in {mastodon.date}</h4>
         <label htmlFor="date">Select a date:</label>
         <input type="date" id="date" name="date" value={date} onChange={handleDateChange} />
+
+        <label htmlFor="topic">Select a topic:</label>
+        <select id="topic" name="topic" value={topic} onChange={handleTopicChange}>
+          <option value="">--Select a topic--</option>
+          <option value="political">Political</option>
+          <option value="criminal">Criminal</option>
+          <option value="employment">Employment</option>
+          <option value="traffic">Traffic</option>
+        </select>
+        
+        <h3>Mastodon Post Infromation - {topic}</h3>
+        <p>{topic} post count: {mastodon.post_num}</p>
+        <p>Total post count: {mastodon.total_post} </p>
+
         <BarChart
         width={500}
         height={300}
@@ -110,6 +155,23 @@ const DataCompare = () => {
         <Tooltip />
         <Legend />
         </PieChart>
+
+        <h4>Top 10 Users</h4>
+        <ol>
+          {userCloudData.slice(0, 10).map((user, index) => (
+            <li key={index}>
+              {user.text} (Posts: {user.value})
+            </li>
+          ))}
+        </ol>
+
+        <h4>Word Cloud</h4>
+        <div style={{ width: '600px', height: '300px', overflow: 'scroll' }}>
+          <ReactD3Cloud data={wordCloudData} {...wordCloudOptions} />
+        </div>
+
+
+        
     </div>
   );
 };

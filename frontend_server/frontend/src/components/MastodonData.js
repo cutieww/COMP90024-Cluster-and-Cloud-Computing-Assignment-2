@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, XAxis, YAxis, Tooltip, CartesianGrid, Bar, Legend, PieChart, Pie, Cell} from 'recharts';
+import DOMPurify from 'dompurify';
 
 
 const MastodonData = () => {
@@ -9,13 +10,11 @@ const MastodonData = () => {
   const [currentTime, setCurrentTime] = useState(new Date().toLocaleString()); // initialize the current time state
 
   const [post, setPost] = useState(
-    { username: "", token: "", created_at:"", political_related:""}
+    {}
   )
 
-  const [userMap, setUserMap] = useState({});
-  const [wordMap, setWordMap] = useState({});
+  const [countdown, setCountdown] = useState(3);
 
-  const [countdown, setCountdown] = useState(5);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,44 +29,41 @@ const MastodonData = () => {
       setData({
         host: text.host,
         date: text.date,
-        count: text.count,
+        post_num: text.post_num,
         total_post: text.total_post,
         post_ratio: text.post_ratio,
+
+        user_num: text.user_num,
+        total_user: text.total_user,
         user_ratio: text.user_ratio,
       });
 
       setPost({
         username: text.latest_post.username,
-        token: text.latest_post.token,
+        content: text.latest_post.content,
         created_at: text.latest_post.created_at,
+        url: text.latest_post.url,
         political_related: text.latest_post.political_related ? 'Yes' : 'No',
+        criminal_related: text.latest_post.criminal_related ? 'Yes' : 'No',
+        employment_related: text.latest_post.employment_related ? 'Yes' : 'No',
+        traffic_related: text.latest_post.traffic_related ? 'Yes' : 'No',
       });
     } else {
       console.error(`Error fetching data: ${response.status}`);
     }
 
-    // Fetch mastodon_map API
-    const mapResponse = await fetch('http://172.26.131.144/data/mastodon_map');
 
-    if (mapResponse.ok) {
-      const json = await mapResponse.json();
-      setUserMap(json.usermap);
-      setWordMap(json.wordmap);
-    } else {
-      console.error(`Error fetching map data: ${mapResponse.status}`);
-    }
-
-        setCurrentTime(new Date().toLocaleString()); // update the current time state
+    setCurrentTime(new Date().toLocaleString()); // update the current time state
 
     };
 
 
     const updateTime = () => {
 
-      setCountdown((prevCountdown) => (prevCountdown > 1 ? prevCountdown - 1 : 5));
+      setCountdown((prevCountdown) => (prevCountdown > 1 ? prevCountdown - 1 : 3));
     };
 
-    const fetchDataIntervalId = setInterval(fetchData, 5000);
+    const fetchDataIntervalId = setInterval(fetchData, 3000);
     const updateTimeIntervalId = setInterval(updateTime, 1000);
 
     return () => {
@@ -76,9 +72,17 @@ const MastodonData = () => {
     };
   }, []);
 
+  const sanitizedContent = DOMPurify.sanitize(post.content);
+
+  
+
+  const handleButtonClick = () => {
+    window.open(post.url, '_blank', 'noopener,noreferrer');
+  };
+
   const COLORS = ['#0088FE', '#00C49F'];
   const barChartData = [
-    { name: 'Political Post', value: data.count },
+    { name: 'Political Post', value: data.post_num },
     { name: 'Total Post', value: data.total_post },
   ];
 
@@ -91,20 +95,31 @@ const MastodonData = () => {
     { name: 'user with political post', value: data.user_ratio },
     { name: 'remaining ratio', value: 1 - data.user_ratio },
   ];
+
+
   return (
     <div>
       <p>Next update in {countdown} seconds</p>
       <p>Data was retrieved from host {data.host} successfully at {currentTime}</p>
 
-      <h4>Latest post streamed</h4>
-      <p>Username: {post.username}</p>
-      <p>Tokens: {post.token}</p>
-      <p>Created_at: {post.created_at}</p>
-      <p>political_related: {post.political_related}</p>
+      <h3>Latest post streamed</h3>
+      <h4>Username</h4>
+      <p>{post.username}</p>
+      <h4>Content</h4>
+      <div dangerouslySetInnerHTML={{ __html: sanitizedContent }}></div>
 
-      <h4>Data Summary in {data.date}</h4>
-      <p>Count: {data.count}</p>
-      <p>Total Count: {data.total_post}</p>
+      <button onClick={handleButtonClick}>View Post</button>
+      <p>Created_at: {post.created_at}</p>
+
+      <h4>Topic information</h4>
+      <p>political_related: {post.political_related}</p>
+      <p>criminal_related: {post.criminal_related}</p>
+      <p>employment_related: {post.employment_related}</p>
+      <p>traffic_related: {post.traffic_related}</p>
+
+      <h3>Data Summary in {data.date}</h3>
+      <p>Relevant Post: {data.post_num}</p>
+      <p>Total Post: {data.total_post}</p>
 
       <BarChart
         width={500}
@@ -157,24 +172,6 @@ const MastodonData = () => {
         <Tooltip />
         <Legend />
       </PieChart>
-
-      <h4>User Map</h4>
-      <ul>
-        {Object.entries(userMap).map(([key, value]) => (
-          <li key={key}>
-            {key}: {value}
-          </li>
-        ))}
-      </ul>
-
-      <h4>Word Map</h4>
-      <ul>
-        {Object.entries(wordMap).map(([key, value]) => (
-          <li key={key}>
-            {key}: {value}
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };

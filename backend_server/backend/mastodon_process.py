@@ -13,7 +13,6 @@ today = datetime.date.today()
 
 # Format the date as a string in the desired format
 date_string = today.strftime("%Y-%m-%d")
-date_string = '2023-05-12'
 # Combine the date string with the CouchDB name prefix
 db_name = "mastodon_" + date_string
 
