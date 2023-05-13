@@ -1,0 +1,32 @@
+---
+- name: Create Docker services
+  hosts: swarm_managers 
+  become: true
+  vars_files:
+    - variables/mastodon_vars.yaml 
+
+  tasks:
+  - name: Build Docker images
+    community.docker.docker_image:
+      name: "{{ item.name }}"
+      source: "../harvester_node/streamer"
+      build:
+        dockerfile: Dockerfile
+      state: present
+    loop: "{{ domains }}"
+
+
+  - name: Create Docker container
+    community.general.docker_container:
+      name: "{{ item.name }}_container"
+      image: "{{ item.name }}"
+      state: started
+      ports:
+        - "8080:80"
+    loop: "{{ domains }}"
+
+
+    
+
+    
+

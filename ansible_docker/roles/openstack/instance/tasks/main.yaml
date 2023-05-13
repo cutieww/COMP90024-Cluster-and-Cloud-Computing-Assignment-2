@@ -1,0 +1,55 @@
+---
+- name: Create an instance
+  openstack.cloud.server:
+    name: "{{ item.name }}"
+    auto_floating_ip: false
+    availability_zone: "{{ availability_zone }}"
+    flavor: "{{ instance_flavor }}"
+    image: "{{ instance_image }}"
+    key_name: "{{ instance_key_name }}"
+    network: "{{ instance_network }}"
+    security_groups: "{{ sg_names }}"
+    timeout: 600
+    volumes: "{{ item.volumes }}"
+    state: present
+    wait: true
+  loop: "{{ instances }}"
+  register: os_instance
+
+
+- name: Add host
+  ansible.builtin.add_host:
+    name: "{{ item.server.access_ipv4 }}"
+    groups: docker_nodes
+    #inventory_file: "{{ inventory_file }}"
+  loop: "{{ os_instance.results }}"
+  when: item.server is defined
+
+- name: Add manager nodes to inventory group
+  ansible.builtin.add_host:
+    name: "{{ item.server.access_ipv4 }}"
+    groups: swarm_managers
+    #inventory_file: "{{ inventory_file }}"
+  #loop: "{{ os_instance.results[:num_managers] }}"
+  loop: "{{ os_instance.results }}"
+  when: item.server is defined
+
+- name: Add worker nodes to inventory group
+  ansible.builtin.add_host:
+    name: "{{ item.server.access_ipv4 }}"
+    groups: swarm_workers
+    #inventory_file: "{{ inventory_file }}"
+  #loop: "{{ os_instance.results[num_managers:] }}"
+  loop: "{{ os_instance.results }}"
+  when: item.server is defined
+
+
+
+
+
+
+
+
+
+
+
