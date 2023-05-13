@@ -17,6 +17,7 @@
       state: present
     loop: "{{ domains }}"
 
+
   - name: Create Docker container
     community.general.docker_container:
       name: "{{ item.name }}_container"
@@ -24,14 +25,6 @@
       state: started
       ports:
         - "8080:80"
-    loop: "{{ domains }}"
-
-
-  #For deleting docker containers  
-  - name: Delete Docker container
-    community.general.docker_container:
-      name: "{{ item.name }}_container"
-      state: absent
     loop: "{{ domains }}"
 
 

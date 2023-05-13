@@ -1,0 +1,38 @@
+#need this to actually work 
+#need to adapt the first one 
+---
+- name: Stop Docker containers not in the name list
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Get list of running containers
+      command: docker ps --format "{{.Names}}"
+      register: running_containers
+      changed_when: false
+
+    - name: Stop containers not in the name list
+      docker_container:
+        name: "{{ item }}"
+        state: stopped
+      loop: "{{ running_containers.stdout_lines }}"
+      when: item not in allowed_containers
+
+---
+- name: Create Docker services
+  hosts: swarm_managers 
+  become: true
+  vars_files:
+    - variables/mastodon_vars.yaml 
+
+  tasks:
+  - name: Delete Docker container
+    community.general.docker_container:
+      name: "{{ item.name }}_container"
+      state: absent
+    loop: "{{ domains }}"
+
+
+    
+
+    
+
