@@ -1,7 +1,7 @@
 - name: Install Docker and Docker Swarm
   hosts: docker_nodes
   become: true
-  serial: 1 #needed because I am running multiple nodes on the same host 
+  serial: 1 #needed because multiple nodes are running at the same IP address and port
   vars_files:
     - variables/docker_vars.yaml 
   tasks:
@@ -89,7 +89,6 @@
     - name: Add worker nodes to the swarm
       community.docker.docker_swarm:
         state: join
-        #advertise_addr: "{{ ansible_host }}" #might not be needed 
         join_token: "{{ worker_token.stdout }}"
         remote_addrs: "{{ hostvars[item]['ansible_default_ipv4']['address'] }}:2377"
       loop: "{{ groups['swarm_workers'] }}"

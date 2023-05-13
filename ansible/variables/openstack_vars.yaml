@@ -1,13 +1,13 @@
 
 availability_zone: melbourne-qh2-uom
 instance_flavor: uom.mse.1c4g
-instance_image: bbaf16f8-2484-48d7-b455-42209cc4b8d2 # need to change this 
+instance_image: bbaf16f8-2484-48d7-b455-42209cc4b8d2 
 instance_key_name: mrc
 instance_network: qh2-uom-internal 
 
 num_managers: 1
 
-inventory_file: "/home/wagw/COMP90024-Cluster-and-Cloud-Computing-Assignment-2/ansible/inventory/inventory.ini"
+inventory_file: "~/inventory/inventory.ini"
 
 volumes:
   - vol_name: mastadon-1-1
@@ -31,8 +31,5 @@ security_groups:
   
 
 instances:
-  - name: ansible-test 
+  - name: mastodon_server
     volumes: ["mastadon-1-1", "mastadon-1-2"]
-
-#  - name: mastadon-2
-#    volumes: ["mastadon-2-1", "mastadon-2-2"]

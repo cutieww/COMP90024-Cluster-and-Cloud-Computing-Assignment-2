@@ -2,7 +2,7 @@
 - name: Create instances on MRC
   hosts: localhost
   vars_files:
-    - variables/vars.yaml
+    - variables/openstack_vars.yaml
   gather_facts: true
 
   roles:

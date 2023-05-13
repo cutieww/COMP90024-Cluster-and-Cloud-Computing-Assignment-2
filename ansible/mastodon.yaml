@@ -5,13 +5,11 @@
   vars_files:
     - variables/mastodon_vars.yaml 
 
-
-  #need to fix the building docker images (e.g. soruce, build, dockerfile)
   tasks:
   - name: Build Docker images
     community.docker.docker_image:
       name: "{{ item.name }}"
-      source: "/home/wagw/COMP90024-Cluster-and-Cloud-Computing-Assignment-2/harvester_node/streamer"
+      source: "../harvester_node/streamer"
       build:
         dockerfile: Dockerfile
       state: present
