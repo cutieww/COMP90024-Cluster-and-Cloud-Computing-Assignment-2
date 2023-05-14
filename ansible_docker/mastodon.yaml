@@ -16,14 +16,14 @@
     loop: "{{ domains }}"
 
 
-  - name: Create Docker container
-    community.general.docker_container:
-      name: "{{ item.name }}_container"
-      image: "{{ item.name }}"
-      state: started
-      ports:
-        - "8080:80"
-    loop: "{{ domains }}"
+  - name: Create the Docker service
+    community.docker.docker_compose:
+      project_src: mastodon-compose.yaml
+      project_name: crawler
+      build: false
+      scale:
+        crawler_{{ item.name }}: "{{ num_replicas }}"
+      loop: "{{ domains }}"
 
 
     

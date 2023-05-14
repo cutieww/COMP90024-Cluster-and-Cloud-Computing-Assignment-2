@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  crawler_{{ item.name }}:
+    image: "{{ item.name }}"
+    ports:
+      - "8080:80"
+
+    deploy:
+      restart_policy:
+        condition: any
+    replicas: "{{ num_replicas }}"
+
+    
