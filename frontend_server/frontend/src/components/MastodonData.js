@@ -47,6 +47,7 @@ const MastodonData = () => {
         criminal_related: text.latest_post.criminal_related ? 'Yes' : 'No',
         employment_related: text.latest_post.employment_related ? 'Yes' : 'No',
         traffic_related: text.latest_post.traffic_related ? 'Yes' : 'No',
+        server: text.latest_post.server
       });
     } else {
       console.error(`Error fetching data: ${response.status}`);
@@ -80,47 +81,59 @@ const MastodonData = () => {
     window.open(post.url, '_blank', 'noopener,noreferrer');
   };
 
-  const COLORS = ['#0088FE', '#00C49F'];
+  const COLORS = ['#0088FF', '#00C49F'];
   const barChartData = [
-    { name: 'Political Post', value: data.post_num },
-    { name: 'Total Post', value: data.total_post },
+    { name: 'relevant post', value: data.post_num },
+    { name: 'total post', value: data.total_post },
   ];
 
   const postRatioData = [
-    { name: 'political post', value: data.post_ratio },
+    { name: 'relevant post', value: data.post_ratio },
     { name: 'remaining ratio', value: 1 - data.post_ratio },
   ];
 
   const userRatioData = [
-    { name: 'user with political post', value: data.user_ratio },
+    { name: 'user with relevant post', value: data.user_ratio },
     { name: 'remaining ratio', value: 1 - data.user_ratio },
   ];
 
 
   return (
-    <div>
+    <div className="container">
       <p>Next update in {countdown} seconds</p>
       <p>Data was retrieved from host {data.host} successfully at {currentTime}</p>
+      <p>Server under use: {post.server}</p>
 
       <h3>Latest post streamed</h3>
-      <h4>Username</h4>
-      <p>{post.username}</p>
-      <h4>Content</h4>
-      <div dangerouslySetInnerHTML={{ __html: sanitizedContent }}></div>
+      <div className="row">
+        <div className="col-md-6">
+          
+          <h4>Username</h4>
+          <p>{post.username}</p>
+          <h4>Topic information</h4>
+            <p>political_related: {post.political_related}</p>
+            <p>criminal_related: {post.criminal_related}</p>
+            <p>employment_related: {post.employment_related}</p>
+            <p>traffic_related: {post.traffic_related}</p>
+          <p>Created_at: {post.created_at}</p>
+          <button className="btn btn-primary" onClick={handleButtonClick}>View Post</button>
+          </div>
 
-      <button onClick={handleButtonClick}>View Post</button>
-      <p>Created_at: {post.created_at}</p>
-
-      <h4>Topic information</h4>
-      <p>political_related: {post.political_related}</p>
-      <p>criminal_related: {post.criminal_related}</p>
-      <p>employment_related: {post.employment_related}</p>
-      <p>traffic_related: {post.traffic_related}</p>
+          <div className="col-md-6">
+            <div className="card">
+              <div className="card-body">
+                <h4>Content</h4>
+                <div dangerouslySetInnerHTML={{ __html: sanitizedContent }}></div>
+              </div>
+            </div>
+          </div>
+      </div>
+      
 
       <h3>Data Summary in {data.date}</h3>
-      <p>Relevant Post: {data.post_num}</p>
-      <p>Total Post: {data.total_post}</p>
-
+      <div className='row'>
+            <p>Relevant Post: {data.post_num}</p>
+            <p>Total Post: {data.total_post}</p>
       <BarChart
         width={500}
         height={300}
@@ -131,13 +144,15 @@ const MastodonData = () => {
         <XAxis dataKey="name" />
         <YAxis />
         <Tooltip />
-        <Legend />
-        <Bar dataKey="value" fill="#8884d8" />
+        <Bar dataKey="value" fill="#7884d8" />
       </BarChart>
 
-      <h4>Post Ratio</h4>
-      <PieChart width={400} height={200} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
-        <Pie
+
+      <div className="row">
+        <div className="col-md-6">
+          <h4>Post Ratio</h4>
+          <PieChart width={400} height={200} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
+          <Pie
           data={postRatioData}
           cx={200}
           cy={100}
@@ -152,11 +167,13 @@ const MastodonData = () => {
         </Pie>
         <Tooltip />
         <Legend />
-      </PieChart>
+          </PieChart>
+        </div>
 
-      <h4>User Ratio</h4>
-      <PieChart width={400} height={200} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
-        <Pie
+        <div className="col-md-6">
+          <h4>User Ratio</h4>
+          <PieChart width={400} height={200} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
+          <Pie
           data={userRatioData}
           cx={200}
           cy={100}
@@ -171,7 +188,13 @@ const MastodonData = () => {
         </Pie>
         <Tooltip />
         <Legend />
-      </PieChart>
+          </PieChart>
+        </div>
+        </div>
+      </div>
+
+     
+   
     </div>
   );
 };

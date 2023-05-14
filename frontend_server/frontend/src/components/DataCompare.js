@@ -45,7 +45,7 @@ const DataCompare = () => {
   // Bar chart data
     const barChartData = [
     { name: topic + ' post', value: mastodon.post_num },
-    { name: 'Total Post', value: mastodon.total_post },
+    { name: 'total post', value: mastodon.total_post },
   ];
 
   // Pie chart data
@@ -68,10 +68,12 @@ const DataCompare = () => {
     .sort((a, b) => b.value - a.value)
     .slice(0, 200);
 
+  /*
   const userCloudData = Object.entries(mastodon.usermap || {})
     .map(([text, value]) => ({ text, value }))
     .sort((a, b) => b.value - a.value)
     .slice(0, 50);
+  */
 
   // Define word cloud options
   const wordCloudOptions = {
@@ -86,9 +88,11 @@ const DataCompare = () => {
 
 
   return (
-    <div>
-        <h1>Data Compare</h1>
+    <div className="container">
+      <div className='row'>
+      <div className="col-md-6">
         <h4>Graph for the mastodon data in {mastodon.date}</h4>
+
         <label htmlFor="date">Select a date:</label>
         <input type="date" id="date" name="date" value={date} onChange={handleDateChange} />
 
@@ -98,13 +102,15 @@ const DataCompare = () => {
           <option value="political">Political</option>
           <option value="criminal">Criminal</option>
           <option value="employment">Employment</option>
-          <option value="traffic">Traffic</option>
+          <option value="traffic">Traffic</option>``
         </select>
         
+      
+
         <h3>Mastodon Post Infromation - {topic}</h3>
+        <div className='row'>
         <p>{topic} post count: {mastodon.post_num}</p>
         <p>Total post count: {mastodon.total_post} </p>
-
         <BarChart
         width={500}
         height={300}
@@ -114,7 +120,6 @@ const DataCompare = () => {
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
-            <Legend />
             <Bar dataKey="value" fill="#8884d8" />
         </BarChart>
 
@@ -155,7 +160,7 @@ const DataCompare = () => {
         <Tooltip />
         <Legend />
         </PieChart>
-
+        {/*
         <h4>Top 10 Users</h4>
         <ol>
           {userCloudData.slice(0, 10).map((user, index) => (
@@ -164,15 +169,23 @@ const DataCompare = () => {
             </li>
           ))}
         </ol>
-
+          */}
         <h4>Word Cloud</h4>
         <div style={{ width: '600px', height: '300px', overflow: 'scroll' }}>
           <ReactD3Cloud data={wordCloudData} {...wordCloudOptions} />
+  
+        </div>
+        </div>
         </div>
 
-
-        
+        <div className="col-md-6">
+          <h4>Graph for the Twitter data in </h4>
+          {/* Add the additional content here */}
+          
+      </div>
+      </div>
     </div>
+
   );
 };
 

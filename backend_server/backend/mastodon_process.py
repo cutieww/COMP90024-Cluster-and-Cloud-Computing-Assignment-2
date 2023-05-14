@@ -32,7 +32,7 @@ def check_date_change():
     if current_date != today:
         today = current_date
         date_string = today.strftime("%Y-%m-%d")
-        db_name = "mastodon_policy_" + date_string
+        db_name = "mastodon_" + date_string
         db = couch[db_name]
 
 '''''

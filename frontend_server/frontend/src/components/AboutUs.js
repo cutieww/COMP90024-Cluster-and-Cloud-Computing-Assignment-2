@@ -1,7 +1,40 @@
 import React from 'react';
 
+const Card = ({ name, role }) => {
+  return (
+    <div className="card">
+      <div className="card-body">
+        <h5 className="card-title">{name}</h5>
+        <p className="card-text">In charge of: {role}</p>
+      </div>
+    </div>
+  );
+};
+
 const AboutUs = () => {
-  return <h1>About Us</h1>;
+  return (
+    <div>
+      <h1>About Us</h1>
+
+      <div className="row">
+        <div className="col-md-4">
+          <Card name="Yihan Wang" role="Mastodon, CouchDB, Backend" />
+        </div>
+        <div className="col-md-4">
+          <Card name="Wei Wang" role="Twitter, CouchDB, Backend" />
+        </div>
+        <div className="col-md-4">
+          <Card name="George Wang" role="Ansible, Docker, Backend" />
+        </div>
+        <div className="col-md-4">
+          <Card name="Brendan Pichler" role="CouchDB, React, Frontend" />
+        </div>
+        <div className="col-md-4">
+          <Card name="Luchen Zhou" role="Infrastructure, Docker, Full stack" />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default AboutUs;

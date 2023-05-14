@@ -50,7 +50,7 @@ m = Mastodon(
 def create_database(date):
     global db_name, db
     today = date
-    db_name = 'mastodon_policy' + "_" + today
+    db_name = 'mastodon_' + "_" + today
 
     if db_name in couch:
         db = couch[db_name]
@@ -172,7 +172,8 @@ class Listener(StreamListener):
                             "criminal_related": criminal_related,
                             "employment_related": employment_related,
                             "traffic_related": traffic_related,
-                            "url": status["url"]
+                            "url": status["url"],
+                            "server": "mastodon.world"
                             }
 
             host_ips = ["172.26.129.100", "172.26.132.19"]
