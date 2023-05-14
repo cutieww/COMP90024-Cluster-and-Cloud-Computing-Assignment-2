@@ -3,6 +3,9 @@ domains:
   - name: mastodon_au
     link: 'https://mastodon.au'
     access_token: "{{ lookup('env', 'MASTODON_ACCESS_TOKEN_AU') }}"
+    num_replicas: 1
   #- name: mastodon_uk
   #  link: 'https://mastodon.world'
   #  access_token: "{{ lookup('env', 'MASTODON_ACCESS_TOKEN_UK') }}"
+  #  num_replicas: 1
+

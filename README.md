@@ -12,15 +12,15 @@
 
 ## Deployment Guide
 
-### Deploy Streamer Node (UK Server)
+### Deploy Streamer Node (World Server)
 
-#### 1. Docker Command for Streamer UK
+#### 1. Docker Command for Streamer World
 ```
-$ docker build -t streamer_uk --platform linux/amd64 .
+$ docker build -t streamer_world --platform linux/amd64 .
 
-$ docker tag streamer_uk luchen2001/mrc:streamer_uk 
+$ docker tag streamer_world luchen2001/mrc:streamer_world
 
-$ docker push luchen2001/mrc:streamer_uk
+$ docker push luchen2001/mrc:streamer_world
 ```
 
 
@@ -30,7 +30,7 @@ $ bash deploy_couchdb.sh
 
 $ bash add_group.sh
 
-$ docker run luchen2001/mrc:streamer_uk
+$ docker run luchen2001/mrc:streamer_world
 ```
 ### Deploy Server1/2
 
