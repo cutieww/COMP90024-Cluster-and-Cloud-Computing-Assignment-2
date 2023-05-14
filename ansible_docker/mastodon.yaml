@@ -22,7 +22,7 @@
       project_name: crawler
       build: false
       scale:
-        crawler_{{ item.name }}: "{{ num_replicas }}"
+        crawler_{{ item.name }}: "{{ item.num_replicas }}"
       loop: "{{ domains }}"
 
 
