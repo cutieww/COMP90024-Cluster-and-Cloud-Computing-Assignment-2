@@ -27,12 +27,18 @@ def check_date_change():
     global date_string
     global db_name
     global db
+    global couch
 
     current_date = datetime.date.today()
     if current_date != today:
         today = current_date
         date_string = today.strftime("%Y-%m-%d")
         db_name = "mastodon_" + date_string
+
+        # Check if the new date database exists, if not, create it
+        if db_name not in couch:
+            couch.create(db_name)
+
         db = couch[db_name]
 
 '''''
@@ -403,7 +409,7 @@ mastodon_total = {'host': host_ip, 'date': date_string, 'latest_post':{},
 
 
 if __name__ == '__main__':
-    time.sleep(1)
+    time.sleep(2)
     while True:
         # Check if the date has changed
         check_date_change()

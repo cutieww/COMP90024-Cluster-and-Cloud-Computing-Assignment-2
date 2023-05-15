@@ -1,0 +1,1 @@
+ansible-playbook -i inventory.ini stop_and_remove_docker_container.yml

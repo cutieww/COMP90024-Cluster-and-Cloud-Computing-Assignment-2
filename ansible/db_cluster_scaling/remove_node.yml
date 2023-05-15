@@ -1,0 +1,69 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  vars_files:
+    - vars/vars.yml
+
+  tasks:
+    - name: Run the shell script
+      ansible.builtin.shell: |
+        #!/bin/bash
+
+        # Configuration
+        NODE_TO_REMOVE="couchdb@{{ worker_ip }}"
+        COUCHDB_USERNAME="{{ couchdb_user }}"
+        COUCHDB_PASSWORD="{{ couchdb_password }}"
+
+        # Remove the node from the _nodes database
+        REV=$(curl -s -X GET "http://${COUCHDB_USERNAME}:${COUCHDB_PASSWORD}@{{ master_ip }}:5984/_node/_local/_nodes/${NODE_TO_REMOVE}" | jq -r '._rev')
+        curl -X DELETE "http://${COUCHDB_USERNAME}:${COUCHDB_PASSWORD}@{{ master_ip }}:5984/_node/_local/_nodes/${NODE_TO_REMOVE}?rev=${REV}"
+
+        # List all databases
+        DBS=$(curl -s -X GET "http://${COUCHDB_USERNAME}:${COUCHDB_PASSWORD}@{{ master_ip }}:5984/_all_dbs" | jq -r '.[]')
+
+        # Iterate over each database
+        for DB in $DBS; do
+          # Get the shard map
+          SHARD_MAP=$(curl -s -X GET "http://${COUCHDB_USERNAME}:${COUCHDB_PASSWORD}@{{ master_ip }}:5986/_dbs/${DB}")
+
+          # Remove the node from the shard map
+          UPDATED_SHARD_MAP=$(echo "$SHARD_MAP" | jq "del(.by_node.\"${NODE_TO_REMOVE}\") | del(.by_range[] | select(.[] | contains(\"${NODE_TO_REMOVE}\"))[0])")
+
+          # Update the shard map
+          curl -X PUT "http://${COUCHDB_USERNAME}:${COUCHDB_PASSWORD}@{{ master_ip }}:5986/_dbs/${DB}" -H "Content-Type: application/json" -d "${UPDATED_SHARD_MAP}"
+        done
+
+        # Check the membership
+        curl -X GET "http://${COUCHDB_USERNAME}:${COUCHDB_PASSWORD}@{{ master_ip }}:5984/_membership"
+      args:
+        executable: /bin/bash
+      register: membership_output
+
+    - name: Display membership result
+      ansible.builtin.debug:
+        var: membership_output.stdout_lines
+
+
+- hosts: couchdb_servers
+  vars_files:
+    - vars/vars.yml
+  gather_facts: true
+
+  vars:
+    - ansible_user: ubuntu
+    - ansible_ssh_private_key_file: ../mrc.pem
+    - ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
+
+  tasks:
+    - name: Remove CouchDB Docker container
+      ansible.builtin.docker_container:
+        name: couchdb
+        state: absent
+      become: yes
+
+    - name: Remove CouchDB Docker image
+      ansible.builtin.docker_image:
+        name: "couchdb:{{ couchdb_version }}"
+        state: absent
+      become: yes

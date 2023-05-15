@@ -1,0 +1,1 @@
+ansible-playbook -i inventory.ini run_docker_container.yml

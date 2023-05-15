@@ -1,0 +1,2 @@
+# vars/vars.yml
+docker_image: luchen2001/mrc:streamer_world

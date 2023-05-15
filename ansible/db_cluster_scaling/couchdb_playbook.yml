@@ -1,0 +1,60 @@
+---
+- hosts: couchdb_servers
+  vars_files:
+    - vars/vars.yml
+  gather_facts: true
+
+  vars:
+    - ansible_user: ubuntu
+    - ansible_ssh_private_key_file: ../mrc.pem
+    - ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
+
+  roles:
+    - role: install_couchdb
+
+- hosts: localhost
+  vars_files:
+    - vars/vars.yml
+
+  tasks:
+    - name: Wait for CouchDB to be ready on worker node
+      ansible.builtin.wait_for:
+        host: "{{ worker_ip }}"
+        port: 5984
+        state: started
+        timeout: 60
+      delegate_to: localhost
+
+    - name: Run CouchDB cluster setup script
+      ansible.builtin.shell: |
+        #!/bin/bash
+
+        # Use the environment variables for the IP addresses
+        master_ip="{{ master_ip }}"
+        worker_ip="{{ worker_ip }}"
+
+        # Use the IP addresses in the curl commands
+        curl -XPOST "http://admin:admin@$master_ip:5984/_cluster_setup" \
+              --header "Content-Type: application/json"\
+              --data "{\"action\": \"enable_cluster\", \"bind_address\":\"0.0.0.0\",\
+                     \"username\": \"admin\", \"password\":\"admin\", \"port\": \"5984\",\
+                     \"remote_node\": \"$worker_ip\", \"node_count\": \"$(echo $worker_ip | wc -w)\",\
+                     \"remote_current_user\":\"admin\", \"remote_current_password\":\"admin\"}"
+
+        curl -XPOST "http://admin:admin@$master_ip:5984/_cluster_setup"\
+              --header "Content-Type: application/json"\
+              --data "{\"action\": \"add_node\", \"host\":\"$worker_ip\",\
+                     \"port\": \"5984\", \"username\": \"admin\", \"password\":\"admin\"}"
+
+        curl -XPOST "http://admin:admin@$master_ip:5984/_cluster_setup"\
+            --header "Content-Type: application/json" --data "{\"action\": \"finish_cluster\"}"
+
+        curl -X GET "http://admin:admin@$worker_ip:5984/_membership"
+      args:
+        executable: /bin/bash
+      register: curl_output
+
+    - name: Display membership result
+      ansible.builtin.debug:
+        var: curl_output.stdout_lines
+
