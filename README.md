@@ -42,6 +42,13 @@ $ Docker tag server1 luchen2001/mrc:server1
 
 $ Docker push luchen2001/mrc:server1
 ```
+```
+$ Docker build -t server2 --platform linux/amd64 .
+
+$ Docker tag server2 luchen2001/mrc:server2
+
+$ Docker push luchen2001/mrc:server2
+```
 
 #### 2. Deploy the CouchDB and Server in Cloud
 ```
