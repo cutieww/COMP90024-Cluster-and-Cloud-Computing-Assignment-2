@@ -8,6 +8,7 @@
 
 
 ## Architecture
+<img width="828" alt="Screenshot 2023-05-17 at 12 12 40 am" src="https://github.com/cutieww/COMP90024-Cluster-and-Cloud-Computing-Assignment-2/assets/88120882/428d772d-51da-4916-ad5b-503ae2e5cd1e">
 
 
 ## Deployment Guide
@@ -158,7 +159,7 @@ $ cd backend_server/backend
 
 # create virtual environment same in the stream Mastodon Server
 $ python3 -m venv myvenvname
-$ myvenvname CCC/bin/activate
+$ myvenvname myvenvname/bin/activate
 
 # install the packages
 $ python -m pip install -r requirements.txt
