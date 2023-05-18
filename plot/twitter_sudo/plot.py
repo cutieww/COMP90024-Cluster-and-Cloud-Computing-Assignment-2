@@ -1,4 +1,5 @@
 import json
+import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -43,7 +44,7 @@ def get_graph_info(topic, twitter_file, sudo_file,x_cols):
     return plot_dict
 
 
-def plot_chart(plot_dict,bars,lines,plot_name,line_label):
+def plot_chart(plot_dict,bars,lines,plot_name,line_label,save_name):
     
     df = pd.DataFrame.from_dict(plot_dict)
 
@@ -76,12 +77,12 @@ def plot_chart(plot_dict,bars,lines,plot_name,line_label):
     for bar in bars:
         y_bars.append(df[bar].to_list())
         
-    print(y_bars)
+
         
     y_lines = []
     for line in lines:
         y_lines.append(df[line].to_list())
-    print(y_lines)
+
         
 
     # Create a figure and axis objects
@@ -122,7 +123,8 @@ def plot_chart(plot_dict,bars,lines,plot_name,line_label):
    
 
 #     Show the plot
-    plt.show()
+    # plt.show()
+    plt.savefig(save_name, bbox_inches='tight')
 
 
 
@@ -135,7 +137,15 @@ def plot_chart(plot_dict,bars,lines,plot_name,line_label):
 
 
 if __name__ == '__main__':
-    # political_plot_dict = get_graph_info('political', twitter, political_sudo,['poll_counts','first_voter_counts'])
-    # plot_chart(political_plot_dict,['post_ratio','user_ratio'],['poll_counts','first_voter_counts'],"Political Graph Name","Count")
+    political_plot_dict = get_graph_info('political', twitter, political_sudo,['poll_counts','first_voter_counts'])
+    plot_chart(political_plot_dict,['post_ratio','user_ratio'],['poll_counts','first_voter_counts'],"Political Graph Name","Count","results/political_sudo.png")
 
-    
+    criminal_plot_dict = get_graph_info("criminal", twitter, criminal_sudo,["acts_intended_to_cause_injury","offences_against_justice","theft"])
+    plot_chart(criminal_plot_dict,['post_ratio','user_ratio'],["acts_intended_to_cause_injury","offences_against_justice","theft"],"Criminal Graph Name","Count","results/criminal_sudo.png")
+
+    employment_plot_dict = get_graph_info("employment", twitter, employment_sudo,["science_average_growth","construction_average_growth","financial_average_growth","total_average_growth"])
+    plot_chart(employment_plot_dict,['post_ratio','user_ratio'],["science_average_growth","construction_average_growth","financial_average_growth"],"Employment Graph Name","Average Growth","results/employment_sudo.png")
+
+    traffic_plot_dict = get_graph_info("traffic", twitter, traffic_sudo,["one_method_total","two_method_total","three_method_total","total_people"])
+    plot_chart(traffic_plot_dict,['post_ratio','user_ratio'],["one_method_total","two_method_total","three_method_total","total_people"],"Traffic Graph Name","People Count","results/traffic_sudo.png")
+
