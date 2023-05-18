@@ -1,0 +1,266 @@
+{
+    "political": {
+        "Queensland": {
+            "user_ratio": 0.6001502488496573,
+            "tweet_ratio": 0.31384743360044104,
+            "user_count": 6391,
+            "tweet_count": 127525,
+            "total_tweet_count": 406328,
+            "total_user_count": 10649
+        },
+        "Western_Australia": {
+            "user_ratio": 0.6105395758975436,
+            "tweet_ratio": 0.3250848348066624,
+            "user_count": 2908,
+            "tweet_count": 60641,
+            "total_tweet_count": 186539,
+            "total_user_count": 4763
+        },
+        "New_South_Wales": {
+            "user_ratio": 0.6170853700125043,
+            "tweet_ratio": 0.30517114049722666,
+            "user_count": 10857,
+            "tweet_count": 215290,
+            "total_tweet_count": 705473,
+            "total_user_count": 17594
+        },
+        "Victoria": {
+            "user_ratio": 0.6350188101766243,
+            "tweet_ratio": 0.3058406470387448,
+            "user_count": 9959,
+            "tweet_count": 211457,
+            "total_tweet_count": 691396,
+            "total_user_count": 15683
+        },
+        "Northern_Territory": {
+            "user_ratio": 0.4676258992805755,
+            "tweet_ratio": 0.30976362602550567,
+            "user_count": 520,
+            "tweet_count": 7627,
+            "total_tweet_count": 24622,
+            "total_user_count": 1112
+        },
+        "South_Australia": {
+            "user_ratio": 0.6203537554473212,
+            "tweet_ratio": 0.29368857019224825,
+            "user_count": 2420,
+            "tweet_count": 42759,
+            "total_tweet_count": 145593,
+            "total_user_count": 3901
+        },
+        "Tasmania": {
+            "user_ratio": 0.5633500357909806,
+            "tweet_ratio": 0.34351802044109736,
+            "user_count": 787,
+            "tweet_count": 15965,
+            "total_tweet_count": 46475,
+            "total_user_count": 1397
+        },
+        "Australian_Capital_Territory": {
+            "user_ratio": 0.657671164417791,
+            "tweet_ratio": 0.36161332436602445,
+            "user_count": 1316,
+            "tweet_count": 18281,
+            "total_tweet_count": 50554,
+            "total_user_count": 2001
+        }
+    },
+    "criminal": {
+        "Queensland": {
+            "user_ratio": 0.25504742229317307,
+            "tweet_ratio": 0.050766868145931364,
+            "user_count": 2716,
+            "tweet_count": 20628,
+            "total_tweet_count": 406328,
+            "total_user_count": 10649
+        },
+        "Western_Australia": {
+            "user_ratio": 0.26957799706067603,
+            "tweet_ratio": 0.05202129313441157,
+            "user_count": 1284,
+            "tweet_count": 9704,
+            "total_tweet_count": 186539,
+            "total_user_count": 4763
+        },
+        "New_South_Wales": {
+            "user_ratio": 0.27168352847561666,
+            "tweet_ratio": 0.05281562866332234,
+            "user_count": 4780,
+            "tweet_count": 37260,
+            "total_tweet_count": 705473,
+            "total_user_count": 17594
+        },
+        "Victoria": {
+            "user_ratio": 0.29343875534017727,
+            "tweet_ratio": 0.049057269639974775,
+            "user_count": 4602,
+            "tweet_count": 33918,
+            "total_tweet_count": 691396,
+            "total_user_count": 15683
+        },
+        "Northern_Territory": {
+            "user_ratio": 0.1672661870503597,
+            "tweet_ratio": 0.04727479489887093,
+            "user_count": 186,
+            "tweet_count": 1164,
+            "total_tweet_count": 24622,
+            "total_user_count": 1112
+        },
+        "South_Australia": {
+            "user_ratio": 0.26531658549089976,
+            "tweet_ratio": 0.04448016044727425,
+            "user_count": 1035,
+            "tweet_count": 6476,
+            "total_tweet_count": 145593,
+            "total_user_count": 3901
+        },
+        "Tasmania": {
+            "user_ratio": 0.22333571939871152,
+            "tweet_ratio": 0.049381387842926304,
+            "user_count": 312,
+            "tweet_count": 2295,
+            "total_tweet_count": 46475,
+            "total_user_count": 1397
+        },
+        "Australian_Capital_Territory": {
+            "user_ratio": 0.25237381309345325,
+            "tweet_ratio": 0.05087629069905448,
+            "user_count": 505,
+            "tweet_count": 2572,
+            "total_tweet_count": 50554,
+            "total_user_count": 2001
+        }
+    },
+    "employment": {
+        "Queensland": {
+            "user_ratio": 0.30462954268006387,
+            "tweet_ratio": 0.06501397885452147,
+            "user_count": 3244,
+            "tweet_count": 26417,
+            "total_tweet_count": 406328,
+            "total_user_count": 10649
+        },
+        "Western_Australia": {
+            "user_ratio": 0.318076842326265,
+            "tweet_ratio": 0.07076268233452522,
+            "user_count": 1515,
+            "tweet_count": 13200,
+            "total_tweet_count": 186539,
+            "total_user_count": 4763
+        },
+        "New_South_Wales": {
+            "user_ratio": 0.31283392065476867,
+            "tweet_ratio": 0.06686010662349941,
+            "user_count": 5504,
+            "tweet_count": 47168,
+            "total_tweet_count": 705473,
+            "total_user_count": 17594
+        },
+        "Victoria": {
+            "user_ratio": 0.33679780654211566,
+            "tweet_ratio": 0.06873484949290999,
+            "user_count": 5282,
+            "tweet_count": 47523,
+            "total_tweet_count": 691396,
+            "total_user_count": 15683
+        },
+        "Northern_Territory": {
+            "user_ratio": 0.20503597122302158,
+            "tweet_ratio": 0.08005036146535618,
+            "user_count": 228,
+            "tweet_count": 1971,
+            "total_tweet_count": 24622,
+            "total_user_count": 1112
+        },
+        "South_Australia": {
+            "user_ratio": 0.3199179697513458,
+            "tweet_ratio": 0.0695912578214612,
+            "user_count": 1248,
+            "tweet_count": 10132,
+            "total_tweet_count": 145593,
+            "total_user_count": 3901
+        },
+        "Tasmania": {
+            "user_ratio": 0.2770221904080172,
+            "tweet_ratio": 0.07210328133405057,
+            "user_count": 387,
+            "tweet_count": 3351,
+            "total_tweet_count": 46475,
+            "total_user_count": 1397
+        },
+        "Australian_Capital_Territory": {
+            "user_ratio": 0.33683158420789605,
+            "tweet_ratio": 0.07746172409700518,
+            "user_count": 674,
+            "tweet_count": 3916,
+            "total_tweet_count": 50554,
+            "total_user_count": 2001
+        }
+    },
+    "traffic": {
+        "Queensland": {
+            "user_ratio": 0.2964597614799512,
+            "tweet_ratio": 0.05262497292827469,
+            "user_count": 3157,
+            "tweet_count": 21383,
+            "total_tweet_count": 406328,
+            "total_user_count": 10649
+        },
+        "Western_Australia": {
+            "user_ratio": 0.3065294982154105,
+            "tweet_ratio": 0.05223572550512225,
+            "user_count": 1460,
+            "tweet_count": 9744,
+            "total_tweet_count": 186539,
+            "total_user_count": 4763
+        },
+        "New_South_Wales": {
+            "user_ratio": 0.3162441741502785,
+            "tweet_ratio": 0.0519878152672037,
+            "user_count": 5564,
+            "tweet_count": 36676,
+            "total_tweet_count": 705473,
+            "total_user_count": 17594
+        },
+        "Victoria": {
+            "user_ratio": 0.3338646942549257,
+            "tweet_ratio": 0.05776429137570943,
+            "user_count": 5236,
+            "tweet_count": 39938,
+            "total_tweet_count": 691396,
+            "total_user_count": 15683
+        },
+        "Northern_Territory": {
+            "user_ratio": 0.20953237410071943,
+            "tweet_ratio": 0.05194541466980749,
+            "user_count": 233,
+            "tweet_count": 1279,
+            "total_tweet_count": 24622,
+            "total_user_count": 1112
+        },
+        "South_Australia": {
+            "user_ratio": 0.31453473468341453,
+            "tweet_ratio": 0.05140357022659056,
+            "user_count": 1227,
+            "tweet_count": 7484,
+            "total_tweet_count": 145593,
+            "total_user_count": 3901
+        },
+        "Tasmania": {
+            "user_ratio": 0.2677165354330709,
+            "tweet_ratio": 0.05112426035502959,
+            "user_count": 374,
+            "tweet_count": 2376,
+            "total_tweet_count": 46475,
+            "total_user_count": 1397
+        },
+        "Australian_Capital_Territory": {
+            "user_ratio": 0.29735132433783107,
+            "tweet_ratio": 0.057581991533805436,
+            "user_count": 595,
+            "tweet_count": 2911,
+            "total_tweet_count": 50554,
+            "total_user_count": 2001
+        }
+    }
+}
