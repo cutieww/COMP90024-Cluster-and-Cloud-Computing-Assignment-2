@@ -1,0 +1,2787 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_869c83eb0dd75c730e1bccaa65d80d7e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_869c83eb0dd75c730e1bccaa65d80d7e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_869c83eb0dd75c730e1bccaa65d80d7e = L.map(
+                "map_869c83eb0dd75c730e1bccaa65d80d7e",
+                {
+                    center: [-33.4827345, 150.1570173],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_bb2cb698361548e946a384f6566c66a2 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_9870e78b78d5beae45c3b6d90db3e86c = L.marker(
+                [-33.4827345, 150.1570173],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var icon_3a632955de39dd35bb50999f181ef631 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9870e78b78d5beae45c3b6d90db3e86c.setIcon(icon_3a632955de39dd35bb50999f181ef631);
+        
+    
+        var popup_08d6014dfa3d168fbd63de9d88b82b3f = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_c24c9de35eef5493e5893c3f4778e9de = $(`<div id="html_c24c9de35eef5493e5893c3f4778e9de" style="width: 100.0%; height: 100.0%;"><b>Lithgow</b><br> Total: 1451, <br>crime: 560</div>`)[0];
+                popup_08d6014dfa3d168fbd63de9d88b82b3f.setContent(html_c24c9de35eef5493e5893c3f4778e9de);
+            
+        
+
+        marker_9870e78b78d5beae45c3b6d90db3e86c.bindPopup(popup_08d6014dfa3d168fbd63de9d88b82b3f)
+        ;
+
+        
+    
+    
+            var rectangle_60ed485232707c47cab9c18227a66e43 = L.rectangle(
+                [[-33.5073172, 150.1146367], [-33.4436027, 150.1948569]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_270d985f0e298645b11217442b147ea4 = L.marker(
+                [-38.1154932, 144.6566531],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var icon_6e35110280bc7ef67359185b8ff8d308 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+            );
+            marker_270d985f0e298645b11217442b147ea4.setIcon(icon_6e35110280bc7ef67359185b8ff8d308);
+        
+    
+        var popup_b1d590bd87eab8932bdc643e0821675b = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_52e2fa39b3156cc9a295e77221329057 = $(`<div id="html_52e2fa39b3156cc9a295e77221329057" style="width: 100.0%; height: 100.0%;"><b>Portarlington</b><br> Total: 1206, <br>crime: 120</div>`)[0];
+                popup_b1d590bd87eab8932bdc643e0821675b.setContent(html_52e2fa39b3156cc9a295e77221329057);
+            
+        
+
+        marker_270d985f0e298645b11217442b147ea4.bindPopup(popup_b1d590bd87eab8932bdc643e0821675b)
+        ;
+
+        
+    
+    
+            var rectangle_350d99b804b9b5835af89b48060e6de4 = L.rectangle(
+                [[-38.1717739, 144.620358], [-38.107765, 144.6927256]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_a84c9fd85408d7c8f23c6d13779df10e = L.marker(
+                [-35.1049834, 150.6240074],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var icon_cd37a87cde3e17f24d15e6893f254752 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a84c9fd85408d7c8f23c6d13779df10e.setIcon(icon_cd37a87cde3e17f24d15e6893f254752);
+        
+    
+        var popup_1156abbd79ba884752773c7fb8bb31a0 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_48de8cb1773479a20053b98064d685d8 = $(`<div id="html_48de8cb1773479a20053b98064d685d8" style="width: 100.0%; height: 100.0%;"><b>St Georges Basin - Sanctuary Point</b><br> Total: 3679, <br>crime: 342</div>`)[0];
+                popup_1156abbd79ba884752773c7fb8bb31a0.setContent(html_48de8cb1773479a20053b98064d685d8);
+            
+        
+
+        marker_a84c9fd85408d7c8f23c6d13779df10e.bindPopup(popup_1156abbd79ba884752773c7fb8bb31a0)
+        ;
+
+        
+    
+    
+            var rectangle_8be6691e62c013ae5f0d0d28a2f8836e = L.rectangle(
+                [[-35.1170187, 150.6087813], [-35.08862630000001, 150.6437673]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_29361bca9df725cd0dc744f4b63eef22 = L.marker(
+                [-33.4111857, 149.578693],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_c66d0ecbee82dd484ab0ec2c739d97de = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_f45d5519f21bdc00ef13e4c1316483b1 = $(`<div id="html_f45d5519f21bdc00ef13e4c1316483b1" style="width: 100.0%; height: 100.0%;"><b>Bathurst</b><br> Total: 1281, <br>crime: 119</div>`)[0];
+                popup_c66d0ecbee82dd484ab0ec2c739d97de.setContent(html_f45d5519f21bdc00ef13e4c1316483b1);
+            
+        
+
+        marker_29361bca9df725cd0dc744f4b63eef22.bindPopup(popup_c66d0ecbee82dd484ab0ec2c739d97de)
+        ;
+
+        
+    
+    
+            var rectangle_511bbbbf65abcc4dc17586a86ab29d77 = L.rectangle(
+                [[-33.4342443, 149.5617719], [-33.403679, 149.5946655]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_7096b5e4937762a8252e429d32c905ef = L.marker(
+                [-33.8436563, 117.6385638],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_341dd7197f8cb8586bb77f9243ef5442 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_cc2654104b18b3a6641a1d669c3d24f6 = $(`<div id="html_cc2654104b18b3a6641a1d669c3d24f6" style="width: 100.0%; height: 100.0%;"><b>Broomehill Village</b><br> Total: 2248, <br>crime: 205</div>`)[0];
+                popup_341dd7197f8cb8586bb77f9243ef5442.setContent(html_cc2654104b18b3a6641a1d669c3d24f6);
+            
+        
+
+        marker_7096b5e4937762a8252e429d32c905ef.bindPopup(popup_341dd7197f8cb8586bb77f9243ef5442)
+        ;
+
+        
+    
+    
+            var rectangle_42c18c28b7f88701b8d2f4b7715e3602 = L.rectangle(
+                [[-33.8673486, 117.6213435], [-33.8317116, 117.6557871]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_8c9b6a7077f2938fdf122264b73efc07 = L.marker(
+                [-38.1668292, 144.5711203],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_3cf1b52aa297055f4f37ba9f30219749 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_fe165d38aaddefc120465f68247780cd = $(`<div id="html_fe165d38aaddefc120465f68247780cd" style="width: 100.0%; height: 100.0%;"><b>Drysdale - Clifton Springs</b><br> Total: 2829, <br>crime: 254</div>`)[0];
+                popup_3cf1b52aa297055f4f37ba9f30219749.setContent(html_fe165d38aaddefc120465f68247780cd);
+            
+        
+
+        marker_8c9b6a7077f2938fdf122264b73efc07.bindPopup(popup_3cf1b52aa297055f4f37ba9f30219749)
+        ;
+
+        
+    
+    
+            var rectangle_af99edc483a56d5d984268dd530fba84 = L.rectangle(
+                [[-38.1832901, 144.5489845], [-38.1391181, 144.5916367]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_f3000111c094ea3b922eec81a8fd13ab = L.marker(
+                [-26.6313202, 152.960382],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_2dd821cf719ecf309b2f52da2b6ff6da = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_338ce384a3228876639c34ccea702ee8 = $(`<div id="html_338ce384a3228876639c34ccea702ee8" style="width: 100.0%; height: 100.0%;"><b>Nambour</b><br> Total: 3809, <br>crime: 337</div>`)[0];
+                popup_2dd821cf719ecf309b2f52da2b6ff6da.setContent(html_338ce384a3228876639c34ccea702ee8);
+            
+        
+
+        marker_f3000111c094ea3b922eec81a8fd13ab.bindPopup(popup_2dd821cf719ecf309b2f52da2b6ff6da)
+        ;
+
+        
+    
+    
+            var rectangle_99bbef8a7e788d1eb108dd5b46acd75c = L.rectangle(
+                [[-26.64738, 152.9333397], [-26.607465, 152.9820202]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_442c258d4734a162e6b1c7e1082a9054 = L.marker(
+                [-34.9928932, 150.7217018],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_b935c2efbb1a632fa7e607f0db690861 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_0863380ada39293d042491910be844e2 = $(`<div id="html_0863380ada39293d042491910be844e2" style="width: 100.0%; height: 100.0%;"><b>Callala Bay</b><br> Total: 1350, <br>crime: 111</div>`)[0];
+                popup_b935c2efbb1a632fa7e607f0db690861.setContent(html_0863380ada39293d042491910be844e2);
+            
+        
+
+        marker_442c258d4734a162e6b1c7e1082a9054.bindPopup(popup_b935c2efbb1a632fa7e607f0db690861)
+        ;
+
+        
+    
+    
+            var rectangle_839d9a19955b1e511654b2cab11126df = L.rectangle(
+                [[-35.0104912, 150.7019152], [-34.9774743, 150.7391954]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_2ebe72d5ed8eb6ac75397cf29f78fb5c = L.marker(
+                [-37.4066923, 144.9798236],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_31078d5f8310b327414a5cb506def584 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_2fdd4538148675bac5465b89eb1d34a9 = $(`<div id="html_2fdd4538148675bac5465b89eb1d34a9" style="width: 100.0%; height: 100.0%;"><b>Wallan</b><br> Total: 1400, <br>crime: 113</div>`)[0];
+                popup_31078d5f8310b327414a5cb506def584.setContent(html_2fdd4538148675bac5465b89eb1d34a9);
+            
+        
+
+        marker_2ebe72d5ed8eb6ac75397cf29f78fb5c.bindPopup(popup_31078d5f8310b327414a5cb506def584)
+        ;
+
+        
+    
+    
+            var rectangle_cc8db216489173c584639f52a5a19ed1 = L.rectangle(
+                [[-37.4443285, 144.894989], [-37.3696931, 145.0270009]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_9a97fbb8f247e53f25e7663a74246720 = L.marker(
+                [-37.2836413, 142.931597],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_134af495e985d3e8dba7cafb65c35c5b = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_c769c4d8353af51780b8e77d48f068f6 = $(`<div id="html_c769c4d8353af51780b8e77d48f068f6" style="width: 100.0%; height: 100.0%;"><b>Ararat</b><br> Total: 1330, <br>crime: 103</div>`)[0];
+                popup_134af495e985d3e8dba7cafb65c35c5b.setContent(html_c769c4d8353af51780b8e77d48f068f6);
+            
+        
+
+        marker_9a97fbb8f247e53f25e7663a74246720.bindPopup(popup_134af495e985d3e8dba7cafb65c35c5b)
+        ;
+
+        
+    
+    
+            var rectangle_29ac040eebb68b5fa4e7a82df212a7ea = L.rectangle(
+                [[-37.3287989, 142.8784235], [-37.2029581, 143.081041]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_891f3af28403a014b25f5261edc7ee65 = L.marker(
+                [-38.2921758, 142.3673185],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_eb78ed448ed73bc8d275da37e4c00439 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_8efca0cb14c7e23eaf596ecc4ca0d077 = $(`<div id="html_8efca0cb14c7e23eaf596ecc4ca0d077" style="width: 100.0%; height: 100.0%;"><b>Koroit</b><br> Total: 1827, <br>crime: 141</div>`)[0];
+                popup_eb78ed448ed73bc8d275da37e4c00439.setContent(html_8efca0cb14c7e23eaf596ecc4ca0d077);
+            
+        
+
+        marker_891f3af28403a014b25f5261edc7ee65.bindPopup(popup_eb78ed448ed73bc8d275da37e4c00439)
+        ;
+
+        
+    
+    
+            var rectangle_5bc41341cee2f8b400810717d51502d1 = L.rectangle(
+                [[-38.3215699, 142.327979], [-38.23119579999999, 142.4157399]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_4ce1a1c719bd11987afbc5aee514512a = L.marker(
+                [-27.6314637, 152.3938748],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_0d6ff7cd2e145fa9078e79a77f71f272 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_d6e44284c9f53164555c00b40f3ad817 = $(`<div id="html_d6e44284c9f53164555c00b40f3ad817" style="width: 100.0%; height: 100.0%;"><b>Laidley</b><br> Total: 2253, <br>crime: 166</div>`)[0];
+                popup_0d6ff7cd2e145fa9078e79a77f71f272.setContent(html_d6e44284c9f53164555c00b40f3ad817);
+            
+        
+
+        marker_4ce1a1c719bd11987afbc5aee514512a.bindPopup(popup_0d6ff7cd2e145fa9078e79a77f71f272)
+        ;
+
+        
+    
+    
+            var rectangle_d6539d8fb23b1ef590670435d2eecc8d = L.rectangle(
+                [[-27.6604911, 152.3811691], [-27.6190529, 152.4426177]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_ddbef739fbab334b52e5e632d88a7284 = L.marker(
+                [-43.1553931, 147.0739253],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_6815fbf0851686e56866627797d3b0b4 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_f1533765789abf60a4b1ae7ba19764d0 = $(`<div id="html_f1533765789abf60a4b1ae7ba19764d0" style="width: 100.0%; height: 100.0%;"><b>Cygnet</b><br> Total: 1470, <br>crime: 99</div>`)[0];
+                popup_6815fbf0851686e56866627797d3b0b4.setContent(html_f1533765789abf60a4b1ae7ba19764d0);
+            
+        
+
+        marker_ddbef739fbab334b52e5e632d88a7284.bindPopup(popup_6815fbf0851686e56866627797d3b0b4)
+        ;
+
+        
+    
+    
+            var rectangle_68b1b623ae3a7b05d0afcc29fa9b6f6e = L.rectangle(
+                [[-43.1820321, 147.0322882], [-43.0862732, 147.1412522]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_b0592a7f905019366161f5ccafa67c4e = L.marker(
+                [-31.632568, 152.7067105],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_4c0fc1573aa6e5bfeb75c98b8303fe23 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_002970596811e7cabe1ee6ccf5e1e528 = $(`<div id="html_002970596811e7cabe1ee6ccf5e1e528" style="width: 100.0%; height: 100.0%;"><b>Kendall</b><br> Total: 1043, <br>crime: 70</div>`)[0];
+                popup_4c0fc1573aa6e5bfeb75c98b8303fe23.setContent(html_002970596811e7cabe1ee6ccf5e1e528);
+            
+        
+
+        marker_b0592a7f905019366161f5ccafa67c4e.bindPopup(popup_4c0fc1573aa6e5bfeb75c98b8303fe23)
+        ;
+
+        
+    
+    
+            var rectangle_75f21c57baf8bf1fe289791bf687271f = L.rectangle(
+                [[-31.6524392, 152.6544288], [-31.6136428, 152.7253701]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_4105f3f1b7c65bc826a89adae49b2f9d = L.marker(
+                [-33.6516465, 115.3473335],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_f2f9ccb96c5405fe92ad1e203e3607cb = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_72b96ed99df926cd8d27c5bc0a98ff99 = $(`<div id="html_72b96ed99df926cd8d27c5bc0a98ff99" style="width: 100.0%; height: 100.0%;"><b>Busselton</b><br> Total: 3089, <br>crime: 203</div>`)[0];
+                popup_f2f9ccb96c5405fe92ad1e203e3607cb.setContent(html_72b96ed99df926cd8d27c5bc0a98ff99);
+            
+        
+
+        marker_4105f3f1b7c65bc826a89adae49b2f9d.bindPopup(popup_f2f9ccb96c5405fe92ad1e203e3607cb)
+        ;
+
+        
+    
+    
+            var rectangle_9b06a768c71230dc01c6932969fd2f03 = L.rectangle(
+                [[-33.6711853, 115.3402448], [-33.6414003, 115.3588577]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_10a292bc5161f90ede8d3f55e706ab34 = L.marker(
+                [-23.4394617, 150.4579791],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_fa5e8a69d625c87770c3d8af4801150d = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_abf79f1187afb4410b2145c4f9f62243 = $(`<div id="html_abf79f1187afb4410b2145c4f9f62243" style="width: 100.0%; height: 100.0%;"><b>Gracemere</b><br> Total: 965, <br>crime: 62</div>`)[0];
+                popup_fa5e8a69d625c87770c3d8af4801150d.setContent(html_abf79f1187afb4410b2145c4f9f62243);
+            
+        
+
+        marker_10a292bc5161f90ede8d3f55e706ab34.bindPopup(popup_fa5e8a69d625c87770c3d8af4801150d)
+        ;
+
+        
+    
+    
+            var rectangle_f9728eb5cfddd78b5d7f7d580bad7b7b = L.rectangle(
+                [[-23.5102688, 150.3997808], [-23.4047932, 150.5146136]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_143f34c8229fd2bcd30adf80ac2550e1 = L.marker(
+                [-31.4580174, 152.8974657],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_6f2eda0200f243a90da588e59e36bc9f = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_1156982ff128f79729964e964469216d = $(`<div id="html_1156982ff128f79729964e964469216d" style="width: 100.0%; height: 100.0%;"><b>Port Macquarie</b><br> Total: 3848, <br>crime: 245</div>`)[0];
+                popup_6f2eda0200f243a90da588e59e36bc9f.setContent(html_1156982ff128f79729964e964469216d);
+            
+        
+
+        marker_143f34c8229fd2bcd30adf80ac2550e1.bindPopup(popup_6f2eda0200f243a90da588e59e36bc9f)
+        ;
+
+        
+    
+    
+            var rectangle_6b395bb4ad9f3686441b5ead8289b337 = L.rectangle(
+                [[-31.51714969999999, 152.8480188], [-31.4052558, 152.9383796]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_99ec08f3bbda8c897a4dadb563c7719b = L.marker(
+                [-36.0260723, 146.0003241],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_855cfc3363bfb8fc5ed081279f503d3c = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_f29d8925dde09626077d3009cabadf54 = $(`<div id="html_f29d8925dde09626077d3009cabadf54" style="width: 100.0%; height: 100.0%;"><b>Yarrawonga</b><br> Total: 1638, <br>crime: 103</div>`)[0];
+                popup_855cfc3363bfb8fc5ed081279f503d3c.setContent(html_f29d8925dde09626077d3009cabadf54);
+            
+        
+
+        marker_99ec08f3bbda8c897a4dadb563c7719b.bindPopup(popup_855cfc3363bfb8fc5ed081279f503d3c)
+        ;
+
+        
+    
+    
+            var rectangle_a50521fdbb57f1e10322953f25a262b1 = L.rectangle(
+                [[-36.0699859, 145.9310069], [-35.9918062, 146.08492]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_bcffbab05f6166d878aae86b442ef596 = L.marker(
+                [-23.3574915, 119.7303373],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_e77b08918628228ee49ff16c761192e7 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_28627fbcede0910d713ddb05af36f126 = $(`<div id="html_28627fbcede0910d713ddb05af36f126" style="width: 100.0%; height: 100.0%;"><b>Newman</b><br> Total: 1115, <br>crime: 70</div>`)[0];
+                popup_e77b08918628228ee49ff16c761192e7.setContent(html_28627fbcede0910d713ddb05af36f126);
+            
+        
+
+        marker_bcffbab05f6166d878aae86b442ef596.bindPopup(popup_e77b08918628228ee49ff16c761192e7)
+        ;
+
+        
+    
+    
+            var rectangle_926061c171c6b47273c43c9198ebce91 = L.rectangle(
+                [[-23.7280389, 118.4260412], [-22.3201839, 121.3020089]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_7b0aed2913f9625c80cd259a13db7c34 = L.marker(
+                [-36.1404431, 144.7511231],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_b12917594bd24a68f7f81fd0b045887b = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_f122241a0ccda6290faa22e17bf5056d = $(`<div id="html_f122241a0ccda6290faa22e17bf5056d" style="width: 100.0%; height: 100.0%;"><b>Echuca</b><br> Total: 1366, <br>crime: 83</div>`)[0];
+                popup_b12917594bd24a68f7f81fd0b045887b.setContent(html_f122241a0ccda6290faa22e17bf5056d);
+            
+        
+
+        marker_7b0aed2913f9625c80cd259a13db7c34.bindPopup(popup_b12917594bd24a68f7f81fd0b045887b)
+        ;
+
+        
+    
+    
+            var rectangle_61561ca48aa74fb75bae68725ca4b164 = L.rectangle(
+                [[-36.2487, 144.6733514], [-36.0611712, 144.850235]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_8d15bab1c9af8783c1cb18f5781520d5 = L.marker(
+                [-31.09003839999999, 150.9293323],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_772ade059dd64b21c18b07ee953eca40 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_1bb3a82f7822657eb012b4ea5645d389 = $(`<div id="html_1bb3a82f7822657eb012b4ea5645d389" style="width: 100.0%; height: 100.0%;"><b>Tamworth</b><br> Total: 1867, <br>crime: 113</div>`)[0];
+                popup_772ade059dd64b21c18b07ee953eca40.setContent(html_1bb3a82f7822657eb012b4ea5645d389);
+            
+        
+
+        marker_8d15bab1c9af8783c1cb18f5781520d5.bindPopup(popup_772ade059dd64b21c18b07ee953eca40)
+        ;
+
+        
+    
+    
+            var rectangle_a96584e855eeb130bcf49fe619d812b7 = L.rectangle(
+                [[-31.1019375, 150.9233156], [-31.0840195, 150.9413162]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_37cd2d511628c5d0edd69cbc505dc087 = L.marker(
+                [-38.0601124, 145.4100456],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_79d813bc661fa86db9bc73f8d72c045b = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_2ac6c7d9ef3a8eb0615e6c416fac3968 = $(`<div id="html_2ac6c7d9ef3a8eb0615e6c416fac3968" style="width: 100.0%; height: 100.0%;"><b>Officer</b><br> Total: 1352, <br>crime: 78</div>`)[0];
+                popup_79d813bc661fa86db9bc73f8d72c045b.setContent(html_2ac6c7d9ef3a8eb0615e6c416fac3968);
+            
+        
+
+        marker_37cd2d511628c5d0edd69cbc505dc087.bindPopup(popup_79d813bc661fa86db9bc73f8d72c045b)
+        ;
+
+        
+    
+    
+            var rectangle_b6ac4326606edacde0cb44c527557759 = L.rectangle(
+                [[-38.083263, 145.3759315], [-38.0132859, 145.4416001]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_6205d2113775b2fdf3939ea915a7bded = L.marker(
+                [-28.80943079999999, 153.287891],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_9147091a601f64c79579c3d79f819d86 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_2201c943cba658ab3d70163321a00a93 = $(`<div id="html_2201c943cba658ab3d70163321a00a93" style="width: 100.0%; height: 100.0%;"><b>Lismore</b><br> Total: 1601, <br>crime: 90</div>`)[0];
+                popup_9147091a601f64c79579c3d79f819d86.setContent(html_2201c943cba658ab3d70163321a00a93);
+            
+        
+
+        marker_6205d2113775b2fdf3939ea915a7bded.bindPopup(popup_9147091a601f64c79579c3d79f819d86)
+        ;
+
+        
+    
+    
+            var rectangle_ba5ea47feec8fec14eb10baf4fe86ca5 = L.rectangle(
+                [[-28.8172458, 153.2692859], [-28.796202, 153.3066794]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_521a4a208616dc252fb9a22741eaefd5 = L.marker(
+                [-30.642358, 151.4990908],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_3ee871edf09df131b21c7f2de867addf = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_ac46e7e5c0762eff494658312678bd84 = $(`<div id="html_ac46e7e5c0762eff494658312678bd84" style="width: 100.0%; height: 100.0%;"><b>Uralla</b><br> Total: 1960, <br>crime: 110</div>`)[0];
+                popup_3ee871edf09df131b21c7f2de867addf.setContent(html_ac46e7e5c0762eff494658312678bd84);
+            
+        
+
+        marker_521a4a208616dc252fb9a22741eaefd5.bindPopup(popup_3ee871edf09df131b21c7f2de867addf)
+        ;
+
+        
+    
+    
+            var rectangle_025efba2da9cee43dddb8575883a15f7 = L.rectangle(
+                [[-30.7477612, 151.3948993], [-30.58546219999999, 151.642677]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_9d92d8c60e435814c260d6560450bb91 = L.marker(
+                [-34.59720739999999, 138.7490985],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_cd78ba7c3b5400a03a2053aca4df33d9 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_12abd17b595899afaae82520a034a25f = $(`<div id="html_12abd17b595899afaae82520a034a25f" style="width: 100.0%; height: 100.0%;"><b>Gawler</b><br> Total: 1879, <br>crime: 105</div>`)[0];
+                popup_cd78ba7c3b5400a03a2053aca4df33d9.setContent(html_12abd17b595899afaae82520a034a25f);
+            
+        
+
+        marker_9d92d8c60e435814c260d6560450bb91.bindPopup(popup_cd78ba7c3b5400a03a2053aca4df33d9)
+        ;
+
+        
+    
+    
+            var rectangle_2e89ea627c68fe47895c6340ff6c810b = L.rectangle(
+                [[-34.6067523, 138.7368619], [-34.5903994, 138.7506818]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_ca5808b043d26caf53be2145ea9d8fc0 = L.marker(
+                [-37.6835831, 144.5779508],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_8ffe434ad9d4c2c2efe6e7b38717ba11 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_801623f473ad12720ae4848357303bb5 = $(`<div id="html_801623f473ad12720ae4848357303bb5" style="width: 100.0%; height: 100.0%;"><b>Melton</b><br> Total: 3493, <br>crime: 195</div>`)[0];
+                popup_8ffe434ad9d4c2c2efe6e7b38717ba11.setContent(html_801623f473ad12720ae4848357303bb5);
+            
+        
+
+        marker_ca5808b043d26caf53be2145ea9d8fc0.bindPopup(popup_8ffe434ad9d4c2c2efe6e7b38717ba11)
+        ;
+
+        
+    
+    
+            var rectangle_ac94bd5938d267310f283393960bcf45 = L.rectangle(
+                [[-37.7201984, 144.5120679], [-37.635262, 144.6156036]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_d44f6749ab5cfdd68876602c82bff7c5 = L.marker(
+                [-35.9987227, 146.3911991],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_5b62b59ccc6303ae0af32f82ea5d52b0 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_5a840ddf3bd40075698b4e69b132655d = $(`<div id="html_5a840ddf3bd40075698b4e69b132655d" style="width: 100.0%; height: 100.0%;"><b>Corowa</b><br> Total: 1194, <br>crime: 66</div>`)[0];
+                popup_5b62b59ccc6303ae0af32f82ea5d52b0.setContent(html_5a840ddf3bd40075698b4e69b132655d);
+            
+        
+
+        marker_d44f6749ab5cfdd68876602c82bff7c5.bindPopup(popup_5b62b59ccc6303ae0af32f82ea5d52b0)
+        ;
+
+        
+    
+    
+            var rectangle_ecc0bce4f8cff1397b968c21fb21f46c = L.rectangle(
+                [[-36.0510475, 146.300906], [-35.9356851, 146.4248141]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_51b51dddaab577c2ef6f454f4c8919df = L.marker(
+                [-21.1433971, 149.1868281],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_88a9df9b02d02576c6799b20deb71e1b = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_4b089055b8de2feb81ef4d703c5601b3 = $(`<div id="html_4b089055b8de2feb81ef4d703c5601b3" style="width: 100.0%; height: 100.0%;"><b>Mackay</b><br> Total: 4670, <br>crime: 257</div>`)[0];
+                popup_88a9df9b02d02576c6799b20deb71e1b.setContent(html_4b089055b8de2feb81ef4d703c5601b3);
+            
+        
+
+        marker_51b51dddaab577c2ef6f454f4c8919df.bindPopup(popup_88a9df9b02d02576c6799b20deb71e1b)
+        ;
+
+        
+    
+    
+            var rectangle_9c4cd656f36fb0427b5301dbe3feec80 = L.rectangle(
+                [[-21.152353, 149.1659516], [-21.1330522, 149.1989214]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_f4b87ec5aaf3440a33fc891a6f97e43b = L.marker(
+                [-33.8688197, 151.2092955],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_d4a55a28bc178bce29268568ac8e6b68 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_50d69d58d51f4270fe15ada83285b553 = $(`<div id="html_50d69d58d51f4270fe15ada83285b553" style="width: 100.0%; height: 100.0%;"><b>Sydney</b><br> Total: 527445, <br>crime: 28566</div>`)[0];
+                popup_d4a55a28bc178bce29268568ac8e6b68.setContent(html_50d69d58d51f4270fe15ada83285b553);
+            
+        
+
+        marker_f4b87ec5aaf3440a33fc891a6f97e43b.bindPopup(popup_d4a55a28bc178bce29268568ac8e6b68)
+        ;
+
+        
+    
+    
+            var rectangle_8ec55d4a74cb91bf2389c4a0056a4527 = L.rectangle(
+                [[-34.118347, 150.5209286], [-33.5781409, 151.3430209]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_fb462a5760274070cc6afdc37c0ab41a = L.marker(
+                [-34.2068859, 142.1366852],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_d14b5dc5b54fbd39459a536f58067577 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_fa44ad52dc623a7db66e77b264948597 = $(`<div id="html_fa44ad52dc623a7db66e77b264948597" style="width: 100.0%; height: 100.0%;"><b>Mildura</b><br> Total: 1289, <br>crime: 69</div>`)[0];
+                popup_d14b5dc5b54fbd39459a536f58067577.setContent(html_fa44ad52dc623a7db66e77b264948597);
+            
+        
+
+        marker_fb462a5760274070cc6afdc37c0ab41a.bindPopup(popup_d14b5dc5b54fbd39459a536f58067577)
+        ;
+
+        
+    
+    
+            var rectangle_c821c7769ba65b767a5303b4337aec57 = L.rectangle(
+                [[-34.27277, 142.063238], [-34.1487119, 142.2039704]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_0ee9ef5e7d12b28d717f6942ba08a81d = L.marker(
+                [-27.4704528, 153.0260341],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_e8019c5790f8970f2eef605dc85a1006 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_792ed78f46d57476aaf073faa0a6ec88 = $(`<div id="html_792ed78f46d57476aaf073faa0a6ec88" style="width: 100.0%; height: 100.0%;"><b>Brisbane</b><br> Total: 229878, <br>crime: 12280</div>`)[0];
+                popup_e8019c5790f8970f2eef605dc85a1006.setContent(html_792ed78f46d57476aaf073faa0a6ec88);
+            
+        
+
+        marker_0ee9ef5e7d12b28d717f6942ba08a81d.bindPopup(popup_e8019c5790f8970f2eef605dc85a1006)
+        ;
+
+        
+    
+    
+            var rectangle_aded4b1b7b7d64d6f2535ad6eb9e86a0 = L.rectangle(
+                [[-27.7674409, 152.6685227], [-26.9968449, 153.3178702]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_c7e1ddbcb22db64d0d524315af5940c1 = L.marker(
+                [-38.5368534, 143.9738066],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_3a181eddcd0fe3d065e455ac7b081e31 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_83fe24e1cb93ddd00acafbd75c36a7d8 = $(`<div id="html_83fe24e1cb93ddd00acafbd75c36a7d8" style="width: 100.0%; height: 100.0%;"><b>Lorne</b><br> Total: 973, <br>crime: 51</div>`)[0];
+                popup_3a181eddcd0fe3d065e455ac7b081e31.setContent(html_83fe24e1cb93ddd00acafbd75c36a7d8);
+            
+        
+
+        marker_c7e1ddbcb22db64d0d524315af5940c1.bindPopup(popup_3a181eddcd0fe3d065e455ac7b081e31)
+        ;
+
+        
+    
+    
+            var rectangle_5bf321d51cfe3bf4ff1a51022a4b0731 = L.rectangle(
+                [[-38.5794179, 143.8245329], [-38.4671461, 144.0122221]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_e03798004a52fc77e63d008aacc63bfc = L.marker(
+                [-42.8826055, 147.3257196],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_698466a4545a61031fa7fb021e356236 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_c53d139f49b0cc607b5c1336cec3af01 = $(`<div id="html_c53d139f49b0cc607b5c1336cec3af01" style="width: 100.0%; height: 100.0%;"><b>Hobart</b><br> Total: 26438, <br>crime: 1383</div>`)[0];
+                popup_698466a4545a61031fa7fb021e356236.setContent(html_c53d139f49b0cc607b5c1336cec3af01);
+            
+        
+
+        marker_e03798004a52fc77e63d008aacc63bfc.bindPopup(popup_698466a4545a61031fa7fb021e356236)
+        ;
+
+        
+    
+    
+            var rectangle_3e43ffaa09df80102b3ebea08d525de1 = L.rectangle(
+                [[-42.8916347, 147.31561], [-42.8730457, 147.3415027]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_f4bea05c3f66033593ecdf5fc04edaf5 = L.marker(
+                [-41.439068, 147.1357671],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_70b8414948d297e3ce0fa633dc7fda5b = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_aec10e3f144f1c2c5888d394909a9617 = $(`<div id="html_aec10e3f144f1c2c5888d394909a9617" style="width: 100.0%; height: 100.0%;"><b>Launceston</b><br> Total: 7992, <br>crime: 417</div>`)[0];
+                popup_70b8414948d297e3ce0fa633dc7fda5b.setContent(html_aec10e3f144f1c2c5888d394909a9617);
+            
+        
+
+        marker_f4bea05c3f66033593ecdf5fc04edaf5.bindPopup(popup_70b8414948d297e3ce0fa633dc7fda5b)
+        ;
+
+        
+    
+    
+            var rectangle_6e3179d037b6a2c6afafa442735fdedc = L.rectangle(
+                [[-41.4504339, 147.1269873], [-41.4163322, 147.1607862]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_9b68d7289ed8c1d17e001e4b911ea0a5 = L.marker(
+                [-12.4637333, 130.8444446],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_e616d15991e86b33ef71eb31c6cf955a = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_55c5b78d391653fd550ba1fb6d06c03d = $(`<div id="html_55c5b78d391653fd550ba1fb6d06c03d" style="width: 100.0%; height: 100.0%;"><b>Darwin</b><br> Total: 14802, <br>crime: 770</div>`)[0];
+                popup_e616d15991e86b33ef71eb31c6cf955a.setContent(html_55c5b78d391653fd550ba1fb6d06c03d);
+            
+        
+
+        marker_9b68d7289ed8c1d17e001e4b911ea0a5.bindPopup(popup_e616d15991e86b33ef71eb31c6cf955a)
+        ;
+
+        
+    
+    
+            var rectangle_bd1eecf299db25961d024457b5177b2a = L.rectangle(
+                [[-12.5217415, 130.8151169], [-12.3300597, 131.0514999]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_0b2ef4e62ee2d0687ac0d28291d5ac25 = L.marker(
+                [-31.9523123, 115.861309],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_ca8b0d67347079bfe42be796db7a76c0 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_47d4c5ad6f0687f8147f260ee87e968d = $(`<div id="html_47d4c5ad6f0687f8147f260ee87e968d" style="width: 100.0%; height: 100.0%;"><b>Perth</b><br> Total: 159723, <br>crime: 8298</div>`)[0];
+                popup_ca8b0d67347079bfe42be796db7a76c0.setContent(html_47d4c5ad6f0687f8147f260ee87e968d);
+            
+        
+
+        marker_0b2ef4e62ee2d0687ac0d28291d5ac25.bindPopup(popup_ca8b0d67347079bfe42be796db7a76c0)
+        ;
+
+        
+    
+    
+            var rectangle_ef9e12f0c062b75e998cd2748d48b92a = L.rectangle(
+                [[-32.4556424, 115.6840483], [-31.6244855, 116.239023]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_8486096f7b05b88391d368567940ce4b = L.marker(
+                [-35.2801903, 149.1310038],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_ec692e7edbf11d3c6e8a87afd71b233b = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_5d4c1c1c002d3fa4a443e26adebc9119 = $(`<div id="html_5d4c1c1c002d3fa4a443e26adebc9119" style="width: 100.0%; height: 100.0%;"><b>Canberra</b><br> Total: 50509, <br>crime: 2572</div>`)[0];
+                popup_ec692e7edbf11d3c6e8a87afd71b233b.setContent(html_5d4c1c1c002d3fa4a443e26adebc9119);
+            
+        
+
+        marker_8486096f7b05b88391d368567940ce4b.bindPopup(popup_ec692e7edbf11d3c6e8a87afd71b233b)
+        ;
+
+        
+    
+    
+            var rectangle_9d2d2a3f6552b4fe80ae35b45a36f824 = L.rectangle(
+                [[-35.2873252, 149.1207312], [-35.2752841, 149.1376675]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_e608d5e4f89f5a3cf6fe3d536f6f5dc8 = L.marker(
+                [-26.1836445, 152.6623743],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_70fba0786af9420258a9a69b46d0ac9e = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_c0dd627087d0394ad2f2060c42c055db = $(`<div id="html_c0dd627087d0394ad2f2060c42c055db" style="width: 100.0%; height: 100.0%;"><b>Gympie</b><br> Total: 2043, <br>crime: 103</div>`)[0];
+                popup_70fba0786af9420258a9a69b46d0ac9e.setContent(html_c0dd627087d0394ad2f2060c42c055db);
+            
+        
+
+        marker_e608d5e4f89f5a3cf6fe3d536f6f5dc8.bindPopup(popup_70fba0786af9420258a9a69b46d0ac9e)
+        ;
+
+        
+    
+    
+            var rectangle_ebeae6fde9d64f9d0238632f052cceb7 = L.rectangle(
+                [[-26.2074334, 152.6355975], [-26.159559, 152.6922528]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_6c1551737bdf78ee7cbd9e4eeb52e589 = L.marker(
+                [-30.2962013, 153.1138924],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_396061916c54e7386152900be8ad4717 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_1a6d08b8a775b6b6edcb83dea49c8dd0 = $(`<div id="html_1a6d08b8a775b6b6edcb83dea49c8dd0" style="width: 100.0%; height: 100.0%;"><b>Coffs Harbour</b><br> Total: 2892, <br>crime: 145</div>`)[0];
+                popup_396061916c54e7386152900be8ad4717.setContent(html_1a6d08b8a775b6b6edcb83dea49c8dd0);
+            
+        
+
+        marker_6c1551737bdf78ee7cbd9e4eeb52e589.bindPopup(popup_396061916c54e7386152900be8ad4717)
+        ;
+
+        
+    
+    
+            var rectangle_b6f1ee548508cad28c7263a395017880 = L.rectangle(
+                [[-30.3551634, 153.0598654], [-30.2616056, 153.1548407]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_187b26484de3fc5ee97dec2a67122212 = L.marker(
+                [-38.0776708, 145.4818724],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_d418b67f4bcca8a7604a40d3676fa750 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_a1f08f9d3ef87ba2de9a92c24cd7583c = $(`<div id="html_a1f08f9d3ef87ba2de9a92c24cd7583c" style="width: 100.0%; height: 100.0%;"><b>Pakenham</b><br> Total: 1876, <br>crime: 94</div>`)[0];
+                popup_d418b67f4bcca8a7604a40d3676fa750.setContent(html_a1f08f9d3ef87ba2de9a92c24cd7583c);
+            
+        
+
+        marker_187b26484de3fc5ee97dec2a67122212.bindPopup(popup_d418b67f4bcca8a7604a40d3676fa750)
+        ;
+
+        
+    
+    
+            var rectangle_e2fb07336533e096b12d16a2a1049991 = L.rectangle(
+                [[-38.1268599, 145.430803], [-38.0152569, 145.5447931]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_8976baa5b8393d7f17e305f1d5cda080 = L.marker(
+                [-37.5787769, 144.7116286],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_0796f202d36b08b552039e50a34da922 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_643f1c7de7694af917fda81ee2a5894a = $(`<div id="html_643f1c7de7694af917fda81ee2a5894a" style="width: 100.0%; height: 100.0%;"><b>Sunbury</b><br> Total: 2919, <br>crime: 145</div>`)[0];
+                popup_0796f202d36b08b552039e50a34da922.setContent(html_643f1c7de7694af917fda81ee2a5894a);
+            
+        
+
+        marker_8976baa5b8393d7f17e305f1d5cda080.bindPopup(popup_0796f202d36b08b552039e50a34da922)
+        ;
+
+        
+    
+    
+            var rectangle_fc73d01064328f8819720cd069ce6eeb = L.rectangle(
+                [[-37.6248259, 144.6324815], [-37.4819578, 144.780498]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_31ce0afd5445e0e033d2cb589d00a1ae = L.marker(
+                [-38.3720954, 142.4777782],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_2f56074a4648a738a438f23349b52cf2 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_291c39f567ec5fa0a6cb6ca123073356 = $(`<div id="html_291c39f567ec5fa0a6cb6ca123073356" style="width: 100.0%; height: 100.0%;"><b>Warrnambool</b><br> Total: 3104, <br>crime: 154</div>`)[0];
+                popup_2f56074a4648a738a438f23349b52cf2.setContent(html_291c39f567ec5fa0a6cb6ca123073356);
+            
+        
+
+        marker_31ce0afd5445e0e033d2cb589d00a1ae.bindPopup(popup_2f56074a4648a738a438f23349b52cf2)
+        ;
+
+        
+    
+    
+            var rectangle_87ecccf9770041aec43cfe91b45869cc = L.rectangle(
+                [[-38.4131665, 142.4362841], [-38.326496, 142.557256]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_5c0432d7fbb6eec802d5831fcaa4b72d = L.marker(
+                [-23.698042, 133.8807471],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_f5343f3f0779db79936ebf3576f18c38 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_5a6573915155f0ff754153f93de535bf = $(`<div id="html_5a6573915155f0ff754153f93de535bf" style="width: 100.0%; height: 100.0%;"><b>Alice Springs</b><br> Total: 2492, <br>crime: 123</div>`)[0];
+                popup_f5343f3f0779db79936ebf3576f18c38.setContent(html_5a6573915155f0ff754153f93de535bf);
+            
+        
+
+        marker_5c0432d7fbb6eec802d5831fcaa4b72d.bindPopup(popup_f5343f3f0779db79936ebf3576f18c38)
+        ;
+
+        
+    
+    
+            var rectangle_1189218dd0510cd2d20bf7b836ca6eac = L.rectangle(
+                [[-23.7070929, 133.874263], [-23.691614, 133.8859969]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_691f72f40eb034e42273e57a9a60de03 = L.marker(
+                [-37.8136276, 144.9630576],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_489b019760dfd9f3a81a012d5ff5d30b = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_1c71904f080097c7619c2edd8200d78c = $(`<div id="html_1c71904f080097c7619c2edd8200d78c" style="width: 100.0%; height: 100.0%;"><b>Melbourne</b><br> Total: 563656, <br>crime: 27816</div>`)[0];
+                popup_489b019760dfd9f3a81a012d5ff5d30b.setContent(html_1c71904f080097c7619c2edd8200d78c);
+            
+        
+
+        marker_691f72f40eb034e42273e57a9a60de03.bindPopup(popup_489b019760dfd9f3a81a012d5ff5d30b)
+        ;
+
+        
+    
+    
+            var rectangle_63655298db03ca277195d631cccf1681 = L.rectangle(
+                [[-38.4338593, 144.5937418], [-37.5112737, 145.5125288]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_64a149a07d4eef2b546efe2a528cd1bb = L.marker(
+                [-42.781144, 147.0622665],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_f69ae3d39757af3547e5051f5c746775 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_edfd35a8d3f82fac707d96a3fe167b73 = $(`<div id="html_edfd35a8d3f82fac707d96a3fe167b73" style="width: 100.0%; height: 100.0%;"><b>New Norfolk</b><br> Total: 3487, <br>crime: 169</div>`)[0];
+                popup_f69ae3d39757af3547e5051f5c746775.setContent(html_edfd35a8d3f82fac707d96a3fe167b73);
+            
+        
+
+        marker_64a149a07d4eef2b546efe2a528cd1bb.bindPopup(popup_f69ae3d39757af3547e5051f5c746775)
+        ;
+
+        
+    
+    
+            var rectangle_951cdd9c497ae06daf9500a1cf68acca = L.rectangle(
+                [[-42.8056164, 147.0196947], [-42.7585761, 147.0920987]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_ea03b1a3e0d0da85cecc59c088b95882 = L.marker(
+                [-32.7573408, 151.748173],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_76c7f5fd965e92070c4cc8b5fb172755 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_e901f86488bdb4eb0d03d3b8a3ce0b35 = $(`<div id="html_e901f86488bdb4eb0d03d3b8a3ce0b35" style="width: 100.0%; height: 100.0%;"><b>Raymond Terrace</b><br> Total: 2199, <br>crime: 105</div>`)[0];
+                popup_76c7f5fd965e92070c4cc8b5fb172755.setContent(html_e901f86488bdb4eb0d03d3b8a3ce0b35);
+            
+        
+
+        marker_ea03b1a3e0d0da85cecc59c088b95882.bindPopup(popup_76c7f5fd965e92070c4cc8b5fb172755)
+        ;
+
+        
+    
+    
+            var rectangle_0bece5930d9ef19f5283bf273f8db35f = L.rectangle(
+                [[-32.8035307, 151.724352], [-32.7071326, 151.8098651]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_19e5ad09aa3ed1eb409cd31a1315e093 = L.marker(
+                [-36.3855842, 145.4139392],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_7618e637a494726c6df80750aa10b2c3 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_07556abc06c8ceb159df4ceb01f33d65 = $(`<div id="html_07556abc06c8ceb159df4ceb01f33d65" style="width: 100.0%; height: 100.0%;"><b>Shepparton - Mooroopna</b><br> Total: 1406, <br>crime: 67</div>`)[0];
+                popup_7618e637a494726c6df80750aa10b2c3.setContent(html_07556abc06c8ceb159df4ceb01f33d65);
+            
+        
+
+        marker_19e5ad09aa3ed1eb409cd31a1315e093.bindPopup(popup_7618e637a494726c6df80750aa10b2c3)
+        ;
+
+        
+    
+    
+            var rectangle_fd12fdc4762c5aaa879ee8914802b821 = L.rectangle(
+                [[-36.4570137, 145.3385366], [-36.3452964, 145.461961]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_f0b3dd727f4fda7ffd5673a5b7440d74 = L.marker(
+                [-28.1786656, 153.5370011],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_0c2a7b03195e133160c73dab1eba5a2d = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_e892565476dae23d825aba54972f3b73 = $(`<div id="html_e892565476dae23d825aba54972f3b73" style="width: 100.0%; height: 100.0%;"><b>Tweed Heads</b><br> Total: 2880, <br>crime: 137</div>`)[0];
+                popup_0c2a7b03195e133160c73dab1eba5a2d.setContent(html_e892565476dae23d825aba54972f3b73);
+            
+        
+
+        marker_f0b3dd727f4fda7ffd5673a5b7440d74.bindPopup(popup_0c2a7b03195e133160c73dab1eba5a2d)
+        ;
+
+        
+    
+    
+            var rectangle_afe2eabe458746a047796b0c8e520f5f = L.rectangle(
+                [[-28.3440154, 153.46348], [-28.1633067, 153.586296]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_f10d913054c805e650de1e8e47283682 = L.marker(
+                [-38.1492994, 144.3598426],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_3d9a02d175fbdac6826dcd00274926f5 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_f12bc4af5ee0e9c776337da65cd526c0 = $(`<div id="html_f12bc4af5ee0e9c776337da65cd526c0" style="width: 100.0%; height: 100.0%;"><b>Geelong</b><br> Total: 19716, <br>crime: 927</div>`)[0];
+                popup_3d9a02d175fbdac6826dcd00274926f5.setContent(html_f12bc4af5ee0e9c776337da65cd526c0);
+            
+        
+
+        marker_f10d913054c805e650de1e8e47283682.bindPopup(popup_3d9a02d175fbdac6826dcd00274926f5)
+        ;
+
+        
+    
+    
+            var rectangle_93fcfcbcc95a864af06169b9104db8ca = L.rectangle(
+                [[-38.164011, 144.3508809], [-38.132269, 144.374881]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_9b14946ed59786043e5de56162ea06aa = L.marker(
+                [-30.5035714, 151.6523371],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_fea56a2218357b280763e8be348a0153 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_fa5d98eeb69af0f29494390f73ee43a1 = $(`<div id="html_fa5d98eeb69af0f29494390f73ee43a1" style="width: 100.0%; height: 100.0%;"><b>Armidale</b><br> Total: 1171, <br>crime: 55</div>`)[0];
+                popup_fea56a2218357b280763e8be348a0153.setContent(html_fa5d98eeb69af0f29494390f73ee43a1);
+            
+        
+
+        marker_9b14946ed59786043e5de56162ea06aa.bindPopup(popup_fea56a2218357b280763e8be348a0153)
+        ;
+
+        
+    
+    
+            var rectangle_e6af1921c384c66b124ec1e65c1e2b15 = L.rectangle(
+                [[-30.5839537, 151.5591875], [-30.4171977, 151.7756108]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_ad437b06012f1dec05504507acafcfb0 = L.marker(
+                [-35.3402728, 143.5441334],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_9fd0b1e88efc9fcd6bfe5dc68b1184ca = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_c10a948f73bd411c3f361b1c728ffb06 = $(`<div id="html_c10a948f73bd411c3f361b1c728ffb06" style="width: 100.0%; height: 100.0%;"><b>Swan Hill</b><br> Total: 1312, <br>crime: 61</div>`)[0];
+                popup_9fd0b1e88efc9fcd6bfe5dc68b1184ca.setContent(html_c10a948f73bd411c3f361b1c728ffb06);
+            
+        
+
+        marker_ad437b06012f1dec05504507acafcfb0.bindPopup(popup_9fd0b1e88efc9fcd6bfe5dc68b1184ca)
+        ;
+
+        
+    
+    
+            var rectangle_4631e649779d7b35a8059a8ffd6d6c28 = L.rectangle(
+                [[-35.429176, 143.4540549], [-35.2950695, 143.5928011]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_7af3744d6b6296128a520b55a6a579f0 = L.marker(
+                [-16.5180925, 145.4660536],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_c5e9b572c707b6e26596516c73ceece7 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_421273796d67f3126a12c9b208e50583 = $(`<div id="html_421273796d67f3126a12c9b208e50583" style="width: 100.0%; height: 100.0%;"><b>Port Douglas - Craiglie</b><br> Total: 1016, <br>crime: 47</div>`)[0];
+                popup_c5e9b572c707b6e26596516c73ceece7.setContent(html_421273796d67f3126a12c9b208e50583);
+            
+        
+
+        marker_7af3744d6b6296128a520b55a6a579f0.bindPopup(popup_c5e9b572c707b6e26596516c73ceece7)
+        ;
+
+        
+    
+    
+            var rectangle_f6d8fd03bd091cddb35e2c34d4165a4c = L.rectangle(
+                [[-16.52819840000003, 145.4617178], [-16.50996479999997, 145.4678197]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_6e22689f2889a8129467a1e2b51c5d1f = L.marker(
+                [-34.9284989, 138.6007456],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_a7189b9591e160fd5783ffbee5447a17 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_b35a74e483514dbea28a8deb44ef64e2 = $(`<div id="html_b35a74e483514dbea28a8deb44ef64e2" style="width: 100.0%; height: 100.0%;"><b>Adelaide</b><br> Total: 118895, <br>crime: 5496</div>`)[0];
+                popup_a7189b9591e160fd5783ffbee5447a17.setContent(html_b35a74e483514dbea28a8deb44ef64e2);
+            
+        
+
+        marker_6e22689f2889a8129467a1e2b51c5d1f.bindPopup(popup_a7189b9591e160fd5783ffbee5447a17)
+        ;
+
+        
+    
+    
+            var rectangle_33cdc888081240406a510d6139f0ce80 = L.rectangle(
+                [[-35.3489699, 138.4421299], [-34.652564, 138.7801898]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_6a50558be7a54762a662bf9201fa4a39 = L.marker(
+                [-36.75961960000001, 144.2785764],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_a10430451f7c1cf303e322b2a99b213a = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_7b185fce4a91ed7419505f2710bbdd9d = $(`<div id="html_7b185fce4a91ed7419505f2710bbdd9d" style="width: 100.0%; height: 100.0%;"><b>Bendigo</b><br> Total: 5058, <br>crime: 230</div>`)[0];
+                popup_a10430451f7c1cf303e322b2a99b213a.setContent(html_7b185fce4a91ed7419505f2710bbdd9d);
+            
+        
+
+        marker_6a50558be7a54762a662bf9201fa4a39.bindPopup(popup_a10430451f7c1cf303e322b2a99b213a)
+        ;
+
+        
+    
+    
+            var rectangle_a749aed48930f9a8fe32a6b34feeff7e = L.rectangle(
+                [[-36.7705759, 144.2621358], [-36.7417838, 144.2981681]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_c64312630902dd8ea1e7cf24b96a3187 = L.marker(
+                [-35.0268148, 117.8837114],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_19667595a79705b6103b4e152187db28 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_2fb93efcd8a1805bb4f82b15dc805d8f = $(`<div id="html_2fb93efcd8a1805bb4f82b15dc805d8f" style="width: 100.0%; height: 100.0%;"><b>Albany</b><br> Total: 5156, <br>crime: 234</div>`)[0];
+                popup_19667595a79705b6103b4e152187db28.setContent(html_2fb93efcd8a1805bb4f82b15dc805d8f);
+            
+        
+
+        marker_c64312630902dd8ea1e7cf24b96a3187.bindPopup(popup_19667595a79705b6103b4e152187db28)
+        ;
+
+        
+    
+    
+            var rectangle_3919b38c6c1db1203ce1bca47b321ad6 = L.rectangle(
+                [[-35.0330642, 117.871782], [-35.0183878, 117.8966316]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_dce218b5e713d27cc2d9528b0f015db2 = L.marker(
+                [-35.3514641, 149.2330429],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_43ecc564673c7804e4f21ac618e12597 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_44a4dd5ca845aa7ddf5ae774f7466000 = $(`<div id="html_44a4dd5ca845aa7ddf5ae774f7466000" style="width: 100.0%; height: 100.0%;"><b>Queanbeyan</b><br> Total: 2231, <br>crime: 100</div>`)[0];
+                popup_43ecc564673c7804e4f21ac618e12597.setContent(html_44a4dd5ca845aa7ddf5ae774f7466000);
+            
+        
+
+        marker_dce218b5e713d27cc2d9528b0f015db2.bindPopup(popup_43ecc564673c7804e4f21ac618e12597)
+        ;
+
+        
+    
+    
+            var rectangle_db35499e98b2f69c94f50ab7f4dba1d9 = L.rectangle(
+                [[-35.3628715, 149.2192093], [-35.341833, 149.2398602]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_a4edafbbb82a16dc41109708427b290c = L.marker(
+                [-29.1188889, 153.4315059],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_78eccb8f348049c1d3364db67740b4ad = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_ce8b2893486f89857554a9488220f1ac = $(`<div id="html_ce8b2893486f89857554a9488220f1ac" style="width: 100.0%; height: 100.0%;"><b>Evans Head</b><br> Total: 1589, <br>crime: 70</div>`)[0];
+                popup_78eccb8f348049c1d3364db67740b4ad.setContent(html_ce8b2893486f89857554a9488220f1ac);
+            
+        
+
+        marker_a4edafbbb82a16dc41109708427b290c.bindPopup(popup_78eccb8f348049c1d3364db67740b4ad)
+        ;
+
+        
+    
+    
+            var rectangle_fa875f98992774c046f2a9ca748ec729 = L.rectangle(
+                [[-29.1467466, 153.3962139], [-29.0826605, 153.4542178]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_8939f2c2280cf5aaaa6df73a61a3942a = L.marker(
+                [-34.4248336, 150.8931132],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_2697a741601a08e734c2c1d55af84311 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_d4a553df1ea3be9b21880d444176e52f = $(`<div id="html_d4a553df1ea3be9b21880d444176e52f" style="width: 100.0%; height: 100.0%;"><b>Wollongong</b><br> Total: 19433, <br>crime: 856</div>`)[0];
+                popup_2697a741601a08e734c2c1d55af84311.setContent(html_d4a553df1ea3be9b21880d444176e52f);
+            
+        
+
+        marker_8939f2c2280cf5aaaa6df73a61a3942a.bindPopup(popup_2697a741601a08e734c2c1d55af84311)
+        ;
+
+        
+    
+    
+            var rectangle_9238b74901740e09caad838e7129e78b = L.rectangle(
+                [[-34.4429436, 150.8750752], [-34.4135363, 150.9110503]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_b1078e2ddf6b027ca9386f44743274cf = L.marker(
+                [-37.5621587, 143.8502556],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_351c62fefbc1c7ee097c181802e0799d = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_4250a2d511f337a892cacfd12ee3895c = $(`<div id="html_4250a2d511f337a892cacfd12ee3895c" style="width: 100.0%; height: 100.0%;"><b>Ballarat</b><br> Total: 23425, <br>crime: 1018</div>`)[0];
+                popup_351c62fefbc1c7ee097c181802e0799d.setContent(html_4250a2d511f337a892cacfd12ee3895c);
+            
+        
+
+        marker_b1078e2ddf6b027ca9386f44743274cf.bindPopup(popup_351c62fefbc1c7ee097c181802e0799d)
+        ;
+
+        
+    
+    
+            var rectangle_208a828ce74cba30c30e3b4d5051bb29 = L.rectangle(
+                [[-37.6597172, 143.780231], [-37.4751869, 143.9252506]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_51cec46fad5c2c429da640a4c04fede8 = L.marker(
+                [-17.96182, 122.236998],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_c50252eef43f686b8be0d058d011f2d8 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_64677ef7de0e4ba6945b736336f121a7 = $(`<div id="html_64677ef7de0e4ba6945b736336f121a7" style="width: 100.0%; height: 100.0%;"><b>Broome</b><br> Total: 1667, <br>crime: 72</div>`)[0];
+                popup_c50252eef43f686b8be0d058d011f2d8.setContent(html_64677ef7de0e4ba6945b736336f121a7);
+            
+        
+
+        marker_51cec46fad5c2c429da640a4c04fede8.bindPopup(popup_c50252eef43f686b8be0d058d011f2d8)
+        ;
+
+        
+    
+    
+            var rectangle_9d1d08020ef370442c5b79f57c9f200e = L.rectangle(
+                [[-17.9734186, 122.215952], [-17.9436407, 122.253155]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_e219a9ba57dd5da0031ddb4a57882500 = L.marker(
+                [-36.3649306, 146.3149259],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_1ce1ad7aa20b9a55f91b584206fdd7b5 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_24fbbff0eb5c41953c3bdbe4471bf7a7 = $(`<div id="html_24fbbff0eb5c41953c3bdbe4471bf7a7" style="width: 100.0%; height: 100.0%;"><b>Wangaratta</b><br> Total: 1067, <br>crime: 46</div>`)[0];
+                popup_1ce1ad7aa20b9a55f91b584206fdd7b5.setContent(html_24fbbff0eb5c41953c3bdbe4471bf7a7);
+            
+        
+
+        marker_e219a9ba57dd5da0031ddb4a57882500.bindPopup(popup_1ce1ad7aa20b9a55f91b584206fdd7b5)
+        ;
+
+        
+    
+    
+            var rectangle_ecc75c6e99e2c0f0327b235605ec1278 = L.rectangle(
+                [[-36.4064009, 146.266021], [-36.3243239, 146.3710429]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_cf730c56ae04f06620f8e75b087d4c86 = L.marker(
+                [-35.5032052, 138.6689697],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_75b7137b9e1378111b3360c39d44ecb4 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_1fce9d0b4a7cf1af5f3202fb094f278d = $(`<div id="html_1fce9d0b4a7cf1af5f3202fb094f278d" style="width: 100.0%; height: 100.0%;"><b>Victor Harbor - Goolwa</b><br> Total: 1935, <br>crime: 82</div>`)[0];
+                popup_75b7137b9e1378111b3360c39d44ecb4.setContent(html_1fce9d0b4a7cf1af5f3202fb094f278d);
+            
+        
+
+        marker_cf730c56ae04f06620f8e75b087d4c86.bindPopup(popup_75b7137b9e1378111b3360c39d44ecb4)
+        ;
+
+        
+    
+    
+            var rectangle_04da0eeb575615e4d1b8258440eede57 = L.rectangle(
+                [[-35.58795509999999, 138.516838], [-35.4515996, 138.8478351]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_0723dfad048de1039c908e0a78ccee74 = L.marker(
+                [-37.8284406, 140.7806761],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_b5748cb6c001e48983c93e7603b5059c = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_b598e21c71f9946b876cb978f7778421 = $(`<div id="html_b598e21c71f9946b876cb978f7778421" style="width: 100.0%; height: 100.0%;"><b>Mount Gambier</b><br> Total: 1098, <br>crime: 45</div>`)[0];
+                popup_b5748cb6c001e48983c93e7603b5059c.setContent(html_b598e21c71f9946b876cb978f7778421);
+            
+        
+
+        marker_0723dfad048de1039c908e0a78ccee74.bindPopup(popup_b5748cb6c001e48983c93e7603b5059c)
+        ;
+
+        
+    
+    
+            var rectangle_8cb6d5ceed5f25743b9371028ac7be17 = L.rectangle(
+                [[-37.8526165, 140.737612], [-37.8000279, 140.8236765]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_84d625b6198de7a1ffb2bdab018d08ff = L.marker(
+                [-34.9983561, 138.7291822],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_5f416f89999216d80ed8057b138d7f10 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_e12484a2f10010504053fd15311b74dc = $(`<div id="html_e12484a2f10010504053fd15311b74dc" style="width: 100.0%; height: 100.0%;"><b>Crafers - Bridgewater</b><br> Total: 955, <br>crime: 39</div>`)[0];
+                popup_5f416f89999216d80ed8057b138d7f10.setContent(html_e12484a2f10010504053fd15311b74dc);
+            
+        
+
+        marker_84d625b6198de7a1ffb2bdab018d08ff.bindPopup(popup_5f416f89999216d80ed8057b138d7f10)
+        ;
+
+        
+    
+    
+            var rectangle_8ad0d0ef4bc2c6d981a09fbfb6dd56ad = L.rectangle(
+                [[-35.0494089, 138.6716375], [-34.9689749, 138.7904637]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_3c1e67c694c4995ac95c26950ad364fd = L.marker(
+                [-38.1940197, 146.5336107],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_0eb585153487a338c7540907f2f185c0 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_cae84eb58d673b56ad2fada19c670c4d = $(`<div id="html_cae84eb58d673b56ad2fada19c670c4d" style="width: 100.0%; height: 100.0%;"><b>Traralgon</b><br> Total: 3093, <br>crime: 125</div>`)[0];
+                popup_0eb585153487a338c7540907f2f185c0.setContent(html_cae84eb58d673b56ad2fada19c670c4d);
+            
+        
+
+        marker_3c1e67c694c4995ac95c26950ad364fd.bindPopup(popup_0eb585153487a338c7540907f2f185c0)
+        ;
+
+        
+    
+    
+            var rectangle_5cca49d736244d0ae7e2a026e66203ff = L.rectangle(
+                [[-38.25077570000001, 146.464222], [-38.1531039, 146.564709]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_c58854abd76d0c2daee65036d0f7fb08 = L.marker(
+                [-38.0229202, 144.3964232],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_1f213578ae37d19f0705e00b52eb81d8 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_81333cd0f1f89acbde0e464430eb13b1 = $(`<div id="html_81333cd0f1f89acbde0e464430eb13b1" style="width: 100.0%; height: 100.0%;"><b>Lara</b><br> Total: 3518, <br>crime: 142</div>`)[0];
+                popup_1f213578ae37d19f0705e00b52eb81d8.setContent(html_81333cd0f1f89acbde0e464430eb13b1);
+            
+        
+
+        marker_c58854abd76d0c2daee65036d0f7fb08.bindPopup(popup_1f213578ae37d19f0705e00b52eb81d8)
+        ;
+
+        
+    
+    
+            var rectangle_28b3b8ed0df0fce34f1a2cf70e29d52a = L.rectangle(
+                [[-38.06220680000001, 144.3409469], [-37.959047, 144.4871069]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_18c748c6540508773286d40741d1e869 = L.marker(
+                [-32.9282712, 151.7816802],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_ffe2a2173e8b5bb18ed23c9bd70ea12e = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_51a98b96e11d2300243c53d65d2b72bb = $(`<div id="html_51a98b96e11d2300243c53d65d2b72bb" style="width: 100.0%; height: 100.0%;"><b>Newcastle</b><br> Total: 28129, <br>crime: 1133</div>`)[0];
+                popup_ffe2a2173e8b5bb18ed23c9bd70ea12e.setContent(html_51a98b96e11d2300243c53d65d2b72bb);
+            
+        
+
+        marker_18c748c6540508773286d40741d1e869.bindPopup(popup_ffe2a2173e8b5bb18ed23c9bd70ea12e)
+        ;
+
+        
+    
+    
+            var rectangle_ac66fe6ac22c1c98d8d821fc4f6dc82e = L.rectangle(
+                [[-33.120457, 151.5550015], [-32.832869, 151.824399]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_670f0a76821d59e700c5ae94b947f751 = L.marker(
+                [-33.034582, 137.5756408],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_c999bd677e1dce64031a3ee21b2b5723 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_c71971c1c494b895bdded1a1deba84a5 = $(`<div id="html_c71971c1c494b895bdded1a1deba84a5" style="width: 100.0%; height: 100.0%;"><b>Whyalla</b><br> Total: 1085, <br>crime: 43</div>`)[0];
+                popup_c999bd677e1dce64031a3ee21b2b5723.setContent(html_c71971c1c494b895bdded1a1deba84a5);
+            
+        
+
+        marker_670f0a76821d59e700c5ae94b947f751.bindPopup(popup_c999bd677e1dce64031a3ee21b2b5723)
+        ;
+
+        
+    
+    
+            var rectangle_3ef5a90596f08c4484496be15e5e8ec2 = L.rectangle(
+                [[-33.0519361, 137.5629333], [-33.02451060000001, 137.5953554]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_f328c63fc756f2b2865f00cf4b1853de = L.marker(
+                [-38.2589909, 144.51633],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_998720067c6fc8d14b8d754e03a87dac = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_1040d847186c225f5b3507e335403657 = $(`<div id="html_1040d847186c225f5b3507e335403657" style="width: 100.0%; height: 100.0%;"><b>Ocean Grove - Barwon Heads</b><br> Total: 1010, <br>crime: 40</div>`)[0];
+                popup_998720067c6fc8d14b8d754e03a87dac.setContent(html_1040d847186c225f5b3507e335403657);
+            
+        
+
+        marker_f328c63fc756f2b2865f00cf4b1853de.bindPopup(popup_998720067c6fc8d14b8d754e03a87dac)
+        ;
+
+        
+    
+    
+            var rectangle_0af8b3ae3d6383f36061145b379a8c08 = L.rectangle(
+                [[-38.2904898, 144.4690137], [-38.247105, 144.5636926]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_1ccc140863b0b936f0cf023005353054 = L.marker(
+                [-34.4777073, 150.4196395],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_8cd542270669eb564941af10f2bf1f3a = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_495b39fc9021cc2282385f593ae21915 = $(`<div id="html_495b39fc9021cc2282385f593ae21915" style="width: 100.0%; height: 100.0%;"><b>Bowral - Mittagong</b><br> Total: 1857, <br>crime: 73</div>`)[0];
+                popup_8cd542270669eb564941af10f2bf1f3a.setContent(html_495b39fc9021cc2282385f593ae21915);
+            
+        
+
+        marker_1ccc140863b0b936f0cf023005353054.bindPopup(popup_8cd542270669eb564941af10f2bf1f3a)
+        ;
+
+        
+    
+    
+            var rectangle_10d5dcea67d7992edae2834d73fd1a3c = L.rectangle(
+                [[-34.5343319, 150.3692049], [-34.419516, 150.4983509]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_a12674b3feb135d0fd5a30c5d5f46ad5 = L.marker(
+                [-33.3270366, 115.6408605],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_e345bf36ae52fe9a5f5b94afb9251790 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_78ead6027c136b59e774cbd83ecce7e5 = $(`<div id="html_78ead6027c136b59e774cbd83ecce7e5" style="width: 100.0%; height: 100.0%;"><b>Bunbury</b><br> Total: 2459, <br>crime: 94</div>`)[0];
+                popup_e345bf36ae52fe9a5f5b94afb9251790.setContent(html_78ead6027c136b59e774cbd83ecce7e5);
+            
+        
+
+        marker_a12674b3feb135d0fd5a30c5d5f46ad5.bindPopup(popup_e345bf36ae52fe9a5f5b94afb9251790)
+        ;
+
+        
+    
+    
+            var rectangle_7d0bbda1e65b90b7a1dcee742f599f23 = L.rectangle(
+                [[-33.3373771, 115.6251977], [-33.30037550000001, 115.6592175]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_d235e484fabef83ae2a62039864ee91e = L.marker(
+                [-35.1025977, 147.3655103],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_5b1bf941995a275c4fb741eab7bb5507 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_c7fc22586ae796b19921b48333137302 = $(`<div id="html_c7fc22586ae796b19921b48333137302" style="width: 100.0%; height: 100.0%;"><b>Wagga Wagga</b><br> Total: 2760, <br>crime: 105</div>`)[0];
+                popup_5b1bf941995a275c4fb741eab7bb5507.setContent(html_c7fc22586ae796b19921b48333137302);
+            
+        
+
+        marker_d235e484fabef83ae2a62039864ee91e.bindPopup(popup_5b1bf941995a275c4fb741eab7bb5507)
+        ;
+
+        
+    
+    
+            var rectangle_8664723871f3b356d959a0bdb716b81c = L.rectangle(
+                [[-35.1252, 147.3383803], [-35.0880498, 147.3828228]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_13fbdb0d2d136e4dcc4b6a6c96151925 = L.marker(
+                [-37.351609, 144.1392885],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_c044251828549da6bc835d4cf08c5106 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_f18b394d9d49e79064d2a6b4936c4431 = $(`<div id="html_f18b394d9d49e79064d2a6b4936c4431" style="width: 100.0%; height: 100.0%;"><b>Daylesford - Hepburn Springs</b><br> Total: 1347, <br>crime: 51</div>`)[0];
+                popup_c044251828549da6bc835d4cf08c5106.setContent(html_f18b394d9d49e79064d2a6b4936c4431);
+            
+        
+
+        marker_13fbdb0d2d136e4dcc4b6a6c96151925.bindPopup(popup_c044251828549da6bc835d4cf08c5106)
+        ;
+
+        
+    
+    
+            var rectangle_d968972576d054cdf4f3329506863d29 = L.rectangle(
+                [[-37.3855817, 144.1188853], [-37.2979147, 144.163654]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_8493b599928867c319338c4b808a9d84 = L.marker(
+                [-32.8321587, 151.3558797],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_3e7703dc25a342a71f91d49512a4624b = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_37d6d6215071f47cbdb5f3d1e9563d6a = $(`<div id="html_37d6d6215071f47cbdb5f3d1e9563d6a" style="width: 100.0%; height: 100.0%;"><b>Cessnock</b><br> Total: 1086, <br>crime: 41</div>`)[0];
+                popup_3e7703dc25a342a71f91d49512a4624b.setContent(html_37d6d6215071f47cbdb5f3d1e9563d6a);
+            
+        
+
+        marker_8493b599928867c319338c4b808a9d84.bindPopup(popup_3e7703dc25a342a71f91d49512a4624b)
+        ;
+
+        
+    
+    
+            var rectangle_349aeef26bdcdab9462a8ec6b6db03a0 = L.rectangle(
+                [[-32.8704181, 151.3198364], [-32.7965125, 151.4143733]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_b72b0f1594c5aa686358f3747e9c3ac8 = L.marker(
+                [-33.919672, 151.0896126],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_451d9f1f680d0a5441e9171f1e8e61bf = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_2b4e71e05cb22f78680858d19bd00979 = $(`<div id="html_2b4e71e05cb22f78680858d19bd00979" style="width: 100.0%; height: 100.0%;"><b>Belmore</b><br> Total: 1440, <br>crime: 54</div>`)[0];
+                popup_451d9f1f680d0a5441e9171f1e8e61bf.setContent(html_2b4e71e05cb22f78680858d19bd00979);
+            
+        
+
+        marker_b72b0f1594c5aa686358f3747e9c3ac8.bindPopup(popup_451d9f1f680d0a5441e9171f1e8e61bf)
+        ;
+
+        
+    
+    
+            var rectangle_d1c6425d910fe3b946cd75a5cdf1b5eb = L.rectangle(
+                [[-33.9314441, 151.076542], [-33.9075075, 151.0998198]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_1b38aa7d0dadf968f31d8ea11f510d8a = L.marker(
+                [-33.2815802, 149.0862242],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_004f81c047e542990fcc015beb9dee57 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_8403b1e964d0c382a0cf98bbdbe82d2d = $(`<div id="html_8403b1e964d0c382a0cf98bbdbe82d2d" style="width: 100.0%; height: 100.0%;"><b>Orange</b><br> Total: 2681, <br>crime: 100</div>`)[0];
+                popup_004f81c047e542990fcc015beb9dee57.setContent(html_8403b1e964d0c382a0cf98bbdbe82d2d);
+            
+        
+
+        marker_1b38aa7d0dadf968f31d8ea11f510d8a.bindPopup(popup_004f81c047e542990fcc015beb9dee57)
+        ;
+
+        
+    
+    
+            var rectangle_d67ff8591b5d43b9735c1282b3f29500 = L.rectangle(
+                [[-33.3377495, 148.9657845], [-33.1641601, 149.1577596]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_e2605928b3f6212354d064a2d0bd036b = L.marker(
+                [-20.3123929, 118.6093685],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_899e61a198ccaa44e67f82115609828b = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_53e54f9b5b43e7e0fa060c9f051e0b5c = $(`<div id="html_53e54f9b5b43e7e0fa060c9f051e0b5c" style="width: 100.0%; height: 100.0%;"><b>Port Hedland</b><br> Total: 1049, <br>crime: 39</div>`)[0];
+                popup_899e61a198ccaa44e67f82115609828b.setContent(html_53e54f9b5b43e7e0fa060c9f051e0b5c);
+            
+        
+
+        marker_e2605928b3f6212354d064a2d0bd036b.bindPopup(popup_899e61a198ccaa44e67f82115609828b)
+        ;
+
+        
+    
+    
+            var rectangle_87666b9ee54c91bcdb7d9fe3fca5419e = L.rectangle(
+                [[-20.3940779, 118.5726358], [-20.278473, 118.6867834]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_5ca594c65c1d9f2c07e30aaabebacb9a = L.marker(
+                [-38.1635458, 145.9309014],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_27a081efbdf1bb02735011e33de0edb4 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_116cc49416bd100eafc5fa67dbbe6425 = $(`<div id="html_116cc49416bd100eafc5fa67dbbe6425" style="width: 100.0%; height: 100.0%;"><b>Warragul</b><br> Total: 1089, <br>crime: 40</div>`)[0];
+                popup_27a081efbdf1bb02735011e33de0edb4.setContent(html_116cc49416bd100eafc5fa67dbbe6425);
+            
+        
+
+        marker_5ca594c65c1d9f2c07e30aaabebacb9a.bindPopup(popup_27a081efbdf1bb02735011e33de0edb4)
+        ;
+
+        
+    
+    
+            var rectangle_06dc5400d47a8700cffa0a13754c62aa = L.rectangle(
+                [[-38.2033643, 145.8754946], [-38.095291, 145.9788471]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_0717d62b3cb348050302db3025fe1ab4 = L.marker(
+                [-31.9595859, 141.4608138],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_a6ac60a9b800f33c66b1b569aa1ca47e = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_a86ca7dacd0cbbaee22fdab32affb81b = $(`<div id="html_a86ca7dacd0cbbaee22fdab32affb81b" style="width: 100.0%; height: 100.0%;"><b>Broken Hill</b><br> Total: 2286, <br>crime: 83</div>`)[0];
+                popup_a6ac60a9b800f33c66b1b569aa1ca47e.setContent(html_a86ca7dacd0cbbaee22fdab32affb81b);
+            
+        
+
+        marker_0717d62b3cb348050302db3025fe1ab4.bindPopup(popup_a6ac60a9b800f33c66b1b569aa1ca47e)
+        ;
+
+        
+    
+    
+            var rectangle_d6465af0e41691453d45877d0bb61edc = L.rectangle(
+                [[-33.1137753, 141.0010097], [-31.591859, 142.2529383]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_410185f7b705d0041f9c2170200a400a = L.marker(
+                [-35.7162174, 150.1794566],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_f59e650ea3b8bac7619cdc3e1af921cd = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_1c9c4a5bd27b46f62d214feac7517688 = $(`<div id="html_1c9c4a5bd27b46f62d214feac7517688" style="width: 100.0%; height: 100.0%;"><b>Batemans Bay</b><br> Total: 1372, <br>crime: 49</div>`)[0];
+                popup_f59e650ea3b8bac7619cdc3e1af921cd.setContent(html_1c9c4a5bd27b46f62d214feac7517688);
+            
+        
+
+        marker_410185f7b705d0041f9c2170200a400a.bindPopup(popup_f59e650ea3b8bac7619cdc3e1af921cd)
+        ;
+
+        
+    
+    
+            var rectangle_810fa1f78fdf8ad85f344a0fb6ce29c1 = L.rectangle(
+                [[-35.7520752, 150.1236667], [-35.6645443, 150.2102431]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_a72a5e9cd76d06e26fb0b4030a4179a8 = L.marker(
+                [-25.1990069, 133.2019681],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_65a5b2b6b4b69f3f58266ea866875c23 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_4b05f9c18835137e4bf6a4681b7098c0 = $(`<div id="html_4b05f9c18835137e4bf6a4681b7098c0" style="width: 100.0%; height: 100.0%;"><b>Ghan</b><br> Total: 6080, <br>crime: 211</div>`)[0];
+                popup_65a5b2b6b4b69f3f58266ea866875c23.setContent(html_4b05f9c18835137e4bf6a4681b7098c0);
+            
+        
+
+        marker_a72a5e9cd76d06e26fb0b4030a4179a8.bindPopup(popup_65a5b2b6b4b69f3f58266ea866875c23)
+        ;
+
+        
+    
+    
+            var rectangle_5fb728433d90d2cd2d9d0c16f46ff2ff = L.rectangle(
+                [[-25.9986222, 131.9862119], [-24.135165, 135.904424]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_5a86e68d8f9f424cd267c40f1ac7d21d = L.marker(
+                [-36.0751193, 146.9094852],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_ef36f12a4aa818712397f0cb1b6a5e08 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_8608e6e994d83a7a4d97849d4c79938a = $(`<div id="html_8608e6e994d83a7a4d97849d4c79938a" style="width: 100.0%; height: 100.0%;"><b>Albury</b><br> Total: 1688, <br>crime: 58</div>`)[0];
+                popup_ef36f12a4aa818712397f0cb1b6a5e08.setContent(html_8608e6e994d83a7a4d97849d4c79938a);
+            
+        
+
+        marker_5a86e68d8f9f424cd267c40f1ac7d21d.bindPopup(popup_ef36f12a4aa818712397f0cb1b6a5e08)
+        ;
+
+        
+    
+    
+            var rectangle_fe042e7c94f7b948a83d96e64a3eb204 = L.rectangle(
+                [[-36.0859903, 146.8979423], [-36.0608676, 146.934028]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_4dfc6fb118070235667a2cd9af3135d3 = L.marker(
+                [-41.1800656, 146.3502862],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_34e0a0a6ee036a3f74eb7ed3ba4dd2b5 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_00022adb1861ad9e364dbaf84ad137d6 = $(`<div id="html_00022adb1861ad9e364dbaf84ad137d6" style="width: 100.0%; height: 100.0%;"><b>Devonport</b><br> Total: 1200, <br>crime: 41</div>`)[0];
+                popup_34e0a0a6ee036a3f74eb7ed3ba4dd2b5.setContent(html_00022adb1861ad9e364dbaf84ad137d6);
+            
+        
+
+        marker_4dfc6fb118070235667a2cd9af3135d3.bindPopup(popup_34e0a0a6ee036a3f74eb7ed3ba4dd2b5)
+        ;
+
+        
+    
+    
+            var rectangle_06bbb8b84f8deb519c0c80f9ee9acf0d = L.rectangle(
+                [[-41.19281489999999, 146.3219379], [-41.1580537, 146.3674253]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_9c9ada5a1a5c166364770a183c1ce937 = L.marker(
+                [-38.3252547, 144.3084645],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_10e4fe0b934af2017d77f6487acb31d1 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_dfd8d98fe2b2a9ca8ee0f7689a2f7144 = $(`<div id="html_dfd8d98fe2b2a9ca8ee0f7689a2f7144" style="width: 100.0%; height: 100.0%;"><b>Torquay - Jan Juc</b><br> Total: 1528, <br>crime: 49</div>`)[0];
+                popup_10e4fe0b934af2017d77f6487acb31d1.setContent(html_dfd8d98fe2b2a9ca8ee0f7689a2f7144);
+            
+        
+
+        marker_9c9ada5a1a5c166364770a183c1ce937.bindPopup(popup_10e4fe0b934af2017d77f6487acb31d1)
+        ;
+
+        
+    
+    
+            var rectangle_f060350c7b0ea7d2518527c09f8c2de9 = L.rectangle(
+                [[-38.3594261, 144.280124], [-38.3043668, 144.3598134]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_9b20dd05a79c9a39eed405f8ffea237e = L.marker(
+                [-34.7226381, 135.8597449],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_e178ab4fd507a22b3b57a8b9844c19b8 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_1e2e4a2d20a9e1baee89cd7aec42ef06 = $(`<div id="html_1e2e4a2d20a9e1baee89cd7aec42ef06" style="width: 100.0%; height: 100.0%;"><b>Port Lincoln</b><br> Total: 1103, <br>crime: 35</div>`)[0];
+                popup_e178ab4fd507a22b3b57a8b9844c19b8.setContent(html_1e2e4a2d20a9e1baee89cd7aec42ef06);
+            
+        
+
+        marker_9b20dd05a79c9a39eed405f8ffea237e.bindPopup(popup_e178ab4fd507a22b3b57a8b9844c19b8)
+        ;
+
+        
+    
+    
+            var rectangle_57108cc01eee7534fcd870c1ac1d36e2 = L.rectangle(
+                [[-34.7700617, 135.8106056], [-34.6874142, 135.8943714]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_0b46909b3f423f96de402a1065b1d8f4 = L.marker(
+                [-36.1244699, 146.8885229],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_fd18403b528eae9db460821f67331513 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_01d22032e2ebaa6c3f164424e418014e = $(`<div id="html_01d22032e2ebaa6c3f164424e418014e" style="width: 100.0%; height: 100.0%;"><b>Wodonga</b><br> Total: 1969, <br>crime: 62</div>`)[0];
+                popup_fd18403b528eae9db460821f67331513.setContent(html_01d22032e2ebaa6c3f164424e418014e);
+            
+        
+
+        marker_0b46909b3f423f96de402a1065b1d8f4.bindPopup(popup_fd18403b528eae9db460821f67331513)
+        ;
+
+        
+    
+    
+            var rectangle_fe6fc43920237d012852417a813ba40f = L.rectangle(
+                [[-36.1786749, 146.841607], [-36.0728343, 146.9232462]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_cc88f333bfd5f30d5cf9766fa5ee93e6 = L.marker(
+                [-28.6419122, 153.6105168],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_3a9d19047c6de17a3d202cf061e905bf = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_90fa3067a8468790c3a541d30e8cd56b = $(`<div id="html_90fa3067a8468790c3a541d30e8cd56b" style="width: 100.0%; height: 100.0%;"><b>Byron Bay</b><br> Total: 1120, <br>crime: 35</div>`)[0];
+                popup_3a9d19047c6de17a3d202cf061e905bf.setContent(html_90fa3067a8468790c3a541d30e8cd56b);
+            
+        
+
+        marker_cc88f333bfd5f30d5cf9766fa5ee93e6.bindPopup(popup_3a9d19047c6de17a3d202cf061e905bf)
+        ;
+
+        
+    
+    
+            var rectangle_9c29deff214fd9d24b264a5060228924 = L.rectangle(
+                [[-28.6793442, 153.5669729], [-28.6143674, 153.6388371]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_de333522d653cfa91c5a1d5ec0e2e923 = L.marker(
+                [-17.2709033, 145.5830306],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_9beba1637a837f190fc3bdc1a408bb63 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_597e6666ed470e3fc5910c35bfe7e869 = $(`<div id="html_597e6666ed470e3fc5910c35bfe7e869" style="width: 100.0%; height: 100.0%;"><b>Yungaburra</b><br> Total: 1423, <br>crime: 42</div>`)[0];
+                popup_9beba1637a837f190fc3bdc1a408bb63.setContent(html_597e6666ed470e3fc5910c35bfe7e869);
+            
+        
+
+        marker_de333522d653cfa91c5a1d5ec0e2e923.bindPopup(popup_9beba1637a837f190fc3bdc1a408bb63)
+        ;
+
+        
+    
+    
+            var rectangle_cabd1031a1e5bc3aa47a79e6d306098d = L.rectangle(
+                [[-17.2944009, 145.5736081], [-17.2478974, 145.6270156]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_4895e3aef29d6ad429f5f04fa53ee4ed = L.marker(
+                [-35.4460326, 149.7990648],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_9449e5ae94488f500c87607e1eb84dcd = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_d7199f8ef126cee5cf35c4e33d640f00 = $(`<div id="html_d7199f8ef126cee5cf35c4e33d640f00" style="width: 100.0%; height: 100.0%;"><b>Braidwood</b><br> Total: 1295, <br>crime: 38</div>`)[0];
+                popup_9449e5ae94488f500c87607e1eb84dcd.setContent(html_d7199f8ef126cee5cf35c4e33d640f00);
+            
+        
+
+        marker_4895e3aef29d6ad429f5f04fa53ee4ed.bindPopup(popup_9449e5ae94488f500c87607e1eb84dcd)
+        ;
+
+        
+    
+    
+            var rectangle_8974696b7b6ce783a66830c6d468474a = L.rectangle(
+                [[-35.5197165, 149.6967445], [-35.3352295, 149.9145847]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_db3175c5678684572f8204fd791bd251 = L.marker(
+                [-33.1773056, 138.0086102],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_367199537ebb42fa9082a2c3cc275d90 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_1b3bd67ba43c7760feb5449e0cabdf5c = $(`<div id="html_1b3bd67ba43c7760feb5449e0cabdf5c" style="width: 100.0%; height: 100.0%;"><b>Port Pirie</b><br> Total: 3766, <br>crime: 109</div>`)[0];
+                popup_367199537ebb42fa9082a2c3cc275d90.setContent(html_1b3bd67ba43c7760feb5449e0cabdf5c);
+            
+        
+
+        marker_db3175c5678684572f8204fd791bd251.bindPopup(popup_367199537ebb42fa9082a2c3cc275d90)
+        ;
+
+        
+    
+    
+            var rectangle_3f613cc48faf4b0aca67c1f92ea9cff0 = L.rectangle(
+                [[-33.1906926, 138.0025429], [-33.150742, 138.0188057]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_f5846ef1e993d2bf76cfde09420647ad = L.marker(
+                [-33.9632646, 137.7148587],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_85397a4d301ba418ec437ebe3a9f2c83 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_0a57cff5ee7d1cfa70f423fb602d9eed = $(`<div id="html_0a57cff5ee7d1cfa70f423fb602d9eed" style="width: 100.0%; height: 100.0%;"><b>Kadina</b><br> Total: 2059, <br>crime: 59</div>`)[0];
+                popup_85397a4d301ba418ec437ebe3a9f2c83.setContent(html_0a57cff5ee7d1cfa70f423fb602d9eed);
+            
+        
+
+        marker_f5846ef1e993d2bf76cfde09420647ad.bindPopup(popup_85397a4d301ba418ec437ebe3a9f2c83)
+        ;
+
+        
+    
+    
+            var rectangle_4370b3c3236124af260a1f75814551d8 = L.rectangle(
+                [[-33.9819598, 137.6795875], [-33.94371960000001, 137.7355968]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_5c1cb113889bde67634ae897a7ab1da0 = L.marker(
+                [-37.06328999999999, 144.2172327],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_678f6e02cc837ebcf9d549291a97671e = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_3b66a7be15e55a8aef76840977d83ce3 = $(`<div id="html_3b66a7be15e55a8aef76840977d83ce3" style="width: 100.0%; height: 100.0%;"><b>Castlemaine</b><br> Total: 9740, <br>crime: 278</div>`)[0];
+                popup_678f6e02cc837ebcf9d549291a97671e.setContent(html_3b66a7be15e55a8aef76840977d83ce3);
+            
+        
+
+        marker_5c1cb113889bde67634ae897a7ab1da0.bindPopup(popup_678f6e02cc837ebcf9d549291a97671e)
+        ;
+
+        
+    
+    
+            var rectangle_f6358025a522862be989491dfaa78b03 = L.rectangle(
+                [[-37.0852574, 144.1877121], [-37.0332559, 144.248549]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_6a6da4d853d5d612bd2ea61db98fb6b4 = L.marker(
+                [-38.456183, 145.2389112],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_0e7ac0dafbb7014db10a813f0e1580ae = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_8555b9c5579987d095af4993090c4433 = $(`<div id="html_8555b9c5579987d095af4993090c4433" style="width: 100.0%; height: 100.0%;"><b>Cowes</b><br> Total: 1143, <br>crime: 31</div>`)[0];
+                popup_0e7ac0dafbb7014db10a813f0e1580ae.setContent(html_8555b9c5579987d095af4993090c4433);
+            
+        
+
+        marker_6a6da4d853d5d612bd2ea61db98fb6b4.bindPopup(popup_0e7ac0dafbb7014db10a813f0e1580ae)
+        ;
+
+        
+    
+    
+            var rectangle_ddc1417d2b8a33c507344531b4a723d9 = L.rectangle(
+                [[-38.4970229, 145.1939949], [-38.4470477, 145.266532]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_4a2c20b69b084adcea46e6b8f8c9d35f = L.marker(
+                [-32.0333806, 147.9816442],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_dc20ea2709e0b366294356fda8d947ec = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_7a116f5a18dbf0d2063bfb889bafef64 = $(`<div id="html_7a116f5a18dbf0d2063bfb889bafef64" style="width: 100.0%; height: 100.0%;"><b>Trangie</b><br> Total: 9158, <br>crime: 239</div>`)[0];
+                popup_dc20ea2709e0b366294356fda8d947ec.setContent(html_7a116f5a18dbf0d2063bfb889bafef64);
+            
+        
+
+        marker_4a2c20b69b084adcea46e6b8f8c9d35f.bindPopup(popup_dc20ea2709e0b366294356fda8d947ec)
+        ;
+
+        
+    
+    
+            var rectangle_717775188a6264ebcde0277398df553d = L.rectangle(
+                [[-32.2526598, 147.6563168], [-31.8667788, 148.1666239]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_bf6b4f4724051b8900f7b130bdeed9db = L.marker(
+                [-37.9188435, 145.0417166],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_298f36163459f2fe670a82e03c9fad69 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_90bca990b2f5dbc88344620e469f9011 = $(`<div id="html_90bca990b2f5dbc88344620e469f9011" style="width: 100.0%; height: 100.0%;"><b>Bentleigh</b><br> Total: 1037, <br>crime: 23</div>`)[0];
+                popup_298f36163459f2fe670a82e03c9fad69.setContent(html_90bca990b2f5dbc88344620e469f9011);
+            
+        
+
+        marker_bf6b4f4724051b8900f7b130bdeed9db.bindPopup(popup_298f36163459f2fe670a82e03c9fad69)
+        ;
+
+        
+    
+    
+            var rectangle_f5d0410e81d49acd0f697c18d0297ff0 = L.rectangle(
+                [[-37.9347275, 145.022458], [-37.9108098, 145.0523639]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_af422de5f90a6c61801a810f32764052 = L.marker(
+                [-34.9043526, 138.8746091],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_f04b017b9f8a11cb634b50ceb883c445 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_893c1e20da57d3a8fcf8f14f37fa356a = $(`<div id="html_893c1e20da57d3a8fcf8f14f37fa356a" style="width: 100.0%; height: 100.0%;"><b>Lobethal</b><br> Total: 2926, <br>crime: 56</div>`)[0];
+                popup_f04b017b9f8a11cb634b50ceb883c445.setContent(html_893c1e20da57d3a8fcf8f14f37fa356a);
+            
+        
+
+        marker_af422de5f90a6c61801a810f32764052.bindPopup(popup_f04b017b9f8a11cb634b50ceb883c445)
+        ;
+
+        
+    
+    
+            var rectangle_dd11d648e145a48e75ef64cb9c309777 = L.rectangle(
+                [[-34.9325143, 138.8378023], [-34.8690979, 138.9147694]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_4352c9d5de85149b68b052b84ffc870d = L.marker(
+                [-27.7129115, 153.1075754],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_553723ae3133390dcacc59621c4a0c23 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_ee7c592f888e5117c896ca603dcba9e0 = $(`<div id="html_ee7c592f888e5117c896ca603dcba9e0" style="width: 100.0%; height: 100.0%;"><b>Logan Reserve</b><br> Total: 2156, <br>crime: 20</div>`)[0];
+                popup_553723ae3133390dcacc59621c4a0c23.setContent(html_ee7c592f888e5117c896ca603dcba9e0);
+            
+        
+
+        marker_4352c9d5de85149b68b052b84ffc870d.bindPopup(popup_553723ae3133390dcacc59621c4a0c23)
+        ;
+
+        
+    
+    
+            var rectangle_625a2369fa4757e7dbc6b3c940a984ff = L.rectangle(
+                [[-27.7433231, 153.0871623], [-27.6904018, 153.1264751]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_be85d55495d47af8686ed966cde59326 = L.marker(
+                [-41.0597309, 145.8937224],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_60e6d0fc2248f42587abeb56fe9d0c4c = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_e45b4efa8d29f09c37eb93453ef45394 = $(`<div id="html_e45b4efa8d29f09c37eb93453ef45394" style="width: 100.0%; height: 100.0%;"><b>Burnie - Somerset</b><br> Total: 1674, <br>crime: 8</div>`)[0];
+                popup_60e6d0fc2248f42587abeb56fe9d0c4c.setContent(html_e45b4efa8d29f09c37eb93453ef45394);
+            
+        
+
+        marker_be85d55495d47af8686ed966cde59326.bindPopup(popup_60e6d0fc2248f42587abeb56fe9d0c4c)
+        ;
+
+        
+    
+    
+            var rectangle_48d658345ca76f3deba52be29577449a = L.rectangle(
+                [[-41.0920735, 145.8054199], [-41.0297944, 145.985167]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_1a8762e990ad93e8cd4bb02ac79ae401 = L.marker(
+                [-32.6727562, 152.1773011],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_116061218b24bd55ef44a96958b4a05c = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_4a8dd4f429276116d28fecad99a3e912 = $(`<div id="html_4a8dd4f429276116d28fecad99a3e912" style="width: 100.0%; height: 100.0%;"><b>Hawks Nest</b><br> Total: 3362, <br>crime: 3</div>`)[0];
+                popup_116061218b24bd55ef44a96958b4a05c.setContent(html_4a8dd4f429276116d28fecad99a3e912);
+            
+        
+
+        marker_1a8762e990ad93e8cd4bb02ac79ae401.bindPopup(popup_116061218b24bd55ef44a96958b4a05c)
+        ;
+
+        
+    
+    
+            var rectangle_40b36d30a56bfc499844d1449ba72f73 = L.rectangle(
+                [[-32.701944, 152.1460118], [-32.5819211, 152.2919621]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+            var marker_a6e8a41b33b06122eb4f56e77f5d3aad = L.marker(
+                [-35.444795, 148.9604438],
+                {}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+    
+        var popup_ff5cca500cead827a0695d53440cad92 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_ad3992f69dbe9cf0887c2d64ff96e0d3 = $(`<div id="html_ad3992f69dbe9cf0887c2d64ff96e0d3" style="width: 100.0%; height: 100.0%;"><b>Paddys River</b><br> Total: 2294, <br>crime: 0</div>`)[0];
+                popup_ff5cca500cead827a0695d53440cad92.setContent(html_ad3992f69dbe9cf0887c2d64ff96e0d3);
+            
+        
+
+        marker_a6e8a41b33b06122eb4f56e77f5d3aad.bindPopup(popup_ff5cca500cead827a0695d53440cad92)
+        ;
+
+        
+    
+    
+            var rectangle_06b7758b9fc924b20df94994c4ff9cd2 = L.rectangle(
+                [[-35.5354139, 148.8676703], [-35.3195077, 149.0762151]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_869c83eb0dd75c730e1bccaa65d80d7e);
+        
+</script>
+</html>

@@ -76,3 +76,18 @@
 .row{
   padding: 1%;
 }
+
+.design_graph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.design_graph img {
+  width: 100%;
+  height: auto;
+}
+
+#overview{
+  margin-left: 2%;
+}

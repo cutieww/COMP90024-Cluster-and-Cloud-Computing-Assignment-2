@@ -50,7 +50,7 @@ m = Mastodon(
 def create_database(date):
     global db_name, db
     today = date
-    db_name = 'mastodon_' + "_" + today
+    db_name = 'mastodon' + "_" + today
 
     if db_name in couch:
         db = couch[db_name]

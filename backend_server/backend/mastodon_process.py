@@ -3,6 +3,7 @@ import requests
 import json
 import time
 import datetime
+from itertools import islice
 
 #host_ip = "192.168.1.116" # Note: if running locally, use the host machine IP
 #host_ip = "172.26.132.19"
@@ -22,60 +23,21 @@ couch = couchdb.Server(f'http://admin:admin@{host_ip}:5984')
 # db = couch['mastodon_policy']
 db = couch[db_name]
 
-def check_date_change():
-    global today
-    global date_string
-    global db_name
-    global db
-    global couch
-
-    current_date = datetime.date.today()
-    if current_date != today:
-        today = current_date
-        date_string = today.strftime("%Y-%m-%d")
+def check_date_change(today, date_string, db_name, db, couch):
+    new_date = datetime.datetime.today()
+    if new_date != today:
+        today = datetime.datetime.today().strftime('%Y-%m-%d')
+        date_string = today
         db_name = "mastodon_" + date_string
+        if db_name in couch:
+            db = couch[db_name]
+        else:
+            db = couch.create(db_name)
+        time.sleep(10)
 
-        # Check if the new date database exists, if not, create it
-        if db_name not in couch:
-            couch.create(db_name)
+    return today, date_string, db_name, db, couch
 
-        db = couch[db_name]
 
-'''''
-def get_latest_post(db,db_name):
-    map_function = """
-    function (doc) {
-        emit(doc.created_at, doc);
-    }
-    """
-
-    view_name = "latest_post"
-    design_doc_name = "_design/post_view"
-
-    if design_doc_name not in db:
-        design_doc = {
-            "_id": design_doc_name,
-            "views": {
-                view_name: {
-                    "map": map_function
-                }
-            }
-        }
-        db.save(design_doc)
-    else:
-        design_doc = db[design_doc_name]
-        if view_name not in design_doc["views"]:
-            design_doc["views"][view_name] = {
-                "map": map_function
-            }
-            db.save(design_doc)
-
-    url = f'http://admin:admin@{host_ip}:5984/{db_name}/_design/post_view/_view/latest_post?descending=true&limit=1'
-    response = requests.get(url)
-    data = json.loads(response.text)
-    latest_post = data['rows'][0]['value'] if data['rows'] else None
-    return latest_post
-'''''
 
 def mastodon_post_total(db,db_name, design_name,view_name):
     map_function = """
@@ -297,7 +259,9 @@ def get_topic_dictionary(db, db_name,date_string, topic_dict, topic, field_name)
         topic_dict["post_ratio"] = topic_dict["post_num"]/topic_dict["total_post"]
 
         # for topic word and the number of count, used for the word cloud
-        topic_dict["wordmap"] = mastodon_topic_word(db,db_name,topic, "word",map_word(field_name))
+        
+        wordmap = mastodon_topic_word(db,db_name,topic, "word",map_word(field_name))
+        topic_dict["wordmap"] = dict(islice(wordmap.items(), 50))
 
         # for user information
         topic_dict["usermap"] = mastodon_topic_user_dict(db,db_name,topic, "user",map_user(field_name))
@@ -400,7 +364,7 @@ def get_total_dictionary(db,db_name,date_string, total_dic):
     return total_dic
 
 
-mastodon_total = {'host': host_ip, 'date': date_string, 'latest_post':{},
+mastodon_total = {'host': host_ip, 'date': "date_string", 'latest_post':{},
                    'total_post':0, 'total_user':0,
                    'post_num':0,'post_ratio':0,
                    'user_num':0,'user_ratio':0,
@@ -409,27 +373,24 @@ mastodon_total = {'host': host_ip, 'date': date_string, 'latest_post':{},
 
 
 if __name__ == '__main__':
+    
     time.sleep(2)
+    count = 0
     while True:
+        new_date = datetime.datetime.today()
+        if new_date != today:
+            today = datetime.datetime.today().strftime('%Y-%m-%d')
+            date_string = today
+            db_name = "mastodon_" + date_string
+            if db_name in couch:
+                db = couch[db_name]
+            else:
+                db = couch.create(db_name)
+            time.sleep(10)
         # Check if the date has changed
-        check_date_change()
-
+        #today, date_string, db_name, db, couch = check_date_change(today, date_string, db_name, db, couch)
         # ############################### total #############################
         mastodon_total = get_total_dictionary(db,db_name,date_string, mastodon_total)
         #requests.post(f'http://localhost:8000/update_mastodon', json=mastodon_total)
         requests.post(f'http://{host_ip}:8000/update_mastodon', json=mastodon_total)
-
-        # ############################### policy topics #############################
-        #mastodon_policy = get_topic_dictionary(db,db_name,date_string, mastodon_policy, "political", "political_related")
-
-        ################################ criminal topics #############################
-        #mastodon_criminal = get_topic_dictionary(db,db_name,date_string, mastodon_criminal, "criminal", "criminal_related")
-
-        ################################ employment topics #############################
-        #mastodon_employment = get_topic_dictionary(db,db_name,date_string, mastodon_employment, "employment", "employment_related")
-
-        ################################ employment topics #############################
-        #mastodon_traffic = get_topic_dictionary(db,db_name,date_string, mastodon_traffic, "traffic", "traffic_related")
-
-
         time.sleep(1)

@@ -58,7 +58,7 @@ function App() {
             <Link className="nav-link" to="/">Home</Link>
             <Link className="nav-link" to="/data-overview">Data Overview</Link>
             <Link className="nav-link" to="/twitter-data">Twitter Data</Link>
-            <Link className="nav-link" to="/mastodon-data">Mastodon Data</Link>
+            <Link className="nav-link" to="/mastodon-data">Mastodon Streaming</Link>
             <Link className="nav-link" to="/data-comparison">Data Comparison</Link>
             <Link className="nav-link" to="/about-us">About Us</Link>
           </nav>

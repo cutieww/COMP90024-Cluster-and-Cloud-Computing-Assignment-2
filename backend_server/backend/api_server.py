@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from mastodon_process import get_topic_dictionary, get_total_dictionary, host_ip
 import couchdb
 import httpx
+import json
 
 
 app = FastAPI()
@@ -56,9 +57,90 @@ mastodon_traffic = {'host': host_ip, 'date': "date_string",
 mastodon_data = {}
 mastodon_post = {}
 
+twitter_all = {
+    'total_user': 51866,
+    'total_post': 2511849,
+    'user_num': 35709,
+    'post_num': 948229,
+    'user_ratio': 0.6884857131839741,
+    'post_ratio': 0.3775023896739016
+    }
+
 @app.get('/')
 async def root():
     return {'name': 'api to connect to react'}
+
+@app.get('/twitter_sudo/{topic}')
+async def twitter_sudo_data(topic: str):
+    twitter_sudo = {}
+    try:
+        with open('json_file/topic_state_info.json') as f:
+            data = json.load(f)
+        topic_info = data.get(topic, None)
+        if topic_info:
+            twitter_sudo['twitter'] = topic_info
+        else:
+            return {"error": f"No data found for topic {topic}"}
+    except FileNotFoundError:
+        return {"error": "topic_state_info.json file not found"}
+    except Exception as e:
+        return {"error": str(e)}
+    
+    try:
+        with open(f'json_file/{topic}_sudo.json') as f:
+            data = json.load(f)
+            twitter_sudo['sudo'] = data
+    except FileNotFoundError:
+        return {"error": f"{topic} sudo file not found"}
+    except Exception as e:
+        return {"error": str(e)}
+    return twitter_sudo
+
+
+@app.get('/twitter_data/all')
+async def all_twitter_data():
+    return twitter_all
+
+
+@app.get('/twitter_data/query/{topic}/{state}')
+async def query_twitter_data(topic: str, state: str):
+    twitter_data = {}
+    try:
+        with open('json_file/topic_state_info.json') as f:
+            data = json.load(f)
+        topic_info = data.get(topic, None)
+        if topic_info:
+            state_info = topic_info.get(state, None)
+            if state_info:
+                twitter_data =  state_info
+            else:
+                return {"error": f"No data found for state {state} in topic {topic}"}
+        else:
+            return {"error": f"No data found for topic {topic}"}
+    except FileNotFoundError:
+        return {"error": "topic_state_info.json file not found"}
+    except Exception as e:
+        return {"error": str(e)}
+    
+    try:
+        with open('json_file/word_cloud.json') as f:
+            data = json.load(f)
+        state_info = data.get(state, None)
+        if state_info:
+            topic_info = state_info.get(topic, None)
+            if topic_info:
+                twitter_data['word_cloud'] =  topic_info
+            else:
+                return {"error": f"No data found for topic {topic} in state {state}"}
+        else:
+            return {"error": f"No data found for state {state}"}
+    except FileNotFoundError:
+        return {"error": "topic_state_info.json file not found"}
+    except Exception as e:
+        return {"error": str(e)}
+    
+    return twitter_data
+
 
 
 @app.get('/mastodon_data')

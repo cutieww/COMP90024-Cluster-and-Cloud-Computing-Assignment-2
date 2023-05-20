@@ -5,7 +5,8 @@ const Card = ({ name, role }) => {
     <div className="card">
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
-        <p className="card-text">In charge of: {role}</p>
+        <p className="card-text">In charge of: </p>
+        <p>{role}</p>
       </div>
     </div>
   );
@@ -24,10 +25,10 @@ const AboutUs = () => {
           <Card name="Wei Wang" role="Twitter, CouchDB, Backend" />
         </div>
         <div className="col-md-4">
-          <Card name="George Wang" role="Ansible, Docker, Backend" />
+          <Card name="George Wang" role="Ansible, Docker" />
         </div>
         <div className="col-md-4">
-          <Card name="Brendan Pichler" role="CouchDB, React, Frontend" />
+          <Card name="Brendan Pichler" role="React, Frontend" />
         </div>
         <div className="col-md-4">
           <Card name="Luchen Zhou" role="Infrastructure, Docker, Full stack" />

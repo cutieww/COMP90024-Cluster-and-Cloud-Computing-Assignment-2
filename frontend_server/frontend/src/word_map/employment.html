@@ -1,0 +1,2787 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a3f6c422bb31992bcd7ce25bedf8c3dd {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a3f6c422bb31992bcd7ce25bedf8c3dd" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a3f6c422bb31992bcd7ce25bedf8c3dd = L.map(
+                "map_a3f6c422bb31992bcd7ce25bedf8c3dd",
+                {
+                    center: [-38.2921758, 142.3673185],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_644d76d0693c932edffd1951bd7ea25e = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_326e8813f601dc3a2f359f3defbb55ac = L.marker(
+                [-38.2921758, 142.3673185],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var icon_72bec29ceddce081f38c97ab96314321 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_326e8813f601dc3a2f359f3defbb55ac.setIcon(icon_72bec29ceddce081f38c97ab96314321);
+        
+    
+        var popup_c3d7179edb6eef30bff27f9de6e08ed8 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_8f09602381d73da8a793ca3e727e986b = $(`<div id="html_8f09602381d73da8a793ca3e727e986b" style="width: 100.0%; height: 100.0%;"><b>Koroit</b><br> Total: 1827, <br>employment: 319</div>`)[0];
+                popup_c3d7179edb6eef30bff27f9de6e08ed8.setContent(html_8f09602381d73da8a793ca3e727e986b);
+            
+        
+
+        marker_326e8813f601dc3a2f359f3defbb55ac.bindPopup(popup_c3d7179edb6eef30bff27f9de6e08ed8)
+        ;
+
+        
+    
+    
+            var rectangle_13a967017bffaa7df439a3d5df521522 = L.rectangle(
+                [[-38.3215699, 142.327979], [-38.23119579999999, 142.4157399]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_93bc1ee745889a2a71f4b6a97825554a = L.marker(
+                [-33.4827345, 150.1570173],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var icon_3e1de7f35af2a3a30119bcfc580b35bd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+            );
+            marker_93bc1ee745889a2a71f4b6a97825554a.setIcon(icon_3e1de7f35af2a3a30119bcfc580b35bd);
+        
+    
+        var popup_f5ec342b3aa54e6a2ef4fe7d3a785451 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_aabf0558e1b539e68deb6e4599b90986 = $(`<div id="html_aabf0558e1b539e68deb6e4599b90986" style="width: 100.0%; height: 100.0%;"><b>Lithgow</b><br> Total: 1451, <br>employment: 233</div>`)[0];
+                popup_f5ec342b3aa54e6a2ef4fe7d3a785451.setContent(html_aabf0558e1b539e68deb6e4599b90986);
+            
+        
+
+        marker_93bc1ee745889a2a71f4b6a97825554a.bindPopup(popup_f5ec342b3aa54e6a2ef4fe7d3a785451)
+        ;
+
+        
+    
+    
+            var rectangle_f1238bd7f473e768834e6f488644ddac = L.rectangle(
+                [[-33.5073172, 150.1146367], [-33.4436027, 150.1948569]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_a74957b02e647e06d85e96b68a39450c = L.marker(
+                [-38.1154932, 144.6566531],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var icon_44412d9d4089a2a4c50531626b311a82 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a74957b02e647e06d85e96b68a39450c.setIcon(icon_44412d9d4089a2a4c50531626b311a82);
+        
+    
+        var popup_62ea8d2aa91636a46e4ffb5f77ee4cc1 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_5a9f12cdc6642f24cca506afb6c0ba3a = $(`<div id="html_5a9f12cdc6642f24cca506afb6c0ba3a" style="width: 100.0%; height: 100.0%;"><b>Portarlington</b><br> Total: 1206, <br>employment: 157</div>`)[0];
+                popup_62ea8d2aa91636a46e4ffb5f77ee4cc1.setContent(html_5a9f12cdc6642f24cca506afb6c0ba3a);
+            
+        
+
+        marker_a74957b02e647e06d85e96b68a39450c.bindPopup(popup_62ea8d2aa91636a46e4ffb5f77ee4cc1)
+        ;
+
+        
+    
+    
+            var rectangle_fdc01834c2c0486db43401a839220689 = L.rectangle(
+                [[-38.1717739, 144.620358], [-38.107765, 144.6927256]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_65cda0e0d85da1e667f6bb40620a3272 = L.marker(
+                [-38.1668292, 144.5711203],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_d85b0147b787349dd7a15213de2b0604 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_a736154356e367845867329977556202 = $(`<div id="html_a736154356e367845867329977556202" style="width: 100.0%; height: 100.0%;"><b>Drysdale - Clifton Springs</b><br> Total: 2829, <br>employment: 366</div>`)[0];
+                popup_d85b0147b787349dd7a15213de2b0604.setContent(html_a736154356e367845867329977556202);
+            
+        
+
+        marker_65cda0e0d85da1e667f6bb40620a3272.bindPopup(popup_d85b0147b787349dd7a15213de2b0604)
+        ;
+
+        
+    
+    
+            var rectangle_51418146a9a6984a2d737163bad300c1 = L.rectangle(
+                [[-38.1832901, 144.5489845], [-38.1391181, 144.5916367]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_7c63d1a24b314f47d58a5d51b58f5daa = L.marker(
+                [-36.0260723, 146.0003241],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_fbf24141476992aa87d5b0a5416a6f00 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_bdb25b98ab77a5c2816995223edb3077 = $(`<div id="html_bdb25b98ab77a5c2816995223edb3077" style="width: 100.0%; height: 100.0%;"><b>Yarrawonga</b><br> Total: 1638, <br>employment: 210</div>`)[0];
+                popup_fbf24141476992aa87d5b0a5416a6f00.setContent(html_bdb25b98ab77a5c2816995223edb3077);
+            
+        
+
+        marker_7c63d1a24b314f47d58a5d51b58f5daa.bindPopup(popup_fbf24141476992aa87d5b0a5416a6f00)
+        ;
+
+        
+    
+    
+            var rectangle_469b9906fc684d610fb34cbd800e573b = L.rectangle(
+                [[-36.0699859, 145.9310069], [-35.9918062, 146.08492]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_e1b2b11f03ec3cc03badf6fe692c2015 = L.marker(
+                [-37.2836413, 142.931597],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_fcecf68265996d7167fb7f8e50ab4e2c = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_29b06063ba72642c765ab475fd1fb235 = $(`<div id="html_29b06063ba72642c765ab475fd1fb235" style="width: 100.0%; height: 100.0%;"><b>Ararat</b><br> Total: 1330, <br>employment: 155</div>`)[0];
+                popup_fcecf68265996d7167fb7f8e50ab4e2c.setContent(html_29b06063ba72642c765ab475fd1fb235);
+            
+        
+
+        marker_e1b2b11f03ec3cc03badf6fe692c2015.bindPopup(popup_fcecf68265996d7167fb7f8e50ab4e2c)
+        ;
+
+        
+    
+    
+            var rectangle_6ca25a40d64315886656f8bc884d8b89 = L.rectangle(
+                [[-37.3287989, 142.8784235], [-37.2029581, 143.081041]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_24bff66356d068f856ad11f8b876c016 = L.marker(
+                [-23.698042, 133.8807471],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_dfb8f82c5939b74d6b72af48344512eb = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_d577cfafb0c90abe0f2f5863bc92bc9e = $(`<div id="html_d577cfafb0c90abe0f2f5863bc92bc9e" style="width: 100.0%; height: 100.0%;"><b>Alice Springs</b><br> Total: 2492, <br>employment: 279</div>`)[0];
+                popup_dfb8f82c5939b74d6b72af48344512eb.setContent(html_d577cfafb0c90abe0f2f5863bc92bc9e);
+            
+        
+
+        marker_24bff66356d068f856ad11f8b876c016.bindPopup(popup_dfb8f82c5939b74d6b72af48344512eb)
+        ;
+
+        
+    
+    
+            var rectangle_b41d6b43226023b8821ddc914d25e6c0 = L.rectangle(
+                [[-23.7070929, 133.874263], [-23.691614, 133.8859969]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_985797e6f632fc26b179453e04ae0546 = L.marker(
+                [-35.1049834, 150.6240074],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_55fa662c6a19a4c5591e9ed7910a78c3 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_69e93bce916c81a10e4b6d6292ed836d = $(`<div id="html_69e93bce916c81a10e4b6d6292ed836d" style="width: 100.0%; height: 100.0%;"><b>St Georges Basin - Sanctuary Point</b><br> Total: 3679, <br>employment: 410</div>`)[0];
+                popup_55fa662c6a19a4c5591e9ed7910a78c3.setContent(html_69e93bce916c81a10e4b6d6292ed836d);
+            
+        
+
+        marker_985797e6f632fc26b179453e04ae0546.bindPopup(popup_55fa662c6a19a4c5591e9ed7910a78c3)
+        ;
+
+        
+    
+    
+            var rectangle_44d46469e2cf6ff60c79dcc1a7c8126e = L.rectangle(
+                [[-35.1170187, 150.6087813], [-35.08862630000001, 150.6437673]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_8433f7805e4ebfa250f285958d2367c9 = L.marker(
+                [-33.6516465, 115.3473335],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_3a332ef06191c6315ea8eca64eb6f9fc = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_3a76f9ab0d1e859bfaf9bd39e6a03922 = $(`<div id="html_3a76f9ab0d1e859bfaf9bd39e6a03922" style="width: 100.0%; height: 100.0%;"><b>Busselton</b><br> Total: 3089, <br>employment: 343</div>`)[0];
+                popup_3a332ef06191c6315ea8eca64eb6f9fc.setContent(html_3a76f9ab0d1e859bfaf9bd39e6a03922);
+            
+        
+
+        marker_8433f7805e4ebfa250f285958d2367c9.bindPopup(popup_3a332ef06191c6315ea8eca64eb6f9fc)
+        ;
+
+        
+    
+    
+            var rectangle_bd7ed58e990ec371a17c84edd555cb67 = L.rectangle(
+                [[-33.6711853, 115.3402448], [-33.6414003, 115.3588577]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_43d36a78209691cecf423b43c1f071e8 = L.marker(
+                [-26.6313202, 152.960382],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_e9fb94ba1076a2a1a35541fa1af04a53 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_5a1fda10a9bb23043e1956082bbcfa4f = $(`<div id="html_5a1fda10a9bb23043e1956082bbcfa4f" style="width: 100.0%; height: 100.0%;"><b>Nambour</b><br> Total: 3809, <br>employment: 407</div>`)[0];
+                popup_e9fb94ba1076a2a1a35541fa1af04a53.setContent(html_5a1fda10a9bb23043e1956082bbcfa4f);
+            
+        
+
+        marker_43d36a78209691cecf423b43c1f071e8.bindPopup(popup_e9fb94ba1076a2a1a35541fa1af04a53)
+        ;
+
+        
+    
+    
+            var rectangle_969409245ef1c20701d925afd9af8dd7 = L.rectangle(
+                [[-26.64738, 152.9333397], [-26.607465, 152.9820202]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_a311d23353b4a8cc95910c80e316e19c = L.marker(
+                [-34.9928932, 150.7217018],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_0103c26e56365f83f8ae2180865de679 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_46e9cad94a3c091b59ef47494845c1e6 = $(`<div id="html_46e9cad94a3c091b59ef47494845c1e6" style="width: 100.0%; height: 100.0%;"><b>Callala Bay</b><br> Total: 1350, <br>employment: 141</div>`)[0];
+                popup_0103c26e56365f83f8ae2180865de679.setContent(html_46e9cad94a3c091b59ef47494845c1e6);
+            
+        
+
+        marker_a311d23353b4a8cc95910c80e316e19c.bindPopup(popup_0103c26e56365f83f8ae2180865de679)
+        ;
+
+        
+    
+    
+            var rectangle_a78b805fa0ac8e067f124c1c99b30fcb = L.rectangle(
+                [[-35.0104912, 150.7019152], [-34.9774743, 150.7391954]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_02b3cda6db0ebbd8eb57c38261e4df65 = L.marker(
+                [-36.3855842, 145.4139392],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_13257d636a1809aca4c96f6e286abf23 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_8fd3a4ed48fb2dc76e527e6c37781d13 = $(`<div id="html_8fd3a4ed48fb2dc76e527e6c37781d13" style="width: 100.0%; height: 100.0%;"><b>Shepparton - Mooroopna</b><br> Total: 1406, <br>employment: 141</div>`)[0];
+                popup_13257d636a1809aca4c96f6e286abf23.setContent(html_8fd3a4ed48fb2dc76e527e6c37781d13);
+            
+        
+
+        marker_02b3cda6db0ebbd8eb57c38261e4df65.bindPopup(popup_13257d636a1809aca4c96f6e286abf23)
+        ;
+
+        
+    
+    
+            var rectangle_95db44416ba3b094fb593d5b33c9348d = L.rectangle(
+                [[-36.4570137, 145.3385366], [-36.3452964, 145.461961]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_fc1a151e06b9b72d9d75e835eff29200 = L.marker(
+                [-33.8436563, 117.6385638],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_563e81d1fe5a8f392e69ef311616263f = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_7feabb989369ed793caf4f31cd94d1bd = $(`<div id="html_7feabb989369ed793caf4f31cd94d1bd" style="width: 100.0%; height: 100.0%;"><b>Broomehill Village</b><br> Total: 2248, <br>employment: 225</div>`)[0];
+                popup_563e81d1fe5a8f392e69ef311616263f.setContent(html_7feabb989369ed793caf4f31cd94d1bd);
+            
+        
+
+        marker_fc1a151e06b9b72d9d75e835eff29200.bindPopup(popup_563e81d1fe5a8f392e69ef311616263f)
+        ;
+
+        
+    
+    
+            var rectangle_7d07ff33d0f4484187b53ec8467f43e8 = L.rectangle(
+                [[-33.8673486, 117.6213435], [-33.8317116, 117.6557871]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_23bb1dad0786e3749455e7aef8f54449 = L.marker(
+                [-36.1404431, 144.7511231],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_ff435221b254898cb6551f7541d846a8 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_f14499ab0ae2ce4de5906a2e1b17f8b4 = $(`<div id="html_f14499ab0ae2ce4de5906a2e1b17f8b4" style="width: 100.0%; height: 100.0%;"><b>Echuca</b><br> Total: 1366, <br>employment: 131</div>`)[0];
+                popup_ff435221b254898cb6551f7541d846a8.setContent(html_f14499ab0ae2ce4de5906a2e1b17f8b4);
+            
+        
+
+        marker_23bb1dad0786e3749455e7aef8f54449.bindPopup(popup_ff435221b254898cb6551f7541d846a8)
+        ;
+
+        
+    
+    
+            var rectangle_c3c446e6dc2a26f3d23a63608a35629e = L.rectangle(
+                [[-36.2487, 144.6733514], [-36.0611712, 144.850235]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_bcaceb36e176eab64bcdecb5532fce5a = L.marker(
+                [-38.5368534, 143.9738066],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_b304e35f1bd7ae75b5acef9252c9e941 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_42186bc92333cdd526c667d1642a50e3 = $(`<div id="html_42186bc92333cdd526c667d1642a50e3" style="width: 100.0%; height: 100.0%;"><b>Lorne</b><br> Total: 973, <br>employment: 91</div>`)[0];
+                popup_b304e35f1bd7ae75b5acef9252c9e941.setContent(html_42186bc92333cdd526c667d1642a50e3);
+            
+        
+
+        marker_bcaceb36e176eab64bcdecb5532fce5a.bindPopup(popup_b304e35f1bd7ae75b5acef9252c9e941)
+        ;
+
+        
+    
+    
+            var rectangle_d6b223b27cbb62e3bfe50ec458ac5d05 = L.rectangle(
+                [[-38.5794179, 143.8245329], [-38.4671461, 144.0122221]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_486d4261b4b047b2e5ce1f96abbd4b74 = L.marker(
+                [-16.5180925, 145.4660536],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_69785a12a96fde871fbcd16cdf01eb8d = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_befa88ff0f53d0a60425f1c37d74803f = $(`<div id="html_befa88ff0f53d0a60425f1c37d74803f" style="width: 100.0%; height: 100.0%;"><b>Port Douglas - Craiglie</b><br> Total: 1016, <br>employment: 95</div>`)[0];
+                popup_69785a12a96fde871fbcd16cdf01eb8d.setContent(html_befa88ff0f53d0a60425f1c37d74803f);
+            
+        
+
+        marker_486d4261b4b047b2e5ce1f96abbd4b74.bindPopup(popup_69785a12a96fde871fbcd16cdf01eb8d)
+        ;
+
+        
+    
+    
+            var rectangle_997849f1f6c9ce0e84b2b6fc6810ffad = L.rectangle(
+                [[-16.52819840000003, 145.4617178], [-16.50996479999997, 145.4678197]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_8a4dd5a2dc050bebf001761ea28168bb = L.marker(
+                [-23.3574915, 119.7303373],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_a4237ef956a36bc39cf74ee394fb21bc = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_709f4fd6b2a713c3e116f9ee75f88179 = $(`<div id="html_709f4fd6b2a713c3e116f9ee75f88179" style="width: 100.0%; height: 100.0%;"><b>Newman</b><br> Total: 1115, <br>employment: 101</div>`)[0];
+                popup_a4237ef956a36bc39cf74ee394fb21bc.setContent(html_709f4fd6b2a713c3e116f9ee75f88179);
+            
+        
+
+        marker_8a4dd5a2dc050bebf001761ea28168bb.bindPopup(popup_a4237ef956a36bc39cf74ee394fb21bc)
+        ;
+
+        
+    
+    
+            var rectangle_6d4fd2ac09b18550747709a16639c90f = L.rectangle(
+                [[-23.7280389, 118.4260412], [-22.3201839, 121.3020089]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_c4a4162936407a1ff13a00ff62c6b1fd = L.marker(
+                [-31.4580174, 152.8974657],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_1613f8c6b981e59c5b7f89fbc2c3001e = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_242ea61a6193cd89747b15267ec22992 = $(`<div id="html_242ea61a6193cd89747b15267ec22992" style="width: 100.0%; height: 100.0%;"><b>Port Macquarie</b><br> Total: 3848, <br>employment: 342</div>`)[0];
+                popup_1613f8c6b981e59c5b7f89fbc2c3001e.setContent(html_242ea61a6193cd89747b15267ec22992);
+            
+        
+
+        marker_c4a4162936407a1ff13a00ff62c6b1fd.bindPopup(popup_1613f8c6b981e59c5b7f89fbc2c3001e)
+        ;
+
+        
+    
+    
+            var rectangle_10c3a8f0e60f2206c8839060b1ad05b5 = L.rectangle(
+                [[-31.51714969999999, 152.8480188], [-31.4052558, 152.9383796]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_5380c76ea90f5df1e409cc6e4620354f = L.marker(
+                [-37.6835831, 144.5779508],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_1c0aac62f2bfcc9ae3d7e5bbd9ec0adc = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_3b082715e31ca032c3bcb3bf1d76d82b = $(`<div id="html_3b082715e31ca032c3bcb3bf1d76d82b" style="width: 100.0%; height: 100.0%;"><b>Melton</b><br> Total: 3493, <br>employment: 309</div>`)[0];
+                popup_1c0aac62f2bfcc9ae3d7e5bbd9ec0adc.setContent(html_3b082715e31ca032c3bcb3bf1d76d82b);
+            
+        
+
+        marker_5380c76ea90f5df1e409cc6e4620354f.bindPopup(popup_1c0aac62f2bfcc9ae3d7e5bbd9ec0adc)
+        ;
+
+        
+    
+    
+            var rectangle_7c7e528d61b04f7d328d4902c2f5fdce = L.rectangle(
+                [[-37.7201984, 144.5120679], [-37.635262, 144.6156036]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_6294b6306f24b7a456b2e9c64a511cf5 = L.marker(
+                [-38.3720954, 142.4777782],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_aa17dd94620f62c0b188d95093c8b1b5 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_b90a5dc65e2f48e1582d257bc8f682aa = $(`<div id="html_b90a5dc65e2f48e1582d257bc8f682aa" style="width: 100.0%; height: 100.0%;"><b>Warrnambool</b><br> Total: 3104, <br>employment: 271</div>`)[0];
+                popup_aa17dd94620f62c0b188d95093c8b1b5.setContent(html_b90a5dc65e2f48e1582d257bc8f682aa);
+            
+        
+
+        marker_6294b6306f24b7a456b2e9c64a511cf5.bindPopup(popup_aa17dd94620f62c0b188d95093c8b1b5)
+        ;
+
+        
+    
+    
+            var rectangle_23fd8eda98d3a442dc89621e66d0bf5f = L.rectangle(
+                [[-38.4131665, 142.4362841], [-38.326496, 142.557256]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_226d72dbe6a411fdd0153ee44b32ac3c = L.marker(
+                [-42.8826055, 147.3257196],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_760764c9436b5857ea21a588fd51b1ec = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_30fb543fbe2fe39a87eee9b0e51b82ee = $(`<div id="html_30fb543fbe2fe39a87eee9b0e51b82ee" style="width: 100.0%; height: 100.0%;"><b>Hobart</b><br> Total: 26438, <br>employment: 2209</div>`)[0];
+                popup_760764c9436b5857ea21a588fd51b1ec.setContent(html_30fb543fbe2fe39a87eee9b0e51b82ee);
+            
+        
+
+        marker_226d72dbe6a411fdd0153ee44b32ac3c.bindPopup(popup_760764c9436b5857ea21a588fd51b1ec)
+        ;
+
+        
+    
+    
+            var rectangle_bd49c99cde5266ee6e1db69a9aba84e5 = L.rectangle(
+                [[-42.8916347, 147.31561], [-42.8730457, 147.3415027]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_735b57e11a95f41eb8f93533b4c7d670 = L.marker(
+                [-38.0601124, 145.4100456],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_99e806e62d7dcff6839d3ec063d88bc5 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_b6fe801e78b2a320adabdb34cb17dd99 = $(`<div id="html_b6fe801e78b2a320adabdb34cb17dd99" style="width: 100.0%; height: 100.0%;"><b>Officer</b><br> Total: 1352, <br>employment: 112</div>`)[0];
+                popup_99e806e62d7dcff6839d3ec063d88bc5.setContent(html_b6fe801e78b2a320adabdb34cb17dd99);
+            
+        
+
+        marker_735b57e11a95f41eb8f93533b4c7d670.bindPopup(popup_99e806e62d7dcff6839d3ec063d88bc5)
+        ;
+
+        
+    
+    
+            var rectangle_ca88a6437b752e1912dc2f2b854e31b0 = L.rectangle(
+                [[-38.083263, 145.3759315], [-38.0132859, 145.4416001]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_fb6a33c3cd6a988701f5f0f1a3483628 = L.marker(
+                [-37.4066923, 144.9798236],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_7a1883b51eaf7808d0f5f3022ee613ac = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_aba7e1a6f5e611ffc4d26e58a29ce08d = $(`<div id="html_aba7e1a6f5e611ffc4d26e58a29ce08d" style="width: 100.0%; height: 100.0%;"><b>Wallan</b><br> Total: 1400, <br>employment: 115</div>`)[0];
+                popup_7a1883b51eaf7808d0f5f3022ee613ac.setContent(html_aba7e1a6f5e611ffc4d26e58a29ce08d);
+            
+        
+
+        marker_fb6a33c3cd6a988701f5f0f1a3483628.bindPopup(popup_7a1883b51eaf7808d0f5f3022ee613ac)
+        ;
+
+        
+    
+    
+            var rectangle_3f6500c783df9c7925bf5e1388edc554 = L.rectangle(
+                [[-37.4443285, 144.894989], [-37.3696931, 145.0270009]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_6f8dd89b6e9acc000fffcaa6c382edbc = L.marker(
+                [-35.9987227, 146.3911991],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_42381beb6fcd4102e91b843ee3fd6e94 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_d30c8911b7715fe199eda3053e892c1a = $(`<div id="html_d30c8911b7715fe199eda3053e892c1a" style="width: 100.0%; height: 100.0%;"><b>Corowa</b><br> Total: 1194, <br>employment: 96</div>`)[0];
+                popup_42381beb6fcd4102e91b843ee3fd6e94.setContent(html_d30c8911b7715fe199eda3053e892c1a);
+            
+        
+
+        marker_6f8dd89b6e9acc000fffcaa6c382edbc.bindPopup(popup_42381beb6fcd4102e91b843ee3fd6e94)
+        ;
+
+        
+    
+    
+            var rectangle_108d2d773e6facdebefc67877d99807e = L.rectangle(
+                [[-36.0510475, 146.300906], [-35.9356851, 146.4248141]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_4b124ebb6a281239e56482e223959601 = L.marker(
+                [-41.439068, 147.1357671],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_50c91b6e9c5507c1c91af7c49c54de87 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_0d0397ee44b97fa402da2819c66330a4 = $(`<div id="html_0d0397ee44b97fa402da2819c66330a4" style="width: 100.0%; height: 100.0%;"><b>Launceston</b><br> Total: 7992, <br>employment: 639</div>`)[0];
+                popup_50c91b6e9c5507c1c91af7c49c54de87.setContent(html_0d0397ee44b97fa402da2819c66330a4);
+            
+        
+
+        marker_4b124ebb6a281239e56482e223959601.bindPopup(popup_50c91b6e9c5507c1c91af7c49c54de87)
+        ;
+
+        
+    
+    
+            var rectangle_a7d936d99fc4603fce71b78945151442 = L.rectangle(
+                [[-41.4504339, 147.1269873], [-41.4163322, 147.1607862]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_f8ffcff89e695cc37d2b57aac4bc0120 = L.marker(
+                [-35.5032052, 138.6689697],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_62ac95dffae8c67e333135df01a60a1f = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_4b61f671352d9a4a9aaea4fc88a79893 = $(`<div id="html_4b61f671352d9a4a9aaea4fc88a79893" style="width: 100.0%; height: 100.0%;"><b>Victor Harbor - Goolwa</b><br> Total: 1935, <br>employment: 154</div>`)[0];
+                popup_62ac95dffae8c67e333135df01a60a1f.setContent(html_4b61f671352d9a4a9aaea4fc88a79893);
+            
+        
+
+        marker_f8ffcff89e695cc37d2b57aac4bc0120.bindPopup(popup_62ac95dffae8c67e333135df01a60a1f)
+        ;
+
+        
+    
+    
+            var rectangle_b494e4224bb24f27e5e2264463f16716 = L.rectangle(
+                [[-35.58795509999999, 138.516838], [-35.4515996, 138.8478351]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_0f90138c0db580ee7e6302bbf42304bc = L.marker(
+                [-26.1836445, 152.6623743],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_66da1edf24c544499d5ba9af9dba9ae9 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_5b1607900bb31e97ac820f9b421c19d9 = $(`<div id="html_5b1607900bb31e97ac820f9b421c19d9" style="width: 100.0%; height: 100.0%;"><b>Gympie</b><br> Total: 2043, <br>employment: 161</div>`)[0];
+                popup_66da1edf24c544499d5ba9af9dba9ae9.setContent(html_5b1607900bb31e97ac820f9b421c19d9);
+            
+        
+
+        marker_0f90138c0db580ee7e6302bbf42304bc.bindPopup(popup_66da1edf24c544499d5ba9af9dba9ae9)
+        ;
+
+        
+    
+    
+            var rectangle_0f693b0775a889b4318541135387bc16 = L.rectangle(
+                [[-26.2074334, 152.6355975], [-26.159559, 152.6922528]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_b93b19f99d662ed0a627f29e31bf910f = L.marker(
+                [-12.4637333, 130.8444446],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_5df6043790afffad981e5f0d0f18d712 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_af49e3b5d812ed5589449857a67ff793 = $(`<div id="html_af49e3b5d812ed5589449857a67ff793" style="width: 100.0%; height: 100.0%;"><b>Darwin</b><br> Total: 14802, <br>employment: 1156</div>`)[0];
+                popup_5df6043790afffad981e5f0d0f18d712.setContent(html_af49e3b5d812ed5589449857a67ff793);
+            
+        
+
+        marker_b93b19f99d662ed0a627f29e31bf910f.bindPopup(popup_5df6043790afffad981e5f0d0f18d712)
+        ;
+
+        
+    
+    
+            var rectangle_aff6d9c35e4fc3afd3e52fa6bbae092f = L.rectangle(
+                [[-12.5217415, 130.8151169], [-12.3300597, 131.0514999]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_159958c4560c5ca01d5850665bfb6768 = L.marker(
+                [-35.2801903, 149.1310038],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_a14c26c4273675dd28140fea508c71ce = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_6b9599c785683b79d7f24280f8ff36bc = $(`<div id="html_6b9599c785683b79d7f24280f8ff36bc" style="width: 100.0%; height: 100.0%;"><b>Canberra</b><br> Total: 50509, <br>employment: 3916</div>`)[0];
+                popup_a14c26c4273675dd28140fea508c71ce.setContent(html_6b9599c785683b79d7f24280f8ff36bc);
+            
+        
+
+        marker_159958c4560c5ca01d5850665bfb6768.bindPopup(popup_a14c26c4273675dd28140fea508c71ce)
+        ;
+
+        
+    
+    
+            var rectangle_d6afa4f62eacbc34ff083a916e21493a = L.rectangle(
+                [[-35.2873252, 149.1207312], [-35.2752841, 149.1376675]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_61952b2bc4afcdfec2955210bbed8aea = L.marker(
+                [-21.1433971, 149.1868281],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_f4f1973b712b7a51c3b28498d31863f9 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_767577776b05c130f478e624798aee34 = $(`<div id="html_767577776b05c130f478e624798aee34" style="width: 100.0%; height: 100.0%;"><b>Mackay</b><br> Total: 4670, <br>employment: 361</div>`)[0];
+                popup_f4f1973b712b7a51c3b28498d31863f9.setContent(html_767577776b05c130f478e624798aee34);
+            
+        
+
+        marker_61952b2bc4afcdfec2955210bbed8aea.bindPopup(popup_f4f1973b712b7a51c3b28498d31863f9)
+        ;
+
+        
+    
+    
+            var rectangle_59496e46dbcd4ef291fd117e0ac22e26 = L.rectangle(
+                [[-21.152353, 149.1659516], [-21.1330522, 149.1989214]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_2d5b6bfed78ae3bd1566fc74e56feeaa = L.marker(
+                [-33.4111857, 149.578693],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_e619d9465e82db19fcea40ea3fb9d219 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_87f88fd0d3dc2f0931652c6ab0541c4c = $(`<div id="html_87f88fd0d3dc2f0931652c6ab0541c4c" style="width: 100.0%; height: 100.0%;"><b>Bathurst</b><br> Total: 1281, <br>employment: 99</div>`)[0];
+                popup_e619d9465e82db19fcea40ea3fb9d219.setContent(html_87f88fd0d3dc2f0931652c6ab0541c4c);
+            
+        
+
+        marker_2d5b6bfed78ae3bd1566fc74e56feeaa.bindPopup(popup_e619d9465e82db19fcea40ea3fb9d219)
+        ;
+
+        
+    
+    
+            var rectangle_78d19ca6a4ec24ebd09bf5ce16863f4d = L.rectangle(
+                [[-33.4342443, 149.5617719], [-33.403679, 149.5946655]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_d7eaf271a003dbb234c7f8c9ac3bd657 = L.marker(
+                [-35.3514641, 149.2330429],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_c87ba733a2e165136e05934b583dc7b0 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_d1c9cba34b3af1b9f9d61a063fc37fa8 = $(`<div id="html_d1c9cba34b3af1b9f9d61a063fc37fa8" style="width: 100.0%; height: 100.0%;"><b>Queanbeyan</b><br> Total: 2231, <br>employment: 169</div>`)[0];
+                popup_c87ba733a2e165136e05934b583dc7b0.setContent(html_d1c9cba34b3af1b9f9d61a063fc37fa8);
+            
+        
+
+        marker_d7eaf271a003dbb234c7f8c9ac3bd657.bindPopup(popup_c87ba733a2e165136e05934b583dc7b0)
+        ;
+
+        
+    
+    
+            var rectangle_779e9ba222ee621c50fb5669409e31dc = L.rectangle(
+                [[-35.3628715, 149.2192093], [-35.341833, 149.2398602]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_29eae7126fb210ce361040cbf61b7042 = L.marker(
+                [-28.80943079999999, 153.287891],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_bf68dafddbaf259fa0abb7c8670da115 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_7d0c304121d555c943bf7c81ce458030 = $(`<div id="html_7d0c304121d555c943bf7c81ce458030" style="width: 100.0%; height: 100.0%;"><b>Lismore</b><br> Total: 1601, <br>employment: 119</div>`)[0];
+                popup_bf68dafddbaf259fa0abb7c8670da115.setContent(html_7d0c304121d555c943bf7c81ce458030);
+            
+        
+
+        marker_29eae7126fb210ce361040cbf61b7042.bindPopup(popup_bf68dafddbaf259fa0abb7c8670da115)
+        ;
+
+        
+    
+    
+            var rectangle_bbb28038721e2e0ea686b5262efaf234 = L.rectangle(
+                [[-28.8172458, 153.2692859], [-28.796202, 153.3066794]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_a41837fadffa9d260c615052a3fca713 = L.marker(
+                [-25.1990069, 133.2019681],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_92d2a5d6c4375d08315ba5b9b3abcac6 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_b30167d4cedb27fd1f8f49cd6541cc5d = $(`<div id="html_b30167d4cedb27fd1f8f49cd6541cc5d" style="width: 100.0%; height: 100.0%;"><b>Ghan</b><br> Total: 6080, <br>employment: 450</div>`)[0];
+                popup_92d2a5d6c4375d08315ba5b9b3abcac6.setContent(html_b30167d4cedb27fd1f8f49cd6541cc5d);
+            
+        
+
+        marker_a41837fadffa9d260c615052a3fca713.bindPopup(popup_92d2a5d6c4375d08315ba5b9b3abcac6)
+        ;
+
+        
+    
+    
+            var rectangle_73ffb9b2dcb192acc242dd9d3c7ca04e = L.rectangle(
+                [[-25.9986222, 131.9862119], [-24.135165, 135.904424]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_36f81f18acc0036b79e85583504d896c = L.marker(
+                [-30.2962013, 153.1138924],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_0dc599efc974df379f3265dcced1f742 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_5d0ad7bc36c89e0e884e0f1e3e01f641 = $(`<div id="html_5d0ad7bc36c89e0e884e0f1e3e01f641" style="width: 100.0%; height: 100.0%;"><b>Coffs Harbour</b><br> Total: 2892, <br>employment: 213</div>`)[0];
+                popup_0dc599efc974df379f3265dcced1f742.setContent(html_5d0ad7bc36c89e0e884e0f1e3e01f641);
+            
+        
+
+        marker_36f81f18acc0036b79e85583504d896c.bindPopup(popup_0dc599efc974df379f3265dcced1f742)
+        ;
+
+        
+    
+    
+            var rectangle_72e0d1c37e11376e0dfe389e22ab2c15 = L.rectangle(
+                [[-30.3551634, 153.0598654], [-30.2616056, 153.1548407]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_345f2fec096f9495cf0ec259d1777afc = L.marker(
+                [-34.9284989, 138.6007456],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_eb3ee4f129b0d7a4fac3aa60b92baab4 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_07663220ad517e22325eafc0120f2238 = $(`<div id="html_07663220ad517e22325eafc0120f2238" style="width: 100.0%; height: 100.0%;"><b>Adelaide</b><br> Total: 118895, <br>employment: 8695</div>`)[0];
+                popup_eb3ee4f129b0d7a4fac3aa60b92baab4.setContent(html_07663220ad517e22325eafc0120f2238);
+            
+        
+
+        marker_345f2fec096f9495cf0ec259d1777afc.bindPopup(popup_eb3ee4f129b0d7a4fac3aa60b92baab4)
+        ;
+
+        
+    
+    
+            var rectangle_8a66009cec2d2e74741b708a22d6388a = L.rectangle(
+                [[-35.3489699, 138.4421299], [-34.652564, 138.7801898]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_45cc2f8254be0600e8bd7e3129926157 = L.marker(
+                [-34.9983561, 138.7291822],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_e8e8ee871d0bc1e3102b690390614f85 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_7ed5159fcd6976a1995a0d18ec5c2528 = $(`<div id="html_7ed5159fcd6976a1995a0d18ec5c2528" style="width: 100.0%; height: 100.0%;"><b>Crafers - Bridgewater</b><br> Total: 955, <br>employment: 69</div>`)[0];
+                popup_e8e8ee871d0bc1e3102b690390614f85.setContent(html_7ed5159fcd6976a1995a0d18ec5c2528);
+            
+        
+
+        marker_45cc2f8254be0600e8bd7e3129926157.bindPopup(popup_e8e8ee871d0bc1e3102b690390614f85)
+        ;
+
+        
+    
+    
+            var rectangle_4d64cf4999695c63421a426f5e5b6300 = L.rectangle(
+                [[-35.0494089, 138.6716375], [-34.9689749, 138.7904637]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_44484f6cd4dd39dc293ca75aacb7a52a = L.marker(
+                [-38.1635458, 145.9309014],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_24eb540cf84210aa51368b6bdb4e865e = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_f0eafe86f43e4184a797abfd0f59bb6d = $(`<div id="html_f0eafe86f43e4184a797abfd0f59bb6d" style="width: 100.0%; height: 100.0%;"><b>Warragul</b><br> Total: 1089, <br>employment: 78</div>`)[0];
+                popup_24eb540cf84210aa51368b6bdb4e865e.setContent(html_f0eafe86f43e4184a797abfd0f59bb6d);
+            
+        
+
+        marker_44484f6cd4dd39dc293ca75aacb7a52a.bindPopup(popup_24eb540cf84210aa51368b6bdb4e865e)
+        ;
+
+        
+    
+    
+            var rectangle_8e4ff6ae5ec478dcf323f8dc98ba38b2 = L.rectangle(
+                [[-38.2033643, 145.8754946], [-38.095291, 145.9788471]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_64485b16d5a0e26a72f4403ab1f76ead = L.marker(
+                [-31.9523123, 115.861309],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_4be4273b985733e537aa25a1769f7e56 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_1dfb00a1e115bd3520e23835b7f344ff = $(`<div id="html_1dfb00a1e115bd3520e23835b7f344ff" style="width: 100.0%; height: 100.0%;"><b>Perth</b><br> Total: 159723, <br>employment: 11425</div>`)[0];
+                popup_4be4273b985733e537aa25a1769f7e56.setContent(html_1dfb00a1e115bd3520e23835b7f344ff);
+            
+        
+
+        marker_64485b16d5a0e26a72f4403ab1f76ead.bindPopup(popup_4be4273b985733e537aa25a1769f7e56)
+        ;
+
+        
+    
+    
+            var rectangle_c82559e2ddc187f99f9281f82b46d942 = L.rectangle(
+                [[-32.4556424, 115.6840483], [-31.6244855, 116.239023]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_3da8858d84d443ae02db274d42f60c0a = L.marker(
+                [-31.632568, 152.7067105],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_74705e374b78cdc02500c25f51d7ec4f = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_ee99c67468ecc09041e930490d695708 = $(`<div id="html_ee99c67468ecc09041e930490d695708" style="width: 100.0%; height: 100.0%;"><b>Kendall</b><br> Total: 1043, <br>employment: 74</div>`)[0];
+                popup_74705e374b78cdc02500c25f51d7ec4f.setContent(html_ee99c67468ecc09041e930490d695708);
+            
+        
+
+        marker_3da8858d84d443ae02db274d42f60c0a.bindPopup(popup_74705e374b78cdc02500c25f51d7ec4f)
+        ;
+
+        
+    
+    
+            var rectangle_fd6f65a1c077d7b3fd669ea9b6d7ca3c = L.rectangle(
+                [[-31.6524392, 152.6544288], [-31.6136428, 152.7253701]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_34b978a465ed9438480f5b71517cdcfc = L.marker(
+                [-37.351609, 144.1392885],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_39d29a464c5621b2cc58342bcb3294f9 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_1fbc05f28b23b03b37702981476a219c = $(`<div id="html_1fbc05f28b23b03b37702981476a219c" style="width: 100.0%; height: 100.0%;"><b>Daylesford - Hepburn Springs</b><br> Total: 1347, <br>employment: 95</div>`)[0];
+                popup_39d29a464c5621b2cc58342bcb3294f9.setContent(html_1fbc05f28b23b03b37702981476a219c);
+            
+        
+
+        marker_34b978a465ed9438480f5b71517cdcfc.bindPopup(popup_39d29a464c5621b2cc58342bcb3294f9)
+        ;
+
+        
+    
+    
+            var rectangle_10b59c0d2ea43c5e6cad813433934a46 = L.rectangle(
+                [[-37.3855817, 144.1188853], [-37.2979147, 144.163654]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_50eece6f4a13d39701634d6caa9c3e1d = L.marker(
+                [-37.8284406, 140.7806761],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_8d130c2673a7052fdd5733405d258cf4 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_678f1a15db14513fee750a0d8e712502 = $(`<div id="html_678f1a15db14513fee750a0d8e712502" style="width: 100.0%; height: 100.0%;"><b>Mount Gambier</b><br> Total: 1098, <br>employment: 77</div>`)[0];
+                popup_8d130c2673a7052fdd5733405d258cf4.setContent(html_678f1a15db14513fee750a0d8e712502);
+            
+        
+
+        marker_50eece6f4a13d39701634d6caa9c3e1d.bindPopup(popup_8d130c2673a7052fdd5733405d258cf4)
+        ;
+
+        
+    
+    
+            var rectangle_185fe2e96e6cad112434bb4b25e5342a = L.rectangle(
+                [[-37.8526165, 140.737612], [-37.8000279, 140.8236765]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_4c33de7071f46d567997f2183d87b516 = L.marker(
+                [-37.8136276, 144.9630576],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_4b6fd9070e7f395305059bb84b0181bb = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_24ac481fb2ae8a3e51156517c6941d4e = $(`<div id="html_24ac481fb2ae8a3e51156517c6941d4e" style="width: 100.0%; height: 100.0%;"><b>Melbourne</b><br> Total: 563656, <br>employment: 39289</div>`)[0];
+                popup_4b6fd9070e7f395305059bb84b0181bb.setContent(html_24ac481fb2ae8a3e51156517c6941d4e);
+            
+        
+
+        marker_4c33de7071f46d567997f2183d87b516.bindPopup(popup_4b6fd9070e7f395305059bb84b0181bb)
+        ;
+
+        
+    
+    
+            var rectangle_aee5fa4546be1fdcbb59cebcfac446a6 = L.rectangle(
+                [[-38.4338593, 144.5937418], [-37.5112737, 145.5125288]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_db86d1cab47de37c12c13b8bcafcb74b = L.marker(
+                [-31.09003839999999, 150.9293323],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_3b2ec18b435408cfa136235a6e5723a6 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_344827ec2383f3293a1b8f05afeae6d3 = $(`<div id="html_344827ec2383f3293a1b8f05afeae6d3" style="width: 100.0%; height: 100.0%;"><b>Tamworth</b><br> Total: 1867, <br>employment: 130</div>`)[0];
+                popup_3b2ec18b435408cfa136235a6e5723a6.setContent(html_344827ec2383f3293a1b8f05afeae6d3);
+            
+        
+
+        marker_db86d1cab47de37c12c13b8bcafcb74b.bindPopup(popup_3b2ec18b435408cfa136235a6e5723a6)
+        ;
+
+        
+    
+    
+            var rectangle_6d1e9cce573e942e222502a5352d7bf3 = L.rectangle(
+                [[-31.1019375, 150.9233156], [-31.0840195, 150.9413162]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_605fca9c8d7c1cc5fa68b57fd7a4aa52 = L.marker(
+                [-17.96182, 122.236998],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_043b62664f0275c3f955202333546ace = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_1e5b4c79aed2f3259d9ec0a518f57e68 = $(`<div id="html_1e5b4c79aed2f3259d9ec0a518f57e68" style="width: 100.0%; height: 100.0%;"><b>Broome</b><br> Total: 1667, <br>employment: 116</div>`)[0];
+                popup_043b62664f0275c3f955202333546ace.setContent(html_1e5b4c79aed2f3259d9ec0a518f57e68);
+            
+        
+
+        marker_605fca9c8d7c1cc5fa68b57fd7a4aa52.bindPopup(popup_043b62664f0275c3f955202333546ace)
+        ;
+
+        
+    
+    
+            var rectangle_ba946898b21732bceeb6d6c138bce19d = L.rectangle(
+                [[-17.9734186, 122.215952], [-17.9436407, 122.253155]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_676b04e76f27d549ff73d097f772906b = L.marker(
+                [-33.919672, 151.0896126],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_3d24c5b223b76b71368e90ce9dba63c4 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_e821b255cdc8050b86260c67a67f2be2 = $(`<div id="html_e821b255cdc8050b86260c67a67f2be2" style="width: 100.0%; height: 100.0%;"><b>Belmore</b><br> Total: 1440, <br>employment: 100</div>`)[0];
+                popup_3d24c5b223b76b71368e90ce9dba63c4.setContent(html_e821b255cdc8050b86260c67a67f2be2);
+            
+        
+
+        marker_676b04e76f27d549ff73d097f772906b.bindPopup(popup_3d24c5b223b76b71368e90ce9dba63c4)
+        ;
+
+        
+    
+    
+            var rectangle_712fa9b0d6851fc6b76f40e9839b1760 = L.rectangle(
+                [[-33.9314441, 151.076542], [-33.9075075, 151.0998198]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_cf0d92b5ffe8f4a18c384240448db01c = L.marker(
+                [-20.3123929, 118.6093685],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_6f69b7c086a1eec8af9d0df380469751 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_0739fa59ce883364b6dfc86584531021 = $(`<div id="html_0739fa59ce883364b6dfc86584531021" style="width: 100.0%; height: 100.0%;"><b>Port Hedland</b><br> Total: 1049, <br>employment: 72</div>`)[0];
+                popup_6f69b7c086a1eec8af9d0df380469751.setContent(html_0739fa59ce883364b6dfc86584531021);
+            
+        
+
+        marker_cf0d92b5ffe8f4a18c384240448db01c.bindPopup(popup_6f69b7c086a1eec8af9d0df380469751)
+        ;
+
+        
+    
+    
+            var rectangle_d60854e6ac0b2823ef9963ae0f494047 = L.rectangle(
+                [[-20.3940779, 118.5726358], [-20.278473, 118.6867834]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_c83443428624a2bd4e928f09f38e101c = L.marker(
+                [-38.2589909, 144.51633],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_42eb7d8399360e76e5ac59b1bca6feb2 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_cb730d6d76c6c8718ba3fba5c4e8bcf5 = $(`<div id="html_cb730d6d76c6c8718ba3fba5c4e8bcf5" style="width: 100.0%; height: 100.0%;"><b>Ocean Grove - Barwon Heads</b><br> Total: 1010, <br>employment: 69</div>`)[0];
+                popup_42eb7d8399360e76e5ac59b1bca6feb2.setContent(html_cb730d6d76c6c8718ba3fba5c4e8bcf5);
+            
+        
+
+        marker_c83443428624a2bd4e928f09f38e101c.bindPopup(popup_42eb7d8399360e76e5ac59b1bca6feb2)
+        ;
+
+        
+    
+    
+            var rectangle_f9f260d398971b6294254b165bb40391 = L.rectangle(
+                [[-38.2904898, 144.4690137], [-38.247105, 144.5636926]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_8b4089a9f4f196d90aad145f8f18b22e = L.marker(
+                [-36.75961960000001, 144.2785764],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_f3383f3a7c8e3148f6a1a6a29385adca = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_0f3f1ad5ee355e7a55e112b7984d0dd9 = $(`<div id="html_0f3f1ad5ee355e7a55e112b7984d0dd9" style="width: 100.0%; height: 100.0%;"><b>Bendigo</b><br> Total: 5058, <br>employment: 343</div>`)[0];
+                popup_f3383f3a7c8e3148f6a1a6a29385adca.setContent(html_0f3f1ad5ee355e7a55e112b7984d0dd9);
+            
+        
+
+        marker_8b4089a9f4f196d90aad145f8f18b22e.bindPopup(popup_f3383f3a7c8e3148f6a1a6a29385adca)
+        ;
+
+        
+    
+    
+            var rectangle_202ae4572fdd9470f4e621d5bbad48cf = L.rectangle(
+                [[-36.7705759, 144.2621358], [-36.7417838, 144.2981681]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_781b151e90cf98e5522b32a8a35f3aad = L.marker(
+                [-33.8688197, 151.2092955],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_d350f8d2d754380cf2b1247c76e95da3 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_2b70d5e5f7ee8351dae986f8a77855fe = $(`<div id="html_2b70d5e5f7ee8351dae986f8a77855fe" style="width: 100.0%; height: 100.0%;"><b>Sydney</b><br> Total: 527445, <br>employment: 35747</div>`)[0];
+                popup_d350f8d2d754380cf2b1247c76e95da3.setContent(html_2b70d5e5f7ee8351dae986f8a77855fe);
+            
+        
+
+        marker_781b151e90cf98e5522b32a8a35f3aad.bindPopup(popup_d350f8d2d754380cf2b1247c76e95da3)
+        ;
+
+        
+    
+    
+            var rectangle_10e46917d0b359c7bd881e81e4e49e9d = L.rectangle(
+                [[-34.118347, 150.5209286], [-33.5781409, 151.3430209]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_b9d89e085e126619faf24d765200cab8 = L.marker(
+                [-34.4248336, 150.8931132],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_b1e491dbddbe27f6dee1113476bbcb20 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_af4e1591078d7931e7ff5356d8aae830 = $(`<div id="html_af4e1591078d7931e7ff5356d8aae830" style="width: 100.0%; height: 100.0%;"><b>Wollongong</b><br> Total: 19433, <br>employment: 1301</div>`)[0];
+                popup_b1e491dbddbe27f6dee1113476bbcb20.setContent(html_af4e1591078d7931e7ff5356d8aae830);
+            
+        
+
+        marker_b9d89e085e126619faf24d765200cab8.bindPopup(popup_b1e491dbddbe27f6dee1113476bbcb20)
+        ;
+
+        
+    
+    
+            var rectangle_13861d07c013d3a7a0e923a36af8b8dc = L.rectangle(
+                [[-34.4429436, 150.8750752], [-34.4135363, 150.9110503]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_228316e713f62bd5a68fc94dba6794a4 = L.marker(
+                [-33.2815802, 149.0862242],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_bea6758c89a54631bdad14dde534ab9b = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_c3f0c58314fc7ffa459629e885cf8542 = $(`<div id="html_c3f0c58314fc7ffa459629e885cf8542" style="width: 100.0%; height: 100.0%;"><b>Orange</b><br> Total: 2681, <br>employment: 179</div>`)[0];
+                popup_bea6758c89a54631bdad14dde534ab9b.setContent(html_c3f0c58314fc7ffa459629e885cf8542);
+            
+        
+
+        marker_228316e713f62bd5a68fc94dba6794a4.bindPopup(popup_bea6758c89a54631bdad14dde534ab9b)
+        ;
+
+        
+    
+    
+            var rectangle_cb04220697e325e5eadd13342c55fb5c = L.rectangle(
+                [[-33.3377495, 148.9657845], [-33.1641601, 149.1577596]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_07655851e63f1d3af5ba24877a6f9161 = L.marker(
+                [-27.4704528, 153.0260341],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_2c16577979bd91fb02f1949d5ef9ddd8 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_30bf0462cd654d1e6b7e3d071fa0dece = $(`<div id="html_30bf0462cd654d1e6b7e3d071fa0dece" style="width: 100.0%; height: 100.0%;"><b>Brisbane</b><br> Total: 229878, <br>employment: 15288</div>`)[0];
+                popup_2c16577979bd91fb02f1949d5ef9ddd8.setContent(html_30bf0462cd654d1e6b7e3d071fa0dece);
+            
+        
+
+        marker_07655851e63f1d3af5ba24877a6f9161.bindPopup(popup_2c16577979bd91fb02f1949d5ef9ddd8)
+        ;
+
+        
+    
+    
+            var rectangle_ca5b11e87faca34d51de8bfc026dd6a7 = L.rectangle(
+                [[-27.7674409, 152.6685227], [-26.9968449, 153.3178702]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_15bf2ddc95957bf55b56c0855703878d = L.marker(
+                [-34.4777073, 150.4196395],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_a8a8f8e83e3cc2b53111a9a306d6b029 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_4a53c87c175b8cfd69b16ed7cf2d8237 = $(`<div id="html_4a53c87c175b8cfd69b16ed7cf2d8237" style="width: 100.0%; height: 100.0%;"><b>Bowral - Mittagong</b><br> Total: 1857, <br>employment: 122</div>`)[0];
+                popup_a8a8f8e83e3cc2b53111a9a306d6b029.setContent(html_4a53c87c175b8cfd69b16ed7cf2d8237);
+            
+        
+
+        marker_15bf2ddc95957bf55b56c0855703878d.bindPopup(popup_a8a8f8e83e3cc2b53111a9a306d6b029)
+        ;
+
+        
+    
+    
+            var rectangle_26b735bd3d20e5faeb3648130e233cac = L.rectangle(
+                [[-34.5343319, 150.3692049], [-34.419516, 150.4983509]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_e2fb207a20fd304c8c55538376a96486 = L.marker(
+                [-32.7573408, 151.748173],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_7cd950715077a55f7ab0680c284eaf97 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_bd1467cc64a24999369be737d4f00b8b = $(`<div id="html_bd1467cc64a24999369be737d4f00b8b" style="width: 100.0%; height: 100.0%;"><b>Raymond Terrace</b><br> Total: 2199, <br>employment: 142</div>`)[0];
+                popup_7cd950715077a55f7ab0680c284eaf97.setContent(html_bd1467cc64a24999369be737d4f00b8b);
+            
+        
+
+        marker_e2fb207a20fd304c8c55538376a96486.bindPopup(popup_7cd950715077a55f7ab0680c284eaf97)
+        ;
+
+        
+    
+    
+            var rectangle_2dae0216aabd6c5b6b42eb9f276698f9 = L.rectangle(
+                [[-32.8035307, 151.724352], [-32.7071326, 151.8098651]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_61f4385662893112683e07ca68cf5493 = L.marker(
+                [-28.1786656, 153.5370011],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_8b3e9490e827bc767969cd0934757147 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_e4650d5f74a4e1ce5e57b5484e8da9b8 = $(`<div id="html_e4650d5f74a4e1ce5e57b5484e8da9b8" style="width: 100.0%; height: 100.0%;"><b>Tweed Heads</b><br> Total: 2880, <br>employment: 183</div>`)[0];
+                popup_8b3e9490e827bc767969cd0934757147.setContent(html_e4650d5f74a4e1ce5e57b5484e8da9b8);
+            
+        
+
+        marker_61f4385662893112683e07ca68cf5493.bindPopup(popup_8b3e9490e827bc767969cd0934757147)
+        ;
+
+        
+    
+    
+            var rectangle_e7c7c7f0a0b74bebb2facec6f3d7df41 = L.rectangle(
+                [[-28.3440154, 153.46348], [-28.1633067, 153.586296]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_85561b9a604f19191bf856db351efc7d = L.marker(
+                [-33.1773056, 138.0086102],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_dc6dfdd2b72743a732c8e2436a2936e0 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_255421c8f9f22b7f2556ae20aa938a3f = $(`<div id="html_255421c8f9f22b7f2556ae20aa938a3f" style="width: 100.0%; height: 100.0%;"><b>Port Pirie</b><br> Total: 3766, <br>employment: 239</div>`)[0];
+                popup_dc6dfdd2b72743a732c8e2436a2936e0.setContent(html_255421c8f9f22b7f2556ae20aa938a3f);
+            
+        
+
+        marker_85561b9a604f19191bf856db351efc7d.bindPopup(popup_dc6dfdd2b72743a732c8e2436a2936e0)
+        ;
+
+        
+    
+    
+            var rectangle_d097b57e96914b0cc9d33929abe1ad6b = L.rectangle(
+                [[-33.1906926, 138.0025429], [-33.150742, 138.0188057]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_b0370a2bc96194d915d00d6df09dca36 = L.marker(
+                [-38.0776708, 145.4818724],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_fb1eac76fd37af4759db475fba9881b8 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_30472da034e67f3ce1ba7e312e782598 = $(`<div id="html_30472da034e67f3ce1ba7e312e782598" style="width: 100.0%; height: 100.0%;"><b>Pakenham</b><br> Total: 1876, <br>employment: 116</div>`)[0];
+                popup_fb1eac76fd37af4759db475fba9881b8.setContent(html_30472da034e67f3ce1ba7e312e782598);
+            
+        
+
+        marker_b0370a2bc96194d915d00d6df09dca36.bindPopup(popup_fb1eac76fd37af4759db475fba9881b8)
+        ;
+
+        
+    
+    
+            var rectangle_fb8d84000ed99ee3ec31ee25490bc746 = L.rectangle(
+                [[-38.1268599, 145.430803], [-38.0152569, 145.5447931]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_5ad40d186045e71635faef6eeaa99f81 = L.marker(
+                [-30.642358, 151.4990908],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_ec9cf76d5ce58c15b35cbbd08992a8e7 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_6c7eb1322fedf8c0ac5541914759fbaf = $(`<div id="html_6c7eb1322fedf8c0ac5541914759fbaf" style="width: 100.0%; height: 100.0%;"><b>Uralla</b><br> Total: 1960, <br>employment: 121</div>`)[0];
+                popup_ec9cf76d5ce58c15b35cbbd08992a8e7.setContent(html_6c7eb1322fedf8c0ac5541914759fbaf);
+            
+        
+
+        marker_5ad40d186045e71635faef6eeaa99f81.bindPopup(popup_ec9cf76d5ce58c15b35cbbd08992a8e7)
+        ;
+
+        
+    
+    
+            var rectangle_61fb34baf3f9b98c19a9daf6c42fcb2d = L.rectangle(
+                [[-30.7477612, 151.3948993], [-30.58546219999999, 151.642677]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_8a91e4f09c77d386ddd1522e6a2b7792 = L.marker(
+                [-38.1492994, 144.3598426],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_66aec6434d5502c1ff47bd96ee6b9c41 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_1a779b623ea21de21dc82fd17c322306 = $(`<div id="html_1a779b623ea21de21dc82fd17c322306" style="width: 100.0%; height: 100.0%;"><b>Geelong</b><br> Total: 19716, <br>employment: 1203</div>`)[0];
+                popup_66aec6434d5502c1ff47bd96ee6b9c41.setContent(html_1a779b623ea21de21dc82fd17c322306);
+            
+        
+
+        marker_8a91e4f09c77d386ddd1522e6a2b7792.bindPopup(popup_66aec6434d5502c1ff47bd96ee6b9c41)
+        ;
+
+        
+    
+    
+            var rectangle_21c1853df7fcde2ee8b2b399d225a216 = L.rectangle(
+                [[-38.164011, 144.3508809], [-38.132269, 144.374881]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_8a2cc6f4cd240feb095a402760299fff = L.marker(
+                [-41.1800656, 146.3502862],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_23e076cf802e9e12cc3303277cc61ceb = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_71bfae385485a592ac25273734c3d67a = $(`<div id="html_71bfae385485a592ac25273734c3d67a" style="width: 100.0%; height: 100.0%;"><b>Devonport</b><br> Total: 1200, <br>employment: 73</div>`)[0];
+                popup_23e076cf802e9e12cc3303277cc61ceb.setContent(html_71bfae385485a592ac25273734c3d67a);
+            
+        
+
+        marker_8a2cc6f4cd240feb095a402760299fff.bindPopup(popup_23e076cf802e9e12cc3303277cc61ceb)
+        ;
+
+        
+    
+    
+            var rectangle_3ed3cfcfd0d8114d07ca1018ffa49105 = L.rectangle(
+                [[-41.19281489999999, 146.3219379], [-41.1580537, 146.3674253]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_5377d293a98f7c241af0cbd30202139b = L.marker(
+                [-38.3252547, 144.3084645],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_9025359b57d3513759eab84049699742 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_a7c94cd41b8a3d4aed9a5771eedcbf9f = $(`<div id="html_a7c94cd41b8a3d4aed9a5771eedcbf9f" style="width: 100.0%; height: 100.0%;"><b>Torquay - Jan Juc</b><br> Total: 1528, <br>employment: 92</div>`)[0];
+                popup_9025359b57d3513759eab84049699742.setContent(html_a7c94cd41b8a3d4aed9a5771eedcbf9f);
+            
+        
+
+        marker_5377d293a98f7c241af0cbd30202139b.bindPopup(popup_9025359b57d3513759eab84049699742)
+        ;
+
+        
+    
+    
+            var rectangle_780bacdb434f452d6ee9aff8166026e2 = L.rectangle(
+                [[-38.3594261, 144.280124], [-38.3043668, 144.3598134]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_ddb4d9a5139e2b245ce66c64a261fa87 = L.marker(
+                [-30.5035714, 151.6523371],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_b1acd01a0656c31a5e6d57003a8434af = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_fea35939fe34c58540042217a7316e0e = $(`<div id="html_fea35939fe34c58540042217a7316e0e" style="width: 100.0%; height: 100.0%;"><b>Armidale</b><br> Total: 1171, <br>employment: 69</div>`)[0];
+                popup_b1acd01a0656c31a5e6d57003a8434af.setContent(html_fea35939fe34c58540042217a7316e0e);
+            
+        
+
+        marker_ddb4d9a5139e2b245ce66c64a261fa87.bindPopup(popup_b1acd01a0656c31a5e6d57003a8434af)
+        ;
+
+        
+    
+    
+            var rectangle_fecec29e302da942ce7817780422c04c = L.rectangle(
+                [[-30.5839537, 151.5591875], [-30.4171977, 151.7756108]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_3d2f1bfd66248cfa49e858013736f94d = L.marker(
+                [-23.4394617, 150.4579791],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_08453c20bf1b33c34735239e32ac7919 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_e9adf45bdbeb2aa417ce5b861dc5fe3c = $(`<div id="html_e9adf45bdbeb2aa417ce5b861dc5fe3c" style="width: 100.0%; height: 100.0%;"><b>Gracemere</b><br> Total: 965, <br>employment: 56</div>`)[0];
+                popup_08453c20bf1b33c34735239e32ac7919.setContent(html_e9adf45bdbeb2aa417ce5b861dc5fe3c);
+            
+        
+
+        marker_3d2f1bfd66248cfa49e858013736f94d.bindPopup(popup_08453c20bf1b33c34735239e32ac7919)
+        ;
+
+        
+    
+    
+            var rectangle_6e68cbe110faa132b6d3bd8166fc6454 = L.rectangle(
+                [[-23.5102688, 150.3997808], [-23.4047932, 150.5146136]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_2800516e0b123504a5d5b4143328c3eb = L.marker(
+                [-32.9282712, 151.7816802],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_31c5ebe2dbaf1270ac29cda58005f991 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_d4944db6f18bf890b60d7ca156b825f2 = $(`<div id="html_d4944db6f18bf890b60d7ca156b825f2" style="width: 100.0%; height: 100.0%;"><b>Newcastle</b><br> Total: 28129, <br>employment: 1582</div>`)[0];
+                popup_31c5ebe2dbaf1270ac29cda58005f991.setContent(html_d4944db6f18bf890b60d7ca156b825f2);
+            
+        
+
+        marker_2800516e0b123504a5d5b4143328c3eb.bindPopup(popup_31c5ebe2dbaf1270ac29cda58005f991)
+        ;
+
+        
+    
+    
+            var rectangle_7c8cbac0d62f029bccb54f260dc6f7b4 = L.rectangle(
+                [[-33.120457, 151.5550015], [-32.832869, 151.824399]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_9483aca423f799834c787cee7232c503 = L.marker(
+                [-36.0751193, 146.9094852],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_50d2b8a8c2f9a4848872c9c871387b30 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_eb1087cf2e59c2ecef5bb6851249ad95 = $(`<div id="html_eb1087cf2e59c2ecef5bb6851249ad95" style="width: 100.0%; height: 100.0%;"><b>Albury</b><br> Total: 1688, <br>employment: 94</div>`)[0];
+                popup_50d2b8a8c2f9a4848872c9c871387b30.setContent(html_eb1087cf2e59c2ecef5bb6851249ad95);
+            
+        
+
+        marker_9483aca423f799834c787cee7232c503.bindPopup(popup_50d2b8a8c2f9a4848872c9c871387b30)
+        ;
+
+        
+    
+    
+            var rectangle_4bedef6f0731944fb8b93cb8008c22e7 = L.rectangle(
+                [[-36.0859903, 146.8979423], [-36.0608676, 146.934028]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_ed49567f4b55f405f1de03a025e2875b = L.marker(
+                [-35.1025977, 147.3655103],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_742d9ffe6b0b8e4cf31e08ec6e85503a = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_468c481a923c5f5a5dd3e3357413648d = $(`<div id="html_468c481a923c5f5a5dd3e3357413648d" style="width: 100.0%; height: 100.0%;"><b>Wagga Wagga</b><br> Total: 2760, <br>employment: 152</div>`)[0];
+                popup_742d9ffe6b0b8e4cf31e08ec6e85503a.setContent(html_468c481a923c5f5a5dd3e3357413648d);
+            
+        
+
+        marker_ed49567f4b55f405f1de03a025e2875b.bindPopup(popup_742d9ffe6b0b8e4cf31e08ec6e85503a)
+        ;
+
+        
+    
+    
+            var rectangle_07bf8b1cfd0e42b834ea74f0259e5f21 = L.rectangle(
+                [[-35.1252, 147.3383803], [-35.0880498, 147.3828228]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_5bca960985bf011fcae323a9c19a258c = L.marker(
+                [-34.7226381, 135.8597449],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_d8483d58cf18052e0ae5081f094474d2 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_77c1b70df958a67cc815c9c798be185c = $(`<div id="html_77c1b70df958a67cc815c9c798be185c" style="width: 100.0%; height: 100.0%;"><b>Port Lincoln</b><br> Total: 1103, <br>employment: 60</div>`)[0];
+                popup_d8483d58cf18052e0ae5081f094474d2.setContent(html_77c1b70df958a67cc815c9c798be185c);
+            
+        
+
+        marker_5bca960985bf011fcae323a9c19a258c.bindPopup(popup_d8483d58cf18052e0ae5081f094474d2)
+        ;
+
+        
+    
+    
+            var rectangle_cf599b0f655e1a408483353a0bd15312 = L.rectangle(
+                [[-34.7700617, 135.8106056], [-34.6874142, 135.8943714]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_5b9be04cfce301975dc68badf8ac4cd7 = L.marker(
+                [-34.59720739999999, 138.7490985],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_14a5d680f864db163e8330f482395282 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_277ce1339876aff75084f49db1f14bb3 = $(`<div id="html_277ce1339876aff75084f49db1f14bb3" style="width: 100.0%; height: 100.0%;"><b>Gawler</b><br> Total: 1879, <br>employment: 102</div>`)[0];
+                popup_14a5d680f864db163e8330f482395282.setContent(html_277ce1339876aff75084f49db1f14bb3);
+            
+        
+
+        marker_5b9be04cfce301975dc68badf8ac4cd7.bindPopup(popup_14a5d680f864db163e8330f482395282)
+        ;
+
+        
+    
+    
+            var rectangle_af71663e3de64650e7926d778f712b08 = L.rectangle(
+                [[-34.6067523, 138.7368619], [-34.5903994, 138.7506818]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_43e1d5e7cf62dca52e561e595f719e37 = L.marker(
+                [-38.1940197, 146.5336107],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_4ea665653ef9f2da214c6473c4985d1e = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_f02fb1c1d32d53b34979468be4231909 = $(`<div id="html_f02fb1c1d32d53b34979468be4231909" style="width: 100.0%; height: 100.0%;"><b>Traralgon</b><br> Total: 3093, <br>employment: 165</div>`)[0];
+                popup_4ea665653ef9f2da214c6473c4985d1e.setContent(html_f02fb1c1d32d53b34979468be4231909);
+            
+        
+
+        marker_43e1d5e7cf62dca52e561e595f719e37.bindPopup(popup_4ea665653ef9f2da214c6473c4985d1e)
+        ;
+
+        
+    
+    
+            var rectangle_1b3c275bdbf0ba0f079dd4b8ca0e52be = L.rectangle(
+                [[-38.25077570000001, 146.464222], [-38.1531039, 146.564709]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_e8fa1362e1e0eb15f5b1be65aa4af768 = L.marker(
+                [-38.0229202, 144.3964232],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_4719d3c473e0da6d94d3e7c6a5647c33 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_a1f548a2bb2797dd0d6495a781e85cd1 = $(`<div id="html_a1f548a2bb2797dd0d6495a781e85cd1" style="width: 100.0%; height: 100.0%;"><b>Lara</b><br> Total: 3518, <br>employment: 182</div>`)[0];
+                popup_4719d3c473e0da6d94d3e7c6a5647c33.setContent(html_a1f548a2bb2797dd0d6495a781e85cd1);
+            
+        
+
+        marker_e8fa1362e1e0eb15f5b1be65aa4af768.bindPopup(popup_4719d3c473e0da6d94d3e7c6a5647c33)
+        ;
+
+        
+    
+    
+            var rectangle_cf75d988530f41bdb05e0202d5347efa = L.rectangle(
+                [[-38.06220680000001, 144.3409469], [-37.959047, 144.4871069]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_3d7937d1e2d4af97ae185771d50986c7 = L.marker(
+                [-27.6314637, 152.3938748],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_f392b8f842c851ee37ecddbf9d18a7aa = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_7ba3551c1967a5f23ec45e6c00b5dc3f = $(`<div id="html_7ba3551c1967a5f23ec45e6c00b5dc3f" style="width: 100.0%; height: 100.0%;"><b>Laidley</b><br> Total: 2253, <br>employment: 116</div>`)[0];
+                popup_f392b8f842c851ee37ecddbf9d18a7aa.setContent(html_7ba3551c1967a5f23ec45e6c00b5dc3f);
+            
+        
+
+        marker_3d7937d1e2d4af97ae185771d50986c7.bindPopup(popup_f392b8f842c851ee37ecddbf9d18a7aa)
+        ;
+
+        
+    
+    
+            var rectangle_c9fbbb0c37d3fa0903b2001474480596 = L.rectangle(
+                [[-27.6604911, 152.3811691], [-27.6190529, 152.4426177]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_e25666f9006ea5bed23be53e8b226302 = L.marker(
+                [-34.2068859, 142.1366852],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_72d0ad5b7cc3e544a37613b05a26df11 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_b3dec65c60ca2cc137752cdab1c3a3cd = $(`<div id="html_b3dec65c60ca2cc137752cdab1c3a3cd" style="width: 100.0%; height: 100.0%;"><b>Mildura</b><br> Total: 1289, <br>employment: 65</div>`)[0];
+                popup_72d0ad5b7cc3e544a37613b05a26df11.setContent(html_b3dec65c60ca2cc137752cdab1c3a3cd);
+            
+        
+
+        marker_e25666f9006ea5bed23be53e8b226302.bindPopup(popup_72d0ad5b7cc3e544a37613b05a26df11)
+        ;
+
+        
+    
+    
+            var rectangle_26c334246aae4e2978e577193f6d7dbd = L.rectangle(
+                [[-34.27277, 142.063238], [-34.1487119, 142.2039704]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_823602213c16bee79d5cd8f02b2c4a80 = L.marker(
+                [-35.4460326, 149.7990648],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_58e42f5c0916f3a1bdef0b7d82ade83e = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_062edd6bebfb82b053b59bade26aa3e2 = $(`<div id="html_062edd6bebfb82b053b59bade26aa3e2" style="width: 100.0%; height: 100.0%;"><b>Braidwood</b><br> Total: 1295, <br>employment: 64</div>`)[0];
+                popup_58e42f5c0916f3a1bdef0b7d82ade83e.setContent(html_062edd6bebfb82b053b59bade26aa3e2);
+            
+        
+
+        marker_823602213c16bee79d5cd8f02b2c4a80.bindPopup(popup_58e42f5c0916f3a1bdef0b7d82ade83e)
+        ;
+
+        
+    
+    
+            var rectangle_60c5e84f8c1286887ec0c0cc205a2322 = L.rectangle(
+                [[-35.5197165, 149.6967445], [-35.3352295, 149.9145847]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_c49f48888647b84350c4efb2bbee6ff5 = L.marker(
+                [-38.456183, 145.2389112],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_9c736d07c5c73bc87a7e21e231d44b6b = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_0000d5880b91f8d300848f24171041a4 = $(`<div id="html_0000d5880b91f8d300848f24171041a4" style="width: 100.0%; height: 100.0%;"><b>Cowes</b><br> Total: 1143, <br>employment: 56</div>`)[0];
+                popup_9c736d07c5c73bc87a7e21e231d44b6b.setContent(html_0000d5880b91f8d300848f24171041a4);
+            
+        
+
+        marker_c49f48888647b84350c4efb2bbee6ff5.bindPopup(popup_9c736d07c5c73bc87a7e21e231d44b6b)
+        ;
+
+        
+    
+    
+            var rectangle_c5817c5f218e22023e034ba24edd57e7 = L.rectangle(
+                [[-38.4970229, 145.1939949], [-38.4470477, 145.266532]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_7baf62db5ee7e7ef1afc70bf00015e1f = L.marker(
+                [-32.8321587, 151.3558797],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_d0c5a8ecc9dacdeded4a723b67658206 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_e44d4092be490f41810f360a332a2dbd = $(`<div id="html_e44d4092be490f41810f360a332a2dbd" style="width: 100.0%; height: 100.0%;"><b>Cessnock</b><br> Total: 1086, <br>employment: 53</div>`)[0];
+                popup_d0c5a8ecc9dacdeded4a723b67658206.setContent(html_e44d4092be490f41810f360a332a2dbd);
+            
+        
+
+        marker_7baf62db5ee7e7ef1afc70bf00015e1f.bindPopup(popup_d0c5a8ecc9dacdeded4a723b67658206)
+        ;
+
+        
+    
+    
+            var rectangle_167557ae46d048a40a2e354ededeccfd = L.rectangle(
+                [[-32.8704181, 151.3198364], [-32.7965125, 151.4143733]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_130c5ed21bc81827253edc2e977c6ada = L.marker(
+                [-37.5621587, 143.8502556],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_9b83d10952bacb58df35f3a0f4736910 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_f52cd401f24726a62f745a37e0123490 = $(`<div id="html_f52cd401f24726a62f745a37e0123490" style="width: 100.0%; height: 100.0%;"><b>Ballarat</b><br> Total: 23425, <br>employment: 1138</div>`)[0];
+                popup_9b83d10952bacb58df35f3a0f4736910.setContent(html_f52cd401f24726a62f745a37e0123490);
+            
+        
+
+        marker_130c5ed21bc81827253edc2e977c6ada.bindPopup(popup_9b83d10952bacb58df35f3a0f4736910)
+        ;
+
+        
+    
+    
+            var rectangle_40d5f701387fbb8b9729ce334fe0cd81 = L.rectangle(
+                [[-37.6597172, 143.780231], [-37.4751869, 143.9252506]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_865bc7400e70b87a7cc7ee011348caa1 = L.marker(
+                [-35.3402728, 143.5441334],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_0b3400ced8917cb81fa31c40df49a20b = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_f2fc8e9403ebdc47e154ca132764ffd6 = $(`<div id="html_f2fc8e9403ebdc47e154ca132764ffd6" style="width: 100.0%; height: 100.0%;"><b>Swan Hill</b><br> Total: 1312, <br>employment: 63</div>`)[0];
+                popup_0b3400ced8917cb81fa31c40df49a20b.setContent(html_f2fc8e9403ebdc47e154ca132764ffd6);
+            
+        
+
+        marker_865bc7400e70b87a7cc7ee011348caa1.bindPopup(popup_0b3400ced8917cb81fa31c40df49a20b)
+        ;
+
+        
+    
+    
+            var rectangle_698927686611da5917c7e9dc6df2ed05 = L.rectangle(
+                [[-35.429176, 143.4540549], [-35.2950695, 143.5928011]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_6d60d8133884018d30169d8f54c780f1 = L.marker(
+                [-17.2709033, 145.5830306],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_323c128c75a9b612f061d5e9a0122f04 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_79ceb9cc14926ff0156194f3f3035934 = $(`<div id="html_79ceb9cc14926ff0156194f3f3035934" style="width: 100.0%; height: 100.0%;"><b>Yungaburra</b><br> Total: 1423, <br>employment: 68</div>`)[0];
+                popup_323c128c75a9b612f061d5e9a0122f04.setContent(html_79ceb9cc14926ff0156194f3f3035934);
+            
+        
+
+        marker_6d60d8133884018d30169d8f54c780f1.bindPopup(popup_323c128c75a9b612f061d5e9a0122f04)
+        ;
+
+        
+    
+    
+            var rectangle_1a9fb9c9a70a3bce83558d489490c025 = L.rectangle(
+                [[-17.2944009, 145.5736081], [-17.2478974, 145.6270156]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_cb7156df67c872b65948639c08fe332d = L.marker(
+                [-33.3270366, 115.6408605],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_d414f8af4b5da172d8a614fbceb30c85 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_41aec328b96ae649acad0fa55a2d449c = $(`<div id="html_41aec328b96ae649acad0fa55a2d449c" style="width: 100.0%; height: 100.0%;"><b>Bunbury</b><br> Total: 2459, <br>employment: 117</div>`)[0];
+                popup_d414f8af4b5da172d8a614fbceb30c85.setContent(html_41aec328b96ae649acad0fa55a2d449c);
+            
+        
+
+        marker_cb7156df67c872b65948639c08fe332d.bindPopup(popup_d414f8af4b5da172d8a614fbceb30c85)
+        ;
+
+        
+    
+    
+            var rectangle_bcca96c0c5d1f3c63bcb3a97c31a0296 = L.rectangle(
+                [[-33.3373771, 115.6251977], [-33.30037550000001, 115.6592175]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_7d578fc2bf5c38af0726e6c1fd561c24 = L.marker(
+                [-33.034582, 137.5756408],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_cf6a5d4dac84de0245cf53008cc32efc = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_c636ca939e89324392898f4e486cbdc3 = $(`<div id="html_c636ca939e89324392898f4e486cbdc3" style="width: 100.0%; height: 100.0%;"><b>Whyalla</b><br> Total: 1085, <br>employment: 50</div>`)[0];
+                popup_cf6a5d4dac84de0245cf53008cc32efc.setContent(html_c636ca939e89324392898f4e486cbdc3);
+            
+        
+
+        marker_7d578fc2bf5c38af0726e6c1fd561c24.bindPopup(popup_cf6a5d4dac84de0245cf53008cc32efc)
+        ;
+
+        
+    
+    
+            var rectangle_e2b5c49e4e6abc3da352a95ebf62a413 = L.rectangle(
+                [[-33.0519361, 137.5629333], [-33.02451060000001, 137.5953554]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_00de56e8205e5c17cf6287c55556593b = L.marker(
+                [-32.0333806, 147.9816442],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_9b2f7de8c34ccd412a4a88960beb231d = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_d9b05c0061f8dcad5b288c415dfaeeb0 = $(`<div id="html_d9b05c0061f8dcad5b288c415dfaeeb0" style="width: 100.0%; height: 100.0%;"><b>Trangie</b><br> Total: 9158, <br>employment: 420</div>`)[0];
+                popup_9b2f7de8c34ccd412a4a88960beb231d.setContent(html_d9b05c0061f8dcad5b288c415dfaeeb0);
+            
+        
+
+        marker_00de56e8205e5c17cf6287c55556593b.bindPopup(popup_9b2f7de8c34ccd412a4a88960beb231d)
+        ;
+
+        
+    
+    
+            var rectangle_3dacc558c3929cbe655ee165371890b5 = L.rectangle(
+                [[-32.2526598, 147.6563168], [-31.8667788, 148.1666239]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_f52c7089defbab3ef063df87b2f2f9b2 = L.marker(
+                [-36.1244699, 146.8885229],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_cd721134c97276c6279b066fb859cd56 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_5e3d610437a99cad542be3307af42838 = $(`<div id="html_5e3d610437a99cad542be3307af42838" style="width: 100.0%; height: 100.0%;"><b>Wodonga</b><br> Total: 1969, <br>employment: 89</div>`)[0];
+                popup_cd721134c97276c6279b066fb859cd56.setContent(html_5e3d610437a99cad542be3307af42838);
+            
+        
+
+        marker_f52c7089defbab3ef063df87b2f2f9b2.bindPopup(popup_cd721134c97276c6279b066fb859cd56)
+        ;
+
+        
+    
+    
+            var rectangle_cfae12a889d87691118e5b130eb0bab0 = L.rectangle(
+                [[-36.1786749, 146.841607], [-36.0728343, 146.9232462]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_f9680c674a8af793c09505086ab86023 = L.marker(
+                [-36.3649306, 146.3149259],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_994f0e61a91a83ebe7888825f83c5eea = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_0f0812ea873082826597bb0dbf42111b = $(`<div id="html_0f0812ea873082826597bb0dbf42111b" style="width: 100.0%; height: 100.0%;"><b>Wangaratta</b><br> Total: 1067, <br>employment: 48</div>`)[0];
+                popup_994f0e61a91a83ebe7888825f83c5eea.setContent(html_0f0812ea873082826597bb0dbf42111b);
+            
+        
+
+        marker_f9680c674a8af793c09505086ab86023.bindPopup(popup_994f0e61a91a83ebe7888825f83c5eea)
+        ;
+
+        
+    
+    
+            var rectangle_c310e5c757f440232729c3c95394eea0 = L.rectangle(
+                [[-36.4064009, 146.266021], [-36.3243239, 146.3710429]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_4a26c204d17ff9275949ce1f38314502 = L.marker(
+                [-35.7162174, 150.1794566],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_903d3c657efa5ef0811cc4f97f80b44c = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_e99e87487d9f1ecbd36e8483eb224566 = $(`<div id="html_e99e87487d9f1ecbd36e8483eb224566" style="width: 100.0%; height: 100.0%;"><b>Batemans Bay</b><br> Total: 1372, <br>employment: 61</div>`)[0];
+                popup_903d3c657efa5ef0811cc4f97f80b44c.setContent(html_e99e87487d9f1ecbd36e8483eb224566);
+            
+        
+
+        marker_4a26c204d17ff9275949ce1f38314502.bindPopup(popup_903d3c657efa5ef0811cc4f97f80b44c)
+        ;
+
+        
+    
+    
+            var rectangle_5d95b4eda622194131f6d6070097f986 = L.rectangle(
+                [[-35.7520752, 150.1236667], [-35.6645443, 150.2102431]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_81f9962745ab2d10358ed3ebdd913540 = L.marker(
+                [-35.0268148, 117.8837114],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_6cce6a02a57c9643c9221a4563458d93 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_0140853781f7fc44782355da8cde3f9a = $(`<div id="html_0140853781f7fc44782355da8cde3f9a" style="width: 100.0%; height: 100.0%;"><b>Albany</b><br> Total: 5156, <br>employment: 226</div>`)[0];
+                popup_6cce6a02a57c9643c9221a4563458d93.setContent(html_0140853781f7fc44782355da8cde3f9a);
+            
+        
+
+        marker_81f9962745ab2d10358ed3ebdd913540.bindPopup(popup_6cce6a02a57c9643c9221a4563458d93)
+        ;
+
+        
+    
+    
+            var rectangle_51ca1f5078a9e02af2ac771443dc4a82 = L.rectangle(
+                [[-35.0330642, 117.871782], [-35.0183878, 117.8966316]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_e1964fb3d68343a6b88d6f0f95a6d1bc = L.marker(
+                [-37.5787769, 144.7116286],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_7743797065fa3eb08d5860816df7f321 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_1d176fd0f2adb9218f0843afd7f78fa2 = $(`<div id="html_1d176fd0f2adb9218f0843afd7f78fa2" style="width: 100.0%; height: 100.0%;"><b>Sunbury</b><br> Total: 2919, <br>employment: 123</div>`)[0];
+                popup_7743797065fa3eb08d5860816df7f321.setContent(html_1d176fd0f2adb9218f0843afd7f78fa2);
+            
+        
+
+        marker_e1964fb3d68343a6b88d6f0f95a6d1bc.bindPopup(popup_7743797065fa3eb08d5860816df7f321)
+        ;
+
+        
+    
+    
+            var rectangle_1441035059db3d161d5d127c4bcbbbe0 = L.rectangle(
+                [[-37.6248259, 144.6324815], [-37.4819578, 144.780498]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_d16e15a5fed4b14d69104fd1d705f3c6 = L.marker(
+                [-31.9595859, 141.4608138],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_a6eac3b0d7c428e59ee6a3caa3201e07 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_a59a710b825c131d95871bac232ba497 = $(`<div id="html_a59a710b825c131d95871bac232ba497" style="width: 100.0%; height: 100.0%;"><b>Broken Hill</b><br> Total: 2286, <br>employment: 87</div>`)[0];
+                popup_a6eac3b0d7c428e59ee6a3caa3201e07.setContent(html_a59a710b825c131d95871bac232ba497);
+            
+        
+
+        marker_d16e15a5fed4b14d69104fd1d705f3c6.bindPopup(popup_a6eac3b0d7c428e59ee6a3caa3201e07)
+        ;
+
+        
+    
+    
+            var rectangle_544477850cb6e5d9996db5ce69ccb56c = L.rectangle(
+                [[-33.1137753, 141.0010097], [-31.591859, 142.2529383]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_5723a342b4b28082f4568ce00c7b54b8 = L.marker(
+                [-37.9188435, 145.0417166],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_8f4b93ef9c780f2e31a4cc92e1990b18 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_411a2c399e6630436520ecfa42c7c44b = $(`<div id="html_411a2c399e6630436520ecfa42c7c44b" style="width: 100.0%; height: 100.0%;"><b>Bentleigh</b><br> Total: 1037, <br>employment: 39</div>`)[0];
+                popup_8f4b93ef9c780f2e31a4cc92e1990b18.setContent(html_411a2c399e6630436520ecfa42c7c44b);
+            
+        
+
+        marker_5723a342b4b28082f4568ce00c7b54b8.bindPopup(popup_8f4b93ef9c780f2e31a4cc92e1990b18)
+        ;
+
+        
+    
+    
+            var rectangle_3ad5dd75d6f2a699815ae67bc3365275 = L.rectangle(
+                [[-37.9347275, 145.022458], [-37.9108098, 145.0523639]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_45bfd126e3f2c8a8d82317fe3ccde6c3 = L.marker(
+                [-43.1553931, 147.0739253],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_9dcb3d8e1e32bad11bd77b73b37fc5b0 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_1d8f3c54b60f90e69be21ea44b3a9ed8 = $(`<div id="html_1d8f3c54b60f90e69be21ea44b3a9ed8" style="width: 100.0%; height: 100.0%;"><b>Cygnet</b><br> Total: 1470, <br>employment: 55</div>`)[0];
+                popup_9dcb3d8e1e32bad11bd77b73b37fc5b0.setContent(html_1d8f3c54b60f90e69be21ea44b3a9ed8);
+            
+        
+
+        marker_45bfd126e3f2c8a8d82317fe3ccde6c3.bindPopup(popup_9dcb3d8e1e32bad11bd77b73b37fc5b0)
+        ;
+
+        
+    
+    
+            var rectangle_705522027e979dc28e7d1ae294d37fda = L.rectangle(
+                [[-43.1820321, 147.0322882], [-43.0862732, 147.1412522]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_1f68b29d87c9696dc0142b3ea72306f6 = L.marker(
+                [-33.9632646, 137.7148587],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_eac10b6aacaf4381d4e74c00fcbb0a67 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_c60b412db97097fea5ad99d1cd5a7cac = $(`<div id="html_c60b412db97097fea5ad99d1cd5a7cac" style="width: 100.0%; height: 100.0%;"><b>Kadina</b><br> Total: 2059, <br>employment: 76</div>`)[0];
+                popup_eac10b6aacaf4381d4e74c00fcbb0a67.setContent(html_c60b412db97097fea5ad99d1cd5a7cac);
+            
+        
+
+        marker_1f68b29d87c9696dc0142b3ea72306f6.bindPopup(popup_eac10b6aacaf4381d4e74c00fcbb0a67)
+        ;
+
+        
+    
+    
+            var rectangle_22825f841ddb7e899de3ffb106ce1f80 = L.rectangle(
+                [[-33.9819598, 137.6795875], [-33.94371960000001, 137.7355968]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_b66e4c17f3cd497a918c435520021c6b = L.marker(
+                [-28.6419122, 153.6105168],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_c6f0b9c2de7aeae987afdce1376887c9 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_612571e637c4255c855c5adfb5df40f6 = $(`<div id="html_612571e637c4255c855c5adfb5df40f6" style="width: 100.0%; height: 100.0%;"><b>Byron Bay</b><br> Total: 1120, <br>employment: 40</div>`)[0];
+                popup_c6f0b9c2de7aeae987afdce1376887c9.setContent(html_612571e637c4255c855c5adfb5df40f6);
+            
+        
+
+        marker_b66e4c17f3cd497a918c435520021c6b.bindPopup(popup_c6f0b9c2de7aeae987afdce1376887c9)
+        ;
+
+        
+    
+    
+            var rectangle_751e94fd5bc4e9924a0746cb9c1bb161 = L.rectangle(
+                [[-28.6793442, 153.5669729], [-28.6143674, 153.6388371]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_075a3ca970e288346a80525783b0564f = L.marker(
+                [-37.06328999999999, 144.2172327],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_6e4ee62efc8e065887c959cf1e303438 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_a4554f665274c6216ba4902882b7bd2e = $(`<div id="html_a4554f665274c6216ba4902882b7bd2e" style="width: 100.0%; height: 100.0%;"><b>Castlemaine</b><br> Total: 9740, <br>employment: 297</div>`)[0];
+                popup_6e4ee62efc8e065887c959cf1e303438.setContent(html_a4554f665274c6216ba4902882b7bd2e);
+            
+        
+
+        marker_075a3ca970e288346a80525783b0564f.bindPopup(popup_6e4ee62efc8e065887c959cf1e303438)
+        ;
+
+        
+    
+    
+            var rectangle_a87fbbebb0203b3a9752437994e0ceb7 = L.rectangle(
+                [[-37.0852574, 144.1877121], [-37.0332559, 144.248549]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_93a5f7af21a1ea5dfda5eee75377e0be = L.marker(
+                [-34.9043526, 138.8746091],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_ee512a29d1c1aad417e7fa23d3797f0e = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_a3d358ecfcdfb169543684c9af36acfb = $(`<div id="html_a3d358ecfcdfb169543684c9af36acfb" style="width: 100.0%; height: 100.0%;"><b>Lobethal</b><br> Total: 2926, <br>employment: 78</div>`)[0];
+                popup_ee512a29d1c1aad417e7fa23d3797f0e.setContent(html_a3d358ecfcdfb169543684c9af36acfb);
+            
+        
+
+        marker_93a5f7af21a1ea5dfda5eee75377e0be.bindPopup(popup_ee512a29d1c1aad417e7fa23d3797f0e)
+        ;
+
+        
+    
+    
+            var rectangle_c87e28d02e257c0e8b7f4d3da8f24ba0 = L.rectangle(
+                [[-34.9325143, 138.8378023], [-34.8690979, 138.9147694]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_0c7315e861443928fdc7c6c5dbc87e99 = L.marker(
+                [-29.1188889, 153.4315059],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_6727ff494c2299a825f448e6f5d9fdd0 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_e4619b4c6d08c442268faa9a8d154cc6 = $(`<div id="html_e4619b4c6d08c442268faa9a8d154cc6" style="width: 100.0%; height: 100.0%;"><b>Evans Head</b><br> Total: 1589, <br>employment: 38</div>`)[0];
+                popup_6727ff494c2299a825f448e6f5d9fdd0.setContent(html_e4619b4c6d08c442268faa9a8d154cc6);
+            
+        
+
+        marker_0c7315e861443928fdc7c6c5dbc87e99.bindPopup(popup_6727ff494c2299a825f448e6f5d9fdd0)
+        ;
+
+        
+    
+    
+            var rectangle_725f908e258b46601b43be7f87ca774b = L.rectangle(
+                [[-29.1467466, 153.3962139], [-29.0826605, 153.4542178]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_84871e115edb2bac6fc4dc96a340ef17 = L.marker(
+                [-42.781144, 147.0622665],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_44901614850abd8a836fe180093d4c2a = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_91c30c2ab4e310ad97a7f10664e3e461 = $(`<div id="html_91c30c2ab4e310ad97a7f10664e3e461" style="width: 100.0%; height: 100.0%;"><b>New Norfolk</b><br> Total: 3487, <br>employment: 58</div>`)[0];
+                popup_44901614850abd8a836fe180093d4c2a.setContent(html_91c30c2ab4e310ad97a7f10664e3e461);
+            
+        
+
+        marker_84871e115edb2bac6fc4dc96a340ef17.bindPopup(popup_44901614850abd8a836fe180093d4c2a)
+        ;
+
+        
+    
+    
+            var rectangle_deebda9b8b7d9df00545a20c22ddccd5 = L.rectangle(
+                [[-42.8056164, 147.0196947], [-42.7585761, 147.0920987]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_d710b0fd8b4850da361fab6eeb42ba35 = L.marker(
+                [-27.7129115, 153.1075754],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_56a03b549d43199b2ffbedd981d88fd9 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_b569d05ac62ef3e4e42ff5818941ac45 = $(`<div id="html_b569d05ac62ef3e4e42ff5818941ac45" style="width: 100.0%; height: 100.0%;"><b>Logan Reserve</b><br> Total: 2156, <br>employment: 30</div>`)[0];
+                popup_56a03b549d43199b2ffbedd981d88fd9.setContent(html_b569d05ac62ef3e4e42ff5818941ac45);
+            
+        
+
+        marker_d710b0fd8b4850da361fab6eeb42ba35.bindPopup(popup_56a03b549d43199b2ffbedd981d88fd9)
+        ;
+
+        
+    
+    
+            var rectangle_80dedbd7bcb9851a20b14e770e2c185d = L.rectangle(
+                [[-27.7433231, 153.0871623], [-27.6904018, 153.1264751]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_35b7c333c715fe4d8a65d63d05a1e0ba = L.marker(
+                [-35.444795, 148.9604438],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_974bff5f5ace9e621dc8a0794bffc28e = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_7df2722352b9cc46629d39936e949ec4 = $(`<div id="html_7df2722352b9cc46629d39936e949ec4" style="width: 100.0%; height: 100.0%;"><b>Paddys River</b><br> Total: 2294, <br>employment: 29</div>`)[0];
+                popup_974bff5f5ace9e621dc8a0794bffc28e.setContent(html_7df2722352b9cc46629d39936e949ec4);
+            
+        
+
+        marker_35b7c333c715fe4d8a65d63d05a1e0ba.bindPopup(popup_974bff5f5ace9e621dc8a0794bffc28e)
+        ;
+
+        
+    
+    
+            var rectangle_8e800ae9da403d452a2dedcd77697e2e = L.rectangle(
+                [[-35.5354139, 148.8676703], [-35.3195077, 149.0762151]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_b98b2fe216bb5c2924d62fc6653349c8 = L.marker(
+                [-41.0597309, 145.8937224],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_3cdaf983268564bdaa471c25bb17ae59 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_10f64a19a22bec0d025e8c0773037c6b = $(`<div id="html_10f64a19a22bec0d025e8c0773037c6b" style="width: 100.0%; height: 100.0%;"><b>Burnie - Somerset</b><br> Total: 1674, <br>employment: 18</div>`)[0];
+                popup_3cdaf983268564bdaa471c25bb17ae59.setContent(html_10f64a19a22bec0d025e8c0773037c6b);
+            
+        
+
+        marker_b98b2fe216bb5c2924d62fc6653349c8.bindPopup(popup_3cdaf983268564bdaa471c25bb17ae59)
+        ;
+
+        
+    
+    
+            var rectangle_d6c0db9927d65336c31f08c142d7daa8 = L.rectangle(
+                [[-41.0920735, 145.8054199], [-41.0297944, 145.985167]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+            var marker_de35e24ae507589990cbf4b3c615c2a7 = L.marker(
+                [-32.6727562, 152.1773011],
+                {}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+    
+        var popup_1977ffe6159544d8bcae5ecf3fc9f983 = L.popup({"maxWidth": 150});
+
+        
+            
+                var html_c7c3dd06b1ba4b611f3aee2624eb0301 = $(`<div id="html_c7c3dd06b1ba4b611f3aee2624eb0301" style="width: 100.0%; height: 100.0%;"><b>Hawks Nest</b><br> Total: 3362, <br>employment: 11</div>`)[0];
+                popup_1977ffe6159544d8bcae5ecf3fc9f983.setContent(html_c7c3dd06b1ba4b611f3aee2624eb0301);
+            
+        
+
+        marker_de35e24ae507589990cbf4b3c615c2a7.bindPopup(popup_1977ffe6159544d8bcae5ecf3fc9f983)
+        ;
+
+        
+    
+    
+            var rectangle_2b6070b8ef9398301106f6be11b229f2 = L.rectangle(
+                [[-32.701944, 152.1460118], [-32.5819211, 152.2919621]],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a3f6c422bb31992bcd7ce25bedf8c3dd);
+        
+</script>
+</html>
