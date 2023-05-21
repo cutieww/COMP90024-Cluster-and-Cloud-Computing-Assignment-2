@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, XAxis, YAxis, Tooltip, CartesianGrid, Bar, Legend, PieChart, Pie, Cell } from 'recharts';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 const DataOverview = () => {
   const [mastodon, setMastodon] = useState({
@@ -55,9 +56,10 @@ const DataOverview = () => {
   }, []);
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-6">
+    <Container>
+      <Row>
+        <Col>
+        <Row>
         <h3>Mastodon Post Information</h3>
         <p>Mastodon relevant post count: {mastodon.post_num}</p>
         <p>Total post count: {mastodon.total_post}</p>
@@ -78,7 +80,8 @@ const DataOverview = () => {
           <Legend />
           <Bar dataKey="value" fill="#8884d8" />
         </BarChart>
-
+        </Row>
+        <Row>
         <h4>Post Ratio</h4>
         <PieChart width={400} height={200} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
           <Pie
@@ -99,7 +102,8 @@ const DataOverview = () => {
           <Tooltip />
           <Legend />
         </PieChart>
-
+        </Row>
+        <Row>
         <h4>User Ratio</h4>
         <PieChart width={400} height={200} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
           <Pie
@@ -120,10 +124,11 @@ const DataOverview = () => {
           <Tooltip />
           <Legend/>
           </PieChart>
-      </div>
+          </Row>
+      </Col>
 
-      <div className="col-md-6">
-         
+      <Col>
+         <Row>
         <h3>Twitter Post Information</h3>
         <p>Twitter relevant post count: {twitter.post_num}</p>
         <p>Total post count: {twitter.total_post}</p>
@@ -144,7 +149,8 @@ const DataOverview = () => {
           <Legend />
           <Bar dataKey="value" fill="#8884d8" />
         </BarChart>
-
+        </Row>
+        <Row>
         <h4>Post Ratio</h4>
         <PieChart width={400} height={200} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
           <Pie
@@ -165,7 +171,8 @@ const DataOverview = () => {
           <Tooltip />
           <Legend />
         </PieChart>
-
+        </Row>
+        <Row>
         <h4>User Ratio</h4>
         <PieChart width={400} height={200} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
           <Pie
@@ -186,10 +193,10 @@ const DataOverview = () => {
           <Tooltip />
           <Legend/>
           </PieChart>
-        
-      </div>
-    </div>
- </div>
+          </Row>
+        </Col>
+    </Row>
+  </Container>
 
   );
 };
