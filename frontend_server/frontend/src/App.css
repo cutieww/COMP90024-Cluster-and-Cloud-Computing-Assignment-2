@@ -98,3 +98,61 @@
   padding-right: 5%;
 
 }
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0px !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.main-content {
+  overflow-y: auto;
+}
+
+.app-row {
+  flex-grow: 1;
+}
+
+.nav-bar {
+  color: rgba(26, 26, 26, 0.75);
+  background-color: rgb(247, 247, 247);
+  height: 100%;
+  min-height: 100vh;
+}
+
+.row-padding {
+  padding: 0px;
+}
+
+.heading-ribbon {
+  background-color: rgb(32, 35, 42);
+  color: whitesmoke
+}
+
+.subheading-ribbon {
+  background-color: white;
+  color: rgb(32, 35, 42);
+}
+
+a { 
+  color: inherit !important; 
+} 
+
+.nav-link-button { }
+
+.nav-link-button-selected {
+  font-weight: bold !important;
+  border: 1px !important;
+  border-color: lightslategray !important;
+}
+
+.text-center {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

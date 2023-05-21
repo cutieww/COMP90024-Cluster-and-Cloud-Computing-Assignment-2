@@ -7,16 +7,10 @@ import MastodonData from './components/MastodonData';
 import DataCompare from './components/DataCompare';
 import AboutUs from './components/AboutUs';
 import DataOverview from './components/DataOverview';
-import { BsChevronDoubleLeft, BsChevronDoubleRight } from 'react-icons/bs';
-import { Nav, Container, Row, Col, Button } from 'react-bootstrap';
+import { Nav, Container, Row, Col } from 'react-bootstrap';
 
 function App() {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
   const location = useLocation();
-
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
 
   const getLinkName = (path) => {
     switch (path) {
@@ -43,23 +37,9 @@ function App() {
 
   return (
     <>
-      {/* <div className="container-fluid">
-      <div className="row">
-        <div id="Sidebar-button" className=" d-flex align-items-center">
-          <button
-            type="button"
-            className={`btn btn-primary sidebar-toggle-btn ${sidebarOpen ? 'open' : 'closed'}`}
-            onClick={toggleSidebar}
-          >
-            {sidebarOpen ? <BsChevronDoubleLeft /> : <BsChevronDoubleRight />}
-          </button>
-          <div className={`sidebar-title ${sidebarOpen ? '' : 'show'}`}>
-            <h1>{currentLinkName}</h1>
-          </div>
-        </div> */}
       <Container className='app-container' fluid>
         <Row>
-        <Row style={ {'paddingBottom': '0px'} }>
+        <Row style={ {'paddingBottom': '0px', 'paddingRight': '0px'} }>
           <Col>
           <Row className='heading-ribbon'>
           <Col>
@@ -68,7 +48,7 @@ function App() {
           </Row>
           </Col>
         </Row>
-        <Row style={ {'paddingTop': '0px'} }>
+        <Row style={ {'paddingTop': '0px', 'paddingRight': '0px' } }>
           <Col sm={2} className='nav-bar'>
             <Nav defaultActiveKey="/" className="flex-column">
               <Nav.Link href="/" weight={"bold"} className={getNavButtonClass('Home')}>Home</Nav.Link>
@@ -79,16 +59,6 @@ function App() {
               <Nav.Link href="/about-us" className={getNavButtonClass('About Us')}>About Us</Nav.Link>
             </Nav>
           </Col>
-          {/* <div className={`col-md-2 sidebar bg-light ${sidebarOpen ? '' : 'd-none'}`}>
-          <nav className={`nav flex-column d-md-block`}>
-            <Link className="nav-link" to="/">Home</Link>
-            <Link className="nav-link" to="/data-overview">Data Overview</Link>
-            <Link className="nav-link" to="/twitter-data">Twitter Data</Link>
-            <Link className="nav-link" to="/mastodon-data">Mastodon Streaming</Link>
-            <Link className="nav-link" to="/data-comparison">Data Comparison</Link>
-            <Link className="nav-link" to="/about-us">About Us</Link>
-          </nav>
-        </div> */}
           <Col sm={10} className='main-content'>
             <Row className='subheading-ribbon'>
             <Col sm={10}>

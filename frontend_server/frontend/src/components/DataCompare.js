@@ -200,7 +200,7 @@ const DataCompare = () => {
               </Dropdown>
             </Col>
           </Row>
-          <h3 style={{ 'paddingTop': '20px' }}>Mastodon Post Infromation - {topic}</h3>
+          <h3 style={{ 'paddingTop': '20px' }}>Mastodon Post Infromation - {topic.charAt(0).toUpperCase() + topic.slice(1)}</h3>
           <Row>
             <div style={{ 'padding': '10px' }}>
               <p>{topic} post count: {mastodon.post_num}</p>
@@ -275,12 +275,6 @@ const DataCompare = () => {
             </div>
           </Row>
         </Col>
-
-
-
-
-
-
         <Col>
           <Row>
             <h4>Graph for the Twitter data in {twitter.date}</h4>
@@ -326,7 +320,7 @@ const DataCompare = () => {
             </Col>
           </Row>
 
-          <h3 style={{ 'paddingTop': '20px' }}>Twitter Tweet Information - {topic}</h3>
+          <h3 style={{ 'paddingTop': '20px' }}>Twitter Tweet Information - {twitterTopic.charAt(0).toUpperCase() + twitterTopic.slice(1)}</h3>
           <Row>
             <div style={{ 'padding': '10px' }}>
               <p>{topic} tweet count: {twitter.tweet_count}</p>
