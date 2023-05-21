@@ -37,11 +37,7 @@ function App() {
     }
   };
 
-  const getNavButtonClass = (nav) => {
-    console.log(nav)
-    console.log(currentLinkName == nav)
-    return currentLinkName !== nav ? 'nav-link-button' : 'nav-link-button-selected';
-  }
+  const getNavButtonClass = (nav) => currentLinkName !== nav ? 'nav-link-button' : 'nav-link-button-selected';
 
   const currentLinkName = getLinkName(location.pathname);
 

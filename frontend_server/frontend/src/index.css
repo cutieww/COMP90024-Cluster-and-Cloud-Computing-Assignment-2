@@ -29,7 +29,7 @@ code {
 .nav-bar {
   color: rgba(26, 26, 26, 0.75);
   background-color: rgb(247, 247, 247);
-  height: 100vh;
+  height: 100%;
 }
 
 .row-padding {
@@ -58,4 +58,9 @@ a {
   font-weight: bold !important;
   border: 1px !important;
   border-color: lightslategray !important;
+}
+
+.text-center {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
