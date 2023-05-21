@@ -70,32 +70,6 @@ twitter_all = {
 async def root():
     return {'name': 'api to connect to react'}
 
-@app.get('/twitter_sudo/{topic}')
-async def twitter_sudo_data(topic: str):
-    twitter_sudo = {}
-    try:
-        with open('json_file/topic_state_info.json') as f:
-            data = json.load(f)
-        topic_info = data.get(topic, None)
-        if topic_info:
-            twitter_sudo['twitter'] = topic_info
-        else:
-            return {"error": f"No data found for topic {topic}"}
-    except FileNotFoundError:
-        return {"error": "topic_state_info.json file not found"}
-    except Exception as e:
-        return {"error": str(e)}
-    
-    try:
-        with open(f'json_file/{topic}_sudo.json') as f:
-            data = json.load(f)
-            twitter_sudo['sudo'] = data
-    except FileNotFoundError:
-        return {"error": f"{topic} sudo file not found"}
-    except Exception as e:
-        return {"error": str(e)}
-    return twitter_sudo
-
 
 @app.get('/twitter_data/all')
 async def all_twitter_data():

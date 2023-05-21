@@ -3,8 +3,8 @@ import { BarChart, XAxis, YAxis, Tooltip, CartesianGrid, Bar, Legend, PieChart, 
 import ReactD3Cloud from 'react-d3-cloud';
 
 const DataCompare = () => {
-  const [date, setDate] = useState('');
-  const [topic, setTopic] = useState('');
+  const [date, setDate] = useState('2023-05-21');
+  const [topic, setTopic] = useState('political');
   const [mastodon, setMastodon] = useState({
     date: '',
     post_num: 0,
@@ -14,8 +14,8 @@ const DataCompare = () => {
     total_user: 0
   });
 
-  const [selectedState, setSelectedState] = useState('');
-  const [twitterTopic, setTwitterTopic] = useState('');
+  const [selectedState, setSelectedState] = useState('Queensland');
+  const [twitterTopic, setTwitterTopic] = useState('political');
   const [twitter, setTwitter] = useState({
     date: '',
     tweet_count: 0,

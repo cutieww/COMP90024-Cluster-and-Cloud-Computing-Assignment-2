@@ -49,7 +49,7 @@ function App() {
     <>
       {/* <div className="container-fluid">
       <div className="row">
-        <div id="Sidebar-button" className="col-sm-0.1 d-flex align-items-center">
+        <div id="Sidebar-button" className=" d-flex align-items-center">
           <button
             type="button"
             className={`btn btn-primary sidebar-toggle-btn ${sidebarOpen ? 'open' : 'closed'}`}
