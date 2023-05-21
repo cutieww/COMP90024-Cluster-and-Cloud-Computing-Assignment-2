@@ -1,0 +1,1 @@
+function(doc) {if (doc.state && doc.state.includes('Queensland')) {emit(doc.location, 1);}}
