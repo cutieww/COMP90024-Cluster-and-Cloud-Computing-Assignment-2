@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, XAxis, YAxis, Tooltip, CartesianGrid, Bar, Legend, PieChart, Pie, Cell } from 'recharts';
 import ReactD3Cloud from 'react-d3-cloud';
+import { Container, Row, Col, Table, Button, Dropdown, ButtonGroup } from 'react-bootstrap';
+
 
 const DataCompare = () => {
   const [date, setDate] = useState('2023-05-21');
@@ -23,7 +25,7 @@ const DataCompare = () => {
     tweet_ratio: 0,
     user_ratio: 0,
     total_user_count: 0,
-    word_cloud:{}
+    word_cloud: {}
   });
 
 
@@ -32,18 +34,15 @@ const DataCompare = () => {
     setDate(selectedDate);
   };
 
-  const handleTopicChange = async (event) => {
-    const selectedTopic = event.target.value;
+  const handleTopicChange = async (selectedTopic) => {
     setTopic(selectedTopic);
   };
 
-  const handleStateChange = async (event) => {
-    const selectedState = event.target.value;
+  const handleStateChange = async (selectedState) => {
     setSelectedState(selectedState);
   };
 
-  const handleTwitterTopicChange = async (event) => {
-    const selectedTopic = event.target.value;
+  const handleTwitterTopicChange = async (selectedTopic) => {
     setTwitterTopic(selectedTopic);
   };
 
@@ -78,10 +77,10 @@ const DataCompare = () => {
         }
       }
     };
-  
+
     fetchData();
   }, [twitterTopic, selectedState]);
-  
+
 
   // Bar chart data
   const barChartData = [
@@ -125,16 +124,16 @@ const DataCompare = () => {
     if (data.length === 0) {
       return data;
     }
-  
+
     const max = Math.max(...data.map(item => item.value));
     const min = Math.min(...data.map(item => item.value));
-  
+
     return data.map(item => ({
       ...item,
       value: ((item.value - min) / (max - min)) * (maxSize - minSize) + minSize
     }));
   }
-  
+
 
   // Prepare word cloud data
   // Prepare word cloud data
@@ -149,9 +148,9 @@ const DataCompare = () => {
 
 
   const twitterWordCloudData = Object.entries(twitter.word_cloud || {})
-  .map(([text, value]) => ({ text, value }))
-  .sort((a, b) => b.value - a.value)
-  .slice(0, 200);
+    .map(([text, value]) => ({ text, value }))
+    .sort((a, b) => b.value - a.value)
+    .slice(0, 200);
 
   /*
   const userCloudData = Object.entries(mastodon.usermap || {})
@@ -173,77 +172,91 @@ const DataCompare = () => {
 
 
   return (
-    <div className="container">
-      <div className='row'>
-        <div className="col-md-6">
-          <h4>Graph for the mastodon data in {mastodon.date}</h4>
-          <div>
-            <label htmlFor="date">Select a date:</label>
-            <input type="date" id="date" name="date" value={date} onChange={handleDateChange} />
-          </div>
-          <div>
-            <label htmlFor="topic">Select a topic:</label>
-            <select id="topic" name="topic" value={topic} onChange={handleTopicChange}>
-              <option value="">--Select a topic--</option>
-              <option value="political">Political</option>
-              <option value="criminal">Criminal</option>
-              <option value="employment">Employment</option>
-              <option value="traffic">Traffic</option>
-            </select>
-          </div>
-          <h3>Mastodon Post Infromation - {topic}</h3>
-          <div className='row'>
-            <p>{topic} post count: {mastodon.post_num}</p>
-            <p>Total post count: {mastodon.total_post} </p>
-            <BarChart
-              width={500}
-              height={300}
-              data={barChartData}
-              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Bar dataKey="value" fill="#8884d8" />
-            </BarChart>
-
-            <h4>Post Ratio</h4>
-            <PieChart width={400} height={200} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
-              <Pie
-                data={postRatioData}
-                cx={200}
-                cy={100}
-                labelLine={false}
-                outerRadius={80}
-                fill="#8884d8"
-                dataKey="value"
-              >
-                {postRatioData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                ))}
-              </Pie>
-              <Tooltip />
-              <Legend />
-            </PieChart>
-
-            <h4>User Ratio</h4>
-            <PieChart width={400} height={200} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
-              <Pie
-                data={userRatioData}
-                cx={200}
-                cy={100}
-                labelLine={false}
-                outerRadius={80}
-                fill="#8884d8"
-                dataKey="value"
-              >
-                {userRatioData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                ))}
-              </Pie>
-              <Tooltip />
-              <Legend />
-            </PieChart>
+    <Container>
+      <Row>
+        <Col>
+          <Row style={{ 'padding': '10px' }}>
+            <h4>Graph for the mastodon data in {mastodon.date}</h4>
+            <div>
+              <label htmlFor="date">Select a date: </label>
+              <input type="date" id="date" name="date" value={date} onChange={handleDateChange} />
+            </div>
+          </Row>
+          <Row style={{ 'padding': '10px' }}>
+            <Col sm={4}>
+              Select a topic:
+            </Col>
+            <Col sm={8}>
+              <Dropdown onSelect={handleTopicChange}>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  {topic.charAt(0).toUpperCase() + topic.slice(1)}
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item eventKey="political">Political</Dropdown.Item>
+                  <Dropdown.Item eventKey="criminal">Criminal</Dropdown.Item>
+                  <Dropdown.Item eventKey="employment">Employment</Dropdown.Item>
+                  <Dropdown.Item eventKey="traffic">Traffic</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Col>
+          </Row>
+          <h3 style={{ 'paddingTop': '20px' }}>Mastodon Post Infromation - {topic}</h3>
+          <Row>
+            <div style={{ 'padding': '10px' }}>
+              <p>{topic} post count: {mastodon.post_num}</p>
+              <p>Total post count: {mastodon.total_post} </p>
+              <BarChart
+                width={500}
+                height={300}
+                data={barChartData}
+                margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Bar dataKey="value" fill="#8884d8" />
+              </BarChart>
+            </div>
+            <div style={{ 'padding': '10px' }}>
+              <h4>Post Ratio</h4>
+              <PieChart width={400} height={200} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
+                <Pie
+                  data={postRatioData}
+                  cx={200}
+                  cy={100}
+                  labelLine={false}
+                  outerRadius={80}
+                  fill="#8884d8"
+                  dataKey="value"
+                >
+                  {postRatioData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  ))}
+                </Pie>
+                <Tooltip />
+                <Legend />
+              </PieChart>
+            </div>
+            <div style={{ 'padding': '10px' }}>
+              <h4>User Ratio</h4>
+              <PieChart width={400} height={200} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
+                <Pie
+                  data={userRatioData}
+                  cx={200}
+                  cy={100}
+                  labelLine={false}
+                  outerRadius={80}
+                  fill="#8884d8"
+                  dataKey="value"
+                >
+                  {userRatioData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  ))}
+                </Pie>
+                <Tooltip />
+                <Legend />
+              </PieChart>
+            </div>
             {/*
         <h4>Top 10 Users</h4>
         <ol>
@@ -254,112 +267,136 @@ const DataCompare = () => {
           ))}
         </ol>
           */}
-            <h4>Mastodon Word Cloud</h4>
-            <div style={{ width: '600px', height: '300px', overflow: 'scroll' }}>
-              <ReactD3Cloud data={wordCloudData} {...wordCloudOptions} />
-
+            <div style={{ 'padding': '10px' }}>
+              <h4>Mastodon Word Cloud</h4>
+              <div style={{ width: '600px', height: '300px', overflow: 'scroll' }}>
+                <ReactD3Cloud data={wordCloudData} {...wordCloudOptions} />
+              </div>
             </div>
-          </div>
-        </div>
+          </Row>
+        </Col>
 
 
 
 
 
 
-        <div className="col-md-6">
+        <Col>
+          <Row>
+            <h4>Graph for the Twitter data in {twitter.date}</h4>
+          </Row>
+          <Row style={{ 'padding': '10px' }}>
+            <Col sm={4}>
+              Select a state:
+            </Col>
+            <Col sm={8}>
+              <Dropdown onSelect={handleStateChange}>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  {selectedState.replaceAll('_', ' ')}
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item eventKey="Queensland">Queensland</Dropdown.Item>
+                  <Dropdown.Item eventKey="Western_Australia">Western Australia</Dropdown.Item>
+                  <Dropdown.Item eventKey="New_South_Wales">New South Wales</Dropdown.Item>
+                  <Dropdown.Item eventKey="Victoria">Victoria</Dropdown.Item>
+                  <Dropdown.Item eventKey="Northern_Territory">Northern Territory</Dropdown.Item>
+                  <Dropdown.Item eventKey="South_Australia">South Australia</Dropdown.Item>
+                  <Dropdown.Item eventKey="Tasmania">Tasmania</Dropdown.Item>
+                  <Dropdown.Item eventKey="Australian_Capital_Territory">Australian Capital Territory</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Col>
+          </Row>
+          <Row style={{ 'padding': '10px' }}>
+            <Col sm={4}>
+              Select a topic:
+            </Col>
+            <Col sm={8}>
+              <Dropdown onSelect={handleTwitterTopicChange}>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  {twitterTopic.charAt(0).toUpperCase() + twitterTopic.slice(1)}
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item eventKey="political">Political</Dropdown.Item>
+                  <Dropdown.Item eventKey="criminal">Criminal</Dropdown.Item>
+                  <Dropdown.Item eventKey="employment">Employment</Dropdown.Item>
+                  <Dropdown.Item eventKey="traffic">Traffic</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Col>
+          </Row>
 
-          <h4>Graph for the Twitter data in {twitter.date}</h4>
-          <div>
-            <label htmlFor="state">Select a state:</label>
-            <select id="state" name="state" value={selectedState} onChange={handleStateChange}>
-              <option value="">--Select a state--</option>
-              <option value="Queensland">Queensland</option>
-              <option value="Western_Australia">Western Australia</option>
-              <option value="New_South_Wales">New South Wales</option>
-              <option value="Victoria">Victoria</option>
-              <option value="Northern_Territory">Northern Territory</option>
-              <option value="South_Australia">South Australia</option>
-              <option value="Tasmania">Tasmania</option>
-              <option value="Australian_Capital_Territory">Australian Capital Territory</option>
-            </select>
-          </div>
-
-          <div>
-            <label htmlFor="twitterTopic">Select a Twitter topic:</label>
-            <select id="twitterTopic" name="twitterTopic" value={twitterTopic} onChange={handleTwitterTopicChange}>
-            <option value="">--Select a topic--</option>
-              <option value="political">Political</option>
-              <option value="criminal">Criminal</option>
-              <option value="employment">Employment</option>
-              <option value="traffic">Traffic</option>
-            </select>
-          </div>
-
-          <h3>Twitter Tweet Information - {topic}</h3>
-          <div className='row'>
-            <p>{topic} tweet count: {twitter.tweet_count}</p>
-            <p>Total tweet count: {twitter.total_tweet_count} </p>
-            <BarChart
-              width={500}
-              height={300}
-              data={twitterBarChartData}
-              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Bar dataKey="value" fill="#8884d8" />
-            </BarChart>
-
-            <h4>Tweet Ratio</h4>
-            <PieChart width={400} height={200} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
-              <Pie
-                data={twitterTweetRatioData}
-                cx={200}
-                cy={100}
-                labelLine={false}
-                outerRadius={80}
-                fill="#8884d8"
-                dataKey="value"
-              >
-                {twitterTweetRatioData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                ))}
-              </Pie>
-              <Tooltip />
-              <Legend />
-            </PieChart>
-
-            <h4>User Ratio</h4>
-            <PieChart width={400} height={200} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
-              <Pie
-                data={twitterUserRatioData}
-                cx={200}
-                cy={100}
-                labelLine={false}
-                outerRadius={80}
-                fill="#8884d8"
-                dataKey="value"
-              >
-                {twitterUserRatioData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                ))}
-              </Pie>
-              <Tooltip />
-              <Legend />
-            </PieChart>
-
-            <h4>Twitter Word Cloud</h4>
-            <div style={{ width: '600px', height: '300px', overflow: 'scroll' }}>
-            <ReactD3Cloud data={twitterWordCloudData} {...wordCloudOptions} />
-
+          <h3 style={{ 'paddingTop': '20px' }}>Twitter Tweet Information - {topic}</h3>
+          <Row>
+            <div style={{ 'padding': '10px' }}>
+              <p>{topic} tweet count: {twitter.tweet_count}</p>
+              <p>Total tweet count: {twitter.total_tweet_count} </p>
+              <BarChart
+                width={500}
+                height={300}
+                data={twitterBarChartData}
+                margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Bar dataKey="value" fill="#8884d8" />
+              </BarChart>
             </div>
-          </div>
-        </div>
 
-      </div>
-    </div>
+            <div style={{ 'padding': '10px' }}>
+              <h4>Tweet Ratio</h4>
+              <PieChart width={400} height={200} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
+                <Pie
+                  data={twitterTweetRatioData}
+                  cx={200}
+                  cy={100}
+                  labelLine={false}
+                  outerRadius={80}
+                  fill="#8884d8"
+                  dataKey="value"
+                >
+                  {twitterTweetRatioData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  ))}
+                </Pie>
+                <Tooltip />
+                <Legend />
+              </PieChart>
+            </div>
+
+            <div style={{ 'padding': '10px' }}>
+              <h4>User Ratio</h4>
+              <PieChart width={400} height={200} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
+                <Pie
+                  data={twitterUserRatioData}
+                  cx={200}
+                  cy={100}
+                  labelLine={false}
+                  outerRadius={80}
+                  fill="#8884d8"
+                  dataKey="value"
+                >
+                  {twitterUserRatioData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  ))}
+                </Pie>
+                <Tooltip />
+                <Legend />
+              </PieChart>
+            </div>
+
+            <div style={{ 'padding': '10px' }}>
+              <h4>Twitter Word Cloud</h4>
+              <div style={{ width: '600px', height: '300px', overflow: 'scroll' }}>
+                <ReactD3Cloud data={twitterWordCloudData} {...wordCloudOptions} />
+              </div>
+            </div>
+          </Row>
+        </Col>
+
+      </Row>
+    </Container>
 
   );
 };

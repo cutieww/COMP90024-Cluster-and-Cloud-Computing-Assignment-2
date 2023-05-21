@@ -17,19 +17,19 @@ const TwitterData = () => {
   const handleDropdownChange = (selectedOption) => {
     setTopic(selectedOption);
     switch (selectedOption) {
-      case 'Political':
+      case 'political':
         setSelectedHtml(politicalHtml);
         setImg(politicalImg);
         break;
-      case 'Criminal':
+      case 'criminal':
         setSelectedHtml(criminalHtml);
         setImg(criminalImg);
         break;
-      case 'Employment':
+      case 'employment':
         setSelectedHtml(employmentHtml);
         setImg(employmentImg)
         break;
-      case 'Traffic':
+      case 'traffic':
         setSelectedHtml(trafficHtml);
         setImg(trafficImg)
         break;
@@ -48,27 +48,26 @@ const TwitterData = () => {
               Select a topic
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item eventKey="Political">Political</Dropdown.Item>
-              <Dropdown.Item eventKey="Criminal">Criminal</Dropdown.Item>
-              <Dropdown.Item eventKey="Employment">Employment</Dropdown.Item>
-              <Dropdown.Item eventKey="Traffic">Traffic</Dropdown.Item>
+              <Dropdown.Item eventKey="political">Political</Dropdown.Item>
+              <Dropdown.Item eventKey="criminal">Criminal</Dropdown.Item>
+              <Dropdown.Item eventKey="employment">Employment</Dropdown.Item>
+              <Dropdown.Item eventKey="traffic">Traffic</Dropdown.Item>
             </Dropdown.Menu>
-
           </Dropdown>
         </Col>
         <Col sm={8}>
-          <h2>{topic}</h2>
+          <h2>{topic.charAt(0).toUpperCase() + topic.slice(1)}</h2>
         </Col>
       </Row>
       <Row>
-        <h3 style={{'paddingTop': '30px'}}>Twitter User and Post Data Analysis</h3>
+        <h3 style={{ 'paddingTop': '30px' }}>Twitter User and Post Data Analysis</h3>
         <div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
           {img && <img src={img} alt={topic} />}
         </div>
         <p>Ratio of twitter posts and twitter users in {topic.toLowerCase()} tweets.</p>
       </Row>
       <Row>
-        <h3 style={{'paddingTop': '30px'}}>Twitter Region Map</h3>
+        <h3 style={{ 'paddingTop': '30px' }}>Twitter Region Map</h3>
         <p>Location of {topic.toLowerCase()} tweets made overlayed onto a map.</p>
         {selectedHtml && (
           <iframe

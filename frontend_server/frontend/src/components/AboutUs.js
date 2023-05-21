@@ -15,8 +15,6 @@ const Card = ({ name, role }) => {
 const AboutUs = () => {
   return (
     <div>
-      <h1>About Us</h1>
-
       <div className="row">
         <div className="col-md-4">
           <Card name="Yihan Wang" role="Mastodon, CouchDB, Backend" />
