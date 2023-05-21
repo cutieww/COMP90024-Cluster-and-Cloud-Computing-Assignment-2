@@ -1,0 +1,1 @@
+function(doc) {if (doc.state && doc.state.includes('Australian Capital Territory')) {emit(doc.location, 1);}}
