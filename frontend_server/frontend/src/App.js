@@ -39,9 +39,9 @@ function App() {
   const currentLinkName = getLinkName(location.pathname);
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid d-flex" >
       <div className="row">
-        <div id="Sidebar-button" className="col-sm-0.1 d-flex align-items-center">
+        <div id="Sidebar-button" className=" d-flex align-items-center">
           <button
             type="button"
             className={`btn btn-primary sidebar-toggle-btn ${sidebarOpen ? 'open' : 'closed'}`}
@@ -53,7 +53,8 @@ function App() {
             <h1>{currentLinkName}</h1>
           </div>
         </div>
-        <div className={`col-md-2 sidebar bg-light ${sidebarOpen ? '' : 'd-none'}`}>
+        
+        <div className={`sidebar ${sidebarOpen ? '' : 'd-none'}`}>
           <nav className={`nav flex-column d-md-block`}>
             <Link className="nav-link" to="/">Home</Link>
             <Link className="nav-link" to="/data-overview">Data Overview</Link>
@@ -63,7 +64,9 @@ function App() {
             <Link className="nav-link" to="/about-us">About Us</Link>
           </nav>
         </div>
-        <div className="col-md-10">
+        
+      </div>
+      <div className={`content bg-white flex-grow-1`}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/twitter-data" element={<TwitterData />} />
@@ -73,7 +76,6 @@ function App() {
             <Route path="/about-us" element={<AboutUs />} />
           </Routes>
         </div>
-      </div>
     </div>
   );
 }
