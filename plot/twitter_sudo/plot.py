@@ -44,7 +44,7 @@ def get_graph_info(topic, twitter_file, sudo_file,x_cols):
     return plot_dict
 
 
-def plot_chart(plot_dict,bars,lines,plot_name,line_label,save_name):
+def plot_chart(plot_dict,bars,lines,line_label,num_label,save_name):
     
     df = pd.DataFrame.from_dict(plot_dict)
 
@@ -75,14 +75,19 @@ def plot_chart(plot_dict,bars,lines,plot_name,line_label,save_name):
     
     y_bars = []
     for bar in bars:
-        y_bars.append(df[bar].to_list())
+        y_bars.append([element * 100 for element in df[bar].to_list()])
         
 
         
     y_lines = []
+    add_num = []
     for line in lines:
         y_lines.append(df[line].to_list())
-
+        if line in num_label:
+            add_num.append(1)
+        else:
+            add_num.append(0)
+            
         
 
     # Create a figure and axis objects
@@ -97,22 +102,33 @@ def plot_chart(plot_dict,bars,lines,plot_name,line_label,save_name):
     
 
     # Set the y-axis label for bars
-    ax.set_ylabel("Percentage")
+    ax.set_ylabel("Percentage(%)")
 
     # Create a twin y-axis for the line plots
     ax2 = ax.twinx()
 
     # Plot the line plots with different colors
+#     for i in range(len(y_lines)):
+#         ax2.plot(x, y_lines[i], marker='o', linestyle='-', label=lines[i], color=COLOUR[i+2])
+# #     ax2.plot(x, y_line2, marker='o', linestyle='-', label='Line 2', color='purple')
+
+
+    
+
     for i in range(len(y_lines)):
         ax2.plot(x, y_lines[i], marker='o', linestyle='-', label=lines[i], color=COLOUR[i+2])
-#     ax2.plot(x, y_line2, marker='o', linestyle='-', label='Line 2', color='purple')
+        
+        if add_num[i] == 1:
+            for j in range(len(x)):
+                ax2.text(j, y_lines[i][j], f'{y_lines[i][j]:.0f}', ha='center', va='bottom', fontsize=9, color="#404040")
+
 
     # Set the y-axis label for lines
     ax2.set_ylabel(line_label)
 
     # Set labels and title
     ax.set_xlabel('State Name')
-    ax.set_title(plot_name)
+#     ax.set_title(plot_name)
 
     # Display legends
     
@@ -122,9 +138,10 @@ def plot_chart(plot_dict,bars,lines,plot_name,line_label,save_name):
     ax2.legend(loc='center left', bbox_to_anchor=(1.12, 0.5 - 0.04* len(y_lines)))
    
 
-#     Show the plot
-    # plt.show()
     plt.savefig(save_name, bbox_inches='tight')
+    
+    
+    
 
 
 
@@ -137,15 +154,34 @@ def plot_chart(plot_dict,bars,lines,plot_name,line_label,save_name):
 
 
 if __name__ == '__main__':
-    political_plot_dict = get_graph_info('political', twitter, political_sudo,['poll_counts','first_voter_counts'])
-    plot_chart(political_plot_dict,['post_ratio','user_ratio'],['poll_counts','first_voter_counts'],"Political Graph Name","Count","results/political_sudo.png")
 
+    
+    political_plot_dict = get_graph_info('political', twitter, political_sudo,['poll_counts','first_voter_counts'])
+    plot_chart(political_plot_dict,['post_ratio','user_ratio'],['poll_counts','first_voter_counts'],"Population Size",["poll_counts"],"results/political_sudo.png")
+    
     criminal_plot_dict = get_graph_info("criminal", twitter, criminal_sudo,["acts_intended_to_cause_injury","offences_against_justice","theft"])
-    plot_chart(criminal_plot_dict,['post_ratio','user_ratio'],["acts_intended_to_cause_injury","offences_against_justice","theft"],"Criminal Graph Name","Count","results/criminal_sudo.png")
+
+    plot_chart(criminal_plot_dict,['post_ratio','user_ratio'],["acts_intended_to_cause_injury","offences_against_justice","theft"],"Population Size",["acts_intended_to_cause_injury","offences_against_justice","theft"],"results/criminal_sudo.png")
 
     employment_plot_dict = get_graph_info("employment", twitter, employment_sudo,["science_average_growth","construction_average_growth","financial_average_growth","total_average_growth"])
-    plot_chart(employment_plot_dict,['post_ratio','user_ratio'],["science_average_growth","construction_average_growth","financial_average_growth"],"Employment Graph Name","Average Growth","results/employment_sudo.png")
 
+    plot_chart(employment_plot_dict,['post_ratio','user_ratio'],["science_average_growth","construction_average_growth","financial_average_growth"],"Average Growth(%)",["construction_average_growth","financial_average_growth"],"results/employment_sudo.png")
+    
     traffic_plot_dict = get_graph_info("traffic", twitter, traffic_sudo,["one_method_total","two_method_total","three_method_total","total_people"])
-    plot_chart(traffic_plot_dict,['post_ratio','user_ratio'],["one_method_total","two_method_total","three_method_total","total_people"],"Traffic Graph Name","People Count","results/traffic_sudo.png")
+
+    plot_chart(traffic_plot_dict,['post_ratio','user_ratio'],["one_method_total","two_method_total","total_people"],"Population Size",["total_people"],"results/traffic_sudo.png")
+
+
+
+
+
+
+#    criminal_plot_dict = get_graph_info("criminal", twitter, criminal_sudo,["acts_intended_to_cause_injury","offences_against_justice","theft"])
+#    plot_chart(criminal_plot_dict,['post_ratio','user_ratio'],["acts_intended_to_cause_injury","offences_against_justice","theft"],"Criminal Graph Name","Count","results/criminal_sudo.png")
+#
+#    employment_plot_dict = get_graph_info("employment", twitter, employment_sudo,["science_average_growth","construction_average_growth","financial_average_growth","total_average_growth"])
+#    plot_chart(employment_plot_dict,['post_ratio','user_ratio'],["science_average_growth","construction_average_growth","financial_average_growth"],"Employment Graph Name","Average Growth","results/employment_sudo.png")
+#
+#    traffic_plot_dict = get_graph_info("traffic", twitter, traffic_sudo,["one_method_total","two_method_total","three_method_total","total_people"])
+#    plot_chart(traffic_plot_dict,['post_ratio','user_ratio'],["one_method_total","two_method_total","three_method_total","total_people"],"Traffic Graph Name","People Count","results/traffic_sudo.png")
 

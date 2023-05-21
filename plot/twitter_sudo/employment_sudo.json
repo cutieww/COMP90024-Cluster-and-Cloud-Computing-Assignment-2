@@ -1,0 +1,44 @@
+{
+    "New_South_Wales": {
+        "science_average_growth": 159.01888757999998,
+        "construction_average_growth": 177.44163839999996,
+        "financial_average_growth": 63.11964656,
+        "total_average_growth": 159.97625014999997
+    },
+    "Victoria": {
+        "science_average_growth": 105.4256052,
+        "construction_average_growth": 108.79536395,
+        "financial_average_growth": 23.817779475000005,
+        "total_average_growth": 137.2852897
+    },
+    "Queensland": {
+        "science_average_growth": 87.74902469999998,
+        "construction_average_growth": 56.330685835,
+        "financial_average_growth": 42.039010239999996,
+        "total_average_growth": 90.63743324500001
+    },
+    "South_Australia": {
+        "science_average_growth": 12.661294300000002,
+        "construction_average_growth": 26.6815509,
+        "financial_average_growth": 7.665607615,
+        "total_average_growth": 19.42952895
+    },
+    "Western_Australia": {
+        "science_average_growth": 24.896312350000002,
+        "construction_average_growth": 32.5555484,
+        "financial_average_growth": 16.736769250000002,
+        "total_average_growth": 45.3072578
+    },
+    "Tasmania": {
+        "science_average_growth": 9.5752659,
+        "construction_average_growth": 5.018014175000001,
+        "financial_average_growth": 7.318207599999999,
+        "total_average_growth": 6.7975795250000015
+    },
+    "Northern_Territory": {
+        "science_average_growth": 5.2263047,
+        "construction_average_growth": 4.287036499999999,
+        "financial_average_growth": 0.8541487499999998,
+        "total_average_growth": 3.8208668999999995
+    }
+}
