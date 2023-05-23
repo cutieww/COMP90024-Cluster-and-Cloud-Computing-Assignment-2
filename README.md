@@ -3,7 +3,7 @@
 
 
 ## Frontend website
-http://172.26.131.144:3000/
+http://172.26.131.144:3000
 
 ## Youtube Video
 System Deployment (scaling): https://www.youtube.com/watch?v=yRJuwNy1_7A&feature=youtu.be
@@ -15,6 +15,7 @@ Frontend Visualization: [https://www.youtube.com/watch?v=SoCIkHjk2eQ&t=51s](http
 
 
 ## Deployment Guide
+The Guide here is just the notes for developers. For latest and complete User Guide, please refer to the Report section 9.
 
 ### Deploy Streamer Node (World Server)
 
