@@ -14,15 +14,8 @@
     state: present
     wait: true
   loop: "{{ instances }}"
-  register: os_instance
 
 
-- name: Add host
-  ansible.builtin.add_host:
-    name: "{{ item.server.access_ipv4 }}"
-    groups: docker_nodes
-  loop: "{{ os_instance.results }}"
-  when: item.server is defined
 
 
 

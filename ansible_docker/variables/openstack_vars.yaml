@@ -14,6 +14,7 @@ volumes:
     vol_size: 10
 
 security_groups:
+
   - name: ssh
     description: "Security group for SSH access"
     protocol: tcp 
@@ -26,7 +27,7 @@ security_groups:
     port_range_min: 80
     port_range_max: 80
     remote_ip_prefix: 0.0.0.0/0
-  
+
 
 instances:
   - name: mastodon_server
