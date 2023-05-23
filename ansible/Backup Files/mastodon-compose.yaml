@@ -3,5 +3,10 @@ version: '3'
 services:
   crawler:
     image: "{{ item.name }}"
-   
+    ports:
+      - "8080:80"
+
+    deploy:
+      restart_policy:
+        condition: any 
 # image name in case: luchen2001/mrc:streamer_uk

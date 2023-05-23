@@ -90,10 +90,35 @@
       with_items: "{{ image_name }}"
 
   
- - name: Create the Docker service
-      community.docker.docker_compose:
-        project_src: /home/wagw/COMP90024-Cluster-and-Cloud-Computing-Assignment-2/ansible/mastodon-compose.yaml
-        project_name: crawler
-        build: false
-        scale:
-          crawler: "{{ num_replicas }}"
+---
+- name: Create Docker services
+  hosts: swarm_managers 
+  become: true
+  vars_files:
+    - variables/mastodon_vars.yaml 
+
+  tasks:
+  - name: Build Docker images
+    community.docker.docker_image:
+      name: "{{ item.name }}"
+      source: "../harvester_node/streamer"
+      build:
+        dockerfile: Dockerfile
+      state: present
+    loop: "{{ domains }}"
+
+
+  - name: Create the Docker service
+    community.docker.docker_compose:
+      project_src: mastodon-compose.yaml
+      project_name: crawler
+      build: false
+      scale:
+        crawler_{{ item.name }}: "{{ num_replicas }}"
+      loop: "{{ domains }}"
+
+
+    
+
+    
+
