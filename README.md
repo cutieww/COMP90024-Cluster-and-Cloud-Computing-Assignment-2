@@ -5,7 +5,7 @@
 http://172.26.131.144:3000/
 
 ## Youtube Video
-System Deployment (scaling): [https://youtu.be/yRJuwNy1_7A]{https://youtu.be/yRJuwNy1_7A}
+System Deployment (scaling): https://www.youtube.com/watch?v=yRJuwNy1_7A&feature=youtu.be
 
 Frontend Visualization: [https://www.youtube.com/watch?v=SoCIkHjk2eQ&t=51s](https://www.youtube.com/watch?v=dCwyQDXtk80)
 
