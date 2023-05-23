@@ -2,10 +2,12 @@
 
 
 ## Frontend website
-
+http://172.26.131.144:3000/
 
 ## Youtube Video
+System Deployment (scaling): https://youtu.be/yRJuwNy1_7A
 
+Frontend Visualization: https://www.youtube.com/watch?v=SoCIkHjk2eQ&t=51s
 
 ## Architecture
 <img width="828" alt="Screenshot 2023-05-17 at 12 12 40 am" src="https://github.com/cutieww/COMP90024-Cluster-and-Cloud-Computing-Assignment-2/assets/88120882/428d772d-51da-4916-ad5b-503ae2e5cd1e">
