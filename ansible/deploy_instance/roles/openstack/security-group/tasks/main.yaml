@@ -43,6 +43,9 @@
     remote_ip_prefix: "{{ item.remote_ip_prefix }}"
     state: present
   loop: "{{ security_groups }}"
+<<<<<<< Updated upstream:ansible/deploy_instance/roles/openstack/security-group/tasks/main.yaml
   when: item.name not in sg_result.security_groups | map(attribute='name') | list
 
   #NGUzZjUyMjZjOWM5ZDUz
+=======
+>>>>>>> Stashed changes:ansible_docker/roles/openstack/security-group/tasks/main.yaml

@@ -1,3 +1,11 @@
+/*
+  Team 84 - Melbourne
+  Brendan Pichler(bpichler@student.unimelb.edu.au) 1212335
+  George Wang (wagw@student.unimelb.edu.au) 1084224
+  Luchen Zhou(luczhou@student.unimelb.edu.au) 1053412
+  Wei Wang(wangw16@student.unimelb.edu.au) 900889
+  Yihan Wang (yihwang3@student.unimelb.edu.au) 1056614
+  */
 import React, { useState, useEffect } from 'react';
 import { BarChart, XAxis, YAxis, Tooltip, CartesianGrid, Bar, Legend, PieChart, Pie, Cell } from 'recharts';
 import DOMPurify from 'dompurify';
@@ -88,7 +96,7 @@ const MastodonData = () => {
     window.open(post.url, '_blank', 'noopener,noreferrer');
   };
 
-  const COLORS = ['#0088FF', '#00C49F'];
+  const COLORS = ['#4C70A2', '#BDD0FB'];
   const barChartData = [
     { name: 'relevant post', value: data.post_num },
     { name: 'total post', value: data.total_post },
@@ -145,7 +153,7 @@ const MastodonData = () => {
               </tbody>
             </Table>
             <p>Created_at: {post.created_at}</p>
-            <button className="btn btn-primary" onClick={handleButtonClick}>View Post</button>
+            <button className="btn btn-primary" onClick={handleButtonClick} style={{ backgroundColor: '#4C70A2', borderColor: '#094183' }} >View Post</button>
           </Col>
 
           <Col>
@@ -172,7 +180,7 @@ const MastodonData = () => {
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
-          <Bar dataKey="value" fill="#7884d8" />
+          <Bar dataKey="value" fill="#BDD0FB" />
         </BarChart>
         </Row>
 
@@ -187,7 +195,7 @@ const MastodonData = () => {
                 cy={100}
                 labelLine={false}
                 outerRadius={80}
-                fill="#8884d8"
+                fill="#BDD0FB"
                 dataKey="value"
               >
                 {postRatioData.map((entry, index) => (
@@ -208,7 +216,7 @@ const MastodonData = () => {
                 cy={100}
                 labelLine={false}
                 outerRadius={80}
-                fill="#8884d8"
+                fill="#BDD0FB"
                 dataKey="value"
               >
                 {userRatioData.map((entry, index) => (

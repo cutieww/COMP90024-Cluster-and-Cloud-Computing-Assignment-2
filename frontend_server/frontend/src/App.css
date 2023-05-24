@@ -1,5 +1,12 @@
 
-
+/*
+  Team 84 - Melbourne
+  Brendan Pichler(bpichler@student.unimelb.edu.au) 1212335
+  George Wang (wagw@student.unimelb.edu.au) 1084224
+  Luchen Zhou(luczhou@student.unimelb.edu.au) 1053412
+  Wei Wang(wangw16@student.unimelb.edu.au) 900889
+  Yihan Wang (yihwang3@student.unimelb.edu.au) 1056614
+  */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -120,7 +127,7 @@ code {
 }
 
 .nav-bar {
-  color: rgba(26, 26, 26, 0.75);
+  color: #094183;
   background-color: rgb(247, 247, 247);
   height: 100%;
   min-height: 100vh;
@@ -142,17 +149,30 @@ code {
 
 a { 
   color: inherit !important; 
+  
 } 
 
-.nav-link-button { }
+.nav-link-button:hover {
+  color: hsl(1, 97%, 75%) !important;
+  font-weight:800 !important;
+}
+
 
 .nav-link-button-selected {
   font-weight: bold !important;
   border: 1px !important;
   border-color: lightslategray !important;
+  background-color: #c9daff;
+  border-top-right-radius: 10px; 
+  border-bottom-right-radius: 10px;
 }
 
 .text-center {
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.banner {
+  color: #094183;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }

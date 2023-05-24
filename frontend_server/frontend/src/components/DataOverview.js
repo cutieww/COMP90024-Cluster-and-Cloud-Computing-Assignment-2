@@ -1,3 +1,11 @@
+/*
+  Team 84 - Melbourne
+  Brendan Pichler(bpichler@student.unimelb.edu.au) 1212335
+  George Wang (wagw@student.unimelb.edu.au) 1084224
+  Luchen Zhou(luczhou@student.unimelb.edu.au) 1053412
+  Wei Wang(wangw16@student.unimelb.edu.au) 900889
+  Yihan Wang (yihwang3@student.unimelb.edu.au) 1056614
+  */
 import React, { useState, useEffect } from 'react';
 import { BarChart, XAxis, YAxis, Tooltip, CartesianGrid, Bar, Legend, PieChart, Pie, Cell } from 'recharts';
 import { Container, Row, Col, Button } from 'react-bootstrap';
@@ -78,7 +86,7 @@ const DataOverview = () => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="value" fill="#8884d8" />
+          <Bar dataKey="value" fill="#BDD0FB" />
         </BarChart>
         </Row>
         <Row>
@@ -96,8 +104,8 @@ const DataOverview = () => {
             fill="#8884d8"
             dataKey="value"
           >
-            <Cell fill="#0088FE" />
-            <Cell fill="#00C49F" />
+            <Cell fill="#4C70A2" />
+            <Cell fill="#BDD0FB" />
           </Pie>
           <Tooltip />
           <Legend />
@@ -115,11 +123,11 @@ const DataOverview = () => {
             cy={100}
             labelLine={false}
             outerRadius={80}
-            fill="#8884d8"
+            fill="#BDD0FB"
             dataKey="value"
           >
-            <Cell fill="#0088FE" />
-            <Cell fill="#00C49F" />
+            <Cell fill="#4C70A2" />
+            <Cell fill="#BDD0FB" />
           </Pie>
           <Tooltip />
           <Legend/>
@@ -147,7 +155,7 @@ const DataOverview = () => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="value" fill="#8884d8" />
+          <Bar dataKey="value" fill="#BDD0FB" />
         </BarChart>
         </Row>
         <Row>
@@ -165,8 +173,8 @@ const DataOverview = () => {
             fill="#8884d8"
             dataKey="value"
           >
-            <Cell fill="#0088FE" />
-            <Cell fill="#00C49F" />
+            <Cell fill="#4C70A2" />
+            <Cell fill="#BDD0FB" />
           </Pie>
           <Tooltip />
           <Legend />
@@ -187,8 +195,8 @@ const DataOverview = () => {
             fill="#8884d8"
             dataKey="value"
           >
-            <Cell fill="#0088FE" />
-            <Cell fill="#00C49F" />
+            <Cell fill="#4C70A2" />
+            <Cell fill="#BDD0FB" />
           </Pie>
           <Tooltip />
           <Legend/>

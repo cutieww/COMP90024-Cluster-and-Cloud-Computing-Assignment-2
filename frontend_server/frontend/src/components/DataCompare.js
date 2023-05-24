@@ -1,3 +1,11 @@
+/*
+  Team 84 - Melbourne
+  Brendan Pichler(bpichler@student.unimelb.edu.au) 1212335
+  George Wang (wagw@student.unimelb.edu.au) 1084224
+  Luchen Zhou(luczhou@student.unimelb.edu.au) 1053412
+  Wei Wang(wangw16@student.unimelb.edu.au) 900889
+  Yihan Wang (yihwang3@student.unimelb.edu.au) 1056614
+  */
 import React, { useState, useEffect } from 'react';
 import { BarChart, XAxis, YAxis, Tooltip, CartesianGrid, Bar, Legend, PieChart, Pie, Cell } from 'recharts';
 import ReactD3Cloud from 'react-d3-cloud';
@@ -101,24 +109,24 @@ const DataCompare = () => {
 
   // Twitter Bar chart data
   const twitterBarChartData = [
-    { name: topic + ' tweet', value: twitter.tweet_count },
+    { name: twitterTopic + ' tweet', value: twitter.tweet_count },
     { name: 'total tweet', value: twitter.total_tweet_count },
   ];
 
   // Twitter Pie chart data
   const twitterTweetRatioData = [
-    { name: topic + ' tweet', value: twitter.tweet_ratio },
+    { name: twitterTopic + ' tweet', value: twitter.tweet_ratio },
     { name: 'remaining ratio', value: 1 - twitter.tweet_ratio },
   ];
 
   const twitterUserRatioData = [
-    { name: topic + ' tweet', value: twitter.user_ratio },
+    { name: twitterTopic + ' tweet', value: twitter.user_ratio },
     { name: 'remaining ratio', value: 1 - twitter.user_ratio },
   ];
 
 
   // Colors for the charts
-  const COLORS = ['#0088FE', '#00C49F'];
+  const COLORS = ['#4C70A2', '#BDD0FB'];
 
   const minMaxNormalize = (data, minSize, maxSize) => {
     if (data.length === 0) {
@@ -152,12 +160,7 @@ const DataCompare = () => {
     .sort((a, b) => b.value - a.value)
     .slice(0, 200);
 
-  /*
-  const userCloudData = Object.entries(mastodon.usermap || {})
-    .map(([text, value]) => ({ text, value }))
-    .sort((a, b) => b.value - a.value)
-    .slice(0, 50);
-  */
+
 
   // Define word cloud options
   const wordCloudOptions = {
@@ -173,22 +176,22 @@ const DataCompare = () => {
 
   return (
     <Container>
-      <Row>
-        <Col>
+      <Row className="flex-nowrap">
+        <Col className="col-md-6">
           <Row style={{ 'padding': '10px' }}>
             <h4>Graph for the mastodon data in {mastodon.date}</h4>
             <div>
-              <label htmlFor="date">Select a date: </label>
+              <label htmlFor="date" style={{ 'padding-right': '80px' }}>Select a date: </label>
               <input type="date" id="date" name="date" value={date} onChange={handleDateChange} />
             </div>
           </Row>
           <Row style={{ 'padding': '10px' }}>
-            <Col sm={4}>
+            <Col sm={4} >
               Select a topic:
             </Col>
             <Col sm={8}>
               <Dropdown onSelect={handleTopicChange}>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                <Dropdown.Toggle variant="success" id="dropdown-basic" style={{ backgroundColor: '#4C70A2', borderColor: '#094183' }}>
                   {topic.charAt(0).toUpperCase() + topic.slice(1)}
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
@@ -214,7 +217,7 @@ const DataCompare = () => {
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
-                <Bar dataKey="value" fill="#8884d8" />
+                <Bar dataKey="value" fill="#BDD0FB" />
               </BarChart>
             </div>
             <div style={{ 'padding': '10px' }}>
@@ -226,7 +229,7 @@ const DataCompare = () => {
                   cy={100}
                   labelLine={false}
                   outerRadius={80}
-                  fill="#8884d8"
+                  fill="#BDD0FB"
                   dataKey="value"
                 >
                   {postRatioData.map((entry, index) => (
@@ -257,16 +260,6 @@ const DataCompare = () => {
                 <Legend />
               </PieChart>
             </div>
-            {/*
-        <h4>Top 10 Users</h4>
-        <ol>
-          {userCloudData.slice(0, 10).map((user, index) => (
-            <li key={index}>
-              {user.text} (Posts: {user.value})
-            </li>
-          ))}
-        </ol>
-          */}
             <div style={{ 'padding': '10px' }}>
               <h4>Mastodon Word Cloud</h4>
               <div style={{ width: '600px', height: '300px', overflow: 'scroll' }}>
@@ -275,20 +268,21 @@ const DataCompare = () => {
             </div>
           </Row>
         </Col>
-        <Col>
+
+        <Col className="col-md-6">
           <Row>
-            <h4>Graph for the Twitter data in {twitter.date}</h4>
+            <h4>Graph for the Twitter data in {selectedState}</h4>
           </Row>
           <Row style={{ 'padding': '10px' }}>
-            <Col sm={4}>
+            <Col sm={4} >
               Select a state:
             </Col>
             <Col sm={8}>
               <Dropdown onSelect={handleStateChange}>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                <Dropdown.Toggle variant="success" id="dropdown-basic" style={{ backgroundColor: '#4C70A2', borderColor: '#094183' }}>
                   {selectedState.replaceAll('_', ' ')}
                 </Dropdown.Toggle>
-                <Dropdown.Menu>
+                <Dropdown.Menu >
                   <Dropdown.Item eventKey="Queensland">Queensland</Dropdown.Item>
                   <Dropdown.Item eventKey="Western_Australia">Western Australia</Dropdown.Item>
                   <Dropdown.Item eventKey="New_South_Wales">New South Wales</Dropdown.Item>
@@ -307,7 +301,7 @@ const DataCompare = () => {
             </Col>
             <Col sm={8}>
               <Dropdown onSelect={handleTwitterTopicChange}>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                <Dropdown.Toggle variant="success" id="dropdown-basic" style={{ backgroundColor: '#4C70A2', borderColor: '#094183' }}>
                   {twitterTopic.charAt(0).toUpperCase() + twitterTopic.slice(1)}
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
@@ -334,7 +328,7 @@ const DataCompare = () => {
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
-                <Bar dataKey="value" fill="#8884d8" />
+                <Bar dataKey="value" fill="#BDD0FB" />
               </BarChart>
             </div>
 
